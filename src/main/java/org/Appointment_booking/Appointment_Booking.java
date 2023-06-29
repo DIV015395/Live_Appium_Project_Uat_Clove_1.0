@@ -89,7 +89,7 @@ public class Appointment_Booking extends BaseDriver
     public void Patient_Dashboard()
     {
         rv_timeSlots.click();
-        String desiredOptionTime = "18:";
+        String desiredOptionTime = "18:00";
         for (WebElement option : tv_timeSlot) {
             if (option.getText().equals(desiredOptionTime))
             {
