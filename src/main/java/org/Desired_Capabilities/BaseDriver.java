@@ -10,7 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BaseDriver
 {
-
     public AndroidDriver<AndroidElement> driver;
     public BaseDriver(AndroidDriver<AndroidElement> driver) {
         this.driver = driver;
