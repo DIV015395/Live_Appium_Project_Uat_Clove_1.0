@@ -10,8 +10,9 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
-public class Patient_Search
+public class Patient_Search_Test
 {
     public AppiumDriver driver;
     @Test
@@ -23,9 +24,12 @@ public class Patient_Search
         Thread.sleep(1000);
         App_Login_POM obj = new App_Login_POM((AndroidDriver) driver);
         obj.Logins();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         Patient_Search_POM obj1 = new Patient_Search_POM((AndroidDriver) driver);
         obj1.explore();
+        Thread.sleep(1000);
         obj1.patientSearch();
+        Thread.sleep(2000);
 
     }
 }
