@@ -64,6 +64,7 @@ public class Appointment_Booking extends BaseDriver
     public WebElement et_contact;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_name")
     public WebElement et_name;
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/rv_timeSlots")
     public WebElement rv_timeSlots;
     @AndroidFindBy(id="com.clove.clover.uat:id/tv_timeSlot")
@@ -74,7 +75,7 @@ public class Appointment_Booking extends BaseDriver
         et_name.sendKeys("ManjeetSharma");
 
         rv_timeSlots.click();
-        String desiredOptionTime = "18:30";
+        String desiredOptionTime = "18:";
         for (WebElement option : tv_timeSlot) {
             if (option.getText().equals(desiredOptionTime))
             {
@@ -82,7 +83,5 @@ public class Appointment_Booking extends BaseDriver
                 break;
             }
         }
-
-
     }
 }
