@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.Desired_Capabilities.BaseDriver;
+import org.graalvm.compiler.nodes.debug.WeakCounterNode;
 import org.openqa.selenium.WebElement;
 import org.springframework.ui.context.Theme;
 
@@ -64,22 +65,31 @@ public class Appointment_Booking extends BaseDriver
     public WebElement et_contact;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_name")
     public WebElement et_name;
-
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_appointmentDateSelect")
     public WebElement Dates;
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"30 June 2023\"]")fpublic void Date_selection()
-    {
-        Dates.click();
-    }
 
+    @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_next_month_arrow")
+    public WebElement Next_month;
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"01 July 2023\"]")
+    public WebElement Date;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_ok")
+    public WebElement Dateok;
+    public void Date_selection()
+    {
+        et_contact.sendKeys("7011131498");
+        et_name.sendKeys("ManjeetSharma");
+        Dates.click();
+        Next_month.click();
+        Date.click();
+        Dateok.click();
+    }
     @AndroidFindBy(id = "com.clove.clover.uat:id/rv_timeSlots")
     public WebElement rv_timeSlots;
     @AndroidFindBy(id="com.clove.clover.uat:id/tv_timeSlot")
     public List<WebElement> tv_timeSlot;
     public void Patient_Dashboard()
     {
-        et_contact.sendKeys("7011131498");
-        et_name.sendKeys("ManjeetSharma");
+
 
         rv_timeSlots.click();
         String desiredOptionTime = "18:";
