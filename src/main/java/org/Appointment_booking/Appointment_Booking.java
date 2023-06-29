@@ -60,4 +60,29 @@ public class Appointment_Booking extends BaseDriver
         }
         fab_newAppointment.click();
     }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_contact")
+    public WebElement et_contact;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_name")
+    public WebElement et_name;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/rv_timeSlots")
+    public WebElement rv_timeSlots;
+    @AndroidFindBy(id="com.clove.clover.uat:id/tv_timeSlot")
+    public List<WebElement> tv_timeSlot;
+    public void Patient_Dashboard()
+    {
+        et_contact.sendKeys("7011131498");
+        et_name.sendKeys("ManjeetSharma");
+
+        rv_timeSlots.click();
+        String desiredOptionTime = "18:30";
+        for (WebElement option : tv_timeSlot) {
+            if (option.getText().equals(desiredOptionTime))
+            {
+                option.click();
+                break;
+            }
+        }
+
+
+    }
 }
