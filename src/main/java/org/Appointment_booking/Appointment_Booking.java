@@ -30,7 +30,7 @@ public class Appointment_Booking extends BaseDriver
         layout_clinicSelect.click();
         Thread.sleep(4000);
         // Assuming you want to select the option with text "Bodakdev"
-        String desiredOptionText = "Bodakdev";
+        String desiredOptionText = "Amanora";
         for (WebElement option : tv_itemTitle) {
             if (option.getText().equals(desiredOptionText)) {
                 option.click();
@@ -51,7 +51,7 @@ public class Appointment_Booking extends BaseDriver
         layout_doctorSelect.click();
         Thread.sleep(4000);
         // Assuming you want to select the option with text "Bodakdev"
-        String desiredOptionText = "Anshu Agrawal";
+        String desiredOptionText = "Amit Bhatia";
         for (WebElement option : tv_itemTitle) {
             if (option.getText().equals(desiredOptionText)) {
                 option.click();
@@ -64,6 +64,13 @@ public class Appointment_Booking extends BaseDriver
     public WebElement et_contact;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_name")
     public WebElement et_name;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_appointmentDateSelect")
+    public WebElement Dates;
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"30 June 2023\"]")fpublic void Date_selection()
+    {
+        Dates.click();
+    }
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/rv_timeSlots")
     public WebElement rv_timeSlots;

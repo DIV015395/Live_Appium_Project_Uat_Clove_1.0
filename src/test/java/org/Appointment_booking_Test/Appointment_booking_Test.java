@@ -32,6 +32,5 @@ public class Appointment_booking_Test
         Thread.sleep(3000);
         obj1.selectDoctorDropdown();
         obj1.Patient_Dashboard();
-
     }
 }
