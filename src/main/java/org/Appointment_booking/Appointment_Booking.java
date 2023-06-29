@@ -1,22 +1,25 @@
 package org.Appointment_booking;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.touch.offset.PointOption;
 import org.Desired_Capabilities.BaseDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.springframework.ui.context.Theme;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class Appointment_Booking extends BaseDriver
-{
-    public Appointment_Booking(AndroidDriver driver)
-    {
+import org.openqa.selenium.Dimension;
+
+
+public class Appointment_Booking extends BaseDriver {
+    public Appointment_Booking(AndroidDriver driver) {
         super(driver);
     }
-    @AndroidFindBy (id = "com.clove.clover.uat:id/tv_home_schedule")
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_schedule")
     public WebElement tv_home_schedule;
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
@@ -24,6 +27,7 @@ public class Appointment_Booking extends BaseDriver
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
     public List<WebElement> tv_itemTitle;
+
     public void selectClinicDropdown() throws InterruptedException {
         tv_home_schedule.click();
         Thread.sleep(3000);
@@ -60,6 +64,7 @@ public class Appointment_Booking extends BaseDriver
         }
         fab_newAppointment.click();
     }
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_contact")
     public WebElement et_contact;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_name")
@@ -73,8 +78,8 @@ public class Appointment_Booking extends BaseDriver
     public WebElement Date;
     @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_ok")
     public WebElement Dateok;
-    public void Date_selection()
-    {
+
+    public void Date_selection() {
         et_contact.sendKeys("7011131498");
         et_name.sendKeys("ManjeetSharma");
         Dates.click();
@@ -82,20 +87,35 @@ public class Appointment_Booking extends BaseDriver
         Date.click();
         Dateok.click();
     }
+
+    //Till  Date is okkk
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/rv_timeSlots")
     public WebElement rv_timeSlots;
-    @AndroidFindBy(id="com.clove.clover.uat:id/tv_timeSlot")
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_timeSlot")
     public List<WebElement> tv_timeSlot;
-    public void Patient_Dashboard()
-    {
+    public void slot_selection() throws InterruptedException {
         rv_timeSlots.click();
-        String desiredOptionTime = "18:00";
+        Thread.sleep(4000);
+        // Assuming you want to select the option with text "Bodakdev"
+        String desiredslot = "10:00";
         for (WebElement option : tv_timeSlot) {
-            if (option.getText().equals(desiredOptionTime))
-            {
+            if (option.getText().equals(desiredslot)) {
                 option.click();
                 break;
             }
         }
     }
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_appointmentDuration")
+    public WebElement tv_appointmentDuration;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/np_appointmentDuration")
+    public List<WebElement> np_appointmentDuration;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_timeSlotPicker_actionButtonDone")
+    public WebElement duration_Ok;
+
+
 }
+
+
