@@ -1,17 +1,17 @@
-package org.App_Login_Test;
+package org.Patient_Search_Test;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.App_login.App_Login_POM;
 import org.Desired_Capabilities.desirecap_POM;
+import org.Patient_Search.Patient_Search_POM;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
-public class App_Login_Test
+public class Patient_Search
 {
     public AppiumDriver driver;
     @Test
@@ -23,5 +23,9 @@ public class App_Login_Test
         Thread.sleep(1000);
         App_Login_POM obj = new App_Login_POM((AndroidDriver) driver);
         obj.Logins();
+        Patient_Search_POM obj1 = new Patient_Search_POM((AndroidDriver) driver);
+        obj1.explore();
+        obj1.patientSearch();
+
     }
 }
