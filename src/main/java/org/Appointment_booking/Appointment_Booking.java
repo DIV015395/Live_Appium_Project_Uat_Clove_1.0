@@ -115,6 +115,17 @@ public class Appointment_Booking extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_timeSlotPicker_actionButtonDone")
     public WebElement duration_Ok;
 
+    public void duration_selection()
+    {
+        tv_appointmentDuration.click();
+        duration_Ok.click();
+    }
+    public void scrolling() {
+
+        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"WebView\").instance(0))").click(); //scroll down to the element and click
+    }
+
+
 
 }
 

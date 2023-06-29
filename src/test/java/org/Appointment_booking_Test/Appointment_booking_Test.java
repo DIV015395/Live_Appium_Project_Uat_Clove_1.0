@@ -33,6 +33,7 @@ public class Appointment_booking_Test
         obj1.selectDoctorDropdown();
         obj1.Date_selection();
         obj1.slot_selection();
-        obj1.Patient_Dashboard();
+        obj1.duration_selection();
+        obj1.scrolling();
     }
 }
