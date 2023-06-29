@@ -4,7 +4,6 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.Desired_Capabilities.BaseDriver;
-import org.graalvm.compiler.nodes.debug.WeakCounterNode;
 import org.openqa.selenium.WebElement;
 import org.springframework.ui.context.Theme;
 
@@ -89,8 +88,6 @@ public class Appointment_Booking extends BaseDriver
     public List<WebElement> tv_timeSlot;
     public void Patient_Dashboard()
     {
-
-
         rv_timeSlots.click();
         String desiredOptionTime = "18:";
         for (WebElement option : tv_timeSlot) {
