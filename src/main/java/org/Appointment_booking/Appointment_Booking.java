@@ -154,13 +154,6 @@ public class Appointment_Booking extends BaseDriver {
         painElement.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-
-
-
-
-
-
-
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_notesTitle")
     public WebElement tv_notesTitle;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_text")
@@ -184,8 +177,6 @@ public class Appointment_Booking extends BaseDriver {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         iv_save.click();
     }
-
-
 }
 
 
