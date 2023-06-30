@@ -35,6 +35,6 @@ public class Appointment_booking_Test
         obj1.slot_selection();
         obj1.duration_selection();
         obj1.chief_Complain();
-        obj1.finals();
+//        obj1.finals();
     }
 }

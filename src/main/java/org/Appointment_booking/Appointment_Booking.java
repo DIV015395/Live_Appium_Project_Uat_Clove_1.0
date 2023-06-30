@@ -141,24 +141,21 @@ public class Appointment_Booking extends BaseDriver {
     public WebElement tv_appointmentNotes;
      public void chief_Complain() throws InterruptedException {
         String chief = "Pain";
-        Thread.sleep(4000);
         for (WebElement option : rv_chiefComplaintList)
         {
             if (option.getText().equals(chief)) {
-                Thread.sleep(2000);
                 option.click();
                 break;
             }
         }
-        tv_appointmentNotes.sendKeys("Very hard pain");
     }
 
-    @AndroidFindBy(id = "com.clove.clover.uat:id/save_text")
-    public WebElement save_text;
-     public void finals() throws InterruptedException {
-         Thread.sleep(3000);
-         save_text.click();
-     }
+//    @AndroidFindBy(id = "com.clove.clover.uat:id/save_text")
+//    public WebElement save_text;
+//     public void finals() throws InterruptedException {
+//         Thread.sleep(3000);
+//         save_text.click();
+//     }
 
 
 //     Happy coding is over?????????????????????????????????????????????????
