@@ -109,7 +109,7 @@ public class Appointment_Other extends Appointment_Booking
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_city.sendKeys("Faridabad");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_pin_codes.sendKeys("dddd");
+        et_pin_codes.sendKeys("110066");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_state.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
