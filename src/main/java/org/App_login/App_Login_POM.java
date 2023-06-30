@@ -23,14 +23,15 @@ public class App_Login_POM extends BaseDriver
     public AndroidElement permission_allow_button;
     public void Logins() throws InterruptedException
     {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_login_username.sendKeys("manjeet.sharma");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_login_password.sendKeys("qpalzm@#1M");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_login_go.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         permission_allow_button.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 }

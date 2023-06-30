@@ -19,7 +19,7 @@ public class App_Login_Test
     {
         DesiredCapabilities caps = desirecap_POM.desire();
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         App_Login_POM obj = new App_Login_POM((AndroidDriver) driver);
         obj.Logins();
     }

@@ -13,11 +13,11 @@ public class Appointment_Other extends Appointment_Booking
     public void selectClinicDropdown() throws InterruptedException
     {
         Thread.sleep(15000);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_home_schedule.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         layout_clinicSelect.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
         String desiredOptionText = "Bodakdev";
         for (WebElement option : tv_itemTitle) {
@@ -30,7 +30,7 @@ public class Appointment_Other extends Appointment_Booking
     @Override
     public void selectDoctorDropdown() throws InterruptedException {
         layout_doctorSelect.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
         String desiredOptionText = "Manjeet Sharma";
         for (WebElement option : tv_itemTitle) {
@@ -44,22 +44,22 @@ public class Appointment_Other extends Appointment_Booking
     @Override
     public void Date_selection() {
         et_contact.sendKeys("7011131498");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_name.sendKeys("ManjeetSharma");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         Dates.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         Next_month.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         Date.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         Dateok.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
     @Override
     public void slot_selection() throws InterruptedException {
         rv_timeSlots.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
         String desiredslot = "10:00";
         for (WebElement option : tv_timeSlot) {
@@ -72,11 +72,11 @@ public class Appointment_Other extends Appointment_Booking
     @Override
     public void duration_selection()
     {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_appointmentDuration.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         duration_Ok.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_scan_type")
     public WebElement tv_scan_type;
@@ -85,11 +85,11 @@ public class Appointment_Other extends Appointment_Booking
    public WebElement home_type;
     public void Scan_type()
     {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_scan_type.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         home_type.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_address")
     public WebElement et_address;
@@ -107,15 +107,15 @@ public class Appointment_Other extends Appointment_Booking
     public void Complete_Address()
     {
         et_address.sendKeys("Tilpat Near Canara Bank");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_city.sendKeys("Faridabad");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_pin_codes.sendKeys("110066");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_state.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         state_delhi.click();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
     @Override
     public void Scrolling()
