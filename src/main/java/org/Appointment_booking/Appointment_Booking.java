@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.interactions.touch.TouchActions;
 
 
 public class Appointment_Booking extends BaseDriver {
@@ -120,12 +121,47 @@ public class Appointment_Booking extends BaseDriver {
         tv_appointmentDuration.click();
         duration_Ok.click();
     }
-    public void scrolling() {
 
-        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"WebView\").instance(0))").click(); //scroll down to the element and click
+    //Scroll down perform karna hai is jagah par;
+
+//    public void scrolling() throws InterruptedException {
+//        Thread.sleep(4000);
+////        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"WebView\").instance(0))").click(); //scroll down to the element and click
+//        TouchActions action = new TouchActions(driver);
+//        Thread.sleep(4000);
+//        action.scroll(rv_chiefComplaintList, 10, 100);
+//        Thread.sleep(4000);
+//        action.perform();
+//        rv_chiefComplaintList.click();
+//    }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/rv_chiefComplaintList")
+    public List<WebElement> rv_chiefComplaintList;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_appointmentNotes")
+    public WebElement tv_appointmentNotes;
+     public void chief_Complain() throws InterruptedException {
+        String chief = "Pain";
+        Thread.sleep(4000);
+        for (WebElement option : rv_chiefComplaintList)
+        {
+            if (option.getText().equals(chief)) {
+                Thread.sleep(2000);
+                option.click();
+                break;
+            }
+        }
+        tv_appointmentNotes.sendKeys("Very hard pain");
     }
 
+    @AndroidFindBy(id = "com.clove.clover.uat:id/save_text")
+    public WebElement save_text;
+     public void finals() throws InterruptedException {
+         Thread.sleep(3000);
+         save_text.click();
+     }
 
+
+//     Happy coding is over?????????????????????????????????????????????????
 
 }
 
