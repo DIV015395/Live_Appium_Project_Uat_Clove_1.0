@@ -117,9 +117,4 @@ public class Appointment_Other extends Appointment_Booking
         state_delhi.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
-    @Override
-    public void Scrolling()
-    {
-        driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));
-    }
 }

@@ -38,7 +38,15 @@ public class Appointment_Other_Test
         obj1.duration_selection();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         obj1.Scan_type();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         obj1.Complete_Address();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         obj1.Scrolling();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
+        obj1.painElements();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
+        obj1.Chief_Note();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
+//        obj1.saveend();
     }
 }
