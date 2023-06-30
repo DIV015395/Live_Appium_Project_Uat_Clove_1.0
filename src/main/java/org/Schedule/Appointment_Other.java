@@ -1,5 +1,4 @@
-package org.Appointment_booking;
-import io.appium.java_client.MobileBy;
+package org.Schedule;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
@@ -96,7 +95,7 @@ public class Appointment_Other extends Appointment_Booking
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_city")
     public WebElement et_city;
 
-    @AndroidFindBy(id = "com.clove.clover.uat:id/et_pin_codes")
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_pin_code")
     public WebElement et_pin_codes;
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_state")
@@ -110,7 +109,7 @@ public class Appointment_Other extends Appointment_Booking
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_city.sendKeys("Faridabad");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_pin_codes.sendKeys("110066");
+        et_pin_codes.sendKeys("dddd");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_state.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

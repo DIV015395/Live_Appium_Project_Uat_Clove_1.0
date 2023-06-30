@@ -1,10 +1,9 @@
-package org.Appointment_booking_Test;
+package org.Schedule_Test;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.App_login.App_Login_POM;
-import org.Appointment_booking.Appointment_Booking;
-import org.Appointment_booking.Appointment_Other;
+import org.Schedule.Appointment_Other;
 import org.Desired_Capabilities.desirecap_POM;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
@@ -39,9 +38,9 @@ public class Appointment_Other_Test
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         obj1.Scan_type();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
-        obj1.Complete_Address();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         obj1.Scrolling();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
+        obj1.Complete_Address();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         obj1.painElements();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;

@@ -29,6 +29,5 @@ public class Patient_Search_Test
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj1.patientSearch();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
     }
 }

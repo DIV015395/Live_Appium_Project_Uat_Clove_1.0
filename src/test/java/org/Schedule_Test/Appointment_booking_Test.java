@@ -1,11 +1,10 @@
-package org.Appointment_booking_Test;
+package org.Schedule_Test;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.App_login.App_Login_POM;
-import org.Appointment_booking.Appointment_Booking;
+import org.Schedule.Appointment_Booking;
 import org.Desired_Capabilities.desirecap_POM;
-import org.Patient_Search.Patient_Search_POM;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 

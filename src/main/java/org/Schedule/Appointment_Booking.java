@@ -1,22 +1,13 @@
-package org.Appointment_booking;
+package org.Schedule;
 
 import io.appium.java_client.MobileBy;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.touch.offset.PointOption;
 import org.Desired_Capabilities.BaseDriver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.interactions.touch.TouchActions;
-
-import static java.awt.FileDialog.SAVE;
 
 
 public class Appointment_Booking extends BaseDriver {
