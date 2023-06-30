@@ -42,6 +42,6 @@ public class Appointment_booking_Test
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         obj1.Chief_Note();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
-//        obj1.saveend();
+        obj1.saveend();
     }
 }

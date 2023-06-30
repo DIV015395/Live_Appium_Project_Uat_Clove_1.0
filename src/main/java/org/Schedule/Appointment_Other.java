@@ -60,7 +60,7 @@ public class Appointment_Other extends Appointment_Booking
         rv_timeSlots.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
-        String desiredslot = "10:00";
+        String desiredslot = "11:00";
         for (WebElement option : tv_timeSlot) {
             if (option.getText().equals(desiredslot)) {
                 option.click();
