@@ -1,5 +1,6 @@
 package org.Appointment_booking;
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -13,6 +14,8 @@ import java.util.List;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.interactions.touch.TouchActions;
+
+import static java.awt.FileDialog.SAVE;
 
 
 public class Appointment_Booking extends BaseDriver {
@@ -123,42 +126,62 @@ public class Appointment_Booking extends BaseDriver {
     }
 
     //Scroll down perform karna hai is jagah par;
-
-//    public void scrolling() throws InterruptedException {
-//        Thread.sleep(4000);
-////        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"WebView\").instance(0))").click(); //scroll down to the element and click
-//        TouchActions action = new TouchActions(driver);
-//        Thread.sleep(4000);
-//        action.scroll(rv_chiefComplaintList, 10, 100);
-//        Thread.sleep(4000);
-//        action.perform();
-//        rv_chiefComplaintList.click();
-//    }
-    @AndroidFindBy(id = "com.clove.clover.uat:id/rv_chiefComplaintList")
-    public List<WebElement> rv_chiefComplaintList;
-
-    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_appointmentNotes")
-    public WebElement tv_appointmentNotes;
-     public void chief_Complain() throws InterruptedException {
-        String chief = "Pain";
-        for (WebElement option : rv_chiefComplaintList)
-        {
-            if (option.getText().equals(chief)) {
-                option.click();
-                break;
-            }
-        }
+    public void Scrolling() throws InterruptedException {
+        driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));
+         Thread.sleep(3000);
     }
 
-//    @AndroidFindBy(id = "com.clove.clover.uat:id/save_text")
-//    public WebElement save_text;
-//     public void finals() throws InterruptedException {
-//         Thread.sleep(3000);
-//         save_text.click();
-//     }
+    //scroll down perfomance
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/rv_chiefComplaintList")
+    public WebElement rv_chiefComplaintList;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_chiefComplaintTitle")
+    public List<WebElement> tv_chiefComplaintTitle;
+//     public void chief_Complain() throws InterruptedException {
+//         rv_chiefComplaintList.click();
+//         Thread.sleep(2000);
+//        String chief = "Pain";
+//        for (WebElement option : tv_chiefComplaintTitle)
+//        {
+//            if (option.getText().equals(chief))
+//            {
+//                option.click();
+//                break;
+//            }
+//        }
+//    }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_notesTitle")
+    public WebElement tv_appointmentNotes;
+
+     public void notess() throws InterruptedException {
+         Thread.sleep(1000);
+         tv_appointmentNotes.sendKeys("Very hard pains");
+     }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/save_text")
+    public WebElement save_text;
+     public void setsave() throws InterruptedException
+     {
+         Thread.sleep(3000);
+         save_text.click();
+     }
 
 
 //     Happy coding is over?????????????????????????????????????????????????
+
+
+
+//
+//
+//    public void scrolllll()
+//    {
+//       String tests =  save_text.getText();
+//        driver.findElement(MobileBy.AndroidUIAutomator(
+//                "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView("+"new UiSelector().text("tests"));"));
+//    }
+
+
+
 
 }
 
