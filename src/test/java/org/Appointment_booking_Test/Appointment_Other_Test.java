@@ -24,15 +24,21 @@ public class Appointment_Other_Test
         App_Login_POM obj = new App_Login_POM((AndroidDriver) driver);
         obj.Logins();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
+
         Appointment_Other obj1 = new Appointment_Other((AndroidDriver) driver);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.selectClinicDropdown();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         obj1.selectDoctorDropdown();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.Date_selection();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.slot_selection();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.duration_selection();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.Scan_type();
         obj1.Complete_Address();
+        obj1.Scrolling();
     }
 }

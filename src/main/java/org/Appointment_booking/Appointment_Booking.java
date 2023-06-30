@@ -34,7 +34,7 @@ public class Appointment_Booking extends BaseDriver {
     public List<WebElement> tv_itemTitle;
 
     public void selectClinicDropdown() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(15000);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         tv_home_schedule.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

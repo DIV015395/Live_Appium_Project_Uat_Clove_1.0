@@ -30,12 +30,19 @@ public class Appointment_booking_Test
         obj1.selectClinicDropdown();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         obj1.selectDoctorDropdown();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.Date_selection();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.slot_selection();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.duration_selection();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.Scrolling();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.painElements();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         obj1.Chief_Note();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
 //        obj1.saveend();
     }
 }

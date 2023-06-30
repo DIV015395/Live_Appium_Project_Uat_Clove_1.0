@@ -1,4 +1,5 @@
 package org.Appointment_booking;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
@@ -11,6 +12,7 @@ public class Appointment_Other extends Appointment_Booking
     @Override
     public void selectClinicDropdown() throws InterruptedException
     {
+        Thread.sleep(15000);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         tv_home_schedule.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -114,5 +116,10 @@ public class Appointment_Other extends Appointment_Booking
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         state_delhi.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+    @Override
+    public void Scrolling()
+    {
+        driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));
     }
 }
