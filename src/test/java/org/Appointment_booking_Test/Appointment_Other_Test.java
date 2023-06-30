@@ -32,5 +32,7 @@ public class Appointment_Other_Test
         obj1.Date_selection();
         obj1.slot_selection();
         obj1.duration_selection();
+        obj1.Scan_type();
+        obj1.Complete_Address();
     }
 }
