@@ -5,6 +5,8 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.Desired_Capabilities.BaseDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class App_Login_POM extends BaseDriver
 {
     public App_Login_POM(AndroidDriver driver)
@@ -21,14 +23,14 @@ public class App_Login_POM extends BaseDriver
     public AndroidElement permission_allow_button;
     public void Logins() throws InterruptedException
     {
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         et_login_username.sendKeys("manjeet.sharma");
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         et_login_password.sendKeys("qpalzm@#1M");
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         tv_login_go.click();
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         permission_allow_button.click();
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }

@@ -19,17 +19,16 @@ public class Patient_Search_Test
     public void main() throws InterruptedException, MalformedURLException, MalformedURLException
     {
         DesiredCapabilities caps = desirecap_POM.desire();
-        Thread.sleep(20000);
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         App_Login_POM obj = new App_Login_POM((AndroidDriver) driver);
         obj.Logins();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         Patient_Search_POM obj1 = new Patient_Search_POM((AndroidDriver) driver);
         obj1.explore();
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         obj1.patientSearch();
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 }

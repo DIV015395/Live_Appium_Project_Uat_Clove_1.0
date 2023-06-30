@@ -11,6 +11,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.concurrent.TimeUnit;
+
 public class Patient_Search_POM extends BaseDriver
 {
     public Patient_Search_POM(AndroidDriver driver)
@@ -27,13 +29,13 @@ public class Patient_Search_POM extends BaseDriver
     public WebElement btn_explore_schedule;
 
     public void explore() throws InterruptedException {
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         home_patient_search.click();
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         tv_next.click();
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         btn_explore_schedule.click();
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_searchQuery")
     public WebElement et_searchQuery;
@@ -41,10 +43,10 @@ public class Patient_Search_POM extends BaseDriver
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_search")
     public WebElement iv_search;
     public void patientSearch() throws InterruptedException {
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         et_searchQuery.sendKeys("7011131498");
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         iv_search.click();
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }

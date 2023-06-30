@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.interactions.touch.TouchActions;
@@ -33,10 +34,11 @@ public class Appointment_Booking extends BaseDriver {
     public List<WebElement> tv_itemTitle;
 
     public void selectClinicDropdown() throws InterruptedException {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         tv_home_schedule.click();
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         layout_clinicSelect.click();
-        Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
         String desiredOptionText = "Amanora";
         for (WebElement option : tv_itemTitle) {
@@ -57,7 +59,7 @@ public class Appointment_Booking extends BaseDriver {
 
     public void selectDoctorDropdown() throws InterruptedException {
         layout_doctorSelect.click();
-        Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
         String desiredOptionText = "Amit Bhatia";
         for (WebElement option : tv_itemTitle) {
@@ -85,11 +87,17 @@ public class Appointment_Booking extends BaseDriver {
 
     public void Date_selection() {
         et_contact.sendKeys("7011131498");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         et_name.sendKeys("ManjeetSharma");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Dates.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Next_month.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Date.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Dateok.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     //Till  Date is okkk
@@ -100,7 +108,7 @@ public class Appointment_Booking extends BaseDriver {
     public List<WebElement> tv_timeSlot;
     public void slot_selection() throws InterruptedException {
         rv_timeSlots.click();
-        Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
         String desiredslot = "10:00";
         for (WebElement option : tv_timeSlot) {
@@ -121,12 +129,15 @@ public class Appointment_Booking extends BaseDriver {
 
     public void duration_selection()
     {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         tv_appointmentDuration.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         duration_Ok.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     //Scroll down perform karna hai is jagah par;
-    public void Scrolling() throws InterruptedException
+    public void Scrolling()
     {
         driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));
     }
@@ -139,7 +150,9 @@ public class Appointment_Booking extends BaseDriver {
     private WebElement painElement;
     public void painElements()
     {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         painElement.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
 
@@ -157,17 +170,18 @@ public class Appointment_Booking extends BaseDriver {
     public WebElement iv_actionDone;
     public void Chief_Note() throws InterruptedException {
         tv_notesTitle.click();
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         et_text.sendKeys("Very hard pain");
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         iv_actionDone.click();
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @AndroidFindBy(id ="com.clove.clover.uat:id/iv_save")
     public WebElement iv_save;
     public void saveend()
     {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         iv_save.click();
     }
 

@@ -18,9 +18,8 @@ public class App_Login_Test
     public void main() throws InterruptedException, MalformedURLException, MalformedURLException
     {
         DesiredCapabilities caps = desirecap_POM.desire();
-        Thread.sleep(20000);
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
-        Thread.sleep(1000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         App_Login_POM obj = new App_Login_POM((AndroidDriver) driver);
         obj.Logins();
     }

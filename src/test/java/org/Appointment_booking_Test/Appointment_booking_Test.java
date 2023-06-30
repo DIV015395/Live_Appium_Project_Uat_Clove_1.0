@@ -20,16 +20,15 @@ public class Appointment_booking_Test
     public void main() throws InterruptedException, MalformedURLException, MalformedURLException
     {
         DesiredCapabilities caps = desirecap_POM.desire();
-        Thread.sleep(20000);
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
-        Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         App_Login_POM obj = new App_Login_POM((AndroidDriver) driver);
         obj.Logins();
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
         Appointment_Booking obj1 = new Appointment_Booking((AndroidDriver) driver);
         obj1.selectClinicDropdown();
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         obj1.selectDoctorDropdown();
         obj1.Date_selection();
         obj1.slot_selection();
