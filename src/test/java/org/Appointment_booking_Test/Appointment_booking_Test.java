@@ -35,8 +35,8 @@ public class Appointment_booking_Test
         obj1.slot_selection();
         obj1.duration_selection();
         obj1.Scrolling();
-//        obj1.chief_Complain();
-        obj1.notess();
-//        obj1.setsave();
+        obj1.painElements();
+        obj1.Chief_Note();
+//        obj1.saveend();
     }
 }

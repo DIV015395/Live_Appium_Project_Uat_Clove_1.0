@@ -126,61 +126,50 @@ public class Appointment_Booking extends BaseDriver {
     }
 
     //Scroll down perform karna hai is jagah par;
-    public void Scrolling() throws InterruptedException {
+    public void Scrolling() throws InterruptedException
+    {
         driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));
-         Thread.sleep(3000);
     }
-
     //scroll down perfomance
 
+
+
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/rv_chiefComplaintList")
-    public WebElement rv_chiefComplaintList;
+    private WebElement painElement;
+    public void painElements()
+    {
+        painElement.click();
+    }
 
-    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_chiefComplaintTitle")
-    public List<WebElement> tv_chiefComplaintTitle;
-//     public void chief_Complain() throws InterruptedException {
-//         rv_chiefComplaintList.click();
-//         Thread.sleep(2000);
-//        String chief = "Pain";
-//        for (WebElement option : tv_chiefComplaintTitle)
-//        {
-//            if (option.getText().equals(chief))
-//            {
-//                option.click();
-//                break;
-//            }
-//        }
-//    }
+
+
+
+
+
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_notesTitle")
-    public WebElement tv_appointmentNotes;
+    public WebElement tv_notesTitle;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_text")
+    public WebElement et_text;
 
-     public void notess() throws InterruptedException {
-         Thread.sleep(1000);
-         tv_appointmentNotes.sendKeys("Very hard pains");
-     }
-    @AndroidFindBy(id = "com.clove.clover.uat:id/save_text")
-    public WebElement save_text;
-     public void setsave() throws InterruptedException
-     {
-         Thread.sleep(3000);
-         save_text.click();
-     }
+    @AndroidFindBy(id ="com.clove.clover.uat:id/iv_actionDone")
+    public WebElement iv_actionDone;
+    public void Chief_Note() throws InterruptedException {
+        tv_notesTitle.click();
+        Thread.sleep(1000);
+        et_text.sendKeys("Very hard pain");
+        Thread.sleep(1000);
+        iv_actionDone.click();
+        Thread.sleep(1000);
+    }
 
-
-//     Happy coding is over?????????????????????????????????????????????????
-
-
-
-//
-//
-//    public void scrolllll()
-//    {
-//       String tests =  save_text.getText();
-//        driver.findElement(MobileBy.AndroidUIAutomator(
-//                "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView("+"new UiSelector().text("tests"));"));
-//    }
-
-
+    @AndroidFindBy(id ="com.clove.clover.uat:id/iv_save")
+    public WebElement iv_save;
+    public void saveend()
+    {
+        iv_save.click();
+    }
 
 
 }
