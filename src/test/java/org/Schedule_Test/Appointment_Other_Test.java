@@ -23,7 +23,6 @@ public class Appointment_Other_Test
         App_Login_POM obj = new App_Login_POM((AndroidDriver) driver);
         obj.Logins();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         Appointment_Other obj1 = new Appointment_Other((AndroidDriver) driver);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         obj1.selectClinicDropdown();

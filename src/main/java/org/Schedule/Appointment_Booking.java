@@ -11,7 +11,8 @@ import java.util.concurrent.TimeUnit;
 
 
 public class Appointment_Booking extends BaseDriver {
-    public Appointment_Booking(AndroidDriver driver) {
+    public Appointment_Booking(AndroidDriver driver)
+    {
         super(driver);
     }
 
@@ -20,11 +21,11 @@ public class Appointment_Booking extends BaseDriver {
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
     public WebElement layout_clinicSelect;
-
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
     public List<WebElement> tv_itemTitle;
 
-    public void selectClinicDropdown() throws InterruptedException {
+    public void selectClinicDropdown() throws InterruptedException
+    {
         Thread.sleep(15000);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_home_schedule.click();
@@ -33,15 +34,14 @@ public class Appointment_Booking extends BaseDriver {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
         String desiredOptionText = "Amanora";
-        for (WebElement option : tv_itemTitle) {
+        for (WebElement option : tv_itemTitle)
+        {
             if (option.getText().equals(desiredOptionText)) {
                 option.click();
                 break;
             }
         }
     }
-
-
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_doctorSelect")
     public WebElement layout_doctorSelect;
 
