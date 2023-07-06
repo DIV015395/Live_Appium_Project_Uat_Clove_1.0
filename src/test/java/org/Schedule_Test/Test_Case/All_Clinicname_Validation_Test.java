@@ -20,5 +20,6 @@ public class All_Clinicname_Validation_Test
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
        All_Clinicname_Validation obj = new All_Clinicname_Validation((AndroidDriver) driver);
+
     }
 }
