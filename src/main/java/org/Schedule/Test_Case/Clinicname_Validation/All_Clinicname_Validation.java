@@ -2,6 +2,10 @@ package org.Schedule.Test_Case.Clinicname_Validation;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.Schedule.Appointment_Booking;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebElement;
 
@@ -17,11 +21,38 @@ public class All_Clinicname_Validation extends Appointment_Booking
     {
         super(driver);
     }
-    public void dataReadTest() throws IOException {
-        File src = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove\\src\\main\\java\\org\\Schedule\\Test_Case\\Clinicname_Validation\\Clinic_Name.xlsx");
-        FileInputStream fis = new FileInputStream(src);
-        XSSFWorkbook xsf = new XSSFWorkbook(fis);
-    }
+    public static void dataReadTest() {
+            // Set the path to your Excel file
+            String excelFilePath = "C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove\\src\\main\\java\\org\\Schedule\\Test_Case\\Clinicname_Validation\\Clinic_Name.xlsx";
+
+            // Set the sheet name in the Excel file where your clinic names are stored
+            String sheetName = "Sheet1";
+
+            try {
+                // Read the Excel file
+                FileInputStream fis = new FileInputStream(excelFilePath);
+                Workbook workbook = new XSSFWorkbook(fis);
+
+                // Get the desired sheet from the Excel file
+                Sheet sheet = workbook.getSheet(sheetName);
+
+                // Iterate over the rows in the sheet
+                for (Row row : sheet)
+                {
+                    // Get the cell value from the "clinic_Name" column (e.g., column index 0)
+                    Cell cell = row.getCell(0);
+                    String clinicName = cell.getStringCellValue();
+
+                    // Print the clinic name
+                    System.out.println(clinicName);
+                }
+                // Close the workbook and input stream
+                workbook.close();
+                fis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     public void selectClinicDropdown() throws InterruptedException
     {

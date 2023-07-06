@@ -19,10 +19,6 @@ public class All_Clinicname_Validation_Test
         DesiredCapabilities caps = desirecap_POM.desire();
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        App_Login_POM obj = new App_Login_POM((AndroidDriver) driver);
-        obj.Logins();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        All_Clinicname_Validation obj1 = new All_Clinicname_Validation((AndroidDriver) driver);
-        obj1.selectClinicDropdown();
+       All_Clinicname_Validation obj = new All_Clinicname_Validation((AndroidDriver) driver);
     }
 }
