@@ -24,6 +24,11 @@ public class Appointment_Booking extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
     public List<WebElement> tv_itemTitle;
 
+    //testing perpose
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/rl_rootItem")
+    public List<WebElement> rootItem;
+
     public void selectClinicDropdown() throws InterruptedException
     {
         Thread.sleep(15000);
@@ -31,6 +36,20 @@ public class Appointment_Booking extends BaseDriver {
         tv_home_schedule.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         layout_clinicSelect.click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        System.out.println(tv_itemTitle.size());
+        System.out.println(rootItem.size());
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Thread.sleep(15000);
+        for(int i=0;i<tv_itemTitle.size();i++)
+        {
+            System.out.println(tv_itemTitle.get(i).getText());
+        }
+        Thread.sleep(15000);
+        for(int i=0;i<rootItem.size();i++)
+        {
+            System.out.println(rootItem.get(i).getText());
+        }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
         String desiredOptionText = "Amanora";
