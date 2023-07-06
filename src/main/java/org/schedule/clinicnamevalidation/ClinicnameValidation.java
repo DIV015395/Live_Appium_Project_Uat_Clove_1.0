@@ -18,7 +18,7 @@ public class ClinicnameValidation extends AppointmentBooking
     {
         super(driver);
     }
-    String excelFilePath = "C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove\\src\\main\\java\\org\\Schedule\\Test_Case\\Clinicname_Validation\\Clinic_Name.xlsx";
+    String excelFilePath = "C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove\\src\\main\\java\\org\\Schedule\\Test_Case\\Clinicname_Validation\\ClinicName.xlsx";
     String sheetName = "Sheet1";
 
     public void selectClinicDropdown() throws InterruptedException, IOException {
@@ -50,14 +50,14 @@ public class ClinicnameValidation extends AppointmentBooking
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             Cell cell = row.getCell(0);
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            String clinicName = cell.getStringCellValue();
+            String AllClinic = cell.getStringCellValue();
 
-            System.out.println(clinicName);
+            System.out.println(AllClinic);
 
             for (int i = 0; i < tv_itemTitle.size(); i++)
             {
                 System.out.println(tv_itemTitle.get(i).getText());
-                Assert.assertEquals(clinicName,tv_itemTitle.get(i).getText());
+                Assert.assertEquals(AllClinic,tv_itemTitle.get(i).getText());
 
             }
         }
