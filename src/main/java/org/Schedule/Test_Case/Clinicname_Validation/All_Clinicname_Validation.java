@@ -2,8 +2,13 @@ package org.Schedule.Test_Case.Clinicname_Validation;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.Schedule.Appointment_Booking;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class All_Clinicname_Validation extends Appointment_Booking
@@ -11,6 +16,11 @@ public class All_Clinicname_Validation extends Appointment_Booking
     public All_Clinicname_Validation(AndroidDriver driver)
     {
         super(driver);
+    }
+    public void dataReadTest() throws IOException {
+        File src = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove\\src\\main\\java\\org\\Schedule\\Test_Case\\Clinicname_Validation\\Clinic_Name.xlsx");
+        FileInputStream fis = new FileInputStream(src);
+        XSSFWorkbook xsf = new XSSFWorkbook(fis);
     }
 
     public void selectClinicDropdown() throws InterruptedException
