@@ -1,22 +1,18 @@
-package org.App_login.Test_Case;
+package org.applogin.testcase;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.App_login.App_Login_POM;
-import org.Desired_Capabilities.BaseDriver;
+import org.applogin.AppLogin;
 import org.openqa.selenium.NoSuchElementException;
 
 import java.util.concurrent.TimeUnit;
 
-public class Login_UI_Validation extends App_Login_POM
+public class LoginUiValidation extends AppLogin
 {
-    public Login_UI_Validation(AndroidDriver<AndroidElement> driver)
-    {
+    public LoginUiValidation(AndroidDriver driver) {
         super(driver);
     }
     @Override
-    public void Logins() throws InterruptedException
+    public void logins() throws InterruptedException
     {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -27,10 +23,8 @@ public class Login_UI_Validation extends App_Login_POM
         }
         catch (NoSuchElementException e)
         {
-            System.out.println("Webelement not found for send the User ID , Please write correct Webelement");
-            System.out.println("Navigation");
-            System.out.println("Install the App => Go on Login Page => Fill the User id => This is Problems ");
-            System.out.println("Please resolve");
+//            Log.error("Report Category button element is not found");
+
         }
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

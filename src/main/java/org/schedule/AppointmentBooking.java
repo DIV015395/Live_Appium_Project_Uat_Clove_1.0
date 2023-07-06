@@ -1,17 +1,18 @@
-package org.Schedule;
+package org.schedule;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.Desired_Capabilities.BaseDriver;
+import org.desiredcapabilities.BaseDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-public class Appointment_Booking extends BaseDriver {
-    public Appointment_Booking(AndroidDriver driver)
+public class AppointmentBooking extends BaseDriver {
+    public AppointmentBooking(AndroidDriver driver)
     {
         super(driver);
     }
@@ -29,8 +30,7 @@ public class Appointment_Booking extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/rl_rootItem")
     public List<WebElement> rootItem;
 
-    public void selectClinicDropdown() throws InterruptedException
-    {
+    public void selectClinicDropdown() throws InterruptedException, IOException {
         Thread.sleep(15000);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_home_schedule.click();

@@ -1,21 +1,16 @@
-package org.Patient_Search;
+package org.patientsearch;
 
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.App_login.App_Login_POM;
-import org.Desired_Capabilities.BaseDriver;
-import org.openqa.selenium.By;
+import org.desiredcapabilities.BaseDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
-public class Patient_Search_POM extends BaseDriver
+public class PatientSearch extends BaseDriver
 {
-    public Patient_Search_POM(AndroidDriver driver)
+    public PatientSearch(AndroidDriver driver)
     {
        super(driver);
     }

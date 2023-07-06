@@ -1,11 +1,11 @@
-package org.Schedule;
+package org.schedule;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import java.util.concurrent.TimeUnit;
-public class Appointment_Other extends Appointment_Booking
+public class AppointmentOther extends AppointmentBooking
 {
-    public Appointment_Other(AndroidDriver driver) {
+    public AppointmentOther(AndroidDriver driver) {
         super(driver);
     }
     @Override

@@ -1,15 +1,16 @@
-package org.App_login;
+package org.applogin;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.Desired_Capabilities.BaseDriver;
+import org.desiredcapabilities.BaseDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class App_Login_POM extends BaseDriver
+public class AppLogin extends BaseDriver
 {
-    public App_Login_POM(AndroidDriver driver)
+
+    public AppLogin(AndroidDriver driver)
     {
         super(driver);
     }
@@ -21,7 +22,7 @@ public class App_Login_POM extends BaseDriver
     public AndroidElement tv_login_go;
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_button")
     public AndroidElement permission_allow_button;
-    public void Logins() throws InterruptedException
+    public void logins() throws InterruptedException
     {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
