@@ -25,15 +25,11 @@ public class ClinicnameValidation extends AppointmentBooking
 
 
         //Exel file reader code
-
         FileInputStream fis = new FileInputStream(excelFilePath);
         Workbook workbook = new XSSFWorkbook(fis);
         Sheet sheet = workbook.getSheet(sheetName);
-
         // Iterate over the rows in the sheet
-
         //Exel file Reader from exel //
-
         // Get the desired sheet from the Excel file
         Thread.sleep(15000);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
