@@ -9,8 +9,7 @@ public class AppointmentOther extends AppointmentBooking
         super(driver);
     }
     @Override
-    public void selectClinicDropdown() throws InterruptedException
-    {
+    public void selectClinicDropdown() throws InterruptedException {
         Thread.sleep(15000);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_home_schedule.click();

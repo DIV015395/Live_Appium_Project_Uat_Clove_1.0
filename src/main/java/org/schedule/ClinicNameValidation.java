@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 public class ClinicNameValidation extends AppointmentBooking
 {
     Set<String> uniqueStrings = new TreeSet<>();
-
     public ClinicNameValidation(AndroidDriver driver)
     {
         super(driver);
@@ -34,7 +33,6 @@ public class ClinicNameValidation extends AppointmentBooking
             System.out.println(tv_itemTitle.get(i).getText());
             uniqueStrings.add(tv_itemTitle.get(i).getText());
         }
-
         System.out.println("____________________________________________________");
         System.out.println("++++++++++++++++All Clinic String++++++++++++++++++++");
         System.out.println(uniqueStrings.size());

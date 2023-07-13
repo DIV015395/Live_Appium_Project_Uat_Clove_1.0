@@ -30,14 +30,16 @@ public class AppointmentBooking extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/rl_rootItem")
     public List<WebElement> rootItem;
 
-    public void selectClinicDropdown() throws InterruptedException, IOException {
+    public void homeSchedule() throws InterruptedException {
         Thread.sleep(15000);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_home_schedule.click();
+    }
+
+    public void selectClinicDropdown() throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         layout_clinicSelect.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Thread.sleep(15000);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
         String desiredOptionText = "Amanora";
@@ -67,9 +69,11 @@ public class AppointmentBooking extends BaseDriver {
                 break;
             }
         }
+    }
+    public void appointmentPlus()
+    {
         fab_newAppointment.click();
     }
-
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_contact")
     public WebElement et_contact;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_name")
