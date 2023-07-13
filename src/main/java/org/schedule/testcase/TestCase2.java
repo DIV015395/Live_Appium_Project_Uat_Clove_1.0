@@ -20,7 +20,6 @@ public class TestCase2 extends AppointmentBooking
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_home_schedule.click();
     }
-
     @Override
     public void selectClinicDropdown() throws InterruptedException, IOException {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

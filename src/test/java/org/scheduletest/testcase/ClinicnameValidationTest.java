@@ -25,6 +25,6 @@ public class ClinicnameValidationTest
         AppLogin obj = new AppLogin((AndroidDriver) driver);
         obj.logins();
         AppointmentBooking obj1 = new AppointmentBooking((AndroidDriver) driver);
-        obj1.selectClinicDropdown();
+        obj1.homeSchedule();
     }
 }

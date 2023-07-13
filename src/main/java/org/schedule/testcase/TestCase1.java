@@ -21,7 +21,6 @@ public class TestCase1 extends AppointmentBooking
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         fab_newAppointment.getText();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         System.out.println(fab_newAppointment.getText());
     }
 }

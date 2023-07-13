@@ -30,7 +30,8 @@ public class AppointmentBooking extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/rl_rootItem")
     public List<WebElement> rootItem;
 
-    public void homeSchedule() throws InterruptedException {
+    public void homeSchedule() throws InterruptedException
+    {
         Thread.sleep(15000);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_home_schedule.click();
