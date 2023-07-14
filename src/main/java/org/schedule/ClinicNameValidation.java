@@ -2,19 +2,26 @@ package org.schedule;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
+
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 
-public class ClinicNameValidation extends AppointmentBooking
-{
+public class ClinicNameValidation extends AppointmentBooking {
     Set<String> uniqueStrings = new TreeSet<>();
-    public ClinicNameValidation(AndroidDriver driver)
-    {
+
+    public ClinicNameValidation(AndroidDriver driver) {
         super(driver);
     }
-    public void nameValidation()
-    {
+
+    @Override
+    public void homeSchedule() throws InterruptedException {
+        Thread.sleep(15000);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        tv_home_schedule.click();
+    }
+
+    public void nameValidation() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_home_schedule.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

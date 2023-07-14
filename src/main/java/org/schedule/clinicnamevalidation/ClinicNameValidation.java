@@ -1,23 +1,23 @@
 package org.schedule.clinicnamevalidation;
+
 import io.appium.java_client.android.AndroidDriver;
-import org.schedule.AppointmentBooking;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.schedule.AppointmentBooking;
 import org.testng.Assert;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class ClinicnameValidation extends AppointmentBooking
-{
-    public ClinicnameValidation(AndroidDriver driver)
-    {
+public class ClinicNameValidation extends AppointmentBooking {
+    public ClinicNameValidation(AndroidDriver driver) {
         super(driver);
     }
+
     String excelFilePath = "C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove\\src\\main\\java\\org\\Schedule\\Test_Case\\Clinicname_Validation\\ClinicName.xlsx";
     String sheetName = "Sheet1";
 

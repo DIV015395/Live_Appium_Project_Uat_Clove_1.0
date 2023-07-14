@@ -1,29 +1,26 @@
-package org.scheduletest.testcase;
+package org.scheduletest;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import org.applogin.AppLogin;
+import org.applogin.Toast;
 import org.desiredcapabilities.Desirecap;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.schedule.AppointmentBooking;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class ClinicnameValidationTest
-{
-    public AndroidDriver driver;
+public class toasttest {
+
+    public AppiumDriver driver;
+
     @Test
-    public void main() throws IOException, InterruptedException
-    {
+    public void main() throws InterruptedException, IOException {
         DesiredCapabilities caps = Desirecap.desire();
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppLogin obj = new AppLogin(driver);
-        obj.logins();
-        AppointmentBooking obj1 = new AppointmentBooking(driver);
-        obj1.homeSchedule();
+        Toast obj = new Toast((AndroidDriver) driver);
+        obj.ttt();
     }
 }

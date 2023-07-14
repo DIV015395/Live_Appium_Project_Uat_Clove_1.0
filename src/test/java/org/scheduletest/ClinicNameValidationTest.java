@@ -5,6 +5,7 @@ import org.applogin.AppLogin;
 import org.desiredcapabilities.Desirecap;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.schedule.ClinicNameValidation;
 
 import java.net.MalformedURLException;
@@ -18,10 +19,12 @@ public class ClinicNameValidationTest {
         DesiredCapabilities caps = Desirecap.desire();
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        AppLogin obj = new AppLogin((AndroidDriver) driver);
+        AppLogin obj = new AppLogin(driver);
         obj.logins();
-        ClinicNameValidation obj1 = new ClinicNameValidation((AndroidDriver) driver);
+        ClinicNameValidation obj1 = new ClinicNameValidation(driver);
         obj1.nameValidation();
+
+        WebDriverWait wait = new WebDriverWait(driver, 5);
 
     }
 }
