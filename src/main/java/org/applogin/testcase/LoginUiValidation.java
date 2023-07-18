@@ -67,7 +67,6 @@ public class LoginUiValidation extends AppLogin
             System.out.println("Install the App => Go on Login Page => Fill the User id => After =>Fill the Password => Then Click on Button");
             System.out.println(" => This is Problems");
             System.out.println("Please resolve");
-
         }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }

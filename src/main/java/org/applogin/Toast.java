@@ -26,9 +26,8 @@ public class Toast extends AppLogin {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         permission_allow_button.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        String mas = massa.getText();
-        System.out.println(mas);
+        tv_login_go.click();
+        String massaText = massa.getText();
+        System.out.println(massaText);
     }
 }
