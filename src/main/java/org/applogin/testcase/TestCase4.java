@@ -41,6 +41,6 @@ public class TestCase4 extends AppLogin {
     }
 
     public void toastMassageValidation() {
-        Assert.assertEquals(getmassage, "You are not authorised to access");
+        Assert.assertEquals(getmassage, "You are not authorised to access.");
     }
 }

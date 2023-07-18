@@ -1,2 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove/src/main/java/org/Schedule/Appointment_Booking.java"><classes/></test><test verbose="2" preserve-order="true" name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove/src/test/java/org/App_Login_Test/App_Login_Test.java"><classes><class name="org.applogintest.AppLoginTest"><methods><include name="main"/></methods></class></classes></test><test verbose="2" preserve-order="true" name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove/src/test/java/org/Patient_Search_Test/Patient_Search_Test.java"><classes><class name="org.patientsearchtest.PatientSearchTest"><methods><include name="main"/></methods></class></classes></test><test verbose="2" preserve-order="true" name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove/src/test/java/org/Schedule_Test/Appointment_booking_Test.java"><classes><class name="org.scheduletest.AppointmentBookingTest"><methods><include name="main"/></methods></class></classes></test><test verbose="2" preserve-order="true" name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove/src/test/java/org/Schedule_Test/Appointment_Other_Test.java"><classes><class name="org.scheduletest.Appointment_Other_Test"><methods><include name="main"/></methods></class></classes></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/applogintest/cases/TestCase1Test.java">
+        <classes>
+            <class name="org.applogintest.cases.TestCase1Test">
+                <methods>
+                    <include name="main"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/applogintest/cases/TestCase2Test.java">
+        <classes>
+            <class name="org.applogintest.cases.TestCase2Test">
+                <methods>
+                    <include name="main"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/applogintest/cases/TestCase3Test.java">
+        <classes>
+            <class name="org.applogintest.cases.TestCase3Test">
+                <methods>
+                    <include name="main"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/applogintest/cases/TestCase4Test.java">
+        <classes>
+            <class name="org.applogintest.cases.TestCase4Test">
+                <methods>
+                    <include name="main"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
