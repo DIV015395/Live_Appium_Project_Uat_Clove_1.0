@@ -41,4 +41,14 @@
             </class>
         </classes>
     </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/applogintest/cases/TestCase5Test.java">
+        <classes>
+            <class name="org.applogintest.cases.TestCase5Test">
+                <methods>
+                    <include name="main"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>

@@ -11,18 +11,15 @@ public class LoginUiValidation extends AppLogin
     public LoginUiValidation(AndroidDriver driver) {
         super(driver);
     }
+
     @Override
-    public void logins() throws InterruptedException
-    {
+    public void logins() {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        try
-        {
+        try {
             et_login_username.sendKeys("manjeet.sharma");
             System.out.println("Pass -> User ID");
-        }
-        catch (NoSuchElementException e)
-        {
+        } catch (NoSuchElementException e) {
 //            Log.error("Report Category button element is not found");
 
         }

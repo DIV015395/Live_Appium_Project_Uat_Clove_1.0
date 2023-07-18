@@ -22,8 +22,7 @@ public class AppLogin extends BaseDriver
     public AndroidElement tv_login_go;
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_button")
     public AndroidElement permission_allow_button;
-    public void logins() throws InterruptedException
-    {
+    public void logins() {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_login_username.sendKeys("manjeet.sharma");

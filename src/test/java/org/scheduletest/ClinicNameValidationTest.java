@@ -2,7 +2,7 @@ package org.scheduletest;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
-import org.desiredcapabilities.Desirecap;
+import org.desiredcapabilities.DesireCap;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,7 +16,7 @@ public class ClinicNameValidationTest {
     public AndroidDriver driver;
     @Test
     public void main() throws MalformedURLException, InterruptedException {
-        DesiredCapabilities caps = Desirecap.desire();
+        DesiredCapabilities caps = DesireCap.desire();
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         AppLogin obj = new AppLogin(driver);

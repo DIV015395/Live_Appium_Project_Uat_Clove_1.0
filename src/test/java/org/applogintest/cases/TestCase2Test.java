@@ -3,7 +3,7 @@ package org.applogintest.cases;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.testcase.TestCase2;
-import org.desiredcapabilities.Desirecap;
+import org.desiredcapabilities.DesireCap;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
@@ -17,7 +17,7 @@ public class TestCase2Test {
 
     @Test
     public void main() throws InterruptedException, MalformedURLException {
-        DesiredCapabilities caps = Desirecap.desire();
+        DesiredCapabilities caps = DesireCap.desire();
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         TestCase2 obj = new TestCase2((AndroidDriver) driver);

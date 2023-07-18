@@ -27,7 +27,9 @@ public class TestCase1 extends AppLogin {
         tv_login_go.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         permission_allow_button.click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         getmassage = massagess.getText();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         System.out.println(getmassage);
     }

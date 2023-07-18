@@ -3,9 +3,9 @@ package org.scheduletest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
-import org.schedule.AppointmentOther;
-import org.desiredcapabilities.Desirecap;
+import org.desiredcapabilities.DesireCap;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.schedule.AppointmentOther;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
@@ -17,7 +17,7 @@ public class Appointment_Other_Test
     public AppiumDriver driver;
     @Test
     public void main() throws InterruptedException, MalformedURLException {
-        DesiredCapabilities caps = Desirecap.desire();
+        DesiredCapabilities caps = DesireCap.desire();
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         AppLogin obj = new AppLogin((AndroidDriver) driver);
