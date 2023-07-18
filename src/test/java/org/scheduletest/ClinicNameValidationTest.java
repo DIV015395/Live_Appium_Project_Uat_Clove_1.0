@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ClinicNameValidationTest {
     public AndroidDriver driver;
+
     @Test
     public void main() throws MalformedURLException, InterruptedException {
         DesiredCapabilities caps = DesireCap.desire();
