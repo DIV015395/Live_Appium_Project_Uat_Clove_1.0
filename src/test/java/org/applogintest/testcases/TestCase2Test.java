@@ -1,4 +1,4 @@
-package org.applogintest.cases;
+package org.applogintest.testcases;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;

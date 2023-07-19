@@ -12,23 +12,15 @@ import java.util.concurrent.TimeUnit;
 
 
 public class AppointmentBooking extends BaseDriver {
-    public AppointmentBooking(AndroidDriver driver)
-    {
-        super(driver);
-    }
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"25 July 2023\"]")
+    public WebElement Date;
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_schedule")
     public WebElement tv_home_schedule;
-
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
     public WebElement layout_clinicSelect;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
     public List<WebElement> tv_itemTitle;
-
-    //testing perpose
-
-    @AndroidFindBy(id = "com.clove.clover.uat:id/rl_rootItem")
-    public List<WebElement> rootItem;
 
     public void homeSchedule() throws InterruptedException
     {
@@ -37,20 +29,8 @@ public class AppointmentBooking extends BaseDriver {
         tv_home_schedule.click();
     }
 
-    public void selectClinicDropdown() throws InterruptedException, IOException {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        layout_clinicSelect.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        // Assuming you want to select the option with text "Bodakdev"
-        String desiredOptionText = "Amanora";
-        for (WebElement option : tv_itemTitle)
-        {
-            if (option.getText().equals(desiredOptionText)) {
-                option.click();
-                break;
-            }
-        }
+    public AppointmentBooking(AndroidDriver driver) {
+        super(driver);
     }
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_doctorSelect")
     public WebElement layout_doctorSelect;
@@ -59,7 +39,24 @@ public class AppointmentBooking extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/fab_newAppointment")
     public WebElement fab_newAppointment;
 
-    public void selectDoctorDropdown() throws InterruptedException {
+    public void selectClinicDropdown() throws IOException {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        layout_clinicSelect.click();
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        // Assuming you want to select the option with text "Bodakdev"
+        String desiredOptionText = "Amanora";
+        for (WebElement option : tv_itemTitle) {
+            if (option.getText().equals(desiredOptionText)) {
+                option.click();
+                break;
+            }
+        }
+    }
+
+    public void selectDoctorDropdown() {
         layout_doctorSelect.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
@@ -71,10 +68,8 @@ public class AppointmentBooking extends BaseDriver {
             }
         }
     }
-    public void appointmentPlus()
-    {
-        fab_newAppointment.click();
-    }
+
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_contact")
     public WebElement et_contact;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_name")
@@ -84,8 +79,12 @@ public class AppointmentBooking extends BaseDriver {
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_next_month_arrow")
     public WebElement Next_month;
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"01 July 2023\"]")
-    public WebElement Date;
+
+    public void appointmentPlus() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        fab_newAppointment.click();
+    }
     @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_ok")
     public WebElement Dateok;
 
@@ -110,7 +109,8 @@ public class AppointmentBooking extends BaseDriver {
     public WebElement rv_timeSlots;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_timeSlot")
     public List<WebElement> tv_timeSlot;
-    public void slot_selection() throws InterruptedException {
+
+    public void slot_selection() {
         rv_timeSlots.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
@@ -165,7 +165,8 @@ public class AppointmentBooking extends BaseDriver {
 
     @AndroidFindBy(id ="com.clove.clover.uat:id/iv_actionDone")
     public WebElement iv_actionDone;
-    public void Chief_Note() throws InterruptedException {
+
+    public void Chief_Note() {
         tv_notesTitle.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_text.sendKeys("Very hard pain");

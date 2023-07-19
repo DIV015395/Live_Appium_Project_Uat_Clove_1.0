@@ -1,16 +1,18 @@
 package org.schedule;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
+
 import java.util.concurrent.TimeUnit;
 public class AppointmentOther extends AppointmentBooking
 {
     public AppointmentOther(AndroidDriver driver) {
         super(driver);
     }
+
     @Override
-    public void selectClinicDropdown() throws InterruptedException {
-        Thread.sleep(15000);
+    public void selectClinicDropdown() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_home_schedule.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -25,8 +27,9 @@ public class AppointmentOther extends AppointmentBooking
             }
         }
     }
+
     @Override
-    public void selectDoctorDropdown() throws InterruptedException {
+    public void selectDoctorDropdown() {
         layout_doctorSelect.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
@@ -54,8 +57,9 @@ public class AppointmentOther extends AppointmentBooking
         Dateok.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
+
     @Override
-    public void slot_selection() throws InterruptedException {
+    public void slot_selection() {
         rv_timeSlots.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"

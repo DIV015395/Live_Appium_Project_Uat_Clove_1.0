@@ -1,8 +1,8 @@
-package org.applogintest.cases;
+package org.applogintest.testcases;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import org.applogin.testcase.TestCase4;
+import org.applogin.testcase.TestCase3;
 import org.desiredcapabilities.DesireCap;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
@@ -13,7 +13,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class TestCase4Test {
+public class TestCase3Test {
+
 
     public AppiumDriver driver;
 
@@ -26,7 +27,7 @@ public class TestCase4Test {
 
     @Test
     public void main() {
-        TestCase4 obj = new TestCase4((AndroidDriver) driver);
+        TestCase3 obj = new TestCase3((AndroidDriver) driver);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.testCase();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
