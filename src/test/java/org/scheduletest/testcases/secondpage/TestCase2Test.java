@@ -5,7 +5,7 @@ import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.schedule.SchedulePage;
-import org.schedule.testcase.secondpage.TestCase1;
+import org.schedule.testcase.secondpage.TestCase2;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -14,7 +14,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class TestCase1Test {
+public class TestCase2Test {
+
     public AndroidDriver driver;
 
     @BeforeClass
@@ -46,7 +47,8 @@ public class TestCase1Test {
 
     @Test(priority = 3)
     public void appointmentTestCase() {
-        TestCase1 obj1 = new TestCase1(driver);
+        TestCase2 obj1 = new TestCase2(driver);
+        obj1.detailsPatient();
         obj1.Scrolling();
         obj1.saveend();
         obj1.toastMassageValidation();
@@ -58,4 +60,3 @@ public class TestCase1Test {
         driver.quit();
     }
 }
-
