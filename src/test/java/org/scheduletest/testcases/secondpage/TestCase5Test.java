@@ -15,8 +15,6 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase5Test {
-
-
     public AndroidDriver driver;
 
     @BeforeClass
@@ -24,7 +22,6 @@ public class TestCase5Test {
         DesiredCapabilities caps = DesireCap.desire();
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
     }
 
     @Test(priority = 1)
@@ -52,7 +49,6 @@ public class TestCase5Test {
         obj1.scrolling();
         obj1.saveend();
     }
-
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
