@@ -47,7 +47,7 @@ public class TestCase1Test {
     @Test(priority = 3)
     public void appointmentTestCase() {
         TestCase1 obj1 = new TestCase1(driver);
-        obj1.Scrolling();
+        obj1.scrolling();
         obj1.saveend();
         obj1.toastMassageValidation();
     }

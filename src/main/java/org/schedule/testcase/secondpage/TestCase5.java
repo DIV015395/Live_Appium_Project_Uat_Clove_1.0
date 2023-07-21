@@ -1,5 +1,4 @@
-//fill name in appointment page then scroll down and click on save button
-//it will generate toast massage like : Please enter patient name number!
+//check mobile number field validation in Appointment page
 
 package org.schedule.testcase.secondpage;
 
@@ -7,22 +6,25 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.WebElement;
 import org.schedule.AppointmentPage;
-import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
-public class TestCase2 extends AppointmentPage {
+
+public class TestCase5 extends AppointmentPage {
+
     @AndroidFindBy(xpath = "//android.widget.Toast")
     public AndroidElement massages;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_contact")
+    public WebElement et_contact;
     String getmassage;
 
-    public TestCase2(AndroidDriver driver) {
+    public TestCase5(AndroidDriver driver) {
         super(driver);
     }
 
-    @Override
-    public void detailsPatient() {
-        et_contact.sendKeys("7011131498");
+    public void mobileNumberNineDigit() {
+        et_contact.sendKeys("701113149");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
@@ -35,11 +37,12 @@ public class TestCase2 extends AppointmentPage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         iv_save.click();
     }
-    public void toastMassageValidation() {
-        getmassage = massages.getText();
+
+
+    public void mobileNumberElevenDigit() {
+        et_contact.sendKeys("70111314981");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        System.out.println(getmassage);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Assert.assertEquals(getmassage, "Please enter patient mobile number!");
     }
+
+
 }

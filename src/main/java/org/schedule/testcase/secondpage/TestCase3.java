@@ -22,14 +22,14 @@ public class TestCase3 extends AppointmentPage {
         super(driver);
     }
 
-
     @Override
     public void detailsPatient() {
         et_name.sendKeys("ManjeetSharma");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    public void Scrolling() {
+    @Override
+    public void scrolling() {
         driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));
     }
 

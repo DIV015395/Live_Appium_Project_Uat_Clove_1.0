@@ -91,7 +91,7 @@ public class AppointmentPage extends BaseDriver {
     }
 
     //Scroll down perform karna hai is jagah par;
-    public void Scrolling() {
+    public void scrolling() {
         driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));
     }
 
