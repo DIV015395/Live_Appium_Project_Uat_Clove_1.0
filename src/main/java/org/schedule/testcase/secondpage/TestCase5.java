@@ -38,7 +38,6 @@ public class TestCase5 extends AppointmentPage {
         iv_save.click();
     }
 
-
     public void mobileNumberElevenDigit() {
         et_contact.sendKeys("70111314981");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

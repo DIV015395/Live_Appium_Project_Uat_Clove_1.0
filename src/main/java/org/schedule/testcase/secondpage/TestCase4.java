@@ -42,6 +42,6 @@ public class TestCase4 extends AppointmentPage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         System.out.println(getmassage);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Assert.assertEquals(getmassage, "Please enter patient mobile number!");
+        Assert.assertEquals(getmassage, "Appointment added successfully!");
     }
 }
