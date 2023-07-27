@@ -2,11 +2,61 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/scheduletest/SchedulePageTest.java">
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/scheduletest/testcases/secondpage/TestCase4Test.java">
         <classes>
-            <class name="org.scheduletest.SchedulePageTest">
+            <class name="org.scheduletest.testcases.secondpage.TestCase4Test">
                 <methods>
-                    <include name="main"/>
+                    <include name="loginApp"/>
+                    <include name="schedulePage"/>
+                    <include name="appointmentTestCase"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/scheduletest/testcases/secondpage/TestCase1Test.java">
+        <classes>
+            <class name="org.scheduletest.testcases.secondpage.TestCase1Test">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="schedulePage"/>
+                    <include name="appointmentTestCase"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/scheduletest/testcases/secondpage/TestCase2Test.java">
+        <classes>
+            <class name="org.scheduletest.testcases.secondpage.TestCase2Test">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="schedulePage"/>
+                    <include name="appointmentTestCase"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/scheduletest/testcases/secondpage/TestCase3Test.java">
+        <classes>
+            <class name="org.scheduletest.testcases.secondpage.TestCase3Test">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="schedulePage"/>
+                    <include name="appointmentTestCase"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/scheduletest/testcases/secondpage/TestCase5Test.java">
+        <classes>
+            <class name="org.scheduletest.testcases.secondpage.TestCase5Test">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="schedulePage"/>
+                    <include name="appointmentTestCase"/>
                 </methods>
             </class>
         </classes>

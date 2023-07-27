@@ -1,4 +1,4 @@
-//fill name in appointment page then scroll down and click on save button
+//fill contact no in appointment page then scroll down and click on save button
 //it will generate toast massage like : Please enter patient name number!
 
 package org.schedule.testcase.secondpage;
@@ -11,6 +11,7 @@ import org.schedule.AppointmentPage;
 import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
+
 public class TestCase2 extends AppointmentPage {
     @AndroidFindBy(xpath = "//android.widget.Toast")
     public AndroidElement massages;
@@ -40,6 +41,6 @@ public class TestCase2 extends AppointmentPage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         System.out.println(getmassage);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Assert.assertEquals(getmassage, "Please enter patient mobile number!");
+        Assert.assertEquals(getmassage, "Please enter patient name!");
     }
 }

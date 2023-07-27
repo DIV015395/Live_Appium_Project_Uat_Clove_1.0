@@ -1,3 +1,5 @@
+//simple click on save button
+
 package org.schedule.testcase.secondpage;
 
 import io.appium.java_client.MobileBy;

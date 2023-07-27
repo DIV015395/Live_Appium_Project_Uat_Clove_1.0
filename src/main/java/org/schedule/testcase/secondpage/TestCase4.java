@@ -1,3 +1,5 @@
+//fill both name and phone no everythings then click on save button
+
 package org.schedule.testcase.secondpage;
 
 import io.appium.java_client.MobileBy;
