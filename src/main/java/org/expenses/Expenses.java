@@ -27,9 +27,8 @@ public class Expenses extends BaseDriver {
         super(driver);
     }
 
-    public void expensesClick() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    public void expensesClick() throws InterruptedException {
+        Thread.sleep(20000);
         expense.click();
     }
 

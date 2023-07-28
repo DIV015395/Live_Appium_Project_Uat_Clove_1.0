@@ -3,7 +3,7 @@ package org.expensestest;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.Expenses;
+import org.expenses.AddExpenses;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -36,13 +36,13 @@ public class AddExpensesTest {
     }
 
     @Test(priority = 2)
-    public void main() {
-
-
-        Expenses obj = new Expenses(driver);
+    public void main() throws InterruptedException {
+        AddExpenses obj = new AddExpenses(driver);
         obj.expensesClick();
         obj.nextbutton();
         obj.setClinic();
+        obj.setAddexpense();
+        obj.informationExpenses();
 
     }
 
