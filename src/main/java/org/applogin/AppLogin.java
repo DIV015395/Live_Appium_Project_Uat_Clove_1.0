@@ -27,7 +27,7 @@ public class AppLogin extends BaseDriver
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_login_username.sendKeys("manjeet.sharma");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_login_password.sendKeys("qpalzm@#1M");
+        et_login_password.sendKeys("Raj@1234");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_login_go.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
