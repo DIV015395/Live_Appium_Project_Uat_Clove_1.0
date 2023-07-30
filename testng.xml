@@ -1,50 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true"
-          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/applogintest/testcases/TestCase1Test.java">
+    <test verbose="2" preserve-order="true" name="TestCase1">
         <classes>
-            <class name="org.applogintest.testcases.TestCase1Test">
+            <class name="org.applogintest.testcases.TestCase1Tests">
                 <methods>
                     <include name="main"/>
                 </methods>
             </class>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true"
-          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/applogintest/testcases/TestCase2Test.java">
+    <test verbose="2" preserve-order="true" name="TestCase2">
         <classes>
-            <class name="org.applogintest.testcases.TestCase2Test">
-                <methods>
-                    <include name="main"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true"
-          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/applogintest/testcases/TestCase3Test.java">
-        <classes>
-            <class name="org.applogintest.testcases.TestCase3Test">
-                <methods>
-                    <include name="main"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true"
-          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/applogintest/testcases/TestCase4Test.java">
-        <classes>
-            <class name="org.applogintest.testcases.TestCase4Test">
-                <methods>
-                    <include name="main"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true"
-          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/applogintest/testcases/TestCase5Test.java">
-        <classes>
-            <class name="org.applogintest.testcases.TestCase5Test">
+            <class name="org.applogintest.testcases.TestCase2Tests">
                 <methods>
                     <include name="main"/>
                 </methods>
