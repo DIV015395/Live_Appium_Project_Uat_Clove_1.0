@@ -36,7 +36,7 @@ public class TestCase5Test {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.logins();
         obj.toastMassage();
-        obj.toastMassageValidation();\
+        obj.toastMassageValidation();
         test.pass("test case passed successfully");
     }
 
