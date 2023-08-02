@@ -10,8 +10,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class AppointmentPage extends BaseDriver {
-
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"25 July 2023\"]")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"04 August 2023\"]")
     public WebElement Date;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_contact")
     public WebElement et_contact;
@@ -19,8 +18,8 @@ public class AppointmentPage extends BaseDriver {
     public WebElement et_name;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_appointmentDateSelect")
     public WebElement Dates;
-    @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_next_month_arrow")
-    public WebElement Next_month;
+    //    @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_next_month_arrow")
+//    public WebElement Next_month;
     @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_ok")
     public WebElement Dateok;
     @AndroidFindBy(id = "com.clove.clover.uat:id/rv_timeSlots")
@@ -57,11 +56,11 @@ public class AppointmentPage extends BaseDriver {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    public void Date_selection() {
+    public void dateSelection() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         Dates.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Next_month.click();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        Next_month.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         Date.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

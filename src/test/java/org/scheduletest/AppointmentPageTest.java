@@ -53,11 +53,18 @@ public class AppointmentPageTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         AppointmentPage obj1 = new AppointmentPage((AndroidDriver) driver);
         obj1.detailsPatient();
+        obj1.dateSelection();
+        obj1.slot_selection();
+        obj1.duration_selection();
+        obj1.scrolling();
+        obj1.painElements();
+        obj1.Chief_Note();
+        obj1.saveend();
     }
 
     @AfterClass
     public void driverClose() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.quit();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        driver.quit();
     }
 }
