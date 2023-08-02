@@ -1,5 +1,8 @@
 package org.scheduletest.testcases.secondpage;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
@@ -16,7 +19,9 @@ import java.util.concurrent.TimeUnit;
 
 public class TestCase2Test {
 
-    public AndroidDriver driver;
+    public AppiumDriver driver;
+    public ExtentReports extent;
+    public ExtentTest test;
 
     @BeforeClass
     public void driverLaunch() throws MalformedURLException {
@@ -29,7 +34,7 @@ public class TestCase2Test {
     @Test(priority = 1)
     public void loginApp() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppLogin obj = new AppLogin(driver);
+        AppLogin obj = new AppLogin((AndroidDriver) driver);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.logins();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -38,7 +43,7 @@ public class TestCase2Test {
     @Test(priority = 2)
 
     public void schedulePage() {
-        SchedulePage obj2 = new SchedulePage(driver);
+        SchedulePage obj2 = new SchedulePage((AndroidDriver) driver);
         obj2.homeSchedule();
         obj2.selectClinicDropdown();
         obj2.selectDoctorDropdown();
@@ -47,16 +52,19 @@ public class TestCase2Test {
 
     @Test(priority = 3)
     public void appointmentTestCase() {
-        TestCase2 obj1 = new TestCase2(driver);
+        test = extent.createTest("Test case 2", "Schedule second page Test case 1");
+        TestCase2 obj1 = new TestCase2((AndroidDriver) driver);
         obj1.detailsPatient();
         obj1.scrolling();
         obj1.saveend();
         obj1.toastMassageValidation();
+        test.pass("Test case passed Successfully");
     }
 
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.quit();
+        extent.flush();
     }
 }

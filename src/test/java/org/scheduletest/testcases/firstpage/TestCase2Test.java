@@ -7,6 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.schedule.testcase.firstpage.TestCase2;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -23,7 +24,7 @@ public class TestCase2Test {
 
     }
 
-    @org.testng.annotations.Test(priority = 1)
+    @Test(priority = 1)
     public void loginApp() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         AppLogin obj = new AppLogin(driver);
@@ -32,7 +33,7 @@ public class TestCase2Test {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    @org.testng.annotations.Test(priority = 2)
+    @Test(priority = 2)
     public void main() {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
