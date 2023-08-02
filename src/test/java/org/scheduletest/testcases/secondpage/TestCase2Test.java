@@ -6,6 +6,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
+import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.schedule.SchedulePage;
 import org.schedule.testcase.secondpage.TestCase2;
@@ -25,9 +26,11 @@ public class TestCase2Test {
 
     @BeforeClass
     public void driverLaunch() throws MalformedURLException {
+        extent = ExtentManager.getInstance();
         DesiredCapabilities caps = DesireCap.desire();
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
 
     }
 
@@ -52,7 +55,8 @@ public class TestCase2Test {
 
     @Test(priority = 3)
     public void appointmentTestCase() {
-        test = extent.createTest("Test case 2", "Schedule second page Test case 1");
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        test = extent.createTest("Test case 2", "Schedule second page Test case 2");
         TestCase2 obj1 = new TestCase2((AndroidDriver) driver);
         obj1.detailsPatient();
         obj1.scrolling();
