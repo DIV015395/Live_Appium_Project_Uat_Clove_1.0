@@ -36,7 +36,7 @@ public class SchedulePage extends BaseDriver {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
-        String desiredOptionText = "Developer West";
+        String desiredOptionText = "Bodakdev";
 
         for (WebElement option : tv_itemTitle) {
             if (option.getText().equals(desiredOptionText)) {

@@ -56,6 +56,7 @@ public class AppointmentPageTest {
         obj1.dateSelection();
         obj1.slot_selection();
         obj1.duration_selection();
+        obj1.setDoctorName();
         obj1.scrolling();
         obj1.painElements();
         obj1.Chief_Note();

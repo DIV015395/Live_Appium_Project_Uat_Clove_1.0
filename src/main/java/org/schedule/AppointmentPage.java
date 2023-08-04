@@ -68,11 +68,22 @@ public class AppointmentPage extends BaseDriver {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_doctorName")
+    public List<WebElement> doctorName;
+
+    public void duration_selection() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        tv_appointmentDuration.click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        duration_Ok.click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
     public void slot_selection() {
-        rv_timeSlots.click();
+//        rv_timeSlots.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
-        String desiredslot = "10:00";
+        String desiredslot = "17:00";
         for (WebElement option : tv_timeSlot) {
             if (option.getText().equals(desiredslot)) {
                 option.click();
@@ -81,12 +92,16 @@ public class AppointmentPage extends BaseDriver {
         }
     }
 
-    public void duration_selection() {
+    public void setDoctorName() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        tv_appointmentDuration.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        duration_Ok.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        // Assuming you want to select the option with text "Bodakdev"
+        String desiredname = "Aarti Panchal";
+        for (WebElement option : doctorName) {
+            if (option.getText().equals(desiredname)) {
+                option.click();
+                break;
+            }
+        }
     }
 
     //Scroll down perform karna hai is jagah par;

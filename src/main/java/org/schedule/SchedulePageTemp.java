@@ -40,7 +40,7 @@ public class SchedulePageTemp extends SchedulePage {
         layout_doctorSelect.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text ""
-        String desiredOptionText = "Aayushi Sharma";
+        String desiredOptionText = "Manjeet Sharma";
         for (WebElement option : tv_itemTitle) {
             if (option.getText().equals(desiredOptionText)) {
                 option.click();

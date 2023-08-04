@@ -9,7 +9,7 @@ import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.schedule.SchedulePageTemp;
-import org.schedule.testcase.secondpage.TestCase6;
+import org.schedule.testcase.secondpage.TestCase8;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.BeforeClass;
@@ -19,7 +19,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class TestCase6Test {
+public class TestCase8Test {
 
     public AppiumDriver driver;
     public ExtentReports extent;
@@ -53,23 +53,16 @@ public class TestCase6Test {
         SchedulePageTemp obj2 = new SchedulePageTemp((AndroidDriver) driver);
         obj2.homeSchedule();
         obj2.selectClinicDropdown();
-//        obj2.selectDoctorDropdown();
-        obj2.appointmentPlus();
+        obj2.selectDoctorDropdown();
+//        obj2.appointmentPlus();
     }
 
     @Test(priority = 3)
     public void appointmentTestCase() {
         test = extent.createTest("Test case 6", "Schedule second page Test case 6");
-        TestCase6 obj1 = new TestCase6((AndroidDriver) driver);
-        obj1.detailsPatient();
-        obj1.dateSelection();
-        obj1.slot_selection();
-        obj1.duration_selection();
-        obj1.scrolling();
-        obj1.painElements();
-        obj1.Chief_Note();
-        obj1.saveend();
-        obj1.toastMassageValidation();
+        TestCase8 obj1 = new TestCase8((AndroidDriver) driver);
+        obj1.printName();
+        obj1.printListItems();
         test.pass("Test case passed Successfully");
     }
 
