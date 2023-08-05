@@ -10,6 +10,12 @@ import java.util.List;
 
 public class TestCase8 extends BaseDriver {
 
+
+    public TestCase8(AndroidDriver driver) {
+        super(driver);
+    }
+
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_scheduleListing_duration")
     public AndroidElement ListingDuration;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_appointmentType")
@@ -29,9 +35,6 @@ public class TestCase8 extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
     public List<WebElement> listofAction;
 
-    public TestCase8(AndroidDriver<AndroidElement> driver) {
-        super(driver);
-    }
 
     public void printName() {
         System.out.println(ListingDuration.getText());
