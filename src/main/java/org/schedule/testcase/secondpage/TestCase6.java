@@ -9,7 +9,6 @@ import org.testng.Assert;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase6 extends AppointmentPage {
-
     @AndroidFindBy(xpath = "//android.widget.Toast")
     public AndroidElement massages;
     String getmassage;

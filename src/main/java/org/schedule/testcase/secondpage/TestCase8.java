@@ -15,7 +15,6 @@ public class TestCase8 extends BaseDriver {
         super(driver);
     }
 
-
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_scheduleListing_duration")
     public AndroidElement ListingDuration;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_appointmentType")

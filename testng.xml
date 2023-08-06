@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Master Test Suite">
     <suite-files>
-        <suite-file path="testsuit/logintestsuite.xml"/>
-        <suite-file path="testsuit/appointmentpage.xml"/>
-        <suite-file path="testsuit/schedulefirstpage.xml"/>
+        <suite-file path="testsuite/logintestsuite.xml"/>
+        <suite-file path="testsuite/appointmentpage.xml"/>
+        <suite-file path="testsuite/schedulefirstpage.xml"/>
     </suite-files>
 </suite>
