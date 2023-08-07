@@ -55,7 +55,7 @@ public class TestCase3Test {
     public void appointmentTestCase() {
         test = extent.createTest("Test case 3", "Schedule second page Test case 3");
         TestCase3 obj1 = new TestCase3((AndroidDriver) driver);
-        obj1.detailsPatient();
+        obj1.namePatient();
         obj1.scrolling();
         obj1.saveend();
         obj1.toastMassageValidation();

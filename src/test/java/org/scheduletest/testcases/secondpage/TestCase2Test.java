@@ -58,7 +58,7 @@ public class TestCase2Test {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         test = extent.createTest("Test case 2", "Schedule second page Test case 2");
         TestCase2 obj1 = new TestCase2((AndroidDriver) driver);
-        obj1.detailsPatient();
+        obj1.mobileNumberPatient();
         obj1.scrolling();
         obj1.saveend();
         obj1.toastMassageValidation();

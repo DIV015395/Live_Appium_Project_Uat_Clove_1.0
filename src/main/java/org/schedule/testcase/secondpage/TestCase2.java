@@ -21,11 +21,6 @@ public class TestCase2 extends AppointmentPage {
         super(driver);
     }
 
-    @Override
-    public void detailsPatient() {
-        et_contact.sendKeys("7011131498");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-    }
 
     public void scrolling() {
         driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));

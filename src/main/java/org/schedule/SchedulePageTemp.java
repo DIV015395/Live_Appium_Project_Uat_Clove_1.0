@@ -3,6 +3,7 @@ package org.schedule;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class SchedulePageTemp extends SchedulePage {
@@ -10,6 +11,11 @@ public class SchedulePageTemp extends SchedulePage {
     public SchedulePageTemp(AndroidDriver driver) {
         super(driver);
     }
+
+
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("tempschedule");
+    String doctorName = resourceBundle.getString("doctorName");
+    String clinicName = resourceBundle.getString("clinicName");
 
     @Override
     public void homeSchedule() {
@@ -25,7 +31,7 @@ public class SchedulePageTemp extends SchedulePage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
-        String desiredOptionText = "Bodakdev";
+        String desiredOptionText = clinicName;
 
         for (WebElement option : tv_itemTitle) {
             if (option.getText().equals(desiredOptionText)) {
@@ -40,7 +46,7 @@ public class SchedulePageTemp extends SchedulePage {
         layout_doctorSelect.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text ""
-        String desiredOptionText = "Manjeet Sharma";
+        String desiredOptionText = doctorName;
         for (WebElement option : tv_itemTitle) {
             if (option.getText().equals(desiredOptionText)) {
                 option.click();

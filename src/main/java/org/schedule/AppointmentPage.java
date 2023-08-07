@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.desiredcapabilities.BaseDriver;
 import org.openqa.selenium.WebElement;
+import org.timeselection.CurrentTimeInIndia;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -49,9 +50,12 @@ public class AppointmentPage extends BaseDriver {
         super(driver);
     }
 
-    public void detailsPatient() {
+    public void mobileNumberPatient() {
         et_contact.sendKeys("7011131498");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
+    public void namePatient() {
         et_name.sendKeys("ManjeetSharma");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
@@ -83,7 +87,7 @@ public class AppointmentPage extends BaseDriver {
 //        rv_timeSlots.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
-        String desiredslot = "17:00";
+        String desiredslot = CurrentTimeInIndia.getNearestHalfHourTime();
         for (WebElement option : tv_timeSlot) {
             if (option.getText().equals(desiredslot)) {
                 option.click();

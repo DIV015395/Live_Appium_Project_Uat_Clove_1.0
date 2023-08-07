@@ -20,13 +20,6 @@ public class TestCase4 extends AppointmentPage {
         super(driver);
     }
 
-    @Override
-    public void detailsPatient() {
-        et_contact.sendKeys("7011131498");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_name.sendKeys("ManjeetSharma");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-    }
 
     @Override
     public void scrolling() {
