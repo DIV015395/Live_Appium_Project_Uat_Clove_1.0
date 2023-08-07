@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.timeselection.CurrentTimeInIndia;
 
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class AppointmentPage extends BaseDriver {
@@ -50,13 +51,18 @@ public class AppointmentPage extends BaseDriver {
         super(driver);
     }
 
+
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("appointment");
+    String patientName = resourceBundle.getString("namePatient");
+    String patientMobileNumber = resourceBundle.getString("mobileNumber");
+
     public void mobileNumberPatient() {
-        et_contact.sendKeys("7011131498");
+        et_contact.sendKeys(patientMobileNumber);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     public void namePatient() {
-        et_name.sendKeys("ManjeetSharma");
+        et_name.sendKeys(patientName);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 

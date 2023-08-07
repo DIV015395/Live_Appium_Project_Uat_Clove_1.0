@@ -61,7 +61,8 @@ public class TestCase6Test {
     public void appointmentTestCase() {
         test = extent.createTest("Test case 6", "Schedule second page Test case 6");
         TestCase6 obj1 = new TestCase6((AndroidDriver) driver);
-        obj1.detailsPatient();
+        obj1.mobileNumberPatient();
+        obj1.namePatient();
         obj1.dateSelection();
         obj1.slot_selection();
         obj1.duration_selection();
