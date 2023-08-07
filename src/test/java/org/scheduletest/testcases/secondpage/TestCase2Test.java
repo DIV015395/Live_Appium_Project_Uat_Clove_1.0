@@ -60,7 +60,7 @@ public class TestCase2Test {
         TestCase2 obj1 = new TestCase2((AndroidDriver) driver);
         obj1.mobileNumberPatient();
         obj1.scrolling();
-        obj1.saveend();
+        obj1.submitButton();
         obj1.toastMassageValidation();
         test.pass("Test case passed Successfully");
     }

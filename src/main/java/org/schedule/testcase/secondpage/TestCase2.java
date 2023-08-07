@@ -27,10 +27,11 @@ public class TestCase2 extends AppointmentPage {
     }
 
     @Override
-    public void saveend() {
+    public void submitButton() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         iv_save.click();
     }
+
     public void toastMassageValidation() {
         getmassage = massages.getText();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

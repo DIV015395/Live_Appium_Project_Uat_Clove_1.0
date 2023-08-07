@@ -1,4 +1,4 @@
-//package org.scheduletest;
+package org.scheduletest.uivalidationtestcase.firstpage;//package org.scheduletest;
 //
 //import io.appium.java_client.android.AndroidDriver;
 //import org.applogin.AppLogin;

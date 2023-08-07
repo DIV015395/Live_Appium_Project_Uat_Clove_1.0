@@ -34,6 +34,7 @@ public class TestCase8Test {
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (MalformedURLException e) {
+            System.out.println("Wrong URL");
             logger.info("Wrong URL ");
         }
     }

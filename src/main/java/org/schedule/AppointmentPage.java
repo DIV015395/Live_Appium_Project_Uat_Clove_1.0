@@ -81,7 +81,7 @@ public class AppointmentPage extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_doctorName")
     public List<WebElement> doctorName;
 
-    public void duration_selection() {
+    public void durationSelection() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_appointmentDuration.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -89,7 +89,7 @@ public class AppointmentPage extends BaseDriver {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    public void slot_selection() {
+    public void slotSelection() {
 //        rv_timeSlots.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
@@ -125,7 +125,7 @@ public class AppointmentPage extends BaseDriver {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    public void Chief_Note() {
+    public void chiefNote() {
         tv_notesTitle.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_text.sendKeys("Very hard pain");
@@ -134,7 +134,7 @@ public class AppointmentPage extends BaseDriver {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    public void saveend() {
+    public void submitButton() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         iv_save.click();
     }

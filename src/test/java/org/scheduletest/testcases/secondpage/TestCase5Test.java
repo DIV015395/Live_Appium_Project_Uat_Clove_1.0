@@ -65,7 +65,7 @@ public class TestCase5Test {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj1.scrolling();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj1.saveend();
+        obj1.submitButton();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj1.scrollingUp();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -73,7 +73,7 @@ public class TestCase5Test {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj1.scrolling();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj1.saveend();
+        obj1.submitButton();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj1.toastMassageValidation();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

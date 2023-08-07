@@ -1,4 +1,4 @@
-package org.scheduletest.testcases.secondpage;
+package org.scheduletest.uivalidationtestcase.firstpage;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -8,17 +8,16 @@ import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.schedule.SchedulePage;
-import org.schedule.testcase.secondpage.TestCase3;
-import org.testng.annotations.AfterClass;
+import org.schedule.uivalidation.firstpage.ValidationClinicName;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-public class TestCase3Test {
+public class ValidationClinicNameTest {
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
@@ -44,28 +43,18 @@ public class TestCase3Test {
     @Test(priority = 2)
 
     public void schedulePage() {
-        SchedulePage obj2 = new SchedulePage((AndroidDriver) driver);
-        obj2.homeSchedule();
-        obj2.selectClinicDropdown();
-        obj2.selectDoctorDropdown();
-        obj2.appointmentPlus();
-    }
+        ValidationClinicName obj = new ValidationClinicName((AndroidDriver) driver);
+        obj.homeSchedule();
+        Set<String> uniqueStrings = obj.scrollAndFindClinicsByAlphabet();
+        for (String clinicName : uniqueStrings) {
+            System.out.println(clinicName);
+        }
 
-    @Test(priority = 3)
-    public void appointmentTestCase() {
-        test = extent.createTest("Test case 3", "Schedule second page Test case 3");
-        TestCase3 obj1 = new TestCase3((AndroidDriver) driver);
-        obj1.namePatient();
-        obj1.scrolling();
-        obj1.submitButton();
-        obj1.toastMassageValidation();
-        test.pass("Test case passed Successfully");
     }
-
-    @AfterClass
-    public void driverClose() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.quit();
-        extent.flush();
-    }
+//    @AfterClass
+//    public void driverClose() {
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        driver.quit();
+//        extent.flush();
+//    }
 }

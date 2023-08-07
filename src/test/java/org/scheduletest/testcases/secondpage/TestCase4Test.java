@@ -60,7 +60,7 @@ public class TestCase4Test {
         obj1.mobileNumberPatient();
         obj1.namePatient();
         obj1.scrolling();
-        obj1.saveend();
+        obj1.submitButton();
         obj1.toastMassageValidation();
         test.pass("Test case passed Successfully");
     }

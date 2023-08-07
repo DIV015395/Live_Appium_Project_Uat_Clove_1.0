@@ -37,7 +37,7 @@ public class TestCase5 extends AppointmentPage {
     }
 
     @Override
-    public void saveend() {
+    public void submitButton() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         iv_save.click();
     }

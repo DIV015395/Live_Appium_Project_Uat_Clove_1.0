@@ -56,7 +56,7 @@ public class TestCase1Test {
         test = extent.createTest("Test case 1", "Schedule second page Test case 1");
         TestCase1 obj1 = new TestCase1((AndroidDriver) driver);
         obj1.scrolling();
-        obj1.saveend();
+        obj1.submitButton();
         obj1.toastMassageValidation();
         test.pass("Test case passed Successfully");
     }

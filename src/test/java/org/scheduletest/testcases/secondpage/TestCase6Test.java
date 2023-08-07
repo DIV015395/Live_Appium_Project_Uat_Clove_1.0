@@ -12,6 +12,7 @@ import org.schedule.SchedulePageTemp;
 import org.schedule.testcase.secondpage.TestCase6;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -64,22 +65,22 @@ public class TestCase6Test {
         obj1.mobileNumberPatient();
         obj1.namePatient();
         obj1.dateSelection();
-        obj1.slot_selection();
-        obj1.duration_selection();
+        obj1.slotSelection();
+        obj1.durationSelection();
         obj1.scrolling();
         obj1.painElements();
-        obj1.Chief_Note();
-        obj1.saveend();
+        obj1.chiefNote();
+        obj1.submitButton();
         obj1.toastMassageValidation();
         test.pass("Test case passed Successfully");
     }
 
-//    @AfterClass
-//    public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
-//        extent.flush();
-//    }
+    @AfterClass
+    public void driverClose() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
+    }
 
 
 }
