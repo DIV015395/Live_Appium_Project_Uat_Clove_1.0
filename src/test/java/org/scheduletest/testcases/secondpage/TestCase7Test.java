@@ -73,6 +73,10 @@ public class TestCase7Test {
         obj1.toastMassageValidation();
         obj1.printName();
         obj1.printListItems();
+        obj1.validatePatientDetails();
+        obj1.validateClinicName();
+        obj1.validateAppointmentType();
+        obj1.validateDoctorName();
         test.pass("Test case passed Successfully");
     }
 
