@@ -58,7 +58,7 @@ public class TestCase7Test {
 
     @Test(priority = 3)
     public void appointmentTestCase() {
-        test = extent.createTest("Test case 6", "Schedule second page Test case 6");
+        test = extent.createTest("Test case 7", "Schedule second page Test case 7");
         TestCase7 obj1 = new TestCase7((AndroidDriver) driver);
         obj1.mobileNumberPatient();
         obj1.namePatient();

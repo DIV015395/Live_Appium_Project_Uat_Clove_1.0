@@ -124,11 +124,12 @@ public class AppointmentPage extends BaseDriver {
         painElement.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
+    String notes = resourceBundle.getString("Notes");
 
     public void chiefNote() {
         tv_notesTitle.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_text.sendKeys("Very hard pain");
+        et_text.sendKeys(notes);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         iv_actionDone.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

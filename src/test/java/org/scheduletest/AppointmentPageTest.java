@@ -43,8 +43,6 @@ public class AppointmentPageTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj1.selectClinicDropdown();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj1.selectDoctorDropdown();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj1.appointmentPlus();
     }
 
