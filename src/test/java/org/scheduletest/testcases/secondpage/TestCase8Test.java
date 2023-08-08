@@ -2,6 +2,7 @@ package org.scheduletest.testcases.secondpage;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
@@ -12,6 +13,7 @@ import org.schedule.SchedulePageTemp;
 import org.schedule.testcase.secondpage.TestCase8;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -25,17 +27,18 @@ public class TestCase8Test {
     public ExtentReports extent;
     public ExtentTest test;
 
+
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
+
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (MalformedURLException e) {
-            System.out.println("Wrong URL");
-            logger.info("Wrong URL ");
+            test.log(Status.FAIL, "Click function is not working");
         }
     }
 
@@ -55,24 +58,20 @@ public class TestCase8Test {
         obj2.homeSchedule();
         obj2.selectClinicDropdown();
         obj2.selectDoctorDropdown();
-//        obj2.appointmentPlus();
     }
 
     @Test(priority = 3)
     public void appointmentTestCase() {
-        test = extent.createTest("Test case 6", "Schedule second page Test case 6");
         TestCase8 obj1 = new TestCase8((AndroidDriver) driver);
-        obj1.printName();
-        obj1.printListItems();
+        test = extent.createTest("Test case 8", "Schedule second page Test case 8");
+        obj1.validationNotesInListing();
         test.pass("Test case passed Successfully");
     }
 
-//    @AfterClass
-//    public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
-//        extent.flush();
-//    }
-
-
+    @AfterClass
+    public void driverClose() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
+    }
 }

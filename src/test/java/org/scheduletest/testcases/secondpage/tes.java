@@ -1,5 +1,6 @@
 package org.scheduletest.testcases.secondpage;
 
+import org.algorithm.FirstNameExtractor;
 import org.testng.annotations.Test;
 import org.timeselection.CurrentTimeInIndia;
 
@@ -18,6 +19,9 @@ public class tes {
         System.out.println(times);
         System.out.println(doctorName);
         System.out.println(clinicName);
+
+        String names = FirstNameExtractor.extractFirstName("Manjeet");
+        System.out.println(names);
 
     }
 

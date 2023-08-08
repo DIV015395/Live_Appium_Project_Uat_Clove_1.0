@@ -24,6 +24,7 @@ public class TestCase7Test {
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
+    TestCase7 obj1;
 
     @BeforeClass
     public void driverLaunch() {
@@ -71,13 +72,18 @@ public class TestCase7Test {
         obj1.chiefNote();
         obj1.submitButton();
         obj1.toastMassageValidation();
-        obj1.printName();
-        obj1.printListItems();
+    }
+
+    @Test(priority = 4)
+    public void validationData() {
+        obj1 = new TestCase7((AndroidDriver) driver);
         obj1.validatePatientDetails();
         obj1.validateClinicName();
         obj1.validateAppointmentType();
         obj1.validateDoctorName();
+        obj1.validatePatientId();
         test.pass("Test case passed Successfully");
+
     }
 
     @AfterClass

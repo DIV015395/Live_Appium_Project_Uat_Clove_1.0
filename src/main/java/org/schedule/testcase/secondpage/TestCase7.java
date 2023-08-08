@@ -35,8 +35,8 @@ public class TestCase7 extends AppointmentPage {
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_scheduleListing_patientName")
     public AndroidElement ListingpatientName;
-    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_scheduleListing_patientId")
-    public AndroidElement Listingpatientid;
+
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_scheduleListing_contactNo")
     public AndroidElement Listingcontactno;
 
@@ -75,6 +75,20 @@ public class TestCase7 extends AppointmentPage {
     }
 
 
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_scheduleListing_patientId")
+    public AndroidElement Listingpatientid;
+
+    public void validatePatientId() {
+
+        if (Listingpatientid != null) {
+            System.out.println("Patient Id is not NULL");
+            Assert.assertTrue(true);
+        } else {
+            Assert.assertFalse(false);
+        }
+    }
+
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_scheduleListing_actionButtons")
     public AndroidElement actionButtons;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
@@ -84,22 +98,14 @@ public class TestCase7 extends AppointmentPage {
 //    com.clove.clover.uat:id/value_appointment_notes_value
 //    com.clove.clover.uat:id/iv_close_dialog
 
-    public void printName() {
-        System.out.println(ListingDuration.getText());
-        System.out.println(appointmentType.getText());
-        System.out.println(Listingclinic.getText());
-        System.out.println(ListingpatientName.getText());
-        System.out.println(Listingpatientid.getText());
-        System.out.println(Listingcontactno.getText());
-    }
 
-    public void printListItems() {
-        actionButtons.click();
-
-        for (WebElement element : listofAction) {
-            System.out.println(element.getText());
-        }
-    }
+//    public void printListItems() {
+//        actionButtons.click();
+//
+//        for (WebElement element : listofAction) {
+//            System.out.println(element.getText());
+//        }
+//    }
 
 
 }
