@@ -34,6 +34,7 @@ public class SchedulePageTest {
         obj1.homeSchedule();
         obj1.selectClinicDropdown();
         obj1.selectDoctorDropdown();
+        obj1.scheduleCalenderDate();
         obj1.appointmentPlus();
     }
 

@@ -20,6 +20,8 @@ public class SchedulePage extends BaseDriver {
     public WebElement layout_doctorSelect;
     @AndroidFindBy(id = "com.clove.clover.uat:id/fab_newAppointment")
     public WebElement fab_newAppointment;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_selectedDate")
+    public WebElement scheduleCalender;
 
 
     public SchedulePage(AndroidDriver driver) {
@@ -35,6 +37,10 @@ public class SchedulePage extends BaseDriver {
 
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         tv_home_schedule.click();
+    }
+
+    public void scheduleCalenderDate() {
+        System.out.println(scheduleCalender.getText());
     }
 
     public void selectClinicDropdown() {

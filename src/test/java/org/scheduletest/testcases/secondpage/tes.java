@@ -1,5 +1,6 @@
 package org.scheduletest.testcases.secondpage;
 
+import org.algorithm.CurrentFormattedDate;
 import org.algorithm.FirstNameExtractor;
 import org.testng.annotations.Test;
 import org.timeselection.CurrentTimeInIndia;
@@ -22,6 +23,8 @@ public class tes {
 
         String names = FirstNameExtractor.extractFirstName("Manjeet");
         System.out.println(names);
+        int l = CurrentFormattedDate.currentDate();
+        System.out.println(l);
 
     }
 
