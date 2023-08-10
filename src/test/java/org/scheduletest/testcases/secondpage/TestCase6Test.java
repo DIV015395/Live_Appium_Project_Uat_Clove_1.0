@@ -53,8 +53,8 @@ public class TestCase6Test {
     public void schedulePage() {
         SchedulePageTemp obj2 = new SchedulePageTemp((AndroidDriver) driver);
         obj2.homeSchedule();
-        obj2.selectClinicDropdown();
-
+        obj2.selectClinicDropdownOne();
+        obj2.selectDoctorDropdownOne();
         obj2.appointmentPlus();
     }
 

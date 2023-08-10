@@ -58,6 +58,7 @@ public class TestCase4Test {
         SchedulePage obj2 = new SchedulePage((AndroidDriver) driver);
         obj2.homeSchedule();
         obj2.selectClinicDropdown();
+        obj2.selectDoctorDropdown();
         obj2.appointmentPlus();
     }
 

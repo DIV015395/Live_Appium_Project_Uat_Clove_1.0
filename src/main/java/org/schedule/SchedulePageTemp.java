@@ -15,7 +15,9 @@ public class SchedulePageTemp extends SchedulePage {
 
     ResourceBundle resourceBundle = ResourceBundle.getBundle("tempschedule");
     String doctorName = resourceBundle.getString("doctorName");
+    String doctorName1 = resourceBundle.getString("doctorName1");
     String clinicName = resourceBundle.getString("clinicName");
+    String clinicName1 = resourceBundle.getString("clinicName1");
 
     @Override
     public void homeSchedule() {
@@ -41,12 +43,41 @@ public class SchedulePageTemp extends SchedulePage {
         }
     }
 
+    public void selectClinicDropdownOne() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        layout_clinicSelect.click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        // Assuming you want to select the option with text "Bodakdev"
+        String desiredOptionText = clinicName1;
+
+        for (WebElement option : tv_itemTitle) {
+            if (option.getText().equals(desiredOptionText)) {
+                option.click();
+                break;
+            }
+        }
+    }
+
     @Override
     public void selectDoctorDropdown() {
         layout_doctorSelect.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text ""
         String desiredOptionText = doctorName;
+        for (WebElement option : tv_itemTitle) {
+            if (option.getText().equals(desiredOptionText)) {
+                option.click();
+                break;
+            }
+        }
+    }
+
+    public void selectDoctorDropdownOne() {
+        layout_doctorSelect.click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        // Assuming you want to select the option with text ""
+        String desiredOptionText = doctorName1;
         for (WebElement option : tv_itemTitle) {
             if (option.getText().equals(desiredOptionText)) {
                 option.click();

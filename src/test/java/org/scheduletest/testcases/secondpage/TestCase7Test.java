@@ -75,7 +75,7 @@ public class TestCase7Test {
     }
 
     @Test(priority = 4)
-    public void validationData() {
+    public void validationDataMessage() {
         obj1 = new TestCase7((AndroidDriver) driver);
         obj1.validatePatientDetails();
         obj1.validateClinicName();
