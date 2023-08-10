@@ -1,9 +1,9 @@
 package org.scheduletest.testcases.secondpage;
 
 import org.algorithm.CurrentFormattedDate;
+import org.algorithm.CurrentTimeInIndia;
 import org.algorithm.FirstNameExtractor;
 import org.testng.annotations.Test;
-import org.timeselection.CurrentTimeInIndia;
 
 import java.util.ResourceBundle;
 

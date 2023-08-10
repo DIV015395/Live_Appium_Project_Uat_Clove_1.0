@@ -10,4 +10,9 @@ public class TestCase9 extends SchedulePage {
     public TestCase9(AndroidDriver driver) {
         super(driver);
     }
+
+    public static String executionTime(String ss) {
+        String timming = ss;
+        return timming;
+    }
 }
