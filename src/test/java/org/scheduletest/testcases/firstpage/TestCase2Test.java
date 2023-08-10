@@ -2,6 +2,7 @@ package org.scheduletest.testcases.firstpage;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
@@ -9,6 +10,8 @@ import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.schedule.testcase.firstpage.TestCase2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -23,11 +26,16 @@ public class TestCase2Test {
     public ExtentTest test;
 
     @BeforeClass
-    public void driverLaunch() throws MalformedURLException {
+    public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        DesiredCapabilities caps = DesireCap.desire();
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Logger logger = LoggerFactory.getLogger(getClass());
+        try {
+            DesiredCapabilities caps = DesireCap.desire();
+            driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        } catch (MalformedURLException e) {
+            test.log(Status.FAIL, "Click function is not working");
+        }
 
     }
 

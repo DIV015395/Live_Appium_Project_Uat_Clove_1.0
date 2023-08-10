@@ -82,7 +82,7 @@ public class TestCase7Test {
         obj1.validateAppointmentType();
         obj1.validateDoctorName();
         obj1.validatePatientId();
-        test.pass("Test case passed Successfully");
+        test.pass("Test case passed Successful");
 
     }
 
