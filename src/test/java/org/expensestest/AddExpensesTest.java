@@ -39,7 +39,7 @@ public class AddExpensesTest {
     public void main() throws InterruptedException {
         AddExpenses obj = new AddExpenses(driver);
         obj.expensesClick();
-        obj.nextbutton();
+        obj.nextButton();
         obj.setClinic();
         obj.setAddexpense();
         obj.informationExpenses();

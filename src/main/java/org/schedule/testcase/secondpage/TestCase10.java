@@ -34,12 +34,7 @@ public class TestCase10 extends SchedulePage {
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
     public List<WebElement> listofAction;
 
-    public void dataBack() {
-        while (date < l) {
-            previousDate.click();
-            l--;
-        }
-    }
+
 
     @Override
     public void selectClinicDropdown() {
@@ -71,8 +66,17 @@ public class TestCase10 extends SchedulePage {
         }
     }
 
+    public void dataBack() {
+        while (date < l) {
+            previousDate.click();
+            l--;
+        }
+    }
+
     public void printAllAction() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         actionButtons.click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         for (WebElement element : listofAction) {
             System.out.println(element.getText());
 

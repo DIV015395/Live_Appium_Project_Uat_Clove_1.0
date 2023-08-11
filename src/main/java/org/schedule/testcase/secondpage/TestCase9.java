@@ -33,12 +33,6 @@ public class TestCase9 extends SchedulePage {
     int l = CurrentFormattedDate.currentDate();
     int date = 10;
 
-    public void dataBack() {
-        while (date < l) {
-            previousDate.click();
-            l--;
-        }
-    }
 
     @Override
     public void selectClinicDropdown() {
@@ -47,7 +41,7 @@ public class TestCase9 extends SchedulePage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
-        String desiredOptionText = "Developer West";
+        String desiredOptionText = "Hinjewadi";
         for (WebElement option : tv_itemTitle) {
             if (option.getText().equals(desiredOptionText)) {
                 option.click();
@@ -55,7 +49,6 @@ public class TestCase9 extends SchedulePage {
             }
         }
     }
-
     @Override
     public void selectDoctorDropdown() {
         layout_doctorSelect.click();
@@ -70,11 +63,17 @@ public class TestCase9 extends SchedulePage {
         }
     }
 
+    public void dataBack() {
+        while (date < l) {
+            previousDate.click();
+            l--;
+        }
+    }
+
     public void printAllAction() {
         actionButtons.click();
         for (WebElement element : listofAction) {
             System.out.println(element.getText());
-
         }
     }
 }

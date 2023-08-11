@@ -48,7 +48,7 @@ public class Expenses extends BaseDriver {
         }
     }
 
-    public void nextbutton() {
+    public void nextButton() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         nextbutton.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

@@ -24,7 +24,6 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase9Test {
-
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
@@ -53,9 +52,9 @@ public class TestCase9Test {
     }
 
     @Test(priority = 2)
-    public void main() {
+    public void schedulePage() {
 
-        test = extent.createTest("Test case 9", "Description of schedule first page test case 9");
+        test = extent.createTest("Test case 9", "Schedule second page test case 9");
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         TestCase9 obj1 = new TestCase9((AndroidDriver) driver);
@@ -65,15 +64,11 @@ public class TestCase9Test {
         obj1.dataBack();
         obj1.printAllAction();
         test.pass("Test is pass successful");
-
     }
-
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.quit();
         extent.flush();
     }
-
-
 }

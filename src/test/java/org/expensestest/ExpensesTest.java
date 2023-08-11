@@ -39,7 +39,7 @@ public class ExpensesTest {
 
         AddExpenses obj = new AddExpenses(driver);
         obj.expensesClick();
-        obj.nextbutton();
+        obj.nextButton();
         obj.setClinic();
         obj.setAddexpense();
 

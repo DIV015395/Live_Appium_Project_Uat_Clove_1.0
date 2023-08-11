@@ -53,10 +53,8 @@ public class TestCase10Test {
     }
 
     @Test(priority = 2)
-    public void main() {
-
-        test = extent.createTest("Test case 10", "Description of schedule first page test case 10");
-
+    public void schedulePage() {
+        test = extent.createTest("Test case 10", "Schedule second page test case 10");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         TestCase10 obj1 = new TestCase10((AndroidDriver) driver);
         obj1.homeSchedule();
@@ -67,7 +65,6 @@ public class TestCase10Test {
         test.pass("Test is pass successful");
 
     }
-
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
