@@ -12,9 +12,10 @@ import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.schedule.SchedulePageTemp;
+import org.schedule.testcase.secondpage.TestCase9;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -28,11 +29,9 @@ public class TestCase9Test {
     public ExtentReports extent;
     public ExtentTest test;
 
-
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -41,11 +40,11 @@ public class TestCase9Test {
         } catch (MalformedURLException e) {
             test.log(Status.FAIL, "Click function is not working");
         }
+
     }
 
     @Test(priority = 1)
     public void loginApp() {
-
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         AppLogin obj = new AppLogin((AndroidDriver) driver);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -54,19 +53,27 @@ public class TestCase9Test {
     }
 
     @Test(priority = 2)
-    public void schedulePage() {
-        SchedulePageTemp obj2 = new SchedulePageTemp((AndroidDriver) driver);
-        obj2.homeSchedule();
-        obj2.selectClinicDropdown();
-        obj2.selectDoctorDropdown();
+    public void main() {
+
+        test = extent.createTest("Test case 9", "Description of schedule first page test case 9");
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        TestCase9 obj1 = new TestCase9((AndroidDriver) driver);
+        obj1.homeSchedule();
+        obj1.selectClinicDropdown();
+        obj1.selectDoctorDropdown();
+        obj1.dataBack();
+        obj1.printAllAction();
+        test.pass("Test is pass successful");
+
     }
 
-//    @AfterClass
-//    public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
-//        extent.flush();
-//    }
+    @AfterClass
+    public void driverClose() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
+    }
 
 
 }

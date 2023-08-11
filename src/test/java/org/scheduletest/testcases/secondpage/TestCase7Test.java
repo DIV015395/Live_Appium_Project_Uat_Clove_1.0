@@ -56,7 +56,6 @@ public class TestCase7Test {
         obj2.selectClinicDropdown();
         obj2.appointmentPlus();
     }
-
     @Test(priority = 3)
     public void appointmentTestCase() {
         test = extent.createTest("Test case 7", "Schedule second page Test case 7");
@@ -73,7 +72,6 @@ public class TestCase7Test {
         obj1.submitButton();
         obj1.toastMassageValidation();
     }
-
     @Test(priority = 4)
     public void validationDataMessage() {
         obj1 = new TestCase7((AndroidDriver) driver);
@@ -83,9 +81,7 @@ public class TestCase7Test {
         obj1.validateDoctorName();
         obj1.validatePatientId();
         test.pass("Test case passed Successful");
-
     }
-
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

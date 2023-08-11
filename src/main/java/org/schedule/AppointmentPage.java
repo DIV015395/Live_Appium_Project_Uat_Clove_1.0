@@ -6,7 +6,6 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.algorithm.CurrentTimeInIndia;
 import org.desiredcapabilities.BaseDriver;
 import org.openqa.selenium.WebElement;
-import org.schedule.testcase.secondpage.TestCase9;
 
 import java.util.List;
 import java.util.ResourceBundle;
@@ -95,7 +94,6 @@ public class AppointmentPage extends BaseDriver {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
         String desiredslot = CurrentTimeInIndia.getNearestHalfHourTime();
-        TestCase9.executionTime(desiredslot);
         for (WebElement option : tv_timeSlot) {
             if (option.getText().equals(desiredslot)) {
                 option.click();
