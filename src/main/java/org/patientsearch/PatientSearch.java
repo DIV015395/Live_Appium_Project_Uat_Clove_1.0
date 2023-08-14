@@ -23,6 +23,16 @@ public class PatientSearch extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/btn_explore_schedule")
     public WebElement btn_explore_schedule;
 
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_searchQuery")
+    public WebElement et_searchQuery;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_patientSearchBy")
+    public WebElement patientSearchBy;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
+    public List<WebElement> listofpatientSearchBy;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_search")
+    public WebElement iv_search;
+
+
     public PatientSearch(AndroidDriver driver) {
         super(driver);
     }
@@ -45,7 +55,7 @@ public class PatientSearch extends BaseDriver {
         ListClinic.click();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         // Assuming you want to select the option with text "Bodakdev"
-        String desiredOptionText = "Bodakdev";
+        String desiredOptionText = "Amanora";
 
         for (WebElement option : clinicname) {
             if (option.getText().equals(desiredOptionText)) {
@@ -55,18 +65,28 @@ public class PatientSearch extends BaseDriver {
         }
     }
 
-    @AndroidFindBy(id = "com.clove.clover.uat:id/et_searchQuery")
-    public WebElement et_searchQuery;
-    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_search")
-    public WebElement iv_search;
+    public void patientSearchByValue() {
+        et_searchQuery.sendKeys("1111");
+    }
 
-    public void patientSearch() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_searchQuery.sendKeys("7011131498");
+    public void patientSearchByOption() {
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        patientSearchBy.click();
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        // Assuming you want to select the option with text "Bodakdev"
+        String desiredOptionText = "Mobile";
+
+        for (WebElement option : listofpatientSearchBy) {
+            if (option.getText().equals(desiredOptionText)) {
+                option.click();
+                break;
+            }
+        }
     }
 
     public void searchButton() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_searchQuery.sendKeys("7011131498");
+        iv_search.click();
+
     }
 }

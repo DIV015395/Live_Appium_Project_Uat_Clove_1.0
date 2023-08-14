@@ -56,7 +56,9 @@ public class PatientSearchTest {
         obj1.homePatientSearch();
         obj1.explore();
         obj1.selectClinic();
-        obj1.patientSearch();
+        obj1.patientSearchByValue();
+        obj1.patientSearchByOption();
+        obj1.searchButton();
         test.pass("Test is successful pass");
     }
 
