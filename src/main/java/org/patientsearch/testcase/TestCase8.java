@@ -1,6 +1,6 @@
 //Checking Cancel button option in three dot button
 
-package org.patientsearch.testcases;
+package org.patientsearch.testcase;
 
 public class TestCase8 {
 }

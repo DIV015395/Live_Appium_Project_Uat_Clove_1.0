@@ -1,4 +1,4 @@
-package org.patientsearch.testcases;
+package org.patientsearch.testcase;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;

@@ -1,4 +1,4 @@
-package org.patientsearchtest;
+package org.patientsearchtest.testcases;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -9,7 +9,7 @@ import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.patientsearch.PatientSearch;
+import org.patientsearch.testcase.TestCase1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
@@ -20,16 +20,17 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class PatientSearchTest {
+public class TestCase1Test {
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
+
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
-            test = extent.createTest("Testcase 1", "description of schedule first page test case 1");
+            test = extent.createTest("Testcase 1", "description of Patient Searchtest case 1");
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -39,6 +40,7 @@ public class PatientSearchTest {
         }
 
     }
+
     @Test(priority = 1)
     public void loginApp() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -52,13 +54,14 @@ public class PatientSearchTest {
     @Test(priority = 2)
     public void patientSearch() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        PatientSearch obj1 = new PatientSearch((AndroidDriver) driver, test);
+        TestCase1 obj1 = new TestCase1((AndroidDriver) driver, test);
         obj1.homePatientSearch();
         obj1.explore();
         obj1.patientSearchByValue();
         obj1.selectClinic();
         obj1.patientSearchByOption();
         obj1.searchButton();
+        obj1.patientDetails();
         test.pass("Test is successful pass");
     }
 
