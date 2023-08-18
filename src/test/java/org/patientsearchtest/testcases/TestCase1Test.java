@@ -54,14 +54,14 @@ public class TestCase1Test {
     @Test(priority = 2)
     public void patientSearch() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        TestCase1 obj1 = new TestCase1((AndroidDriver) driver, test);
-        obj1.homePatientSearch();
-        obj1.explore();
-        obj1.patientSearchByValue();
-        obj1.selectClinic();
-        obj1.patientSearchByOption();
-        obj1.searchButton();
-        obj1.patientDetails();
+        TestCase1 obj = new TestCase1((AndroidDriver) driver, test);
+        obj.homePatientSearch();
+        obj.explore();
+        obj.patientSearchByValue();
+        obj.selectClinic();
+        obj.patientSearchByOption();
+        obj.searchButton();
+        obj.patientDetails();
         test.pass("Test is successful pass");
     }
 

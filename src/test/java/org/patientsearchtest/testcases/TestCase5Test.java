@@ -55,13 +55,13 @@ public class TestCase5Test {
     @Test(priority = 2)
     public void patientSearch() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        TestCase5 obj1 = new TestCase5((AndroidDriver) driver, test);
-        obj1.homePatientSearch();
-        obj1.explore();
-        obj1.patientSearchByValue();
-        obj1.selectClinic();
-        obj1.patientSearchByOption();
-        obj1.searchButton();
+        TestCase5 obj = new TestCase5((AndroidDriver) driver, test);
+        obj.homePatientSearch();
+        obj.explore();
+        obj.patientSearchByValue();
+        obj.selectClinic();
+        obj.patientSearchByOption();
+        obj.searchButton();
         test.pass("Test is successful pass");
     }
 
