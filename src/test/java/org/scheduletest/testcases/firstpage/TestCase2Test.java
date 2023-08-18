@@ -54,10 +54,10 @@ public class TestCase2Test {
         test = extent.createTest("Test case 2", "Description of schedule first page test case 2");
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        TestCase2 obj1 = new TestCase2((AndroidDriver) driver);
-        obj1.homeSchedule();
-        obj1.selectClinicDropdown();
-        obj1.appointmentPlus();
+        TestCase2 obj = new TestCase2((AndroidDriver) driver);
+        obj.homeSchedule();
+        obj.selectClinicDropdown();
+        obj.appointmentPlus();
         test.pass("Test is pass successful");
 
     }

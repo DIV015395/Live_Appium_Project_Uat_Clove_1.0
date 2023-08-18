@@ -50,32 +50,32 @@ public class TestCase5Test {
 
     @Test(priority = 2)
     public void schedulePage() {
-        SchedulePage obj2 = new SchedulePage((AndroidDriver) driver);
-        obj2.homeSchedule();
-        obj2.selectClinicDropdown();
-        obj2.selectDoctorDropdown();
-        obj2.appointmentPlus();
+        SchedulePage obj = new SchedulePage((AndroidDriver) driver);
+        obj.homeSchedule();
+        obj.selectClinicDropdown();
+        obj.selectDoctorDropdown();
+        obj.appointmentPlus();
     }
 
     @Test(priority = 3)
     public void appointmentTestCase() {
         test = extent.createTest("Test case 5", "Schedule second page Test case 5");
-        TestCase5 obj1 = new TestCase5((AndroidDriver) driver);
-        obj1.mobileNumberNineDigit();
+        TestCase5 obj = new TestCase5((AndroidDriver) driver);
+        obj.mobileNumberNineDigit();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj1.scrolling();
+        obj.scrolling();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj1.submitButton();
+        obj.submitButton();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj1.scrollingUp();
+        obj.scrollingUp();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj1.patientName();
+        obj.patientName();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj1.scrolling();
+        obj.scrolling();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj1.submitButton();
+        obj.submitButton();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj1.toastMassageValidation();
+        obj.toastMassageValidation();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         test.pass("Test case passed Successfully");
     }

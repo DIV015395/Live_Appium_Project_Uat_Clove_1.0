@@ -24,7 +24,7 @@ public class TestCase7Test {
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
-    TestCase7 obj1;
+    TestCase7 obj;
 
     @BeforeClass
     public void driverLaunch() {
@@ -51,35 +51,35 @@ public class TestCase7Test {
 
     @Test(priority = 2)
     public void schedulePage() {
-        SchedulePageTemp obj2 = new SchedulePageTemp((AndroidDriver) driver);
-        obj2.homeSchedule();
-        obj2.selectClinicDropdown();
-        obj2.appointmentPlus();
+        SchedulePageTemp obj = new SchedulePageTemp((AndroidDriver) driver);
+        obj.homeSchedule();
+        obj.selectClinicDropdown();
+        obj.appointmentPlus();
     }
     @Test(priority = 3)
     public void appointmentTestCase() {
         test = extent.createTest("Test case 7", "Schedule second page Test case 7");
-        TestCase7 obj1 = new TestCase7((AndroidDriver) driver);
-        obj1.mobileNumberPatient();
-        obj1.namePatient();
-        obj1.dateSelection();
-        obj1.slotSelection();
-        obj1.durationSelection();
-        obj1.setDoctorName();
-        obj1.scrolling();
-        obj1.painElements();
-        obj1.chiefNote();
-        obj1.submitButton();
-        obj1.toastMassageValidation();
+        TestCase7 obj = new TestCase7((AndroidDriver) driver);
+        obj.mobileNumberPatient();
+        obj.namePatient();
+        obj.dateSelection();
+        obj.slotSelection();
+        obj.durationSelection();
+        obj.setDoctorName();
+        obj.scrolling();
+        obj.painElements();
+        obj.chiefNote();
+        obj.submitButton();
+        obj.toastMassageValidation();
     }
     @Test(priority = 4)
     public void validationDataMessage() {
-        obj1 = new TestCase7((AndroidDriver) driver);
-        obj1.validatePatientDetails();
-        obj1.validateClinicName();
-        obj1.validateAppointmentType();
-        obj1.validateDoctorName();
-        obj1.validatePatientId();
+        obj = new TestCase7((AndroidDriver) driver);
+        obj.validatePatientDetails();
+        obj.validateClinicName();
+        obj.validateAppointmentType();
+        obj.validateDoctorName();
+        obj.validatePatientId();
         test.pass("Test case passed Successful");
     }
     @AfterClass

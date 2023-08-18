@@ -54,22 +54,22 @@ public class TestCase2Test {
     @Test(priority = 2)
 
     public void schedulePage() {
-        SchedulePage obj2 = new SchedulePage((AndroidDriver) driver);
-        obj2.homeSchedule();
-        obj2.selectClinicDropdown();
-        obj2.selectDoctorDropdown();
-        obj2.appointmentPlus();
+        SchedulePage obj = new SchedulePage((AndroidDriver) driver);
+        obj.homeSchedule();
+        obj.selectClinicDropdown();
+        obj.selectDoctorDropdown();
+        obj.appointmentPlus();
     }
 
     @Test(priority = 3)
     public void appointmentTestCase() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         test = extent.createTest("Test case 2", "Schedule second page Test case 2");
-        TestCase2 obj1 = new TestCase2((AndroidDriver) driver);
-        obj1.mobileNumberPatient();
-        obj1.scrolling();
-        obj1.submitButton();
-        obj1.toastMassageValidation();
+        TestCase2 obj = new TestCase2((AndroidDriver) driver);
+        obj.mobileNumberPatient();
+        obj.scrolling();
+        obj.submitButton();
+        obj.toastMassageValidation();
         test.pass("Test case passed Successfully");
     }
 

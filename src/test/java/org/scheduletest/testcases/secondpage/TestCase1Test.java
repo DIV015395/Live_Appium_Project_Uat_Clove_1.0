@@ -52,20 +52,20 @@ public class TestCase1Test {
     @Test(priority = 2)
 
     public void schedulePage() {
-        SchedulePage obj2 = new SchedulePage((AndroidDriver) driver);
-        obj2.homeSchedule();
-        obj2.selectClinicDropdown();
-        obj2.selectDoctorDropdown();
-        obj2.appointmentPlus();
+        SchedulePage obj = new SchedulePage((AndroidDriver) driver);
+        obj.homeSchedule();
+        obj.selectClinicDropdown();
+        obj.selectDoctorDropdown();
+        obj.appointmentPlus();
     }
 
     @Test(priority = 3)
     public void appointmentTestCase() {
         test = extent.createTest("Test case 1", "Schedule second page Test case 1");
-        TestCase1 obj1 = new TestCase1((AndroidDriver) driver);
-        obj1.scrolling();
-        obj1.submitButton();
-        obj1.toastMassageValidation();
+        TestCase1 obj = new TestCase1((AndroidDriver) driver);
+        obj.scrolling();
+        obj.submitButton();
+        obj.toastMassageValidation();
         test.pass("Test case passed Successfully");
     }
 
