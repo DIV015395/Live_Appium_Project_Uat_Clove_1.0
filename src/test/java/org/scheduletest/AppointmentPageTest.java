@@ -1,5 +1,6 @@
 package org.scheduletest;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
@@ -17,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 public class AppointmentPageTest {
     public AppiumDriver driver;
+    public ExtentTest test;
 
     @BeforeClass
     public void driverLaunch() throws MalformedURLException {
@@ -28,7 +30,7 @@ public class AppointmentPageTest {
     @Test(priority = 1)
     public void loginpage() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppLogin obj = new AppLogin((AndroidDriver) driver);
+        AppLogin obj = new AppLogin((AndroidDriver) driver, test);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.logins();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

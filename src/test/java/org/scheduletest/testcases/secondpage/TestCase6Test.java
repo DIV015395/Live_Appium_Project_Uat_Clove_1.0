@@ -43,7 +43,7 @@ public class TestCase6Test {
     public void loginApp() {
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppLogin obj = new AppLogin((AndroidDriver) driver);
+        AppLogin obj = new AppLogin((AndroidDriver) driver, test);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.logins();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

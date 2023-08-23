@@ -3,6 +3,8 @@
 
 package org.applogin.testcase;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -12,17 +14,20 @@ import org.testng.Assert;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase5 extends AppLogin {
+    public ExtentTest test;
 
     @AndroidFindBy(xpath = "//android.widget.Toast")
     public AndroidElement massagess;
     String getmassage;
 
-    public TestCase5(AndroidDriver driver) {
-        super(driver);
+    public TestCase5(AndroidDriver driver, ExtentTest test) {
+        super(driver, test);
+        this.test = test;
     }
 
     public void toastMassage() {
         getmassage = massagess.getText();
+        test.log(Status.INFO, getmassage);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         System.out.println(getmassage);
@@ -30,5 +35,6 @@ public class TestCase5 extends AppLogin {
 
     public void toastMassageValidation() {
         Assert.assertEquals(getmassage, "Please wait, your contacts are being updated!");
+        test.log(Status.PASS, "Toast Message is Validated");
     }
 }

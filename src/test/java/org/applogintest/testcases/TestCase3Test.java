@@ -29,6 +29,7 @@ public class TestCase3Test {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
+        test = extent.createTest("Test Caase 3 ", "Description of test case 3");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -41,8 +42,7 @@ public class TestCase3Test {
 
     @Test
     public void main() {
-        test = extent.createTest("Test Caase 3 ", "Description of test case 3");
-        TestCase3 obj = new TestCase3((AndroidDriver) driver);
+        TestCase3 obj = new TestCase3((AndroidDriver) driver, test);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.testCase();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

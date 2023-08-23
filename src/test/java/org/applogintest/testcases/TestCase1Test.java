@@ -27,7 +27,8 @@ public class TestCase1Test {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        Logger logger = LoggerFactory.getLogger(getClass());
+        test = extent.createTest("Test Case 1", "Description of Test Case 1");
+//        Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
@@ -39,16 +40,14 @@ public class TestCase1Test {
 
     @Test
     public void main() {
-        test = extent.createTest("Test Case 1", "Description of Test Case 1");
-        TestCase1 obj = new TestCase1((AndroidDriver) driver);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        TestCase1 obj = new TestCase1((AndroidDriver) driver, test);
         obj.testCase();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.toastMassageValidation();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         test.pass("Test case passed successfully.");
     }
-
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

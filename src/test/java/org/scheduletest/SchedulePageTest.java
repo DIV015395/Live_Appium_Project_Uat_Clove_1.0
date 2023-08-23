@@ -1,5 +1,6 @@
 package org.scheduletest;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
@@ -16,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SchedulePageTest {
     public AppiumDriver driver;
-
+    public ExtentTest test;
     @BeforeClass
     public void driverLaunch() throws MalformedURLException {
         DesiredCapabilities caps = DesireCap.desire();
@@ -27,7 +28,7 @@ public class SchedulePageTest {
     @Test
     public void main() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppLogin obj = new AppLogin((AndroidDriver) driver);
+        AppLogin obj = new AppLogin((AndroidDriver) driver, test);
         obj.logins();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         SchedulePage obj1 = new SchedulePage((AndroidDriver) driver);
