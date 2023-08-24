@@ -51,16 +51,13 @@ public class TestCase2Test {
 
     @Test(priority = 2)
     public void main() {
-
-
-
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         TestCase2 obj = new TestCase2((AndroidDriver) driver, test);
         obj.homeSchedule();
         obj.selectClinicDropdown();
         obj.appointmentPlus();
+        test.log(Status.PASS, "Redirect to Appointment Page");
         test.pass("Test is pass successful");
-
     }
 
     @AfterClass

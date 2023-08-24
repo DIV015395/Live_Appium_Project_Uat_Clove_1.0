@@ -40,7 +40,7 @@ public class TestCase1 extends AppLogin {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         System.out.println(getmassage);
-        test.log(Status.INFO, getmassage);
+        test.log(Status.INFO, "Toast Message => " + getmassage);
     }
 
     public void toastMassageValidation() {
