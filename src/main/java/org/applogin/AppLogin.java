@@ -26,10 +26,35 @@ public class AppLogin extends BaseDriver {
     public AndroidElement tv_login_go;
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_button")
     public AndroidElement permission_allow_button;
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("login");
+    String userid = resourceBundle.getString("id");
+    String password = resourceBundle.getString("pass");
+
+    public void userName() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        et_login_username.sendKeys(userid);
+        test.log(Status.PASS, "Correct User Id Filled");
+    }
+
+    public void userPassword() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        et_login_password.sendKeys(password);
+        test.log(Status.PASS, "Correct Password Filled");
+    }
+
+    public void goClickButton() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        tv_login_go.click();
+        test.log(Status.PASS, "Clicked on Go Button");
+    }
+
+    public void permissonAllowed() {
+        permission_allow_button.click();
+        test.log(Status.PASS, "Permisson Allowed");
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
     public void logins() {
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("login");
-        String userid = resourceBundle.getString("id");
-        String password = resourceBundle.getString("pass");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_login_username.sendKeys(userid);
         test.log(Status.PASS, "Correct User Id Filled");

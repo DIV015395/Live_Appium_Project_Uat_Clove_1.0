@@ -23,20 +23,10 @@ public class TestCase2 extends AppLogin {
         this.test = test;
     }
 
-    public void testCase() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_login_password.sendKeys("qpalzm@#1M");
-        test.log(Status.PASS, "Password Filled");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        tv_login_go.click();
-        test.log(Status.PASS, "Clicked on Go button");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        permission_allow_button.click();
-        test.log(Status.PASS, "Permisson Allowed");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    public void toastMessage() {
         getmassage = massages.getText();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         System.out.println(getmassage);
         test.log(Status.INFO, "Toast Message => " + getmassage);
     }

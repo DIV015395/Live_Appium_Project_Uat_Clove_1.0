@@ -26,27 +26,28 @@ public class TestCase4 extends AppLogin {
         this.test = test;
     }
 
-    public void testCase() {
+    @Override
+    public void userName() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_login_username.sendKeys("manjeet");
         test.log(Status.PASS, "Entered Wrong user ID");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
+    @Override
+    public void userPassword() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         et_login_password.sendKeys("qpalzm2223");
         test.log(Status.PASS, "Entered wrong password");
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
 
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
-        tv_login_go.click();
-        test.log(Status.PASS, "Clicked on Go button");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        permission_allow_button.click();
-        test.log(Status.PASS, "Permission Allowed");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    public void toastMessage() {
         getmassage = massages.getText();
-        System.out.println(getmassage);
         test.log(Status.INFO, "Toast Message => " + getmassage);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        System.out.println(getmassage);
     }
 
     public void toastMassageValidation() {

@@ -44,7 +44,10 @@ public class TestCase2Test {
 
         TestCase2 obj = new TestCase2((AndroidDriver) driver, test);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.testCase();
+        obj.userPassword();
+        obj.goClickButton();
+        obj.permissonAllowed();
+        obj.toastMessage();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.toastMassageValidation();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

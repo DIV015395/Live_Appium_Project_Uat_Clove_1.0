@@ -43,7 +43,10 @@ public class TestCase5Test {
 
         TestCase5 obj = new TestCase5((AndroidDriver) driver, test);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.logins();
+        obj.userName();
+        obj.userPassword();
+        obj.goClickButton();
+        obj.permissonAllowed();
         obj.toastMassage();
         obj.toastMassageValidation();
         test.pass("test case passed successfully");

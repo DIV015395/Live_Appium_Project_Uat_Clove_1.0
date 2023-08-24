@@ -24,18 +24,7 @@ public class TestCase1 extends AppLogin {
         this.test = test;
     }
 
-    public void testCase() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_login_username.sendKeys("manjeet.sharma");
-        test.log(Status.PASS, "User name Filled");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        tv_login_go.click();
-        test.log(Status.PASS, "Clicked on Go button");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        permission_allow_button.click();
-        test.log(Status.PASS, "Clicked on permission");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    public void toastMessage() {
         getmassage = massagess.getText();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
