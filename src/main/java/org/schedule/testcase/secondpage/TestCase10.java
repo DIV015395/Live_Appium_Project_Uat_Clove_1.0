@@ -9,6 +9,7 @@
 
 package org.schedule.testcase.secondpage;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -20,20 +21,21 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase10 extends SchedulePage {
+    public ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_previousDate")
     public AndroidElement previousDate;
     int l = CurrentFormattedDate.currentDate();
     int date = 06;
 
-    public TestCase10(AndroidDriver driver) {
-        super(driver);
+    public TestCase10(AndroidDriver driver, ExtentTest test) {
+        super(driver, test);
+        this.test = test;
     }
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_scheduleListing_actionButtons")
     public AndroidElement actionButtons;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
     public List<WebElement> listofAction;
-
 
 
     @Override

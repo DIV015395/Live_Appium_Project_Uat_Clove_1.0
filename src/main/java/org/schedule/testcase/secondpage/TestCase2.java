@@ -1,5 +1,5 @@
 //fill contact no in appointment page then scroll down and click on save button
-//it will generate toast massage like : Please enter patient name number!
+//it will generate toast massage like : Please enter patient name !
 
 package org.schedule.testcase.secondpage;
 

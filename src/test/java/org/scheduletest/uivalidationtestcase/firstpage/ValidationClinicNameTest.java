@@ -43,7 +43,7 @@ public class ValidationClinicNameTest {
     @Test(priority = 2)
 
     public void schedulePage() {
-        ValidationClinicName obj = new ValidationClinicName((AndroidDriver) driver);
+        ValidationClinicName obj = new ValidationClinicName((AndroidDriver) driver, test);
         obj.homeSchedule();
         Set<String> uniqueStrings = obj.scrollAndFindClinicsByAlphabet();
         for (String clinicName : uniqueStrings) {

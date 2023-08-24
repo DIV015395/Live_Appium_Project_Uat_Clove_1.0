@@ -39,7 +39,7 @@ public class AppointmentPageTest {
     @Test(priority = 2)
     public void schedulePage() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        SchedulePage obj1 = new SchedulePage((AndroidDriver) driver);
+        SchedulePage obj1 = new SchedulePage((AndroidDriver) driver, test);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj1.homeSchedule();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

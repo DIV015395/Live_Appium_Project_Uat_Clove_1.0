@@ -1,5 +1,6 @@
 package org.schedule.uivalidation.firstpage;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -12,13 +13,16 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class ValidationClinicName extends SchedulePage {
+    public ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
     private WebElement layoutClinicSelect;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
     private List<AndroidElement> tvItemTitleList;
 
-    public ValidationClinicName(AndroidDriver driver) {
-        super(driver);
+    public ValidationClinicName(AndroidDriver driver, ExtentTest test) {
+
+        super(driver, test);
+        this.test = test;
     }
 
     public Set<String> scrollAndFindClinicsByAlphabet() {

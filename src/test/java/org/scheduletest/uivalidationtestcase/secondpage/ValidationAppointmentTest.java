@@ -30,7 +30,7 @@ public class ValidationAppointmentTest {
     @Test(priority = 1)
     public void loginApp() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppLogin obj = new AppLogin((AndroidDriver) driver, test);
+        AppLogin obj = new AppLogin(driver, test);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.logins();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -39,7 +39,7 @@ public class ValidationAppointmentTest {
     @Test(priority = 2)
 
     public void schedulePage() {
-        SchedulePage obj2 = new SchedulePage(driver);
+        SchedulePage obj2 = new SchedulePage(driver, test);
         obj2.homeSchedule();
         obj2.selectClinicDropdown();
         obj2.selectDoctorDropdown();

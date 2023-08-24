@@ -28,7 +28,7 @@ public class TestCase1Test {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-
+        test = extent.createTest("Testcase 1", "description of schedule first page test case 1");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -51,12 +51,11 @@ public class TestCase1Test {
 
     @Test(priority = 2)
     public void main() {
-        test = extent.createTest("Testcase 1", "description of schedule first page test case 1");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        TestCase1 obj = new TestCase1((AndroidDriver) driver);
+        TestCase1 obj = new TestCase1((AndroidDriver) driver, test);
         obj.homeSchedule();
         obj.appointmentPlus();
-        obj.toastMassage();
+        obj.toastMessage();
         obj.toastMassageValidation();
         test.pass("Test is successful pass");
     }

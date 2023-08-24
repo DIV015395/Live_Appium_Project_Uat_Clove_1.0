@@ -1,5 +1,6 @@
 package org.schedule;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 
@@ -7,9 +8,11 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class SchedulePageTemp extends SchedulePage {
+    public ExtentTest test;
 
-    public SchedulePageTemp(AndroidDriver driver) {
-        super(driver);
+    public SchedulePageTemp(AndroidDriver driver, ExtentTest test) {
+        super(driver, test);
+        this.test = test;
     }
 
 

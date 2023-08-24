@@ -20,7 +20,6 @@ public class tes {
         System.out.println(times);
         System.out.println(doctorName);
         System.out.println(clinicName);
-
         String names = FirstNameExtractor.extractFirstName("Manjeet");
         System.out.println(names);
         int l = CurrentFormattedDate.currentDate();

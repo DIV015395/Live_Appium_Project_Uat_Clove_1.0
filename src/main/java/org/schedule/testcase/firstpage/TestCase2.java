@@ -5,6 +5,8 @@
 
 package org.schedule.testcase.firstpage;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.schedule.SchedulePage;
@@ -12,8 +14,9 @@ import org.schedule.SchedulePage;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase2 extends SchedulePage {
-    public TestCase2(AndroidDriver driver) {
-        super(driver);
+    public TestCase2(AndroidDriver driver, ExtentTest test) {
+        super(driver, test);
+        this.test = test;
     }
 
     @Override
@@ -31,5 +34,6 @@ public class TestCase2 extends SchedulePage {
                 break;
             }
         }
+        test.log(Status.PASS, "Selected clinic from dropdown");
     }
 }

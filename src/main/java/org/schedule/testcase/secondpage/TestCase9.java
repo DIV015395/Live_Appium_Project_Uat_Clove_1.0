@@ -3,6 +3,7 @@
 package org.schedule.testcase.secondpage;
 
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -14,8 +15,11 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase9 extends SchedulePage {
-    public TestCase9(AndroidDriver driver) {
-        super(driver);
+    public ExtentTest test;
+
+    public TestCase9(AndroidDriver driver, ExtentTest test) {
+        super(driver, test);
+        this.test = test;
     }
 //
 //    public static String executionTime(String ss) {

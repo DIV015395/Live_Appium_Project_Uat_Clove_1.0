@@ -1,5 +1,7 @@
 package org.schedule;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.desiredcapabilities.BaseDriver;
@@ -10,6 +12,7 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class SchedulePage extends BaseDriver {
+    public ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_schedule")
     public WebElement tv_home_schedule;
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
@@ -24,8 +27,9 @@ public class SchedulePage extends BaseDriver {
     public WebElement scheduleCalender;
 
 
-    public SchedulePage(AndroidDriver driver) {
+    public SchedulePage(AndroidDriver driver, ExtentTest test) {
         super(driver);
+        this.test = test;
     }
 
 
@@ -34,9 +38,9 @@ public class SchedulePage extends BaseDriver {
     String clinicName = resourceBundle.getString("clinicName");
 
     public void homeSchedule() {
-
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         tv_home_schedule.click();
+        test.log(Status.PASS, "Home schedule button clicked ");
     }
 
     public void scheduleCalenderDate() {
@@ -57,6 +61,7 @@ public class SchedulePage extends BaseDriver {
                 break;
             }
         }
+        test.log(Status.PASS, "Clinic is selected from dropdown");
     }
 
     public void selectDoctorDropdown() {
@@ -70,12 +75,14 @@ public class SchedulePage extends BaseDriver {
                 break;
             }
         }
+        test.log(Status.PASS, "Doctor is selected from dropdown");
     }
 
     public void appointmentPlus() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         fab_newAppointment.click();
+        test.log(Status.PASS, "Clicked on Appointment plus button");
     }
 
 

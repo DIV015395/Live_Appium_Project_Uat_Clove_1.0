@@ -55,7 +55,7 @@ public class TestCase4Test {
 
     @Test(priority = 2)
     public void schedulePage() {
-        SchedulePage obj = new SchedulePage((AndroidDriver) driver);
+        SchedulePage obj = new SchedulePage((AndroidDriver) driver, test);
         obj.homeSchedule();
         obj.selectClinicDropdown();
         obj.selectDoctorDropdown();

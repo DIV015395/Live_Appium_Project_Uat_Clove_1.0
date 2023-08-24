@@ -57,7 +57,7 @@ public class TestCase9Test {
         test = extent.createTest("Test case 9", "Schedule second page test case 9");
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        TestCase9 obj = new TestCase9((AndroidDriver) driver);
+        TestCase9 obj = new TestCase9((AndroidDriver) driver, test);
         obj.homeSchedule();
         obj.selectClinicDropdown();
         obj.selectDoctorDropdown();

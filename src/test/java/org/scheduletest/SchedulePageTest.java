@@ -31,7 +31,7 @@ public class SchedulePageTest {
         AppLogin obj = new AppLogin((AndroidDriver) driver, test);
         obj.logins();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        SchedulePage obj1 = new SchedulePage((AndroidDriver) driver);
+        SchedulePage obj1 = new SchedulePage((AndroidDriver) driver, test);
         obj1.homeSchedule();
         obj1.selectClinicDropdown();
         obj1.selectDoctorDropdown();
