@@ -32,7 +32,10 @@ public class ValidationAppointmentTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         AppLogin obj = new AppLogin(driver, test);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.logins();
+        obj.userName();
+        obj.userPassword();
+        obj.goClickButton();
+        obj.permissonAllowed();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 

@@ -53,20 +53,4 @@ public class AppLogin extends BaseDriver {
         test.log(Status.PASS, "Permisson Allowed");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
-
-    public void logins() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_login_username.sendKeys(userid);
-        test.log(Status.PASS, "Correct User Id Filled");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        et_login_password.sendKeys(password);
-        test.log(Status.PASS, "Correct Password Filled");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        tv_login_go.click();
-        test.log(Status.PASS, "Clicked on Go Button");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        permission_allow_button.click();
-        test.log(Status.PASS, "Permisson Allowed");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-    }
 }

@@ -5,7 +5,6 @@ import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
 import org.expenses.AddExpenses;
-import org.expenses.Expenses;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -32,9 +31,12 @@ public class AddExpensesTest {
     @Test(priority = 1)
     public void loginApp() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppLogin obj = new AppLogin((AndroidDriver) driver, test);
+        AppLogin obj = new AppLogin(driver, test);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.logins();
+        obj.userName();
+        obj.userPassword();
+        obj.goClickButton();
+        obj.permissonAllowed();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 

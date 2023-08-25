@@ -3,6 +3,9 @@
   <component name="AdditionalModuleElements">
     <content url="file://$MODULE_DIR$" dumb="true">
       <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/bddstepdefinition" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/bddfeaturesresource" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/bddtestrunner" isTestSource="true" />
     </content>
   </component>
 </module>

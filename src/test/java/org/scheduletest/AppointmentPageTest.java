@@ -32,7 +32,10 @@ public class AppointmentPageTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         AppLogin obj = new AppLogin((AndroidDriver) driver, test);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.logins();
+        obj.userName();
+        obj.userPassword();
+        obj.goClickButton();
+        obj.permissonAllowed();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
