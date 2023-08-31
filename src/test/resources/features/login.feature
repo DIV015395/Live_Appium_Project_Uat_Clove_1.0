@@ -7,15 +7,15 @@ Feature: Testing the login functionality
     When user will enter the password
     When user will click on Go button
     When user will click on notification allowed
-    Then Toast message "Please enter valid username & password!" will display
+    Then Toast message "Please wait, your contacts are being updated!" will display
 
   @regression
   Scenario: User logs in with empty password
     Given Launch the driver
     When user will enter the user id
     When user will click on Go button
-    Then user will click on notification allowed
-    Then Toast message "Please enter valid username & password!" will display
+    When user will click on notification allowed
+    Then Toast message "Please enter password" will display
 
   @regression
   Scenario: User logs in with empty user id
@@ -23,7 +23,7 @@ Feature: Testing the login functionality
     When user will enter the password
     When user will click on Go button
     When user will click on notification allowed
-    Then Toast message "Please enter valid username & password!" will display
+    Then Toast message "Please enter username" will display
 
   @regression
   Scenario: User logs in with empty password

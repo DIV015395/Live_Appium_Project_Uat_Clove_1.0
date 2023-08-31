@@ -13,10 +13,15 @@ import java.util.concurrent.TimeUnit;
 public class AppLogin extends BaseDriver {
     public ExtentTest test;
 
+
     public AppLogin(AndroidDriver driver, ExtentTest test) {
         super(driver);
         this.test = test;
     }
+
+    @AndroidFindBy(xpath = "//android.widget.Toast")
+    public AndroidElement toastmessages;
+    String getmassage;
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_login_username")
     public AndroidElement et_login_username;
@@ -52,5 +57,10 @@ public class AppLogin extends BaseDriver {
         permission_allow_button.click();
         test.log(Status.PASS, "Permisson Allowed");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
+    public String getToastMessage() {
+        getmassage = toastmessages.getText();
+        return getmassage;
     }
 }

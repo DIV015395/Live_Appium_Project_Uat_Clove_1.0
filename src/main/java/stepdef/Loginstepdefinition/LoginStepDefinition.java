@@ -11,6 +11,7 @@ import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -56,12 +57,11 @@ public class LoginStepDefinition {
     public void user_will_click_on_notification_allowed() {
         // Write code here that turns the phrase above into concrete actions
         obj.permissonAllowed();
-        driver.quit();
     }
-
     @Then("Toast message {string} will display")
     public void toast_message_will_display(String string) {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        System.out.println(obj.getToastMessage());
+        Assert.assertEquals(obj.getToastMessage(), string);
     }
 }
