@@ -1,17 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="CucumberTestSuite">
-    <test name="CucumberTests">
-        <classes>
-            <class name="testrunner.TestRunner"/>
-        </classes>
-    </test>
+<suite name="Master Test Suite">
+    <suite-files>
+        <suite-file path="testsuite/logintestsuite.xml"/>
+        <suite-file path="testsuite/schedulefirstpage.xml"/>
+    </suite-files>
 </suite>
-
-
-        <!--<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">-->
-        <!--<suite name="Master Test Suite">-->
-        <!--    <suite-files>-->
-        <!--        <suite-file path="testsuite/logintestsuite.xml"/>-->
-        <!--        <suite-file path="testsuite/schedulefirstpage.xml"/>-->
-        <!--    </suite-files>-->
-        <!--</suite>-->

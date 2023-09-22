@@ -29,7 +29,7 @@ public class TestCase3Test {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test Caase 3 ", "Description of test case 3");
+        test = extent.createTest("Test Case 3 ", "Description of test case 3");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();

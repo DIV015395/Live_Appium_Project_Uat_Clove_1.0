@@ -26,7 +26,7 @@ Feature: Testing the login functionality
     Then Toast message "Please enter username" will display
 
   @regression
-  Scenario: User logs in with empty password
+  Scenario: User logs in with empty password and username
     Given Launch the driver
     When user will click on Go button
     When user will click on notification allowed

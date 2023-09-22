@@ -51,6 +51,8 @@ public class TestCase4Test {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.goClickButton();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        obj.permissonAllowed();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.toastMessage();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.toastMassageValidation();

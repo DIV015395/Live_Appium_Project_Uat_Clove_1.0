@@ -16,7 +16,7 @@ public class TestCase5 extends PatientSearch {
 
     public void patientSearchByValue() {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        searchQuery.sendKeys("0001-566");
+        searchQuery.sendKeys("0001-555");
         test.log(Status.PASS, "Patient Id - Input Field fill successfully ");
     }
 
