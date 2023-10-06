@@ -8,12 +8,16 @@ package org.schedule.testcase.firstpage;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.schedule.SchedulePage;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestCase2 extends SchedulePage {
+    @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
+    private WebElement layout_clinicSelect;
+
     public TestCase2(AndroidDriver driver, ExtentTest test) {
         super(driver, test);
         this.test = test;

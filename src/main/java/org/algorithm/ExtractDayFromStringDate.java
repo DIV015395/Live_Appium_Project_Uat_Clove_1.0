@@ -6,11 +6,9 @@ public class ExtractDayFromStringDate {
         int day = extractDayFromDate(dateString);
         System.out.println("Day: " + day);
     }
-
     public static int extractDayFromDate(String dateString) {
         // Split the date string using "/" as the delimiter
         String[] dateParts = dateString.split("/");
-
         // Extract the day part as an integer
         int day = Integer.parseInt(dateParts[0]);
 

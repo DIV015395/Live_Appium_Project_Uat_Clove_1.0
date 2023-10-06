@@ -22,6 +22,8 @@ import java.util.concurrent.TimeUnit;
 
 public class TestCase10 extends SchedulePage {
     public ExtentTest test;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
+    private WebElement layout_clinicSelect;
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_previousDate")
     public AndroidElement previousDate;
     int l = CurrentFormattedDate.currentDate();

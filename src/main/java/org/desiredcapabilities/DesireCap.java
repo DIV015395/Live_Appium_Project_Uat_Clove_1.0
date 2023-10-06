@@ -1,8 +1,6 @@
 package org.desiredcapabilities;
-
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 public class DesireCap {
     public static DesiredCapabilities desire() {
         DesiredCapabilities caps = new DesiredCapabilities();

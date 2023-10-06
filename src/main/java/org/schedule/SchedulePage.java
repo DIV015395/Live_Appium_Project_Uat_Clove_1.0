@@ -12,11 +12,11 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class SchedulePage extends BaseDriver {
-    public ExtentTest test;
+   public ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_schedule")
-    public WebElement tv_home_schedule;
+    private WebElement tv_home_schedule;
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
-    public WebElement layout_clinicSelect;
+    private WebElement layout_clinicSelect;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
     public List<WebElement> tv_itemTitle;
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_doctorSelect")
@@ -32,7 +32,6 @@ public class SchedulePage extends BaseDriver {
         this.test = test;
     }
 
-
     ResourceBundle resourceBundle = ResourceBundle.getBundle("schedule");
     String doctorName = resourceBundle.getString("doctorName");
     String clinicName = resourceBundle.getString("clinicName");
@@ -42,11 +41,9 @@ public class SchedulePage extends BaseDriver {
         tv_home_schedule.click();
         test.log(Status.PASS, "Home schedule button clicked ");
     }
-
     public void scheduleCalenderDate() {
         System.out.println(scheduleCalender.getText());
     }
-
     public void selectClinicDropdown() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         layout_clinicSelect.click();

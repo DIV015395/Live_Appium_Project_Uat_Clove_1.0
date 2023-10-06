@@ -12,6 +12,8 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class AppointmentPage extends BaseDriver {
+
+
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"04 August 2023\"]")
     public WebElement Date;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_contact")

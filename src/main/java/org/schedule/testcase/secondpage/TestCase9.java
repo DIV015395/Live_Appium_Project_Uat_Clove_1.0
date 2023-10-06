@@ -16,6 +16,8 @@ import java.util.concurrent.TimeUnit;
 
 public class TestCase9 extends SchedulePage {
     public ExtentTest test;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
+    private WebElement layout_clinicSelect;
 
     public TestCase9(AndroidDriver driver, ExtentTest test) {
         super(driver, test);

@@ -12,13 +12,10 @@ import java.util.concurrent.TimeUnit;
 
 public class AppLogin extends BaseDriver {
     private final ExtentTest test;
-
-
     public AppLogin(AndroidDriver driver, ExtentTest test) {
         super(driver);
         this.test = test;
     }
-
     @AndroidFindBy(xpath = "//android.widget.Toast")
     private AndroidElement toastmessages;
     private String getmassage;
