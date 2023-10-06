@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class AppLogin extends BaseDriver {
-    public ExtentTest test;
+    private final ExtentTest test;
 
 
     public AppLogin(AndroidDriver driver, ExtentTest test) {
@@ -20,20 +20,20 @@ public class AppLogin extends BaseDriver {
     }
 
     @AndroidFindBy(xpath = "//android.widget.Toast")
-    public AndroidElement toastmessages;
-    String getmassage;
+    private AndroidElement toastmessages;
+    private String getmassage;
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_login_username")
-    public AndroidElement et_login_username;
+    private AndroidElement et_login_username;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_login_password")
-    public AndroidElement et_login_password;
+    private AndroidElement et_login_password;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_login_go")
-    public AndroidElement tv_login_go;
+    private AndroidElement tv_login_go;
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_button")
-    public AndroidElement permission_allow_button;
+    private AndroidElement permission_allow_button;
     ResourceBundle resourceBundle = ResourceBundle.getBundle("login");
-    String userid = resourceBundle.getString("id");
-    String password = resourceBundle.getString("pass");
+    private final String userid = resourceBundle.getString("id");
+    private final String password = resourceBundle.getString("pass");
 
     public void userName() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

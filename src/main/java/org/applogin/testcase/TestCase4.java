@@ -16,10 +16,14 @@ import org.testng.Assert;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase4 extends AppLogin {
-    public ExtentTest test;
+    private final ExtentTest test;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_login_username")
+    private AndroidElement et_login_username;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_login_password")
+    private AndroidElement et_login_password;
     @AndroidFindBy(xpath = "//android.widget.Toast")
-    public AndroidElement massages;
-    String getmassage;
+    private AndroidElement massages;
+    private String getmassage;
 
     public TestCase4(AndroidDriver driver, ExtentTest test) {
         super(driver, test);

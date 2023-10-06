@@ -6,11 +6,11 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 import java.util.concurrent.TimeUnit;
 
-public class AddExpenses extends Expenses {
+public class ExpensesAdd extends Expenses {
     @AndroidFindBy(id = "com.clove.clover.uat:id/add_expense")
     public AndroidElement addexpense;
 
-    public AddExpenses(AndroidDriver driver) {
+    public ExpensesAdd(AndroidDriver driver) {
         super(driver);
     }
 

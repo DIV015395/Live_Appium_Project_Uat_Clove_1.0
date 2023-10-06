@@ -4,7 +4,7 @@ import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.AddExpenses;
+import org.expenses.ExpensesAdd;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class AddExpensesTest {
+public class ExpensesAddTest {
 
 
     public AndroidDriver driver;
@@ -42,7 +42,7 @@ public class AddExpensesTest {
 
     @Test(priority = 2)
     public void main() throws InterruptedException {
-        AddExpenses obj = new AddExpenses(driver);
+        ExpensesAdd obj = new ExpensesAdd(driver);
         obj.expensesClick();
         obj.nextButton();
         obj.setClinic();

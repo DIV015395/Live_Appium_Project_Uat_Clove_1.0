@@ -6,12 +6,16 @@ package org.patientsearch.testcase;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.patientsearch.PatientSearch;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestCase4 extends PatientSearch {
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_patientSearchBy")
+    private WebElement patientSearchBy;
+
     public TestCase4(AndroidDriver driver, ExtentTest test) {
         super(driver, test);
     }

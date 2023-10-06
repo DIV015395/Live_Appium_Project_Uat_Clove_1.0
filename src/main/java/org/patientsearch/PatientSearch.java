@@ -13,17 +13,17 @@ import java.util.concurrent.TimeUnit;
 public class PatientSearch extends BaseDriver {
     public ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_selectedItem")
-    public WebElement ListClinic;
+    private WebElement ListClinic;
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_home_patient_search")
-    public WebElement home_patient_search;
+    private WebElement home_patient_search;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
-    public List<WebElement> clinicname;
+    private List<WebElement> clinicname;
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_next")
-    public WebElement tv_next;
+    private WebElement tv_next;
     @AndroidFindBy(id = "com.clove.clover.uat:id/btn_explore_schedule")
-    public WebElement btn_explore_schedule;
+    private WebElement btn_explore_schedule;
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_patientSearchBy")
     public WebElement patientSearchBy;
