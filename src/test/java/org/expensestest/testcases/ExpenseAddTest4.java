@@ -1,4 +1,4 @@
-package org.expensestest;
+package org.expensestest.testcases;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -7,7 +7,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.ExpensesAdd;
+import org.expenses.testcases.ExpenseAddTestCase2;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
@@ -19,7 +19,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class ExpensesTest {
+public class ExpenseAddTest4 {
+
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
@@ -27,7 +28,7 @@ public class ExpensesTest {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 1", "Expense Test Cases");
+        test = extent.createTest("Test case 3", "Expense Add Test Cases 3");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -52,20 +53,23 @@ public class ExpensesTest {
     }
 
     @Test(priority = 2)
-    public void main() {
-
-        ExpensesAdd obj = new ExpensesAdd((AndroidDriver) driver);
+    public void main() throws InterruptedException {
+        ExpenseAddTestCase2 obj = new ExpenseAddTestCase2((AndroidDriver) driver);
         obj.expensesClick();
         obj.nextButton();
-        obj.setClinic();
         obj.setAddexpense();
-
+        obj.setName();
+        obj.setQuantity();
+        obj.setAmount();
+        obj.setSaveText();
+        obj.toastMessage();
+        obj.toastMassageValidation();
     }
 
 //    @AfterClass
 //    public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
+////        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+////        driver.quit();
 //    }
 
 }

@@ -1,9 +1,13 @@
 package org.expenses;
 
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class ExpenseAddInfo {
+public class ExpenseAddInfo extends Expenses {
+    public ExpenseAddInfo(AndroidDriver driver) {
+        super(driver);
+    }
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_screen_title")
     public AndroidElement screenTitle;
