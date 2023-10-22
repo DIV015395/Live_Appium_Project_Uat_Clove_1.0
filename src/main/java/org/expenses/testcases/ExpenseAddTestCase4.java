@@ -27,6 +27,6 @@ public class ExpenseAddTestCase4 extends ExpensesAdd {
     }
 
     public void toastMassageValidation() {
-        Assert.assertEquals(getmassage, "Please enter Item!");
+        Assert.assertEquals(getmassage, "Please upload expense receipt before saving!");
     }
 }

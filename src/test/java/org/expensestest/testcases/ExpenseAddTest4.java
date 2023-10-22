@@ -7,7 +7,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.testcases.ExpenseAddTestCase2;
+import org.expenses.testcases.ExpenseAddTestCase4;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
@@ -54,7 +54,7 @@ public class ExpenseAddTest4 {
 
     @Test(priority = 2)
     public void main() throws InterruptedException {
-        ExpenseAddTestCase2 obj = new ExpenseAddTestCase2((AndroidDriver) driver);
+        ExpenseAddTestCase4 obj = new ExpenseAddTestCase4((AndroidDriver) driver);
         obj.expensesClick();
         obj.nextButton();
         obj.setAddexpense();

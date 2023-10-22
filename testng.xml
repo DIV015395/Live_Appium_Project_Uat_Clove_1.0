@@ -1,7 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Master Test Suite">
-    <suite-files>
-        <suite-file path="testsuite/logintestsuite.xml"/>
-        <suite-file path="testsuite/schedulefirstpage.xml"/>
-    </suite-files>
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseAddTest1.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseAddTest1">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="main"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseAddTest2.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseAddTest2">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="main"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseAddTest3.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseAddTest3">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="main"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseAddTest4.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseAddTest4">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="main"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
