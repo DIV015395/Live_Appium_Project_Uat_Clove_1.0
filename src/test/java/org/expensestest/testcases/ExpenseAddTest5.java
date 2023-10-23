@@ -7,7 +7,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.testcases.ExpenseAddCalender;
+import org.expenses.testcases.ExpenseAddTestCase4;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
@@ -20,7 +20,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class ExpenseAddCalenderTest {
+public class ExpenseAddTest5 {
+
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
@@ -28,7 +29,7 @@ public class ExpenseAddCalenderTest {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 1", "Expense Add Test Cases 1");
+        test = extent.createTest("Test case 3", "Expense Add Test Cases 3");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -54,14 +55,17 @@ public class ExpenseAddCalenderTest {
 
     @Test(priority = 2)
     public void main() throws InterruptedException {
-        ExpenseAddCalender obj = new ExpenseAddCalender((AndroidDriver) driver);
+        ExpenseAddTestCase4 obj = new ExpenseAddTestCase4((AndroidDriver) driver);
         obj.expensesClick();
         obj.nextButton();
         obj.setAddexpense();
-        obj.setCalenderButton();
-        obj.setCalenderOk();
-        obj.setCalenderButton();
-        obj.setCalenderCancel();
+        obj.setAttachFiles();
+        obj.setPermissionOne();
+        obj.setAllowFirstTime();
+        obj.setAllowSecondtime();
+        obj.setCamera();
+        obj.setShutterButton();
+        obj.setDoneCapture();
     }
 
     @AfterClass
