@@ -56,14 +56,23 @@ public class ExpenseAddTest4 {
     public void main() throws InterruptedException {
         ExpenseAddTestCase4 obj = new ExpenseAddTestCase4((AndroidDriver) driver);
         obj.expensesClick();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAddexpense();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setName();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setQuantity();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAmount();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setActionSave();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.toastMessage();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.toastMassageValidation();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
 //    @AfterClass

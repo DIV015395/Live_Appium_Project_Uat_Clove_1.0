@@ -57,15 +57,25 @@ public class ExpenseAddTest5 {
     public void main() throws InterruptedException {
         ExpenseAddTestCase4 obj = new ExpenseAddTestCase4((AndroidDriver) driver);
         obj.expensesClick();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAddexpense();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAttachFiles();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setPermissionOne();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAllowFirstTime();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAllowSecondtime();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setCamera();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setShutterButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setDoneCapture();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     @AfterClass

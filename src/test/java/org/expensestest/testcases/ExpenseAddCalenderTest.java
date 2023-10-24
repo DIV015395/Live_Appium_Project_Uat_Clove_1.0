@@ -56,12 +56,19 @@ public class ExpenseAddCalenderTest {
     public void main() throws InterruptedException {
         ExpenseAddCalender obj = new ExpenseAddCalender((AndroidDriver) driver);
         obj.expensesClick();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAddexpense();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setCalenderButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setCalenderOk();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setCalenderButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setCalenderCancel();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     @AfterClass

@@ -7,7 +7,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.testcases.ExpenseAddTestCase3;
+import org.expenses.ExpenseAddInfo;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
@@ -20,7 +20,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class ExpenseAddTest3 {
+public class ExpenseAddInfoTest {
+
 
     public AppiumDriver driver;
     public ExtentReports extent;
@@ -55,23 +56,27 @@ public class ExpenseAddTest3 {
 
     @Test(priority = 2)
     public void main() throws InterruptedException {
-        ExpenseAddTestCase3 obj = new ExpenseAddTestCase3((AndroidDriver) driver);
+        ExpenseAddInfo obj = new ExpenseAddInfo((AndroidDriver) driver);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAddexpense();
+        obj.setAddInfo();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setName();
+        obj.setBackArrow();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setQuantity();
+        obj.setScreenTitle();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setActionSave();
+        obj.setAddInfo();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.toastMessage();
+        obj.setScreenTitleInfo();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.toastMassageValidation();
+        obj.setExpenseLimitAndAmount();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        obj.setMtdExpenseAndValue();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+
     }
 
     @AfterClass
@@ -79,5 +84,4 @@ public class ExpenseAddTest3 {
 //        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 //        driver.quit();
     }
-
 }

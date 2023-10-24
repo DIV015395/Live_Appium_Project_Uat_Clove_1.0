@@ -56,20 +56,35 @@ public class ExpenseAddRemarksTest {
     public void main() throws InterruptedException {
         ExpenseAddRemarks obj = new ExpenseAddRemarks((AndroidDriver) driver);
         obj.expensesClick();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAddexpense();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setRemarksButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setRemarksTextSend();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setRemarkDone();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.getNotes();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setRemarksButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setRemarksBackArrow();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.getNotes();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setRemarksButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setRemarksDelete();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.getNotes();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setRemarksButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setRemarksBackArrow();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
     }
 

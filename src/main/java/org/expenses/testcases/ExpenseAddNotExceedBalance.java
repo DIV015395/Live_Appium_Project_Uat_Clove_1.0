@@ -45,12 +45,10 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
     }
 
     public void toastMassageValidation() {
-
         if (getmassage.equals(actualOutput)) {
             Assert.assertEquals(getmassage, actualOutput);
         } else {
             Assert.assertEquals(getmassage, actualSecondOutput);
         }
-
     }
 }

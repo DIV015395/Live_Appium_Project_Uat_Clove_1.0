@@ -58,22 +58,39 @@ public class ExpenseAddNotExceedBalanceTest {
     public void main() throws InterruptedException {
         ExpenseAddNotExceedBalance obj = new ExpenseAddNotExceedBalance((AndroidDriver) driver);
         obj.expensesClick();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setClinic();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAddexpense();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setName();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setQuantity();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAmount();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAttachFiles();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setPermissionOne();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAllowFirstTime();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAllowSecondtime();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setCamera();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setShutterButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setDoneCapture();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setActionSave();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.toastMessage();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.toastMassageValidation();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     @AfterClass
