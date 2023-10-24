@@ -55,7 +55,7 @@ public class ExpenseAddInfoTest {
     }
 
     @Test(priority = 2)
-    public void main() {
+    public void expenseAddInfo() {
         ExpenseAddInfo obj = new ExpenseAddInfo((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

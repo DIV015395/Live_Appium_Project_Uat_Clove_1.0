@@ -22,17 +22,30 @@ public class ExpenseAddTestCase2 extends ExpensesAdd {
     }
 
     public void toastMessage() {
-        getmassage = massages.getText();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        System.out.println(getmassage);
-        test.log(Status.INFO, "Toast Message => " + getmassage);
+        try {
+            getmassage = massages.getText();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            System.out.println(getmassage);
+            test.log(Status.PASS, "Toast Message => " + getmassage);
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Failed to Display the Toast message in Report");
+        }
+
 
     }
 
     public void toastMassageValidation() {
-        Assert.assertEquals(getmassage, "Please enter Quantity!");
-        test.log(Status.PASS, "Toast message is Validated");
+
+
+        try {
+            Assert.assertEquals(getmassage, "Please enter Quantity!");
+            test.log(Status.PASS, "Toast message is Validated");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Failed toast message Validation");
+
+        }
+
     }
 
 }

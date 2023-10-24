@@ -55,7 +55,7 @@ public class ExpenseAddTest2 {
     }
 
     @Test(priority = 2)
-    public void main() {
+    public void nameFillThenClickOnSaveButton() {
         ExpenseAddTestCase2 obj = new ExpenseAddTestCase2((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

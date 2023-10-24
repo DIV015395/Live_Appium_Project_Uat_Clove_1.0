@@ -53,7 +53,7 @@ public class ExpenseAddRemarksTest {
     }
 
     @Test(priority = 2)
-    public void main() {
+    public void expenseAddRemarks() {
         ExpenseAddRemarks obj = new ExpenseAddRemarks((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

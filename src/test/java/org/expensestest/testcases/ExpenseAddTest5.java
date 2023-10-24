@@ -54,7 +54,7 @@ public class ExpenseAddTest5 {
     }
 
     @Test(priority = 2)
-    public void main() {
+    public void verifyCameraCapture() {
         ExpenseAddTestCase5 obj = new ExpenseAddTestCase5((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

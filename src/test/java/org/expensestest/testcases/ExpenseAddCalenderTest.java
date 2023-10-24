@@ -53,7 +53,7 @@ public class ExpenseAddCalenderTest {
     }
 
     @Test(priority = 2)
-    public void main() {
+    public void expenseAddCalender() {
         ExpenseAddCalender obj = new ExpenseAddCalender((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

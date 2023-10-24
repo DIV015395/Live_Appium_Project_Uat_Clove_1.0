@@ -27,28 +27,45 @@ public class ExpenseAddExceedBalance extends ExpensesAdd {
 
     @Override
     public void setClinic() {
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        cliniclist.click();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        for (WebElement option : clinics) {
-            if (option.getText().equals(desiredOptionText)) {
-                option.click();
-                break;
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            cliniclist.click();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+            for (WebElement option : clinics) {
+                if (option.getText().equals(desiredOptionText)) {
+                    option.click();
+                    break;
+                }
             }
+            test.log(Status.PASS, "Click on Clinic selected from dropdown. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Clinic selected from dropdown. Not Working");
         }
     }
 
     public void toastMessage() {
-        getmassage = massages.getText();
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        System.out.println(getmassage);
-        test.log(Status.INFO, "Toast Message => " + getmassage);
+        try {
+            getmassage = massages.getText();
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            System.out.println(getmassage);
+            test.log(Status.PASS, "Toast Message => " + getmassage);
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Failed to Display the Toast message in Report");
+        }
+
 
     }
 
     public void toastMassageValidation() {
-        Assert.assertEquals(getmassage, "Expense for clinic can not exceed balance / limit available!");
-        test.log(Status.PASS, "Toast message is Validated");
+        try {
+            Assert.assertEquals(getmassage, "Expense for clinic can not exceed balance / limit available!");
+            test.log(Status.PASS, "Toast message is Validated");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Failed toast message Validation");
+
+        }
+
     }
 
 }
