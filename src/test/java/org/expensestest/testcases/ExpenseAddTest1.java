@@ -28,14 +28,14 @@ public class ExpenseAddTest1 {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 1", "Expense Add Test Cases 1");
+        test = extent.createTest("Expense Test case 1", "Click on Save button in Expense Add Screen");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (MalformedURLException e) {
-            test.log(Status.FAIL, "Click function is not working");
+            test.log(Status.FAIL, "DesiredCapabilities not working");
         }
 
     }
@@ -53,8 +53,8 @@ public class ExpenseAddTest1 {
     }
 
     @Test(priority = 2)
-    public void main() throws InterruptedException {
-        ExpenseAddTestCase1 obj = new ExpenseAddTestCase1((AndroidDriver) driver);
+    public void main() {
+        ExpenseAddTestCase1 obj = new ExpenseAddTestCase1((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
@@ -71,7 +71,8 @@ public class ExpenseAddTest1 {
 
     @AfterClass
     public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
     }
 }

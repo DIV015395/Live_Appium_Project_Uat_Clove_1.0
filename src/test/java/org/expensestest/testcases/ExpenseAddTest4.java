@@ -12,6 +12,7 @@ import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -53,8 +54,8 @@ public class ExpenseAddTest4 {
     }
 
     @Test(priority = 2)
-    public void main() throws InterruptedException {
-        ExpenseAddTestCase4 obj = new ExpenseAddTestCase4((AndroidDriver) driver);
+    public void main() {
+        ExpenseAddTestCase4 obj = new ExpenseAddTestCase4((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
@@ -75,10 +76,11 @@ public class ExpenseAddTest4 {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-//    @AfterClass
-//    public void driverClose() {
-////        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-////        driver.quit();
-//    }
+    @AfterClass
+    public void driverClose() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
+    }
 
 }

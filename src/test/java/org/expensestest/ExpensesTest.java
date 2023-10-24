@@ -12,6 +12,7 @@ import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -54,7 +55,7 @@ public class ExpensesTest {
     @Test(priority = 2)
     public void main() {
 
-        ExpensesAdd obj = new ExpensesAdd((AndroidDriver) driver);
+        ExpensesAdd obj = new ExpensesAdd((AndroidDriver) driver, test);
         obj.expensesClick();
         obj.nextButton();
         obj.setClinic();
@@ -62,10 +63,11 @@ public class ExpensesTest {
 
     }
 
-//    @AfterClass
-//    public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
-//    }
+    @AfterClass
+    public void driverClose() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
+    }
 
 }

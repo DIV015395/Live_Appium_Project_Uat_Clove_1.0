@@ -1,5 +1,7 @@
 package org.expenses;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -7,11 +9,13 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import java.util.concurrent.TimeUnit;
 
 public class ExpensesAdd extends Expenses {
+    ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/add_expense")
     private AndroidElement addexpense;
 
-    public ExpensesAdd(AndroidDriver driver) {
-        super(driver);
+    public ExpensesAdd(AndroidDriver driver, ExtentTest test) {
+        super(driver, test);
+        this.test = test;
     }
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_calender")
@@ -68,105 +72,238 @@ public class ExpensesAdd extends Expenses {
     private AndroidElement actionSave;
 
     public void setAddexpense() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        addexpense.click();
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            addexpense.click();
+            test.log(Status.PASS, "Click on Expense button. Working");
+
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Expense button. Not Working");
+        }
+
     }
 
     public void setCalenderButton() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        calenderButton.click();
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            calenderButton.click();
+            test.log(Status.PASS, "Click on Calender button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Calender button. Not Working");
+        }
+
     }
 
     public void setCalenderOk() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        calenderOk.click();
+        try {
+
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            calenderOk.click();
+            test.log(Status.PASS, "Click on Calender ok button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Calender ok button. Not Working");
+        }
     }
 
     public void setCalenderCancel() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        calenderCancel.click();
+        try {
+
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            calenderCancel.click();
+            test.log(Status.PASS, "Click on Calender Cancel button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Calender Cancel button. Not Working");
+        }
     }
 
     public void setName() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        name.sendKeys("Manjeet sharma");
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            name.sendKeys("Manjeet sharma");
+            test.log(Status.PASS, "Click on Name send in Text field. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Name send in Text field. Not Working");
+        }
+
     }
 
     public void setQuantity() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        quantity.sendKeys("3");
+
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            quantity.sendKeys("3");
+            test.log(Status.PASS, "Click on Quantity send in Text field. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Quantity send in Text field. Not Working");
+        }
 
     }
 
     public void setAmount() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        amount.sendKeys("30");
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            amount.sendKeys("30");
+            test.log(Status.PASS, "Click on Amount send in Text field. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Amount send in Text field. Not Working");
+        }
     }
 
     public void setRemarksButton() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        remarksButton.click();
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            remarksButton.click();
+            test.log(Status.PASS, "Click on Remarks button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Remarks button. Not Working");
+        }
+
+
     }
 
     public void setRemarksTextSend() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        remarksTextSend.sendKeys("Expense Added");
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            remarksTextSend.sendKeys("Expense Added");
+            test.log(Status.PASS, "Click on Remarks send in Text field. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Remarks send in Text field. Not Working");
+        }
     }
 
     public void setRemarkDone() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        remarkDone.click();
+
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            remarkDone.click();
+            test.log(Status.PASS, "Click on Remarks done button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Remarks done button.  Not Working");
+        }
     }
 
     public void setRemarksDelete() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        remarksDelete.click();
+
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            remarksDelete.click();
+            test.log(Status.PASS, "Click on Remarks Delete button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Remarks Delete button.  Not Working");
+        }
     }
 
     public void setRemarksBackArrow() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        remarksBackArrow.click();
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            remarksBackArrow.click();
+            test.log(Status.PASS, "Click on Remarks Back Arrow button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Remarks Back Arrow button.  Not Working");
+        }
     }
 
 
     public void setPermissionOne() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        permissionOne.click();
+
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            permissionOne.click();
+            test.log(Status.PASS, "Click on Permission button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Permission button.  Not Working");
+        }
     }
 
     public void setAllowFirstTime() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        allowFirstTime.click();
+
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            allowFirstTime.click();
+            test.log(Status.PASS, "Click on Allow button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Allow button.  Not Working");
+        }
     }
 
     public void setAllowSecondtime() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        allowSecondtime.click();
+
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            allowSecondtime.click();
+            test.log(Status.PASS, "Click on Allow Second button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Allow Second button.  Not Working");
+        }
     }
 
     public void setCamera() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        Camera.click();
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            allowSecondtime.click();
+            test.log(Status.PASS, "Click on Camera button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Camera button.  Not Working");
+        }
     }
 
     public void setShutterButton() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        shutterButton.click();
+
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            shutterButton.click();
+            test.log(Status.PASS, "Click on Camera Capture button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Camera Capture button.  Not Working");
+        }
     }
 
     public void setAttachFiles() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        attachFiles.click();
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            attachFiles.click();
+
+            test.log(Status.PASS, "Click on Attach file button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Attach file button.  Not Working");
+        }
     }
 
     public void setDoneCapture() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        doneCapture.click();
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            doneCapture.click();
+
+            test.log(Status.PASS, "Click on Capture Right button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Capture Right button.  Not Working");
+        }
     }
 
     public void setActionSave() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        actionSave.click();
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            actionSave.click();
+
+            test.log(Status.PASS, "Click on Action Save button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Action Save button.  Not Working");
+        }
     }
 
 }

@@ -8,6 +8,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
 import org.expenses.testcases.ExpenseAddTestCase4;
+import org.expenses.testcases.ExpenseAddTestCase5;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
@@ -54,8 +55,8 @@ public class ExpenseAddTest5 {
     }
 
     @Test(priority = 2)
-    public void main() throws InterruptedException {
-        ExpenseAddTestCase4 obj = new ExpenseAddTestCase4((AndroidDriver) driver);
+    public void main() {
+        ExpenseAddTestCase5 obj = new ExpenseAddTestCase5((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
@@ -80,7 +81,8 @@ public class ExpenseAddTest5 {
 
     @AfterClass
     public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
     }
 }

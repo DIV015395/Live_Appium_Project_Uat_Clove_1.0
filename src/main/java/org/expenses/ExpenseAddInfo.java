@@ -1,14 +1,19 @@
 package org.expenses;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.testng.Assert;
 
 public class ExpenseAddInfo extends Expenses {
-    public ExpenseAddInfo(AndroidDriver driver) {
-        super(driver);
+    ExtentTest test;
+
+    public ExpenseAddInfo(AndroidDriver driver, ExtentTest test) {
+        super(driver, test);
+        this.test = test;
     }
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_screen_title")
     public AndroidElement screenTitle;
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_back_arrow")

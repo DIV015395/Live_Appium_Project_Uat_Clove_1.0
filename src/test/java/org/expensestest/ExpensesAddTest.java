@@ -56,7 +56,7 @@ public class ExpensesAddTest {
 
     @Test(priority = 2)
     public void main() throws InterruptedException {
-        ExpensesAdd obj = new ExpensesAdd((AndroidDriver) driver);
+        ExpensesAdd obj = new ExpensesAdd((AndroidDriver) driver, test);
         obj.expensesClick();
         obj.nextButton();
         obj.setAddexpense();
@@ -70,7 +70,8 @@ public class ExpensesAddTest {
 
     @AfterClass
     public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
     }
 }

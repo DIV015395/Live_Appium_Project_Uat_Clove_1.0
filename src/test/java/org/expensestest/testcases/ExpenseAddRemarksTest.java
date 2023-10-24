@@ -53,8 +53,8 @@ public class ExpenseAddRemarksTest {
     }
 
     @Test(priority = 2)
-    public void main() throws InterruptedException {
-        ExpenseAddRemarks obj = new ExpenseAddRemarks((AndroidDriver) driver);
+    public void main() {
+        ExpenseAddRemarks obj = new ExpenseAddRemarks((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
@@ -90,8 +90,9 @@ public class ExpenseAddRemarksTest {
 
     @AfterClass
     public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
     }
 
 }

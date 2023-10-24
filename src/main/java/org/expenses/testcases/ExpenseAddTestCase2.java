@@ -1,5 +1,7 @@
 package org.expenses.testcases;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -9,12 +11,14 @@ import org.testng.Assert;
 import java.util.concurrent.TimeUnit;
 
 public class ExpenseAddTestCase2 extends ExpensesAdd {
+    ExtentTest test;
     @AndroidFindBy(xpath = "//android.widget.Toast")
     private AndroidElement massages;
     private String getmassage;
 
-    public ExpenseAddTestCase2(AndroidDriver driver) {
-        super(driver);
+    public ExpenseAddTestCase2(AndroidDriver driver, ExtentTest test) {
+        super(driver, test);
+        this.test = test;
     }
 
     public void toastMessage() {
@@ -22,11 +26,13 @@ public class ExpenseAddTestCase2 extends ExpensesAdd {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         System.out.println(getmassage);
+        test.log(Status.INFO, "Toast Message => " + getmassage);
 
     }
 
     public void toastMassageValidation() {
         Assert.assertEquals(getmassage, "Please enter Quantity!");
+        test.log(Status.PASS, "Toast message is Validated");
     }
 
 }

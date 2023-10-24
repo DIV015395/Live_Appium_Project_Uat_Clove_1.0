@@ -55,8 +55,8 @@ public class ExpenseAddExceedBalanceTest {
     }
 
     @Test(priority = 2)
-    public void main() throws InterruptedException {
-        ExpenseAddExceedBalance obj = new ExpenseAddExceedBalance((AndroidDriver) driver);
+    public void main() {
+        ExpenseAddExceedBalance obj = new ExpenseAddExceedBalance((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
@@ -95,7 +95,8 @@ public class ExpenseAddExceedBalanceTest {
 
     @AfterClass
     public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
     }
 }
