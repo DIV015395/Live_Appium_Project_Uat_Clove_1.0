@@ -61,7 +61,7 @@ public class ExpenseAddTest4 {
         obj.setName();
         obj.setQuantity();
         obj.setAmount();
-        obj.setSaveText();
+        obj.setActionSave();
         obj.toastMessage();
         obj.toastMassageValidation();
     }

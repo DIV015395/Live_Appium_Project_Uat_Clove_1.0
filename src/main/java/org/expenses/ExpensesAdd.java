@@ -64,8 +64,8 @@ public class ExpensesAdd extends Expenses {
 
     @AndroidFindBy(id = "com.android.camera2:id/done_button")
     private AndroidElement doneCapture;
-    @AndroidFindBy(id = "com.clove.clover.uat:id/save_text")
-    private AndroidElement saveText;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/rl_actionSave")
+    private AndroidElement actionSave;
 
     public void setAddexpense() {
         driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
@@ -100,7 +100,7 @@ public class ExpensesAdd extends Expenses {
 
     public void setAmount() {
         driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        amount.sendKeys("3000");
+        amount.sendKeys("30");
     }
 
     public void setRemarksButton() {
@@ -128,10 +128,6 @@ public class ExpensesAdd extends Expenses {
         remarksBackArrow.click();
     }
 
-    public void setSaveText() {
-        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-        saveText.click();
-    }
 
     public void setPermissionOne() {
         driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
@@ -167,4 +163,10 @@ public class ExpensesAdd extends Expenses {
         driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
         doneCapture.click();
     }
+
+    public void setActionSave() {
+        driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+        actionSave.click();
+    }
+
 }

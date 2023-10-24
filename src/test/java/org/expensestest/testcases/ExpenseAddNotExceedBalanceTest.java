@@ -7,7 +7,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.testcases.ExpenseAddTestCase1;
+import org.expenses.testcases.ExpenseAddNotExceedBalance;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
@@ -20,7 +20,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class ExpenseAddTest1 {
+public class ExpenseAddNotExceedBalanceTest {
+
+
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
@@ -28,7 +30,7 @@ public class ExpenseAddTest1 {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 1", "Expense Add Test Cases 1");
+        test = extent.createTest("Test case 3", "Expense Add Test Cases 3");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -54,10 +56,21 @@ public class ExpenseAddTest1 {
 
     @Test(priority = 2)
     public void main() throws InterruptedException {
-        ExpenseAddTestCase1 obj = new ExpenseAddTestCase1((AndroidDriver) driver);
+        ExpenseAddNotExceedBalance obj = new ExpenseAddNotExceedBalance((AndroidDriver) driver);
         obj.expensesClick();
         obj.nextButton();
+        obj.setClinic();
         obj.setAddexpense();
+        obj.setName();
+        obj.setQuantity();
+        obj.setAmount();
+        obj.setAttachFiles();
+        obj.setPermissionOne();
+        obj.setAllowFirstTime();
+        obj.setAllowSecondtime();
+        obj.setCamera();
+        obj.setShutterButton();
+        obj.setDoneCapture();
         obj.setActionSave();
         obj.toastMessage();
         obj.toastMassageValidation();
