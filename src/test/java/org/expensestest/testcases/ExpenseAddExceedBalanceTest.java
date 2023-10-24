@@ -30,7 +30,7 @@ public class ExpenseAddExceedBalanceTest {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 3", "Expense Add Test Cases 3");
+        test = extent.createTest("Expense Add with Exceed Balance of Clinic", "Clinic having Exceed Balance for Expense");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();

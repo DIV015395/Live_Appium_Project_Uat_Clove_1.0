@@ -29,7 +29,7 @@ public class ExpenseAddTest4 {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 3", "Expense Add Test Cases 3");
+        test = extent.createTest("Expense add Test case 4", "Fill Name, Quantity and Amount then click on save button");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();

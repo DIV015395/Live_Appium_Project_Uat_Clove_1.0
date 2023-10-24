@@ -28,7 +28,7 @@ public class ExpenseAddCalenderTest {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 1", "Expense Add Test Cases 1");
+        test = extent.createTest("Expense Add Calender", "Expense Add Calender Verify All Button");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();

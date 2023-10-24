@@ -7,7 +7,6 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.testcases.ExpenseAddTestCase4;
 import org.expenses.testcases.ExpenseAddTestCase5;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -30,7 +29,7 @@ public class ExpenseAddTest5 {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 3", "Expense Add Test Cases 3");
+        test = extent.createTest("Expense Add Test case 5", "Verify attachment from camera in Expense add Screen");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
