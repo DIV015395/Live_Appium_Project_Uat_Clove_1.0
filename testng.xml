@@ -7,7 +7,7 @@
             <class name="org.expensestest.testcases.ExpenseAddCalenderTest">
                 <methods>
                     <include name="loginApp"/>
-                    <include name="main"/>
+                    <include name="expenseAddCalender"/>
                 </methods>
             </class>
         </classes>
@@ -18,7 +18,7 @@
             <class name="org.expensestest.testcases.ExpenseAddExceedBalanceTest">
                 <methods>
                     <include name="loginApp"/>
-                    <include name="main"/>
+                    <include name="expenseAddExceedAmountBalance"/>
                 </methods>
             </class>
         </classes>
@@ -29,7 +29,7 @@
             <class name="org.expensestest.testcases.ExpenseAddInfoTest">
                 <methods>
                     <include name="loginApp"/>
-                    <include name="main"/>
+                    <include name="expenseAddInfo"/>
                 </methods>
             </class>
         </classes>
@@ -40,7 +40,7 @@
             <class name="org.expensestest.testcases.ExpenseAddNotExceedBalanceTest">
                 <methods>
                     <include name="loginApp"/>
-                    <include name="main"/>
+                    <include name="expenseAddNotExceedBalance"/>
                 </methods>
             </class>
         </classes>
@@ -51,7 +51,7 @@
             <class name="org.expensestest.testcases.ExpenseAddRemarksTest">
                 <methods>
                     <include name="loginApp"/>
-                    <include name="main"/>
+                    <include name="expenseAddRemarks"/>
                 </methods>
             </class>
         </classes>
@@ -62,7 +62,7 @@
             <class name="org.expensestest.testcases.ExpenseAddTest1">
                 <methods>
                     <include name="loginApp"/>
-                    <include name="main"/>
+                    <include name="clickOnSaveButton"/>
                 </methods>
             </class>
         </classes>
@@ -73,7 +73,7 @@
             <class name="org.expensestest.testcases.ExpenseAddTest2">
                 <methods>
                     <include name="loginApp"/>
-                    <include name="main"/>
+                    <include name="nameFillThenClickOnSaveButton"/>
                 </methods>
             </class>
         </classes>
@@ -84,7 +84,7 @@
             <class name="org.expensestest.testcases.ExpenseAddTest3">
                 <methods>
                     <include name="loginApp"/>
-                    <include name="main"/>
+                    <include name="fillNameQuantityThenClickOnSaveButton"/>
                 </methods>
             </class>
         </classes>
@@ -95,7 +95,7 @@
             <class name="org.expensestest.testcases.ExpenseAddTest4">
                 <methods>
                     <include name="loginApp"/>
-                    <include name="main"/>
+                    <include name="fillNameAmountQuantityThenClickOnSaveButton"/>
                 </methods>
             </class>
         </classes>
@@ -106,7 +106,7 @@
             <class name="org.expensestest.testcases.ExpenseAddTest5">
                 <methods>
                     <include name="loginApp"/>
-                    <include name="main"/>
+                    <include name="verifyCameraCapture"/>
                 </methods>
             </class>
         </classes>
