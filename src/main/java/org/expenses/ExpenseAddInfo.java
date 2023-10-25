@@ -24,7 +24,6 @@ public class ExpenseAddInfo extends Expenses {
     public AndroidElement expenseLimit;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_expenseLimitValue")
     public AndroidElement expenseLimitAmount;
-
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_mtdExpense")
     public AndroidElement mtdExpense;
 

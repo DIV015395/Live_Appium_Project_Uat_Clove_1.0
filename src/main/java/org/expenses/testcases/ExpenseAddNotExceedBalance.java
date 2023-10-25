@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 public class ExpenseAddNotExceedBalance extends ExpensesAdd {
     ExtentTest test;
-
     ResourceBundle resourceBundle = ResourceBundle.getBundle("ExpenseNotExceedAmountClinic");
     private final String desiredOptionText = resourceBundle.getString("clinic");
     private final String actualOutput = "Expense already added! Duplicate request has been ignored.";
@@ -60,8 +59,6 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed to Display the Toast message in Report");
         }
-
-
     }
 
     public void toastMassageValidation() {
@@ -76,6 +73,5 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
             test.log(Status.FAIL, "Failed toast message Validation");
 
         }
-
     }
 }

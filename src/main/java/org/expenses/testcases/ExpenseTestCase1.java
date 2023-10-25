@@ -2,14 +2,13 @@ package org.expenses.testcases;
 
 import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
-import org.expenses.ExpensesAdd;
+import org.expenses.Expenses;
 
-public class ExpenseAddTestCase5 extends ExpensesAdd {
+public class ExpenseTestCase1 extends Expenses {
     ExtentTest test;
-    public ExpenseAddTestCase5(AndroidDriver driver, ExtentTest test) {
 
+    public ExpenseTestCase1(AndroidDriver driver, ExtentTest test) {
         super(driver, test);
         this.test = test;
     }
-
 }

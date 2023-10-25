@@ -254,7 +254,6 @@ public class EmailSenders {
             // Handle exceptions more gracefully and log them
         }
     }
-
     public static void main(String[] args) {
         EmailSenders.emailSenderToCompanyManjeetSharma();
         EmailSenders.emailSenderToRajeshMishra();

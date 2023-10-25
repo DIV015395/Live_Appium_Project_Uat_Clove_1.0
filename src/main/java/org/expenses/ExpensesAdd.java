@@ -6,6 +6,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class ExpensesAdd extends Expenses {
@@ -17,7 +18,6 @@ public class ExpensesAdd extends Expenses {
         super(driver, test);
         this.test = test;
     }
-
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_calender")
     private AndroidElement calenderButton;
 
@@ -71,6 +71,12 @@ public class ExpensesAdd extends Expenses {
     @AndroidFindBy(id = "com.clove.clover.uat:id/rl_actionSave")
     private AndroidElement actionSave;
 
+
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("addexpensedetails");
+    private final String expenseAddName = resourceBundle.getString("name");
+    private final String expenseAddAmount = resourceBundle.getString("Amount");
+    private final String expenseAddQuantity = resourceBundle.getString("Quantity");
+
     public void setAddexpense() {
         try {
             driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
@@ -119,7 +125,7 @@ public class ExpensesAdd extends Expenses {
     public void setName() {
         try {
             driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-            name.sendKeys("Manjeet sharma");
+            name.sendKeys(expenseAddName);
             test.log(Status.PASS, "Click on Name send in Text field. Working");
         } catch (Exception e) {
             test.log(Status.FAIL, "Click on Name send in Text field. Not Working");
@@ -132,7 +138,7 @@ public class ExpensesAdd extends Expenses {
 
         try {
             driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-            quantity.sendKeys("3");
+            quantity.sendKeys(expenseAddQuantity);
             test.log(Status.PASS, "Click on Quantity send in Text field. Working");
         } catch (Exception e) {
             test.log(Status.FAIL, "Click on Quantity send in Text field. Not Working");
@@ -144,7 +150,7 @@ public class ExpensesAdd extends Expenses {
 
         try {
             driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-            amount.sendKeys("30");
+            amount.sendKeys(expenseAddAmount);
             test.log(Status.PASS, "Click on Amount send in Text field. Working");
         } catch (Exception e) {
             test.log(Status.FAIL, "Click on Amount send in Text field. Not Working");
@@ -251,7 +257,7 @@ public class ExpensesAdd extends Expenses {
 
         try {
             driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
-            allowSecondtime.click();
+            Camera.click();
             test.log(Status.PASS, "Click on Camera button. Working");
         } catch (Exception e) {
             test.log(Status.FAIL, "Click on Camera button.  Not Working");

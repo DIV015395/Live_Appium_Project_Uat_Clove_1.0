@@ -7,6 +7,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.desiredcapabilities.BaseDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -25,6 +26,13 @@ public class Expenses extends BaseDriver {
     public AndroidElement explore;
     @AndroidFindBy(id = "com.clove.clover.uat:id/rl_next")
     public AndroidElement next;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_noRecords")
+    private AndroidElement noRecords;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_action_dots")
+    private List<AndroidElement> actionDots;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemdetail")
+    private AndroidElement itemDetail;
 
     public Expenses(AndroidDriver driver, ExtentTest test) {
         super(driver);
@@ -82,6 +90,31 @@ public class Expenses extends BaseDriver {
         } catch (Exception e) {
             test.log(Status.FAIL, "Click on Explore button. Not Working");
         }
+    }
 
+
+    public void setNoRecords() {
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            Assert.assertEquals(noRecords.getText(), "No records found!");
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            test.log(Status.PASS, "Check No Records text display. Working");
+        } catch (Exception e) {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            test.log(Status.FAIL, "Check No Records text display. Not Working");
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        }
+    }
+
+    public void setActionDots() {
+        try {
+            if (actionDots.size() == 0) {
+                test.log(Status.PASS, noRecords.getText());
+            } else {
+                test.log(Status.PASS, "There is no of Items = " + actionDots.size());
+            }
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Items Listing Not working");
+        }
     }
 }

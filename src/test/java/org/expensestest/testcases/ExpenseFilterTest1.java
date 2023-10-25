@@ -7,7 +7,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.testcases.ExpenseAddNotExceedBalance;
+import org.expenses.testcases.ExpenseFilterTestCase1;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
@@ -19,7 +19,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class ExpenseAddNotExceedBalanceTest {
+public class ExpenseFilterTest1 {
 
 
     public AppiumDriver driver;
@@ -29,7 +29,7 @@ public class ExpenseAddNotExceedBalanceTest {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Expense Add Not with Exceed Balance", "Clinic should be a amount for Expense");
+        test = extent.createTest("Expense Filter Test Cases", "Verify attachment from camera in Expense add Screen");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -54,42 +54,23 @@ public class ExpenseAddNotExceedBalanceTest {
     }
 
     @Test(priority = 2)
-    public void expenseAddNotExceedBalance() {
-        ExpenseAddNotExceedBalance obj = new ExpenseAddNotExceedBalance((AndroidDriver) driver, test);
+    public void searchFilter() {
+        ExpenseFilterTestCase1 obj = new ExpenseFilterTestCase1((AndroidDriver) driver, test);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setClinic();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAddexpense();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setName();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setQuantity();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAmount();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAttachFiles();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setPermissionOne();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAllowFirstTime();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAllowSecondtime();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setCamera();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setShutterButton();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setDoneCapture();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setActionSave();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        obj.setSearchExpenseButton();
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        obj.setIvSearchButton();
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         obj.toastMessage();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         obj.toastMassageValidation();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        obj.setIvFilterExpense();
+
     }
 
 //    @AfterClass
