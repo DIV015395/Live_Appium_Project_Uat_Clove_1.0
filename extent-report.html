@@ -50,7 +50,7 @@
         <!-- nav-right -->
         <ul class='right hide-on-med-and-down nav-right' id='nav-mobile'>
             <a href='#!'>
-                <span class='label blue darken-3 suite-start-time'>Oct 25, 2023 06:50:45 pm</span>
+                <span class='label blue darken-3 suite-start-time'>Nov 6, 2023 10:00:13 am</span>
             </a>
         </ul>
     </div>
@@ -66,8 +66,7 @@
                         <i class='material-icons'>warning</i> Status
                     </a>
                     <ul class='dropdown-content' id='tests-toggle'>
-                        <li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a>
-                        </li>
+                        <li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
                         <li class='divider'></li>
                         <li clear='true' status='clear'><a href='#!'>Clear Filters <i
                                 class='material-icons'>clear</i></a></li>
@@ -112,11 +111,10 @@
                             <canvas height='70' id='parent-analysis' width='90'></canvas>
                         </div>
                         <div class='block text-small'>
-                            <span class='tooltipped' data-position='top' data-tooltip='100%'><span
-                                    class='strong'>1</span> test(s) passed</span>
+                            <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
                         </div>
                         <div class='block text-small'>
-                            <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s)
+                            <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s)
                             failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span>
                             skipped
                         </div>
@@ -137,19 +135,19 @@
         <div class='subview-left left'>
             <div class='view-summary'>
                 <ul class='test-collection' id='test-collection'>
-                    <li bdd='false' class='test displayed active  pass' status='pass' test-id='1'>
+                    <li bdd='false' class='test displayed active  fail' status='fail' test-id='1'>
                         <div class='test-heading'>
-                            <span class='test-name'>Expense Filter Test Cases</span>
-                            <span class='test-time'>Oct 25, 2023 06:50:45 pm</span>
-                            <span class='test-status right pass'>pass</span>
+                            <span class='test-name'>Expense Add Calender</span>
+                            <span class='test-time'>Nov 6, 2023 10:00:13 am</span>
+                            <span class='test-status right fail'>fail</span>
                         </div>
                         <div class='test-content hide'>
                             <div class='test-time-info'>
-                                <span class='label start-time'>Oct 25, 2023 06:50:45 pm</span>
-                                <span class='label end-time'>Oct 25, 2023 06:51:26 pm</span>
-                                <span class='label time-taken grey lighten-1 white-text'>0h 0m 40s+223ms</span>
+                                <span class='label start-time'>Nov 6, 2023 10:00:13 am</span>
+                                <span class='label end-time'>Nov 6, 2023 10:01:22 am</span>
+                                <span class='label time-taken grey lighten-1 white-text'>0h 1m 8s+955ms</span>
                             </div>
-                            <div class='test-desc'>Verify attachment from camera in Expense add Screen</div>
+                            <div class='test-desc'>Expense Add Calender Verify All Button</div>
                             <div class='test-steps'>
                                 <table class='bordered table-results'>
                                     <thead>
@@ -163,7 +161,7 @@
                                     <tr class='log' status='pass'>
                                         <td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
                                         </td>
-                                        <td class='timestamp'>6:51:02 pm</td>
+                                        <td class='timestamp'>10:00:34 am</td>
                                         <td class='step-details'>
                                             Correct User Id Filled
 
@@ -172,7 +170,7 @@
                                     <tr class='log' status='pass'>
                                         <td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
                                         </td>
-                                        <td class='timestamp'>6:51:03 pm</td>
+                                        <td class='timestamp'>10:00:34 am</td>
                                         <td class='step-details'>
                                             Correct Password Filled
 
@@ -181,7 +179,7 @@
                                     <tr class='log' status='pass'>
                                         <td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
                                         </td>
-                                        <td class='timestamp'>6:51:03 pm</td>
+                                        <td class='timestamp'>10:00:35 am</td>
                                         <td class='step-details'>
                                             Clicked on Go Button
 
@@ -190,45 +188,72 @@
                                     <tr class='log' status='pass'>
                                         <td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
                                         </td>
-                                        <td class='timestamp'>6:51:04 pm</td>
+                                        <td class='timestamp'>10:00:36 am</td>
                                         <td class='step-details'>
                                             Permisson Allowed
 
                                         </td>
                                     </tr>
-                                    <tr class='log' status='pass'>
-                                        <td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
-                                        </td>
-                                        <td class='timestamp'>6:51:15 pm</td>
+                                    <tr class='log' status='fail'>
+                                        <td alt='fail' class='status fail' title='fail'><i
+                                                class='material-icons'>cancel</i></td>
+                                        <td class='timestamp'>10:01:22 am</td>
                                         <td class='step-details'>
-                                            Click on Expense menu button. Working
+                                            Click on Expense button. Not Working
 
                                         </td>
                                     </tr>
-                                    <tr class='log' status='pass'>
-                                        <td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
-                                        </td>
-                                        <td class='timestamp'>6:51:22 pm</td>
+                                    <tr class='log' status='fail'>
+                                        <td alt='fail' class='status fail' title='fail'><i
+                                                class='material-icons'>cancel</i></td>
+                                        <td class='timestamp'>10:01:22 am</td>
                                         <td class='step-details'>
-                                            Click on Explore button. Working
+                                            Click on Explore button. Not Working
 
                                         </td>
                                     </tr>
-                                    <tr class='log' status='pass'>
-                                        <td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
-                                        </td>
-                                        <td class='timestamp'>6:51:24 pm</td>
+                                    <tr class='log' status='fail'>
+                                        <td alt='fail' class='status fail' title='fail'><i
+                                                class='material-icons'>cancel</i></td>
+                                        <td class='timestamp'>10:01:22 am</td>
                                         <td class='step-details'>
-                                            Click on Clinic selected from dropdown. Working
+                                            Click on Expense button. Not Working
 
                                         </td>
                                     </tr>
-                                    <tr class='log' status='pass'>
-                                        <td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
-                                        </td>
-                                        <td class='timestamp'>6:51:26 pm</td>
+                                    <tr class='log' status='fail'>
+                                        <td alt='fail' class='status fail' title='fail'><i
+                                                class='material-icons'>cancel</i></td>
+                                        <td class='timestamp'>10:01:22 am</td>
                                         <td class='step-details'>
-                                            There is no of Items = 7
+                                            Click on Calender button. Not Working
+
+                                        </td>
+                                    </tr>
+                                    <tr class='log' status='fail'>
+                                        <td alt='fail' class='status fail' title='fail'><i
+                                                class='material-icons'>cancel</i></td>
+                                        <td class='timestamp'>10:01:22 am</td>
+                                        <td class='step-details'>
+                                            Click on Calender ok button. Not Working
+
+                                        </td>
+                                    </tr>
+                                    <tr class='log' status='fail'>
+                                        <td alt='fail' class='status fail' title='fail'><i
+                                                class='material-icons'>cancel</i></td>
+                                        <td class='timestamp'>10:01:22 am</td>
+                                        <td class='step-details'>
+                                            Click on Calender button. Not Working
+
+                                        </td>
+                                    </tr>
+                                    <tr class='log' status='fail'>
+                                        <td alt='fail' class='status fail' title='fail'><i
+                                                class='material-icons'>cancel</i></td>
+                                        <td class='timestamp'>10:01:22 am</td>
+                                        <td class='step-details'>
+                                            Click on Calender Cancel button. Not Working
 
                                         </td>
                                     </tr>
@@ -285,19 +310,19 @@
                 <div class='col s2'>
                     <div class='card-panel r'>
                         Start
-                        <div class='panel-lead'>Oct 25, 2023 06:50:45 pm</div>
+                        <div class='panel-lead'>Nov 6, 2023 10:00:13 am</div>
                     </div>
                 </div>
                 <div class='col s2'>
                     <div class='card-panel r'>
                         End
-                        <div class='panel-lead'>Oct 25, 2023 06:51:26 pm</div>
+                        <div class='panel-lead'>Nov 6, 2023 10:01:22 am</div>
                     </div>
                 </div>
                 <div class='col s2'>
                     <div class='card-panel r'>
                         Time Taken
-                        <div class='panel-lead'>0h 0m 40s+765ms</div>
+                        <div class='panel-lead'>0h 1m 9s+297ms</div>
                     </div>
                 </div>
             </div>
@@ -309,13 +334,13 @@
 <script>
 			var statusGroup = {
                 parentCount: 1,
-				passParent: 1,
-				failParent: 0,
+				passParent: 0,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 1,
 				childCount: 0,
 				passChild: 0,
 				failChild: 0,
@@ -341,7 +366,7 @@
 </script>
 <script>
 			var timeline = {
-			        "Expense Filter Test Cases":40.223
+			        "Expense Add Calender":68.955
 			};
 
 </script>

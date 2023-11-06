@@ -93,6 +93,10 @@ public class ExpenseAddExceedBalanceTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
+    public void dataValidation() {
+
+    }
+
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

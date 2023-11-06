@@ -54,42 +54,64 @@ public class ExpenseAddNotExceedBalanceTest {
     }
 
     @Test(priority = 2)
-    public void expenseAddNotExceedBalance() {
+    public void expenseAddNotExceedBalance() throws InterruptedException {
         ExpenseAddNotExceedBalance obj = new ExpenseAddNotExceedBalance((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setClinic();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAddexpense();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setName();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setQuantity();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAmount();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAttachFiles();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setPermissionOne();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAllowFirstTime();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setAllowSecondtime();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setCamera();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setShutterButton();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setDoneCapture();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setActionSave();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.toastMessage();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.toastMassageValidation();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        obj.scrollTo();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setAddexpense();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setName();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setQuantity();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setAmount();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setAttachFiles();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setPermissionOne();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setAllowFirstTime();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setAllowSecondtime();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setCamera();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setShutterButton();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setDoneCapture();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.setActionSave();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.toastMessage();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.toastMassageValidation();
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        obj.scrollTo();
+    }
+
+    @Test(priority = 3)
+    public void dataValidation() {
+//        ExpenseFilterDataValidation obj = new ExpenseFilterDataValidation((AndroidDriver) driver, test);
+//        obj.setSearchExpenseButton();
+//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+//        obj.setFromDate();
+//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+//        obj.setCalenderOkButton();
+//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+//        obj.setToDate();
+//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+//        obj.setCalenderOkButton();
+//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+//        obj.setNewStatus();
+//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+//        obj.setIvSearchButton();
+//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
     }
 
 //    @AfterClass

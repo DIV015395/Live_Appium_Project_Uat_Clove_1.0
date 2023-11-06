@@ -20,6 +20,31 @@ public class ExpenseFilter extends Expenses {
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_filter_expense")
     private AndroidElement ivFilterExpense;
 
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.ImageView")
+    private AndroidElement fromDate;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout[2]/android.widget.ImageView")
+    private AndroidElement toDate;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[2]/android.widget.TextView")
+    private AndroidElement newStatus;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_ok")
+    private AndroidElement calenderOkButton;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_cancel")
+    private AndroidElement calenderCancelButton;
+
+    @AndroidFindBy(id = "//android.widget.ImageButton[@content-desc=\"Previous Month\"]")
+    private AndroidElement calenderPreviousMonth;
+
+    @AndroidFindBy(id = "//android.widget.ImageButton[@content-desc=\"Next Month\"]")
+    private AndroidElement calenderNextButton;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_date_picker_year")
+    private AndroidElement calenderDatePickerYearbutton;
+
+    @AndroidFindBy(id = "//android.widget.TextView[@content-desc=\"2021\"]")
+    private AndroidElement calenderYearset;
+
+
     public ExpenseFilter(AndroidDriver driver, ExtentTest test) {
         super(driver, test);
         this.test = test;
@@ -72,7 +97,42 @@ public class ExpenseFilter extends Expenses {
         } else {
             System.out.println("No");
         }
+    }
 
+    public void setFromDate() {
+        try {
+            fromDate.click();
+            test.log(Status.PASS, "Click on From Date in Expense Filter -  working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on From Date in Expense Filter -  not working");
+        }
+    }
+
+    public void setToDate() {
+        try {
+            toDate.click();
+            test.log(Status.PASS, "Click on to Date in Expense Filter -  working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on to Date in Expense Filter -  not working");
+        }
+    }
+
+    public void setNewStatus() {
+        try {
+            newStatus.click();
+            test.log(Status.PASS, "Click on new status in Expense Filter -  working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on new status in Expense Filter -  not working");
+        }
+    }
+
+    public void setCalenderOkButton() {
+        try {
+            calenderOkButton.click();
+            test.log(Status.PASS, "Click on Calender ok button in Expense Filter -  working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Calender ok button in Expense Filter-  not working");
+        }
     }
 
 

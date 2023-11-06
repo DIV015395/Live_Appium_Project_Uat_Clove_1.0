@@ -305,7 +305,6 @@ public class ExpensesAdd extends Expenses {
         try {
             driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
             actionSave.click();
-
             test.log(Status.PASS, "Click on Action Save button. Working");
         } catch (Exception e) {
             test.log(Status.FAIL, "Click on Action Save button.  Not Working");
