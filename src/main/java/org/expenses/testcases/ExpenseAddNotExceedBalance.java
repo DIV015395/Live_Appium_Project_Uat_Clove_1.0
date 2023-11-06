@@ -2,6 +2,7 @@ package org.expenses.testcases;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -9,6 +10,7 @@ import org.expenses.ExpensesAdd;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
@@ -72,6 +74,39 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
         } catch (Exception e) {
             test.log(Status.FAIL, "Failed toast message Validation");
 
+        }
+    }
+
+    ResourceBundle resourceBundles = ResourceBundle.getBundle("addexpensedetails");
+    String expenseAddName = resourceBundles.getString("name");
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_action_dots")
+    private List<AndroidElement> actionDots;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemdetail")
+    private List<WebElement> itemDetail;
+
+    public void scrollTo() {
+        boolean elementFound = false;
+        while (!elementFound) {
+            driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + expenseAddName + "\"));"));
+            for (WebElement element : itemDetail) {
+                if (element.getText().equals("ABCDEFG")) {
+                    if (element.isDisplayed()) {
+                        element.click();
+                        elementFound = true;
+                        System.out.println("mil gya wo items");
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    public void clickActionButtonForItemText() {
+        for (int i = 0; i < itemDetail.size(); i++) {
+            if (itemDetail.get(i).getText().equals(expenseAddName)) {
+                actionDots.get(i).click();
+                break;
+            }
         }
     }
 }

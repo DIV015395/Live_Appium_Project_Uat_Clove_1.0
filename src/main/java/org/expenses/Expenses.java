@@ -6,14 +6,11 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.desiredcapabilities.BaseDriver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
 
 import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class Expenses extends BaseDriver {
@@ -35,8 +32,10 @@ public class Expenses extends BaseDriver {
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_action_dots")
     private List<AndroidElement> actionDots;
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("addexpensedetails");
+    String expenseAddName = resourceBundle.getString("name");
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemdetail")
-    private AndroidElement itemDetail;
+    private List<WebElement> itemDetail;
 
     public Expenses(AndroidDriver driver, ExtentTest test) {
         super(driver);
@@ -123,35 +122,7 @@ public class Expenses extends BaseDriver {
     }
 
 
-    public void scrollTo() {
-        FluentWait<AndroidDriver<AndroidElement>> wait = new FluentWait<>(driver)
-                .withTimeout(10, TimeUnit.SECONDS)
-                .pollingEvery(2, TimeUnit.SECONDS);
 
-        boolean elementFound = false;
-        while (!elementFound) {
-            try {
-                // Wait for the presence of all elements with text "abcd"
-                List<WebElement> elements = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("com.clove.clover.uat:id/tv_itemdetail")));
-
-                for (WebElement element : elements) {
-                    if (element.getText().equals("ABCDEFG")) {
-                        // Check if the element is visible before clicking
-                        if (element.isDisplayed()) {
-                            element.click();
-                            elementFound = true;
-                            break;
-                        } else {
-                            // Scroll the page if the element is not visible
-                            driver.executeScript("window.scrollBy(0, 100)");
-                        }
-                    }
-                }
-            } catch (NoSuchElementException e) {
-                // Continue scrolling if the element is not found
-                driver.executeScript("window.scrollBy(0, 100)");
-            }
-        }
 
     }
-}
+
