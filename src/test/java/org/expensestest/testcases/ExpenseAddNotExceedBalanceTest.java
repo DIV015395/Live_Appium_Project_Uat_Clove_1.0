@@ -91,6 +91,10 @@ public class ExpenseAddNotExceedBalanceTest {
         obj.toastMassageValidation();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.scrollTo();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        obj.printDetailsForMatchingItems();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
     }
 
     @Test(priority = 3)

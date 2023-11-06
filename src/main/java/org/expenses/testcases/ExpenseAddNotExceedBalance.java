@@ -20,6 +20,22 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
     private final String desiredOptionText = resourceBundle.getString("clinic");
     private final String actualOutput = "Expense already added! Duplicate request has been ignored.";
     private final String actualSecondOutput = "Expense details added Successfully!";
+    ResourceBundle resourceBundles = ResourceBundle.getBundle("addexpensedetails");
+    String expenseAddName = resourceBundles.getString("name");
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_action_dots")
+    private List<AndroidElement> actionDots;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemdetail")
+    private List<WebElement> itemDetail;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_date")
+    private List<WebElement> dates;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_status")
+    private List<WebElement> statuses;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_amount")
+    private List<WebElement> amounts;
+
     @AndroidFindBy(xpath = "//android.widget.Toast")
     private AndroidElement massages;
     private String getmassage;
@@ -77,27 +93,25 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
         }
     }
 
-    ResourceBundle resourceBundles = ResourceBundle.getBundle("addexpensedetails");
-    String expenseAddName = resourceBundles.getString("name");
-    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_action_dots")
-    private List<AndroidElement> actionDots;
-    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemdetail")
-    private List<WebElement> itemDetail;
 
     public void scrollTo() {
-        boolean elementFound = false;
-        while (!elementFound) {
-            driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + expenseAddName + "\"));"));
-            for (WebElement element : itemDetail) {
-                if (element.getText().equals("ABCDEFG")) {
-                    if (element.isDisplayed()) {
-                        element.click();
-                        elementFound = true;
-                        System.out.println("mil gya wo items");
-                        break;
+        try {
+            boolean elementFound = false;
+            while (!elementFound) {
+                driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + expenseAddName + "\"));"));
+                for (WebElement element : itemDetail) {
+                    if (element.getText().equals(expenseAddName)) {
+                        if (element.isDisplayed()) {
+                            element.click();
+                            elementFound = true;
+                            System.out.println("mil gya wo items");
+                            break;
+                        }
                     }
                 }
             }
+        } catch (Exception e) {
+
         }
     }
 
@@ -109,4 +123,27 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
             }
         }
     }
+
+    public void printDetailsForMatchingItems() {
+        try {
+
+            for (int i = 0; i < itemDetail.size(); i++) {
+                if (itemDetail.get(i).getText().equals(expenseAddName)) {
+                    // Get the corresponding date, status, and amount elements
+                    WebElement dateElement = dates.get(i);
+                    WebElement statusElement = statuses.get(i);
+                    WebElement amountElement = amounts.get(i);
+                    // Print the text of date, status, and amount
+                    System.out.println("Item " + (i + 1) + ":");
+                    System.out.println("Date: " + dateElement.getText());
+                    System.out.println("Status: " + statusElement.getText());
+                    System.out.println("Amount: " + amountElement.getText());
+                    System.out.println();
+                }
+            }
+        } catch (Exception e) {
+
+        }
+    }
+
 }

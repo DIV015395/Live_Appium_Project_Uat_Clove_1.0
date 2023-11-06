@@ -7,11 +7,12 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.testcases.ExpenseFilterDataValidation;
+import org.expenses.testcases.ExpenseFilterNewStatus;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -19,7 +20,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class ExpenseFilterDataValidationTest {
+public class ExpenseFilterNewStatusTest {
 
 
     public AppiumDriver driver;
@@ -52,10 +53,9 @@ public class ExpenseFilterDataValidationTest {
         obj.permissonAllowed();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
-
     @Test(priority = 2)
     public void searchFilter() {
-        ExpenseFilterDataValidation obj = new ExpenseFilterDataValidation((AndroidDriver) driver, test);
+        ExpenseFilterNewStatus obj = new ExpenseFilterNewStatus((AndroidDriver) driver, test);
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -72,13 +72,12 @@ public class ExpenseFilterDataValidationTest {
         obj.setCalenderOkButton();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         obj.setNewStatus();
-
     }
 
-//    @AfterClass
-//    public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
-//        extent.flush();
-//    }
+    @AfterClass
+    public void driverClose() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
+    }
 }
