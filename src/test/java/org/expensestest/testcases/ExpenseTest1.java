@@ -60,7 +60,7 @@ public class ExpenseTest1 {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
         obj.setClinic();
-        obj.setActionDots();
+        obj.setListcount();
     }
 
     @AfterClass

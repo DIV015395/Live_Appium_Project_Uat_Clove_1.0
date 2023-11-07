@@ -109,7 +109,7 @@ public class Expenses extends BaseDriver {
         }
     }
 
-    public void setActionDots() {
+    public void setListcount() {
         try {
             if (actionDots.size() == 0) {
                 test.log(Status.PASS, noRecords.getText());

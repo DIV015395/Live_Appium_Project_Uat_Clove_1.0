@@ -20,9 +20,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class ExpenseFilterNewStatusTest {
-
-
+public class ExpenseFilterRejectAcceptStatusTest {
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
@@ -53,6 +51,7 @@ public class ExpenseFilterNewStatusTest {
         obj.permissonAllowed();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
+
     @Test(priority = 2)
     public void searchFilter() {
         ExpenseFilterNewStatus obj = new ExpenseFilterNewStatus((AndroidDriver) driver, test);
@@ -71,17 +70,20 @@ public class ExpenseFilterNewStatusTest {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         obj.setCalenderOkButton();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        obj.setNewStatus();
+        obj.setRejectionStatus();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         obj.setIvSearchButton();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         obj.setListcount();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
     }
+
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.quit();
         extent.flush();
     }
+
+
 }
