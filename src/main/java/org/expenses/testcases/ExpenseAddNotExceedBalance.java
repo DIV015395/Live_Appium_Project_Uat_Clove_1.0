@@ -144,6 +144,10 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
                     System.out.println("Status: " + statusElement.getText());
                     System.out.println("Amount: " + amountElement.getText());
                     System.out.println();
+                    test.log(Status.PASS, "Items Name : " + (i + 1));
+                    test.log(Status.PASS, "Date : " + dateElement.getText());
+                    test.log(Status.PASS, "Status : " + statusElement.getText());
+                    test.log(Status.PASS, "Amount : " + amountElement.getText());
                 }
             }
         } catch (Exception e) {
