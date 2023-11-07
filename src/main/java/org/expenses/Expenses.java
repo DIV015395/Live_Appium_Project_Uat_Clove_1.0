@@ -30,6 +30,21 @@ public class Expenses extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_noRecords")
     private AndroidElement noRecords;
 
+
+    //three dot action button option
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView")
+    private AndroidElement copy;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[2]/android.widget.TextView")
+    private AndroidElement edit;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[3]/android.widget.TextView")
+    private AndroidElement view;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[4]/android.widget.TextView")
+    private AndroidElement delete;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.Button")
+    private AndroidElement cancel;
+    //three dot action button option
+
+
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_action_dots")
     private List<AndroidElement> actionDots;
     ResourceBundle resourceBundle = ResourceBundle.getBundle("addexpensedetails");
@@ -121,8 +136,53 @@ public class Expenses extends BaseDriver {
         }
     }
 
+    public void setView() {
+        try {
+            view.click();
+            test.log(Status.PASS, "Click on view button : working ");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on view button : not working ");
+        }
+    }
 
+    public void setCancel() {
+        try {
+            cancel.click();
+            test.log(Status.PASS, "click on cancel button : working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "click on cancel button : not working");
+        }
+    }
 
+    public void setCopy() {
+        try {
+            copy.click();
+            test.log(Status.PASS, "click on copy button :  working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "click on copy button : Not working");
+        }
+    }
+
+    public void setEdit() {
+
+        try {
+            edit.click();
+            test.log(Status.PASS, "click on Edit button :  working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "click on Edit button : Not working");
+        }
+    }
+
+    public void setDelete() {
+        try {
+            delete.click();
+            test.log(Status.PASS, "click on delete button :  working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "click on delete button : Not working");
+        }
 
     }
+
+
+}
 
