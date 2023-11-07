@@ -111,4 +111,81 @@
             </class>
         </classes>
     </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseFilterAllStatusTest.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseFilterAllStatusTest">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="searchFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseFilterApprovedStatusTest.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseFilterApprovedStatusTest">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="searchFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseFilterNewStatusTest.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseFilterNewStatusTest">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="searchFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseFilterPendingStatusTest.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseFilterPendingStatusTest">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="searchFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseFilterRejectAcceptStatusTest.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseFilterRejectAcceptStatusTest">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="searchFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseFilterTest1.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseFilterTest1">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="searchFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseTest1.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseTest1">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="searchFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
