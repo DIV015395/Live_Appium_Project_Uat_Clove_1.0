@@ -12,6 +12,7 @@ import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -97,29 +98,10 @@ public class ExpenseAddNotExceedBalanceTest {
 
     }
 
-    @Test(priority = 3)
-    public void dataValidation() {
-//        ExpenseFilterDataValidation obj = new ExpenseFilterDataValidation((AndroidDriver) driver, test);
-//        obj.setSearchExpenseButton();
-//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-//        obj.setFromDate();
-//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-//        obj.setCalenderOkButton();
-//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-//        obj.setToDate();
-//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-//        obj.setCalenderOkButton();
-//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-//        obj.setNewStatus();
-//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-//        obj.setIvSearchButton();
-//        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+    @AfterClass
+    public void driverClose() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
     }
-
-//    @AfterClass
-//    public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
-//        extent.flush();
-//    }
 }

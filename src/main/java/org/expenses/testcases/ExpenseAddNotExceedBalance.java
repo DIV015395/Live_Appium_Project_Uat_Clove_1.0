@@ -104,29 +104,34 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
                         if (element.isDisplayed()) {
                             element.click();
                             elementFound = true;
-                            System.out.println("mil gya wo items");
                             break;
                         }
                     }
                 }
             }
+            test.log(Status.PASS, "Finding the items with searching and scroll down");
         } catch (Exception e) {
-
+            test.log(Status.FAIL, "Finding the items with searching and scroll down = Failed");
         }
     }
 
     public void clickActionButtonForItemText() {
-        for (int i = 0; i < itemDetail.size(); i++) {
-            if (itemDetail.get(i).getText().equals(expenseAddName)) {
-                actionDots.get(i).click();
-                break;
+        try {
+            for (int i = 0; i < itemDetail.size(); i++) {
+                if (itemDetail.get(i).getText().equals(expenseAddName)) {
+                    actionDots.get(i).click();
+                    break;
+                }
             }
+            test.log(Status.PASS, "click on three dot button at expenses list page");
+
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Failed click on three dot button at expenses list page");
         }
     }
 
     public void printDetailsForMatchingItems() {
         try {
-
             for (int i = 0; i < itemDetail.size(); i++) {
                 if (itemDetail.get(i).getText().equals(expenseAddName)) {
                     // Get the corresponding date, status, and amount elements
@@ -142,6 +147,7 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
                 }
             }
         } catch (Exception e) {
+            test.log(Status.FAIL, "Failed to Validate items name , Date , Status , Amount");
 
         }
     }
