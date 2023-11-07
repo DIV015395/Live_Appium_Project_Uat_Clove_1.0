@@ -5,8 +5,10 @@ import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.WebElement;
 
 import javax.swing.*;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class ExpenseFilter extends Expenses {
@@ -50,6 +52,11 @@ public class ExpenseFilter extends Expenses {
 
     @AndroidFindBy(id = "//android.widget.TextView[@content-desc=\"2021\"]")
     private AndroidElement calenderYearset;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemdetail")
+    private List<WebElement> itemDetail;
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_action_dots")
+    private List<AndroidElement> actionDots;
 
 
     public ExpenseFilter(AndroidDriver driver, ExtentTest test) {
@@ -179,4 +186,5 @@ public class ExpenseFilter extends Expenses {
             test.log(Status.FAIL, "Click on Reject status in Expense Filter -  not working");
         }
     }
+
 }

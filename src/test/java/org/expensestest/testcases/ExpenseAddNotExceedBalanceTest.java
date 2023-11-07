@@ -95,6 +95,7 @@ public class ExpenseAddNotExceedBalanceTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.printDetailsForMatchingItems();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        obj.clickActionButtonForItemText();
 
     }
 
