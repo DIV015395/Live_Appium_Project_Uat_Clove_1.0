@@ -7,16 +7,21 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.patientsearch.PatientSearch;
 
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase5 extends PatientSearch {
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("patientsearch");
+    private final String patientId = resourceBundle.getString("patientId");
+
+
     public TestCase5(AndroidDriver driver, ExtentTest test) {
         super(driver, test);
     }
 
     public void patientSearchByValue() {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        searchQuery.sendKeys("0001-555");
+        searchQuery.sendKeys(patientId);
         test.log(Status.PASS, "Patient Id - Input Field fill successfully ");
     }
 

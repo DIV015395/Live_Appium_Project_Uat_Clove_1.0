@@ -16,7 +16,6 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
 public class TestCase1Test {
     public AppiumDriver driver;
     public ExtentReports extent;

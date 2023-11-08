@@ -8,9 +8,13 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.patientsearch.PatientSearch;
 
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase2 extends PatientSearch {
+
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("patientsearch");
+    String patientEmail = resourceBundle.getString("patientEmail");
 
 
     public TestCase2(AndroidDriver driver, ExtentTest test) {
@@ -19,7 +23,7 @@ public class TestCase2 extends PatientSearch {
 
     public void patientSearchByValue() {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        searchQuery.sendKeys("clovemanjeet@gmail.com");
+        searchQuery.sendKeys(patientEmail);
         test.log(Status.PASS, "Eamil - Input Field fill successfully ");
     }
 

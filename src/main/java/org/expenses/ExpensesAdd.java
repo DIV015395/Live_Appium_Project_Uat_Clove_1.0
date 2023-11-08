@@ -76,6 +76,10 @@ public class ExpensesAdd extends Expenses {
     private final String expenseAddName = resourceBundle.getString("name");
     private final String expenseAddAmount = resourceBundle.getString("Amount");
     private final String expenseAddQuantity = resourceBundle.getString("Quantity");
+    private final String expenseEditAddName = resourceBundle.getString("editname");
+    private final String expenseEditAddAmount = resourceBundle.getString("editAmount");
+    private final String expenseEditAddQuantity = resourceBundle.getString("editQuantity");
+
 
     public void setAddexpense() {
         try {
@@ -133,6 +137,17 @@ public class ExpensesAdd extends Expenses {
 
     }
 
+    public void setEditName() {
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            name.sendKeys(expenseEditAddName);
+            test.log(Status.PASS, "Click on Name send in Text field in Edit . Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Name send in Text field in Edit. Not Working");
+        }
+
+    }
+
     public void setQuantity() {
 
 
@@ -146,6 +161,20 @@ public class ExpensesAdd extends Expenses {
 
     }
 
+
+    public void setEditQuantity() {
+
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            quantity.sendKeys(expenseEditAddQuantity);
+            test.log(Status.PASS, "Click on Quantity send in Text field in Edit. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Quantity send in Text field in Edit. Not Working");
+        }
+
+    }
+
     public void setAmount() {
 
         try {
@@ -154,6 +183,18 @@ public class ExpensesAdd extends Expenses {
             test.log(Status.PASS, "Click on Amount send in Text field. Working");
         } catch (Exception e) {
             test.log(Status.FAIL, "Click on Amount send in Text field. Not Working");
+        }
+    }
+
+
+    public void setEditAmount() {
+
+        try {
+            driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+            amount.sendKeys(expenseEditAddAmount);
+            test.log(Status.PASS, "Click on Amount send in Text field in Edit. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Amount send in Text field in Edit. Not Working");
         }
     }
 

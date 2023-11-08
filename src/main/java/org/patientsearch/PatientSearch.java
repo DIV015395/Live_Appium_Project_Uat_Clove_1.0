@@ -6,8 +6,10 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.desiredcapabilities.BaseDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class PatientSearch extends BaseDriver {
@@ -33,6 +35,36 @@ public class PatientSearch extends BaseDriver {
     public WebElement iv_search;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_searchQuery")
     public AndroidElement searchQuery;
+
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("patientsearch");
+    //All for search listing verify patient search
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_patientSearch_contactNo")
+    private AndroidElement listingContactNo;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_patientSearch_patientName")
+    private AndroidElement listingPatientName;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_patientSearch_patientId")
+    private AndroidElement listingPatientId;
+    private final String patientId = resourceBundle.getString("patientId");
+    private final String patientPhone = resourceBundle.getString("patientPhone");
+    private final String patientName = resourceBundle.getString("patientName");
+
+    public void setListingPatientId() {
+        System.out.println(listingPatientId.getText());
+        Assert.assertEquals(listingPatientId.getText(), patientId);
+    }
+
+    public void setListingContactNo() {
+        System.out.println(listingContactNo.getText());
+        Assert.assertEquals(listingContactNo.getText(), patientPhone);
+    }
+
+    public void setListingPatientName() {
+        System.out.println(listingPatientName.getText());
+        Assert.assertEquals(listingPatientName.getText(), patientName);
+    }
+
+    //ALl for patient listing verified
+
 
     public PatientSearch(AndroidDriver driver, ExtentTest test) {
         super(driver);

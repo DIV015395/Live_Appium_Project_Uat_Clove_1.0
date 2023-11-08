@@ -12,7 +12,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.patientsearch.testcase.TestCase3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -64,13 +63,14 @@ public class TestCase3Test {
         obj.selectClinic();
         obj.patientSearchByOption();
         obj.searchButton();
+        obj.setListingContactNo();
         test.pass("Test is successful pass");
     }
-
-    @AfterClass
-    public void driverClose() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.quit();
-        extent.flush();
-    }
+//
+//    @AfterClass
+//    public void driverClose() {
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        driver.quit();
+//        extent.flush();
+//    }
 }
