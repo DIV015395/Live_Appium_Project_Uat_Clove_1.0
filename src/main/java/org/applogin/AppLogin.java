@@ -10,7 +10,8 @@ import org.desiredcapabilities.BaseDriver;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-public class AppLogin extends BaseDriver {
+public class AppLogin extends BaseDriver
+{
     private final ExtentTest test;
     public AppLogin(AndroidDriver driver, ExtentTest test) {
         super(driver);
@@ -28,7 +29,7 @@ public class AppLogin extends BaseDriver {
     private AndroidElement tv_login_go;
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_button")
     private AndroidElement permission_allow_button;
-    ResourceBundle resourceBundle = ResourceBundle.getBundle("login");
+    private ResourceBundle resourceBundle = ResourceBundle.getBundle("login");
     private final String userid = resourceBundle.getString("id");
     private final String password = resourceBundle.getString("pass");
 

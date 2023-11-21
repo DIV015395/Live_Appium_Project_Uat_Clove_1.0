@@ -1,5 +1,4 @@
 Feature: Testing the login functionality
-
   @sanity
   Scenario: User logs in with userid password
     Given Launch the driver

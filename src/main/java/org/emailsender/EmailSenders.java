@@ -82,12 +82,9 @@ public class EmailSenders {
         properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         properties.put("mail.smtp.socketFactory.fallback", "false");
 
-
-        // Replace with your actual email and password (securely stored)
         String senderEmail = "manjeet.instantsys@gmail.com";
         String senderPassword = "abzu rkcq csar ikzo";
 
-        // Replace with the recipient's email address
         String recipientEmail = "manjeet.sharma@instantsys.com";
 
         // Specify the full path to the Extent Report file
