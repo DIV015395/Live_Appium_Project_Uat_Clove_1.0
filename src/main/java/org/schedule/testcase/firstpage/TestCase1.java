@@ -35,6 +35,7 @@ public class TestCase1 extends SchedulePage {
     }
 
     public void toastMassageValidation() {
+
         Assert.assertEquals(getmassage, "Please select a valid clinic!");
         test.log(Status.PASS, "Toast message is Validated");
     }

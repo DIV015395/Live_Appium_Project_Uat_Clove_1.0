@@ -25,19 +25,25 @@ public class TestCase2 extends SchedulePage {
 
     @Override
     public void selectClinicDropdown() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        layout_clinicSelect.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        // Assuming you want to select the option with text "Bodakdev"
-        String desiredOptionText = "Developer West";
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            layout_clinicSelect.click();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            // Assuming you want to select the option with text "Bodakdev"
+            String desiredOptionText = "Developer West";
 
-        for (WebElement option : tv_itemTitle) {
-            if (option.getText().equals(desiredOptionText)) {
-                option.click();
-                break;
+            for (WebElement option : tv_itemTitle) {
+                if (option.getText().equals(desiredOptionText)) {
+                    option.click();
+                    break;
+                }
             }
+            test.log(Status.PASS, "Selected clinic from dropdown");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Selected clinic from dropdown -> Not Working");
+
         }
-        test.log(Status.PASS, "Selected clinic from dropdown");
+
     }
 }

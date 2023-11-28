@@ -37,49 +37,67 @@ public class SchedulePage extends BaseDriver {
     String clinicName = resourceBundle.getString("clinicName");
 
     public void homeSchedule() {
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        tv_home_schedule.click();
-        test.log(Status.PASS, "Home schedule button clicked ");
+        try {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            tv_home_schedule.click();
+            test.log(Status.PASS, "Home schedule button clicked ");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Home schedule button click -> Failed");
+        }
     }
     public void scheduleCalenderDate() {
         System.out.println(scheduleCalender.getText());
     }
     public void selectClinicDropdown() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        layout_clinicSelect.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        // Assuming you want to select the option with text "Bodakdev"
-        String desiredOptionText = clinicName;
 
-        for (WebElement option : tv_itemTitle) {
-            if (option.getText().equals(desiredOptionText)) {
-                option.click();
-                break;
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            layout_clinicSelect.click();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            // Assuming you want to select the option with text "Bodakdev"
+            String desiredOptionText = clinicName;
+
+            for (WebElement option : tv_itemTitle) {
+                if (option.getText().equals(desiredOptionText)) {
+                    option.click();
+                    break;
+                }
             }
+            test.log(Status.PASS, "Clinic is selected from dropdown");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Clinic is selected from dropdown -> Failed");
         }
-        test.log(Status.PASS, "Clinic is selected from dropdown");
     }
 
     public void selectDoctorDropdown() {
-        layout_doctorSelect.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        // Assuming you want to select the option with text "Bodakdev"
-        String desiredOptionText = doctorName;
-        for (WebElement option : tv_itemTitle) {
-            if (option.getText().equals(desiredOptionText)) {
-                option.click();
-                break;
+        try {
+            layout_doctorSelect.click();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            // Assuming you want to select the option with text "Bodakdev"
+            String desiredOptionText = doctorName;
+            for (WebElement option : tv_itemTitle) {
+                if (option.getText().equals(desiredOptionText)) {
+                    option.click();
+                    break;
+                }
             }
+            test.log(Status.PASS, "Doctor is selected from dropdown");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Doctor is selected from dropdown -> Failed");
         }
-        test.log(Status.PASS, "Doctor is selected from dropdown");
     }
 
     public void appointmentPlus() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        fab_newAppointment.click();
-        test.log(Status.PASS, "Clicked on Appointment plus button");
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            fab_newAppointment.click();
+            test.log(Status.PASS, "Clicked on Appointment plus button");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Clicked on Appointement plus button -> Failed");
+        }
+
     }
 
 

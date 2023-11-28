@@ -1,5 +1,7 @@
 package org.schedule;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -12,6 +14,7 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class AppointmentPage extends BaseDriver {
+    ExtentTest test;
 
 
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"04 August 2023\"]")
@@ -49,8 +52,9 @@ public class AppointmentPage extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/rv_chiefComplaintList")
     private WebElement painElement;
 
-    public AppointmentPage(AndroidDriver driver) {
+    public AppointmentPage(AndroidDriver driver, ExtentTest test) {
         super(driver);
+        this.test = test;
     }
 
 
@@ -59,25 +63,58 @@ public class AppointmentPage extends BaseDriver {
     String patientMobileNumber = resourceBundle.getString("mobileNumber");
 
     public void mobileNumberPatient() {
-        et_contact.sendKeys(patientMobileNumber);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            et_contact.sendKeys(patientMobileNumber);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            test.log(Status.PASS, "Patient mobile no filled");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Patient mobile no filled -> Not working");
+
+        }
+
     }
 
     public void namePatient() {
-        et_name.sendKeys(patientName);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            et_name.sendKeys(patientName);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            test.log(Status.PASS, "Patient name filled at Appointment page");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Patient name filled at Appointment page -> Not working");
+        }
+
     }
 
-    public void dateSelection() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Dates.click();
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        Next_month.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Date.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Dateok.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    public void calenderOpen() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Dates.click();
+            test.log(Status.PASS, "Calender Open Properly");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Calender Open -> Not working");
+        }
+    }
+
+    public void selectDate() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Date.click();
+            test.log(Status.PASS, "Date selected from calender");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Date selected from calender -> Not Working");
+        }
+
+    }
+
+    public void calenderOkButton() {
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Dateok.click();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            test.log(Status.PASS, "Clicked on ok Button at Calender page");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Clicked on ok Button at Calender page -> Not Working");
+        }
     }
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_doctorName")
@@ -118,13 +155,35 @@ public class AppointmentPage extends BaseDriver {
 
     //Scroll down perform karna hai is jagah par;
     public void scrolling() {
+//        Dimension size = driver.manage().window().getSize();
+//        int startX = size.width / 2;
+//        int startY = (int) (size.height * 0.8);
+//        int endY = (int) (size.height * 0.2);
+//        new TouchAction(driver)
+//                .press(PointOption.point(startX, startY))
+//                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+//                .moveTo(PointOption.point(startX, endY))
+//                .release()
+//                .perform();
+//        MobileElement element = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
+//                "new UiScrollable(new UiSelector().scrollable(true))"
+//                        + ".scrollIntoView(new UiSelector().text(\"SAVE\"))"));
+//        element.click();
+
+
         driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));
     }
 
     public void painElements() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        painElement.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            painElement.click();
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            test.log(Status.PASS, "All pain Selected");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "All pain Selected - Not Working Fine");
+        }
+
     }
     String notes = resourceBundle.getString("Notes");
 
@@ -138,7 +197,12 @@ public class AppointmentPage extends BaseDriver {
     }
 
     public void submitButton() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        iv_save.click();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            iv_save.click();
+            test.log(Status.PASS, "Click on Save button at Appointment Page");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Save button at Appointment Page -> Not Working");
+        }
     }
 }

@@ -65,7 +65,9 @@ public class TestCase7Test {
         TestCase7 obj = new TestCase7((AndroidDriver) driver);
         obj.mobileNumberPatient();
         obj.namePatient();
-        obj.dateSelection();
+        obj.calenderOpen();
+        obj.selectDate();
+        obj.calenderOkButton();
         obj.slotSelection();
         obj.durationSelection();
         obj.setDoctorName();

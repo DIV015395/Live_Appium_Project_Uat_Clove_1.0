@@ -54,10 +54,12 @@ public class AppointmentPageTest {
     @Test(priority = 3)
     public void main() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppointmentPage obj1 = new AppointmentPage((AndroidDriver) driver);
+        AppointmentPage obj1 = new AppointmentPage((AndroidDriver) driver, test);
         obj1.mobileNumberPatient();
         obj1.namePatient();
-        obj1.dateSelection();
+        obj1.calenderOpen();
+        obj1.selectDate();
+        obj1.calenderOkButton();
         obj1.slotSelection();
         obj1.durationSelection();
         obj1.setDoctorName();

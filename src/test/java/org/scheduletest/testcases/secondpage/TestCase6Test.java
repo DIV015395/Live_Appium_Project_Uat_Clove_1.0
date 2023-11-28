@@ -67,7 +67,9 @@ public class TestCase6Test {
         TestCase6 obj = new TestCase6((AndroidDriver) driver);
         obj.mobileNumberPatient();
         obj.namePatient();
-        obj.dateSelection();
+        obj.calenderOpen();
+        obj.selectDate();
+        obj.calenderOkButton();
         obj.slotSelection();
         obj.durationSelection();
         obj.scrolling();
