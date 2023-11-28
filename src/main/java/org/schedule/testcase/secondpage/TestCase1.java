@@ -2,6 +2,7 @@
 
 package org.schedule.testcase.secondpage;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -13,11 +14,14 @@ import java.util.concurrent.TimeUnit;
 
 public class TestCase1 extends AppointmentPage {
     @AndroidFindBy(xpath = "//android.widget.Toast")
-    public AndroidElement massages;
-    String getmassage;
+    private AndroidElement massages;
+    private final ExtentTest test;
+    private String getmassage;
 
-    public TestCase1(AndroidDriver driver) {
+    public TestCase1(AndroidDriver driver, ExtentTest test) {
+
         super(driver);
+        this.test = test;
     }
 
     public void scrolling() {

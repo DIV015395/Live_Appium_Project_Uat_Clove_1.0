@@ -23,9 +23,9 @@ import java.util.concurrent.TimeUnit;
 
 public class TestCase8Test {
 
-    public AppiumDriver driver;
-    public ExtentReports extent;
-    public ExtentTest test;
+    private AppiumDriver driver;
+    private ExtentReports extent;
+    private ExtentTest test;
 
 
     @BeforeClass
@@ -65,7 +65,7 @@ public class TestCase8Test {
 
     @Test(priority = 3)
     public void appointmentTestCase() {
-        TestCase8 obj = new TestCase8((AndroidDriver) driver);
+        TestCase8 obj = new TestCase8((AndroidDriver) driver, test);
         test = extent.createTest("Test case 8", "Schedule second page Test case 8");
         obj.validationNotesInListing();
         test.pass("Test case passed Successfully");

@@ -1,5 +1,6 @@
 package org.schedule.testcase.secondpage;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -9,12 +10,14 @@ import org.testng.Assert;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase6 extends AppointmentPage {
+    ExtentTest test;
     @AndroidFindBy(xpath = "//android.widget.Toast")
-    public AndroidElement massages;
-    String getmassage;
+    private AndroidElement massages;
+    private String getmassage;
 
-    public TestCase6(AndroidDriver driver) {
+    public TestCase6(AndroidDriver driver, ExtentTest test) {
         super(driver);
+        this.test = test;
     }
 
     public void toastMassageValidation() {

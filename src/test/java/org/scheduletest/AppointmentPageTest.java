@@ -17,8 +17,8 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class AppointmentPageTest {
-    public AppiumDriver driver;
-    public ExtentTest test;
+    private AppiumDriver driver;
+    private ExtentTest test;
 
     @BeforeClass
     public void driverLaunch() throws MalformedURLException {
@@ -54,7 +54,7 @@ public class AppointmentPageTest {
     @Test(priority = 3)
     public void main() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppointmentPage obj1 = new AppointmentPage((AndroidDriver) driver, test);
+        AppointmentPage obj1 = new AppointmentPage((AndroidDriver) driver);
         obj1.mobileNumberPatient();
         obj1.namePatient();
         obj1.calenderOpen();

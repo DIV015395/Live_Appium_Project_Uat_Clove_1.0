@@ -12,11 +12,14 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.schedule.SchedulePage;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase2 extends SchedulePage {
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
     private WebElement layout_clinicSelect;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
+    private List<WebElement> tv_itemTitle;
 
     public TestCase2(AndroidDriver driver, ExtentTest test) {
         super(driver, test);

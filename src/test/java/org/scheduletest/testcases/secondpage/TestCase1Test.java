@@ -22,9 +22,9 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase1Test {
-    public AppiumDriver driver;
-    public ExtentReports extent;
-    public ExtentTest test;
+    private AppiumDriver driver;
+    private ExtentReports extent;
+    private ExtentTest test;
 
     @BeforeClass
     public void driverLaunch() {
@@ -65,7 +65,7 @@ public class TestCase1Test {
 
     @Test(priority = 3)
     public void appointmentTestCase() {
-        TestCase1 obj = new TestCase1((AndroidDriver) driver);
+        TestCase1 obj = new TestCase1((AndroidDriver) driver, test);
         obj.scrolling();
         obj.submitButton();
         obj.toastMassageValidation();

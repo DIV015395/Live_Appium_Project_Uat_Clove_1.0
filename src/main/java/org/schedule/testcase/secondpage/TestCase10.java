@@ -21,11 +21,15 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase10 extends SchedulePage {
-    public ExtentTest test;
+    private final ExtentTest test;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
+    private List<WebElement> tv_itemTitle;
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
     private WebElement layout_clinicSelect;
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_previousDate")
     public AndroidElement previousDate;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/layout_doctorSelect")
+    private WebElement layout_doctorSelect;
     int l = CurrentFormattedDate.currentDate();
     int date = 06;
 

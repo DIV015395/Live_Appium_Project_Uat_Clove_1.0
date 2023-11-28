@@ -5,15 +5,23 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class SchedulePageTemp extends SchedulePage {
     private final ExtentTest test;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
+    private List<WebElement> tv_itemTitle;
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
     private WebElement layout_clinicSelect;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_schedule")
     private WebElement tv_home_schedule;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/layout_doctorSelect")
+    private WebElement layout_doctorSelect;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/fab_newAppointment")
+    private WebElement fab_newAppointment;
+
 
     public SchedulePageTemp(AndroidDriver driver, ExtentTest test) {
         super(driver, test);
@@ -22,10 +30,10 @@ public class SchedulePageTemp extends SchedulePage {
 
 
     ResourceBundle resourceBundle = ResourceBundle.getBundle("tempschedule");
-    String doctorName = resourceBundle.getString("doctorName");
-    String doctorName1 = resourceBundle.getString("doctorName1");
-    String clinicName = resourceBundle.getString("clinicName");
-    String clinicName1 = resourceBundle.getString("clinicName1");
+    private final String doctorName = resourceBundle.getString("doctorName");
+    private final String doctorName1 = resourceBundle.getString("doctorName1");
+    private final String clinicName = resourceBundle.getString("clinicName");
+    private final String clinicName1 = resourceBundle.getString("clinicName1");
 
     @Override
     public void homeSchedule() {

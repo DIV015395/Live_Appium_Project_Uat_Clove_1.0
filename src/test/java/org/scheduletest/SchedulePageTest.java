@@ -16,8 +16,9 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class SchedulePageTest {
-    public AppiumDriver driver;
-    public ExtentTest test;
+    private AppiumDriver driver;
+    private ExtentTest test;
+
     @BeforeClass
     public void driverLaunch() throws MalformedURLException {
         DesiredCapabilities caps = DesireCap.desire();

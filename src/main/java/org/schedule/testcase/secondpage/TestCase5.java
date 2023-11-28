@@ -3,6 +3,7 @@
 
 package org.schedule.testcase.secondpage;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -21,10 +22,12 @@ public class TestCase5 extends AppointmentPage {
     public WebElement et_contact;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_name")
     public WebElement et_name;
+    private final ExtentTest test;
     String getmassage;
 
-    public TestCase5(AndroidDriver driver) {
+    public TestCase5(AndroidDriver driver, ExtentTest test) {
         super(driver);
+        this.test = test;
     }
 
     public void mobileNumberNineDigit() {

@@ -21,9 +21,9 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase7Test {
-    public AppiumDriver driver;
-    public ExtentReports extent;
-    public ExtentTest test;
+    private AppiumDriver driver;
+    private ExtentReports extent;
+    private ExtentTest test;
     TestCase7 obj;
 
     @BeforeClass
@@ -62,7 +62,7 @@ public class TestCase7Test {
     @Test(priority = 3)
     public void appointmentTestCase() {
         test = extent.createTest("Test case 7", "Schedule second page Test case 7");
-        TestCase7 obj = new TestCase7((AndroidDriver) driver);
+        TestCase7 obj = new TestCase7((AndroidDriver) driver, test);
         obj.mobileNumberPatient();
         obj.namePatient();
         obj.calenderOpen();
@@ -79,7 +79,7 @@ public class TestCase7Test {
     }
     @Test(priority = 4)
     public void validationDataMessage() {
-        obj = new TestCase7((AndroidDriver) driver);
+        obj = new TestCase7((AndroidDriver) driver, test);
         obj.validatePatientDetails();
         obj.validateClinicName();
         obj.validateAppointmentType();

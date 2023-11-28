@@ -2,6 +2,7 @@
 
 package org.schedule.testcase.secondpage;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -13,10 +14,12 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class TestCase8 extends BaseDriver {
+    private final ExtentTest test;
 
 
-    public TestCase8(AndroidDriver driver) {
+    public TestCase8(AndroidDriver driver, ExtentTest test) {
         super(driver);
+        this.test = test;
     }
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/value_appointment_notes_value")

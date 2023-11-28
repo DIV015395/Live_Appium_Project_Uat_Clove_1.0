@@ -23,9 +23,9 @@ import java.util.concurrent.TimeUnit;
 
 public class TestCase2Test {
 
-    public AppiumDriver driver;
-    public ExtentReports extent;
-    public ExtentTest test;
+    private AppiumDriver driver;
+    private ExtentReports extent;
+    private ExtentTest test;
 
     @BeforeClass
     public void driverLaunch() {
@@ -68,7 +68,7 @@ public class TestCase2Test {
     public void appointmentTestCase() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         test = extent.createTest("Test case 2", "Schedule second page Test case 2");
-        TestCase2 obj = new TestCase2((AndroidDriver) driver);
+        TestCase2 obj = new TestCase2((AndroidDriver) driver, test);
         obj.mobileNumberPatient();
         obj.scrolling();
         obj.submitButton();

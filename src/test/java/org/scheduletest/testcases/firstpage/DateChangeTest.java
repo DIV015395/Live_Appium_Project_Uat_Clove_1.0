@@ -21,9 +21,9 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DateChangeTest {
-    public AppiumDriver driver;
-    public ExtentReports extent;
-    public ExtentTest test;
+    private AppiumDriver driver;
+    private ExtentReports extent;
+    private ExtentTest test;
 
     @BeforeClass
     public void driverLaunch() {

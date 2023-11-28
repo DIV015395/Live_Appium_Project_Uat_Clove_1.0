@@ -18,13 +18,13 @@ public class SchedulePage extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
     private WebElement layout_clinicSelect;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
-    public List<WebElement> tv_itemTitle;
+    private List<WebElement> tv_itemTitle;
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_doctorSelect")
-    public WebElement layout_doctorSelect;
+    private WebElement layout_doctorSelect;
     @AndroidFindBy(id = "com.clove.clover.uat:id/fab_newAppointment")
-    public WebElement fab_newAppointment;
+    private WebElement fab_newAppointment;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_selectedDate")
-    public WebElement scheduleCalender;
+    private WebElement scheduleCalender;
 
 
     public SchedulePage(AndroidDriver driver, ExtentTest test) {
