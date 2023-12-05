@@ -8,7 +8,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
-import org.logout.Logout;
+import org.logout.MenuLogout;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -17,7 +17,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class LogoutTest {
+public class MenuLogoutTest {
+
+
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
@@ -49,9 +51,10 @@ public class LogoutTest {
 
     @Test(priority = 2)
     public void logoutApp() {
-        Logout obj = new Logout((AndroidDriver) driver, test);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.setLogoutFromDashboard();
+        MenuLogout obj = new MenuLogout((AndroidDriver) driver, test);
+        obj.setHomeChat();
+        obj.setMenu();
+        obj.setLogoutFromMenu();
         obj.clickOnYesButton();
         obj.redirectLoginPage();
     }
