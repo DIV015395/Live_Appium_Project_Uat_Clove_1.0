@@ -52,7 +52,7 @@ public class AppointmentPage extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/rv_chiefComplaintList")
     private WebElement painElement;
 
-    public AppointmentPage(AndroidDriver driver) {
+    public AppointmentPage(AndroidDriver driver, ExtentTest test) {
         super(driver);
         this.test = test;
     }

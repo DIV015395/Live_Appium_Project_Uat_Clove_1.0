@@ -26,7 +26,7 @@ public class TestCase5 extends AppointmentPage {
     String getmassage;
 
     public TestCase5(AndroidDriver driver, ExtentTest test) {
-        super(driver);
+        super(driver, test);
         this.test = test;
     }
 

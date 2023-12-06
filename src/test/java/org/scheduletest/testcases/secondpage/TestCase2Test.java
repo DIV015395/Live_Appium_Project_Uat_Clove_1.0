@@ -11,8 +11,6 @@ import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.schedule.SchedulePage;
 import org.schedule.testcase.secondpage.TestCase2;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -30,6 +28,7 @@ public class TestCase2Test {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
+        test = extent.createTest("Test case 2", "Schedule second page Test case 2");
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
@@ -37,10 +36,7 @@ public class TestCase2Test {
         } catch (MalformedURLException e) {
             test.log(Status.FAIL, "Click function is not working");
         }
-
-
     }
-
     @Test(priority = 1)
     public void loginApp() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

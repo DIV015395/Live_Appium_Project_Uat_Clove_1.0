@@ -19,7 +19,7 @@ public class TestCase4 extends AppointmentPage {
     String getmassage;
 
     public TestCase4(AndroidDriver driver, ExtentTest test) {
-        super(driver);
+        super(driver, test);
         this.test = test;
     }
 

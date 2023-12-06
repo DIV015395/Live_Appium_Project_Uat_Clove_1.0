@@ -28,6 +28,7 @@ public class TestCase5Test {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
+        test = extent.createTest("Test case 5", "Schedule second page Test case 5");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -62,7 +63,7 @@ public class TestCase5Test {
 
     @Test(priority = 3)
     public void appointmentTestCase() {
-        test = extent.createTest("Test case 5", "Schedule second page Test case 5");
+
         TestCase5 obj = new TestCase5((AndroidDriver) driver, test);
         obj.mobileNumberNineDigit();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

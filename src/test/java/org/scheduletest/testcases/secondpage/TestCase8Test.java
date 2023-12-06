@@ -31,7 +31,7 @@ public class TestCase8Test {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-
+        test = extent.createTest("Test case 8", "Schedule second page Test case 8");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -66,7 +66,6 @@ public class TestCase8Test {
     @Test(priority = 3)
     public void appointmentTestCase() {
         TestCase8 obj = new TestCase8((AndroidDriver) driver, test);
-        test = extent.createTest("Test case 8", "Schedule second page Test case 8");
         obj.validationNotesInListing();
         test.pass("Test case passed Successfully");
     }

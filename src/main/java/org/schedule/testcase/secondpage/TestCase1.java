@@ -20,7 +20,7 @@ public class TestCase1 extends AppointmentPage {
 
     public TestCase1(AndroidDriver driver, ExtentTest test) {
 
-        super(driver);
+        super(driver, test);
         this.test = test;
     }
 

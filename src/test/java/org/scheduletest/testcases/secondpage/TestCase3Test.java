@@ -29,6 +29,7 @@ public class TestCase3Test {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
+        test = extent.createTest("Test case 3", "Schedule second page Test case 3");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -64,7 +65,7 @@ public class TestCase3Test {
 
     @Test(priority = 3)
     public void appointmentTestCase() {
-        test = extent.createTest("Test case 3", "Schedule second page Test case 3");
+
         TestCase3 obj = new TestCase3((AndroidDriver) driver, test);
         obj.namePatient();
         obj.scrolling();
