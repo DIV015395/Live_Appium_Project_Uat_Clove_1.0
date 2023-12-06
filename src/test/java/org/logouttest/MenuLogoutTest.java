@@ -10,6 +10,7 @@ import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.logout.MenuLogout;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -58,10 +59,10 @@ public class MenuLogoutTest {
         obj.clickOnYesButton();
         obj.redirectLoginPage();
     }
-//    @AfterClass
-//    public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
-//        extent.flush();
-//    }
+    @AfterClass
+    public void driverClose() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
+    }
 }

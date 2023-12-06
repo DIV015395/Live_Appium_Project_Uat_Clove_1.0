@@ -30,7 +30,6 @@ public class TestCase2Test {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);

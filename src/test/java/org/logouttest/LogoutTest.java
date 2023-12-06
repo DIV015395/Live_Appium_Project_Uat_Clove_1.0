@@ -10,6 +10,7 @@ import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.logout.Logout;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -17,11 +18,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class LogoutTest {
+public class LogoutTest
+{
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
-
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
@@ -34,7 +35,6 @@ public class LogoutTest {
             test.log(Status.FAIL, "Click function is not working");
         }
     }
-
     @Test(priority = 1)
     public void loginApp() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -46,7 +46,6 @@ public class LogoutTest {
         obj.permissonAllowed();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
-
     @Test(priority = 2)
     public void logoutApp() {
         Logout obj = new Logout((AndroidDriver) driver, test);
@@ -55,10 +54,10 @@ public class LogoutTest {
         obj.clickOnYesButton();
         obj.redirectLoginPage();
     }
-//    @AfterClass
-//    public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        driver.quit();
-//        extent.flush();
-//    }
+    @AfterClass
+    public void driverClose() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.quit();
+        extent.flush();
+    }
 }
