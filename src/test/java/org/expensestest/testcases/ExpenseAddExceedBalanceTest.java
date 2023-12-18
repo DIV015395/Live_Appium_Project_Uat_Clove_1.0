@@ -70,6 +70,11 @@ public class ExpenseAddExceedBalanceTest {
         obj.setQuantity();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAmount();
+        obj.setRemarksButton();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        obj.setRemarksTextSend();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        obj.setRemarkDone();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAttachFiles();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

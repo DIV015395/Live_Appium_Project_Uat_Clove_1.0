@@ -62,6 +62,8 @@ public class ExpenseAddNotExceedBalance extends ExpensesAdd {
             test.log(Status.PASS, "Click on Clinic selected from dropdown. Working");
         } catch (Exception e) {
             test.log(Status.FAIL, "Click on Clinic selected from dropdown. Not Working");
+            test.error("Error = " + e);
+            e.printStackTrace();
         }
 
     }

@@ -1,5 +1,4 @@
 package org.expenses.testcases;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;

@@ -1,13 +1,11 @@
 //Patient Details validation
 
 package org.patientsearch.testcase;
-
 import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.patientsearch.PatientSearch;
-
 public class TestCase1 extends PatientSearch {
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_patientSearch_patientName")
     public WebElement patientName;
@@ -19,7 +17,6 @@ public class TestCase1 extends PatientSearch {
     public WebElement doctorName;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_patientSearch_clinicName")
     public WebElement clinicName;
-
     public TestCase1(AndroidDriver driver, ExtentTest test) {
         super(driver, test);
     }

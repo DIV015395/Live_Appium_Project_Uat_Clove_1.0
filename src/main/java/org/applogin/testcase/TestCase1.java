@@ -18,7 +18,6 @@ public class TestCase1 extends AppLogin {
     @AndroidFindBy(xpath = "//android.widget.Toast")
     private AndroidElement massagess;
     private String getmassage;
-
     public TestCase1(AndroidDriver driver, ExtentTest test) {
         super(driver, test);
         this.test = test;
