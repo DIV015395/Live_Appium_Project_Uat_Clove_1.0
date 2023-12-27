@@ -9,9 +9,9 @@ import org.applogin.testcase.TestCase5;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import orguivalidation.dashboard.DashboardScreen;
 import orguivalidation.login.LoginScreen;
 
 import java.net.MalformedURLException;
@@ -20,12 +20,12 @@ import java.util.concurrent.TimeUnit;
 
 public class CompleteUIScreenValidation {
     public AppiumDriver driver;
-    public ExtentReports extent;
+    public ExtentReports extent = ExtentManager.getInstance();
     public ExtentTest test;
 
     @BeforeClass
     public void driverLaunch() {
-        extent = ExtentManager.getInstance();
+
         test = extent.createTest("Login Page UI Validation", "Login Page UI Validation");
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -35,7 +35,6 @@ public class CompleteUIScreenValidation {
             test.log(Status.FAIL, "Click function is not working");
         }
     }
-
     @Test(priority = 1)
     public void loginScreenTest() {
         LoginScreen objLoginScreen = new LoginScreen((AndroidDriver) driver, test);
@@ -43,13 +42,15 @@ public class CompleteUIScreenValidation {
         objLoginScreen.loginTitle();
         objLoginScreen.titleProceed();
         objLoginScreen.loginUsername();
+        objLoginScreen.loginUsernameIcon();
         objLoginScreen.loginPassword();
+        objLoginScreen.loginPasswordIcon();
         objLoginScreen.loginGo();
-        objLoginScreen.ivSave();
+        objLoginScreen.ivSaveIcon();
         objLoginScreen.loginBottomMessage();
         objLoginScreen.captureAndAttachScreenshot();
+        extent.flush();
     }
-
     @Test(priority = 2)
     public void redirectToDashboard() {
         TestCase5 obj = new TestCase5((AndroidDriver) driver, test);
@@ -60,12 +61,21 @@ public class CompleteUIScreenValidation {
         obj.permissonAllowed();
         obj.toastMassage();
         obj.toastMassageValidation();
-        test.pass("test case passed successfully");
     }
 
-    @AfterClass
-    public void driverClose() {
-        driver.quit();
+    @Test(priority = 3)
+    public void dashboardScreenTest() {
+        test = extent.createTest("DashBoard Page UI Validation", "DashBoard Page UI Validation");
+        DashboardScreen dashboardScreen = new DashboardScreen((AndroidDriver) driver, test);
+        dashboardScreen.dashboardNotificationIconExtract();
+        dashboardScreen.dashboardLogoutIconExtract();
+        dashboardScreen.dashboardProfileImageExtract();
+        dashboardScreen.dashboardEditIconExtract();
         extent.flush();
     }
+//    @AfterClass
+//    public void driverClose() {
+//        driver.quit();
+//        extent.flush();
+//    }
 }

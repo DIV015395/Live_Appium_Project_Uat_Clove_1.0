@@ -253,7 +253,6 @@ public class EmailSenders {
     }
     public static void main(String[] args) {
         EmailSenders.emailSenderToCompanyManjeetSharma();
-        EmailSenders.emailSenderToRajeshMishra();
     }
 
 }

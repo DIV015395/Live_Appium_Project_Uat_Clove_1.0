@@ -26,8 +26,12 @@ public class LoginScreen extends BaseDriver {
     private AndroidElement titleproceedtext;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_login_username")
     private AndroidElement loginusernametext;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_login_username")
+    private AndroidElement loginusernameicon;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_login_password")
     private AndroidElement loginpasswordtext;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_login_password")
+    private AndroidElement loginpasswordicon;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_login_go")
     private AndroidElement logingotext;
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_save")
@@ -39,7 +43,6 @@ public class LoginScreen extends BaseDriver {
         super(driver);
         this.test = test;
     }
-
     public void extractImage() {
         try {
             File screenshotFile = loginscreenimageview.getScreenshotAs(OutputType.FILE);
@@ -83,6 +86,19 @@ public class LoginScreen extends BaseDriver {
         }
     }
 
+    public void loginUsernameIcon() {
+        try {
+            File screenshotFile = loginusernameicon.getScreenshotAs(OutputType.FILE);
+            BufferedImage image = ImageIO.read(screenshotFile);
+            File outputFile = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\screenshotscreen\\loginusernameicon.png");
+            ImageIO.write(image, "png", outputFile);
+            test.pass("Extract Login username Icon", MediaEntityBuilder.createScreenCaptureFromPath("loginusernameicon.png").build());
+        } catch (IOException e) {
+            e.printStackTrace();
+            test.fail("Failed to extract the Login username Icon " + e.getMessage());
+        }
+    }
+
     public void loginPassword() {
         if (loginpasswordtext.getText() != null) {
             Assert.assertEquals(loginpasswordtext.getText(), loginText.loginPasswordText());
@@ -90,6 +106,19 @@ public class LoginScreen extends BaseDriver {
             test.pass("Assert Method Verified");
         } else {
             test.fail("Failed Login password Text Validation");
+        }
+    }
+
+    public void loginPasswordIcon() {
+        try {
+            File screenshotFile = loginpasswordicon.getScreenshotAs(OutputType.FILE);
+            BufferedImage image = ImageIO.read(screenshotFile);
+            File outputFile = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\screenshotscreen\\loginpasswordicon.png");
+            ImageIO.write(image, "png", outputFile);
+            test.pass("Extract Login password Icon", MediaEntityBuilder.createScreenCaptureFromPath("loginpasswordicon.png").build());
+        } catch (IOException e) {
+            e.printStackTrace();
+            test.fail("Failed to extract the Login password Icon " + e.getMessage());
         }
     }
 
@@ -103,7 +132,7 @@ public class LoginScreen extends BaseDriver {
         }
     }
 
-    public void ivSave() {
+    public void ivSaveIcon() {
         try {
             File screenshotFile = ivsave.getScreenshotAs(OutputType.FILE);
             BufferedImage image = ImageIO.read(screenshotFile);
