@@ -15,17 +15,14 @@ public class LoginText {
         String text = "Username";
         return text;
     }
-
     public String loginPasswordText() {
         String text = "Password";
         return text;
     }
-
     public String loginGoText() {
         String text = "GO";
         return text;
     }
-
     public String loginBottomMessage() {
         String text = "*Please be aware that on login into app you will be automatically logged out from other devices!";
         return text;

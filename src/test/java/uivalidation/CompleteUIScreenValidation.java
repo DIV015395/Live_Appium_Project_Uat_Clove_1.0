@@ -5,6 +5,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import org.applogin.testcase.TestCase5;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -35,20 +36,31 @@ public class CompleteUIScreenValidation {
         }
     }
 
-    @Test
+    @Test(priority = 1)
     public void loginScreenTest() {
         LoginScreen objLoginScreen = new LoginScreen((AndroidDriver) driver, test);
+        objLoginScreen.extractImage();
         objLoginScreen.loginTitle();
         objLoginScreen.titleProceed();
         objLoginScreen.loginUsername();
         objLoginScreen.loginPassword();
         objLoginScreen.loginGo();
+        objLoginScreen.ivSave();
         objLoginScreen.loginBottomMessage();
         objLoginScreen.captureAndAttachScreenshot();
     }
 
-    public void loginRedirectToDashboard() {
-
+    @Test(priority = 2)
+    public void redirectToDashboard() {
+        TestCase5 obj = new TestCase5((AndroidDriver) driver, test);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        obj.userName();
+        obj.userPassword();
+        obj.goClickButton();
+        obj.permissonAllowed();
+        obj.toastMassage();
+        obj.toastMassageValidation();
+        test.pass("test case passed successfully");
     }
 
     @AfterClass

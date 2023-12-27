@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.concurrent.TimeUnit;
 
 public class BaseDriver {
-    public AndroidDriver<AndroidElement> driver;
+    public static AndroidDriver<AndroidElement> driver;
 
     public BaseDriver(AndroidDriver<AndroidElement> driver) {
-        this.driver = driver;
+        BaseDriver.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 

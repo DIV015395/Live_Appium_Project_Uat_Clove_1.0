@@ -10,6 +10,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/testbdd/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/expenseresources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/loginresources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/screenshotscreen" type="java-resource" />
     </content>
   </component>
 </module>

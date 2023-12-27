@@ -52,7 +52,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Dec 27, 2023 01:47:15 pm</span>
+			<span class='label blue darken-3 suite-start-time'>Dec 27, 2023 05:02:22 pm</span>
 			</a>
 		</ul>
 	</div>
@@ -104,31 +104,31 @@
 <div id='test-view-charts' class='subview-full'>
     <div id='charts-row' class='row nm-v nm-h'>
         <div class='col s12 m12 l12 np-h'>
-            <div class='card-panel nm-v'>
-                <div class='left panel-name'>Tests</div>
-                <div class='chart-box' style="max-height:94px;">
-                    <canvas id='parent-analysis' width='90' height='70'></canvas>
-                </div>
-                <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
-                </div>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box' style="max-height:94px;">
+					<canvas height='70' id='parent-analysis' width='90'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span
 						class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
 				</div>
-            </div>
+			</div>
         </div>
     </div>
-    <div id="timeline-chart" class="row nm-v nm-h">
-        <div class="col s12 m12 l12 np-h">
-            <div class="card-panel">
-                <div class='left panel-name'>Timeline (seconds)</div>
-                <div class="chart-box" style="width:98%;max-height:145px;">
-                    <canvas id="timeline" height="120"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="row nm-v nm-h" id="timeline-chart">
+		<div class="col s12 m12 l12 np-h">
+			<div class="card-panel">
+				<div class='left panel-name'>Timeline (seconds)</div>
+				<div class="chart-box" style="width:98%;max-height:145px;">
+					<canvas height="120" id="timeline"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 	<div class='subview-left left'>
 		<div class='view-summary'>
@@ -136,14 +136,14 @@
 				<li bdd='false' class='test displayed active  pass' status='pass' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Login Page UI Validation</span>
-						<span class='test-time'>Dec 27, 2023 01:47:15 pm</span>
+						<span class='test-time'>Dec 27, 2023 05:02:22 pm</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 						<div class='test-time-info'>
-							<span class='label start-time'>Dec 27, 2023 01:47:15 pm</span>
-							<span class='label end-time'>Dec 27, 2023 01:47:33 pm</span>
-							<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+80ms</span>
+							<span class='label start-time'>Dec 27, 2023 05:02:22 pm</span>
+							<span class='label end-time'>Dec 27, 2023 05:02:42 pm</span>
+							<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+946ms</span>
 						</div>
 						<div class='test-desc'>Login Page UI Validation</div>
 						<div class='test-steps'>
@@ -156,10 +156,20 @@
 								</tr>
 								</thead>
 								<tbody>
+								<tr class='log' status='pass'>
+									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
+									</td>
+									<td class='timestamp'>5:02:36 pm</td>
+									<td class='step-details'>
+										Extract Login Icon
+										<img class='r-img' data-featherlight='loginicon.png'
+											 onerror='this.style.display="none"' src='loginicon.png'>
+									</td>
+								</tr>
 								<tr class='log' status='info'>
 									<td alt='info' class='status info' title='info'><i class='material-icons'>info_outline</i>
 									</td>
-									<td class='timestamp'>1:47:32 pm</td>
+									<td class='timestamp'>5:02:36 pm</td>
 									<td class='step-details'>
 										Login
 
@@ -168,7 +178,7 @@
 								<tr class='log' status='pass'>
 									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
 									</td>
-									<td class='timestamp'>1:47:32 pm</td>
+									<td class='timestamp'>5:02:36 pm</td>
 									<td class='step-details'>
 										Assert Method Verified
 
@@ -177,7 +187,7 @@
 								<tr class='log' status='info'>
 									<td alt='info' class='status info' title='info'><i class='material-icons'>info_outline</i>
 									</td>
-									<td class='timestamp'>1:47:32 pm</td>
+									<td class='timestamp'>5:02:36 pm</td>
 									<td class='step-details'>
 										with your existing PRM User ID
 
@@ -186,7 +196,7 @@
 								<tr class='log' status='pass'>
 									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
 									</td>
-									<td class='timestamp'>1:47:32 pm</td>
+									<td class='timestamp'>5:02:36 pm</td>
 									<td class='step-details'>
 										Assert Method Verified
 
@@ -195,7 +205,7 @@
 								<tr class='log' status='info'>
 									<td alt='info' class='status info' title='info'><i class='material-icons'>info_outline</i>
 									</td>
-									<td class='timestamp'>1:47:32 pm</td>
+									<td class='timestamp'>5:02:37 pm</td>
 									<td class='step-details'>
 										Username
 
@@ -204,7 +214,7 @@
 								<tr class='log' status='pass'>
 									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
 									</td>
-									<td class='timestamp'>1:47:32 pm</td>
+									<td class='timestamp'>5:02:37 pm</td>
 									<td class='step-details'>
 										Assert Method Verified
 
@@ -213,7 +223,7 @@
 								<tr class='log' status='info'>
 									<td alt='info' class='status info' title='info'><i class='material-icons'>info_outline</i>
 									</td>
-									<td class='timestamp'>1:47:32 pm</td>
+									<td class='timestamp'>5:02:37 pm</td>
 									<td class='step-details'>
 										Password
 
@@ -222,7 +232,7 @@
 								<tr class='log' status='pass'>
 									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
 									</td>
-									<td class='timestamp'>1:47:32 pm</td>
+									<td class='timestamp'>5:02:37 pm</td>
 									<td class='step-details'>
 										Assert Method Verified
 
@@ -231,7 +241,7 @@
 								<tr class='log' status='info'>
 									<td alt='info' class='status info' title='info'><i class='material-icons'>info_outline</i>
 									</td>
-									<td class='timestamp'>1:47:32 pm</td>
+									<td class='timestamp'>5:02:37 pm</td>
 									<td class='step-details'>
 										GO
 
@@ -240,16 +250,26 @@
 								<tr class='log' status='pass'>
 									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
 									</td>
-									<td class='timestamp'>1:47:32 pm</td>
+									<td class='timestamp'>5:02:37 pm</td>
 									<td class='step-details'>
 										Assert Method Verified
 
 									</td>
 								</tr>
+								<tr class='log' status='pass'>
+									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
+									</td>
+									<td class='timestamp'>5:02:37 pm</td>
+									<td class='step-details'>
+										Extract Login Icon
+										<img class='r-img' data-featherlight='loginsaveicon.png'
+											 onerror='this.style.display="none"' src='loginsaveicon.png'>
+									</td>
+								</tr>
 								<tr class='log' status='info'>
 									<td alt='info' class='status info' title='info'><i class='material-icons'>info_outline</i>
 									</td>
-									<td class='timestamp'>1:47:33 pm</td>
+									<td class='timestamp'>5:02:37 pm</td>
 									<td class='step-details'>
 										*Please be aware that on login into app you will be automatically logged out
 										from other devices!
@@ -259,7 +279,7 @@
 								<tr class='log' status='pass'>
 									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
 									</td>
-									<td class='timestamp'>1:47:33 pm</td>
+									<td class='timestamp'>5:02:37 pm</td>
 									<td class='step-details'>
 										Assert Method Verified
 
@@ -268,21 +288,83 @@
 								<tr class='log' status='pass'>
 									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
 									</td>
-									<td class='timestamp'>1:47:33 pm</td>
+									<td class='timestamp'>5:02:38 pm</td>
 									<td class='step-details'>
-										Screenshot captured and attached
+										ScreenShot Store Successfully
 
 									</td>
 								</tr>
 								<tr class='log' status='pass'>
 									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
 									</td>
-									<td class='timestamp'>1:47:33 pm</td>
+									<td class='timestamp'>5:02:38 pm</td>
 									<td class='step-details'>
 										Screenshot captured and attached
-										<img class='r-img' data-featherlight='C:\Users\ManjeetSharma\IdeaProjects\Live_Appium_Project_Uat_Clove_1.0\loginresources\screenshot.png'
-											 onerror='this.style.display="none"'
-											 src='C:\Users\ManjeetSharma\IdeaProjects\Live_Appium_Project_Uat_Clove_1.0\loginresources\screenshot.png'>
+										<img class='r-img' data-featherlight='loginsscreen.png'
+											 onerror='this.style.display="none"' src='loginsscreen.png'>
+									</td>
+								</tr>
+								<tr class='log' status='pass'>
+									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
+									</td>
+									<td class='timestamp'>5:02:38 pm</td>
+									<td class='step-details'>
+										Correct User Id Filled
+
+									</td>
+								</tr>
+								<tr class='log' status='pass'>
+									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
+									</td>
+									<td class='timestamp'>5:02:38 pm</td>
+									<td class='step-details'>
+										Correct Password Filled
+
+									</td>
+								</tr>
+								<tr class='log' status='pass'>
+									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
+									</td>
+									<td class='timestamp'>5:02:39 pm</td>
+									<td class='step-details'>
+										Clicked on Go Button
+
+									</td>
+								</tr>
+								<tr class='log' status='pass'>
+									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
+									</td>
+									<td class='timestamp'>5:02:40 pm</td>
+									<td class='step-details'>
+										Permisson Allowed
+
+									</td>
+								</tr>
+								<tr class='log' status='info'>
+									<td alt='info' class='status info' title='info'><i class='material-icons'>info_outline</i>
+									</td>
+									<td class='timestamp'>5:02:42 pm</td>
+									<td class='step-details'>
+										Toast Message => Please wait, your contacts are being updated!
+
+									</td>
+								</tr>
+								<tr class='log' status='pass'>
+									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
+									</td>
+									<td class='timestamp'>5:02:42 pm</td>
+									<td class='step-details'>
+										Toast Message is Validated
+
+									</td>
+								</tr>
+								<tr class='log' status='pass'>
+									<td alt='pass' class='status pass' title='pass'><i class='material-icons'>check_circle</i>
+									</td>
+									<td class='timestamp'>5:02:42 pm</td>
+									<td class='step-details'>
+										test case passed successfully
+
 									</td>
 								</tr>
 								</tbody>
@@ -330,19 +412,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Dec 27, 2023 01:47:15 pm</div>
+					<div class='panel-lead'>Dec 27, 2023 05:02:22 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-					<div class='panel-lead'>Dec 27, 2023 01:47:33 pm</div>
+					<div class='panel-lead'>Dec 27, 2023 05:02:43 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 18s+498ms</div>
+					<div class='panel-lead'>0h 0m 20s+429ms</div>
 				</div>
 			</div>
 		</div>
@@ -385,7 +467,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "Login Page UI Validation":18.08
+			        "Login Page UI Validation":19.946
 			};
 		</script>
 	

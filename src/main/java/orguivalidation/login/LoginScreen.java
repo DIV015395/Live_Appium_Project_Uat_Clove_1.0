@@ -6,18 +6,19 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.desiredcapabilities.BaseDriver;
+import org.desiredcapabilities.ScreenShot;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class LoginScreen extends BaseDriver {
     LoginText loginText = new LoginText();
     ExtentTest test;
-    @AndroidFindBy(id = "android.widget.ImageView")
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_cloveLogo")
     private AndroidElement loginscreenimageview;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_login_titleLogin")
     private AndroidElement logintitletext;
@@ -29,12 +30,27 @@ public class LoginScreen extends BaseDriver {
     private AndroidElement loginpasswordtext;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_login_go")
     private AndroidElement logingotext;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_save")
+    private AndroidElement ivsave;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_login_bottomMessage")
     private AndroidElement loginbottommessage;
 
     public LoginScreen(AndroidDriver driver, ExtentTest test) {
         super(driver);
         this.test = test;
+    }
+
+    public void extractImage() {
+        try {
+            File screenshotFile = loginscreenimageview.getScreenshotAs(OutputType.FILE);
+            BufferedImage image = ImageIO.read(screenshotFile);
+            File outputFile = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\screenshotscreen\\loginicon.png");
+            ImageIO.write(image, "png", outputFile);
+            test.pass("Extract Login Icon", MediaEntityBuilder.createScreenCaptureFromPath("loginicon.png").build());
+        } catch (IOException e) {
+            e.printStackTrace();
+            test.fail("Failed to extract the Login Icon " + e.getMessage());
+        }
     }
 
     public void loginTitle() {
@@ -87,6 +103,19 @@ public class LoginScreen extends BaseDriver {
         }
     }
 
+    public void ivSave() {
+        try {
+            File screenshotFile = ivsave.getScreenshotAs(OutputType.FILE);
+            BufferedImage image = ImageIO.read(screenshotFile);
+            File outputFile = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\screenshotscreen\\loginsaveicon.png");
+            ImageIO.write(image, "png", outputFile);
+            test.pass("Extract Login Icon", MediaEntityBuilder.createScreenCaptureFromPath("loginsaveicon.png").build());
+        } catch (IOException e) {
+            e.printStackTrace();
+            test.fail("Failed to extract the Login save Icon " + e.getMessage());
+        }
+    }
+
     public void loginBottomMessage() {
         if (loginbottommessage.getText() != null) {
             Assert.assertEquals(loginbottommessage.getText(), loginText.loginBottomMessage());
@@ -98,41 +127,12 @@ public class LoginScreen extends BaseDriver {
     }
 
     public void captureAndAttachScreenshot() {
+        ScreenShot screenShot = new ScreenShot(driver, test);
         try {
-            // Take screenshot using Appium
-            String screenshotPath = takeScreenshot();
-            System.out.println(screenshotPath);
-
-            // Attach screenshot to the Extent Report without a description
-            test.addScreenCaptureFromPath(screenshotPath);
-            test.addScreenCaptureFromPath("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\loginresources\\screenshot.png");
-            test.pass("Screenshot captured and attached");
-            test.pass("Screenshot captured and attached", MediaEntityBuilder.createScreenCaptureFromPath("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\loginresources\\screenshot.png").build());
+            String screenshotPath = screenShot.takeScreenshot("loginsscreen.png");
+            test.pass("Screenshot captured and attached", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
         } catch (Exception e) {
             test.fail("Failed to capture and attach screenshot: " + e.getMessage());
-        }
-    }
-
-
-    private String takeScreenshot() {
-        try {
-            // Take screenshot using Appium
-            TakesScreenshot ts = driver;
-            byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-
-            // Specify the directory path to save the screenshot
-            String directoryPath = "C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\loginresources";
-            String screenshotPath = directoryPath + "\\screenshot.png";
-
-            // Create directories if they don't exist
-            Files.createDirectories(Paths.get(directoryPath));
-
-            // Save the screenshot to a file
-            Files.write(Paths.get(screenshotPath), screenshot);
-
-            return screenshotPath;
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to save screenshot: " + e.getMessage());
         }
     }
 }
