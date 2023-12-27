@@ -53,63 +53,37 @@ public class ExpenseAddNotExceedBalanceTest {
         obj.permissonAllowed();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
-
     @Test(priority = 2)
     public void expenseAddNotExceedBalance() {
         ExpenseAddNotExceedBalance obj = new ExpenseAddNotExceedBalance((AndroidDriver) driver, test);
         obj.expensesClick();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.nextButton();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setClinic();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAddexpense();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setName();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setQuantity();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAmount();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAttachFiles();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setPermissionOne();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAllowFirstTime();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setAllowSecondtime();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setCamera();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setShutterButton();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setDoneCapture();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setActionSave();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.toastMessage();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.toastMassageValidation();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.scrollTo();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.printDetailsForMatchingItems();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.clickActionButtonForItemText();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setView();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setRemarksBackArrow();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.clickActionButtonForItemText();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setEdit();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         obj.setEditName();
         obj.setEditAmount();
         obj.setEditQuantity();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
     }
 
     @AfterClass

@@ -166,4 +166,15 @@
             </class>
         </classes>
     </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/expensestest/testcases/ExpenseAddNotExceedBalanceTest.java">
+        <classes>
+            <class name="org.expensestest.testcases.ExpenseAddNotExceedBalanceTest">
+                <methods>
+                    <include name="loginApp"/>
+                    <include name="expenseAddNotExceedBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
