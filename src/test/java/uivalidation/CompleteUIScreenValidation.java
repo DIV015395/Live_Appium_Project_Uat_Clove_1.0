@@ -17,7 +17,6 @@ import orguivalidation.login.LoginScreen;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
 public class CompleteUIScreenValidation {
     public AppiumDriver driver;
     public ExtentReports extent = ExtentManager.getInstance();
@@ -25,8 +24,7 @@ public class CompleteUIScreenValidation {
 
     @BeforeClass
     public void driverLaunch() {
-
-        test = extent.createTest("Login Page UI Validation", "Login Page UI Validation");
+        test = extent.createTest("Driver Launch", "Driver Launch");
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
@@ -34,9 +32,12 @@ public class CompleteUIScreenValidation {
         } catch (MalformedURLException e) {
             test.log(Status.FAIL, "Click function is not working");
         }
+        extent.flush();
     }
+
     @Test(priority = 1)
     public void loginScreenTest() {
+        test = extent.createTest("Login Page UI Validation", "Login Page UI Validation");
         LoginScreen objLoginScreen = new LoginScreen((AndroidDriver) driver, test);
         objLoginScreen.extractImage();
         objLoginScreen.loginTitle();
@@ -62,7 +63,6 @@ public class CompleteUIScreenValidation {
         obj.toastMassage();
         obj.toastMassageValidation();
     }
-
     @Test(priority = 3)
     public void dashboardScreenTest() {
         test = extent.createTest("DashBoard Page UI Validation", "DashBoard Page UI Validation");
@@ -71,11 +71,12 @@ public class CompleteUIScreenValidation {
         dashboardScreen.dashboardLogoutIconExtract();
         dashboardScreen.dashboardProfileImageExtract();
         dashboardScreen.dashboardEditIconExtract();
+        dashboardScreen.dashboardWelcomeTextTest();
+        dashboardScreen.dashboardDoctorNameText();
+        dashboardScreen.dashboardDefaultLocationIcon();
+//        dashboardScreen.dashboardDefaultLocationText();
+        dashboardScreen.dashboardRoleIcon();
+//        dashboardScreen.dashboardRoleNameText();
         extent.flush();
     }
-//    @AfterClass
-//    public void driverClose() {
-//        driver.quit();
-//        extent.flush();
-//    }
 }
