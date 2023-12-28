@@ -17,6 +17,7 @@ import orguivalidation.login.LoginScreen;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+
 public class CompleteUIScreenValidation {
     public AppiumDriver driver;
     public ExtentReports extent = ExtentManager.getInstance();
@@ -34,7 +35,6 @@ public class CompleteUIScreenValidation {
         }
         extent.flush();
     }
-
     @Test(priority = 1)
     public void loginScreenTest() {
         test = extent.createTest("Login Page UI Validation", "Login Page UI Validation");
@@ -63,6 +63,7 @@ public class CompleteUIScreenValidation {
         obj.toastMassage();
         obj.toastMassageValidation();
     }
+
     @Test(priority = 3)
     public void dashboardScreenTest() {
         test = extent.createTest("DashBoard Page UI Validation", "DashBoard Page UI Validation");
@@ -74,9 +75,20 @@ public class CompleteUIScreenValidation {
         dashboardScreen.dashboardWelcomeTextTest();
         dashboardScreen.dashboardDoctorNameText();
         dashboardScreen.dashboardDefaultLocationIcon();
-//        dashboardScreen.dashboardDefaultLocationText();
+        dashboardScreen.dashboardDefaultLocationText();
         dashboardScreen.dashboardRoleIcon();
-//        dashboardScreen.dashboardRoleNameText();
+        dashboardScreen.dashboardRoleNameText();
+        dashboardScreen.dashboardChatText();
+        dashboardScreen.dashboardHomeChatIcon();
+        dashboardScreen.dashboardHomeChatSubtext();
+        dashboardScreen.dashboardHomeExpenseText();
+        dashboardScreen.dashboardHomeExpenseIcon();
+        dashboardScreen.dashboardHomeExpenseSubtext();
+        dashboardScreen.dashboardHomeSchedule();
+        dashboardScreen.dashboardHomeScheduleIcon();
+        dashboardScreen.dashboardHomeScheduleSubtext();
+        dashboardScreen.captureAndAttachScreenshot();
         extent.flush();
     }
+
 }

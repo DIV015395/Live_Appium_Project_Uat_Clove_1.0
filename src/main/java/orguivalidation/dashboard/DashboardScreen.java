@@ -6,6 +6,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.desiredcapabilities.BaseDriver;
+import org.desiredcapabilities.ScreenShot;
 import org.openqa.selenium.OutputType;
 import org.testng.Assert;
 
@@ -37,6 +38,30 @@ public class DashboardScreen extends BaseDriver {
     private AndroidElement dashboardRoleIcon;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_doctorRole")
     private AndroidElement dashboardRoleNameText;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_chat")
+    private AndroidElement dashboardChatText;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_home_chat")
+    private AndroidElement dashboardHomeChatIcon;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_chat_subtext")
+    private AndroidElement dashboardHomeChatSubtext;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_expense")
+    private AndroidElement dashboardHomeExpenseText;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_home_expense")
+    private AndroidElement dashboardHomeExpenseIcon;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_expense_subtext")
+    private AndroidElement dashboardHomeExpenseSubtext;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_schedule")
+    private AndroidElement dashboardHomeSchedule;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_home_schedule")
+    private AndroidElement dashboardHomeScheduleIcon;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_schedule_subtext")
+    private AndroidElement dashboardHomeScheduleSubtext;
+
+//    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_patient_search")
+//    private AndroidElement dashboardHomePatientSearch;
+//    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_home_patient_search")
+//    private AndroidElement dashboardHomePatientSearchIcon;
+
 
     public DashboardScreen(AndroidDriver driver, ExtentTest test) {
         super(driver);
@@ -132,7 +157,7 @@ public class DashboardScreen extends BaseDriver {
 
     public void dashboardDefaultLocationText() {
         if (dashboardDefaultLocationText.getText() != null) {
-            Assert.assertEquals(dashboardDefaultLocationText.getText(), DashboardText.dashboardDoctorName());
+            Assert.assertEquals(dashboardDefaultLocationText.getText(), DashboardText.dashboardDefaultLocationText());
             test.info(dashboardDefaultLocationText.getText());
             test.pass("Assert Method Verified");
         } else {
@@ -156,12 +181,120 @@ public class DashboardScreen extends BaseDriver {
 
     public void dashboardRoleNameText() {
         if (dashboardRoleNameText.getText() != null) {
-            Assert.assertEquals(dashboardRoleNameText.getText(), DashboardText.dashboardDoctorName());
+            Assert.assertEquals(dashboardRoleNameText.getText(), DashboardText.dashboardRoleNameText());
             test.info(dashboardRoleNameText.getText());
             test.pass("Assert Method Verified");
         } else {
             test.fail("Failed dashboard Role Name Text");
         }
+    }
 
+    public void dashboardChatText() {
+        if (dashboardChatText.getText() != null) {
+            Assert.assertEquals(dashboardChatText.getText(), DashboardText.dashboardChatText());
+            test.info(dashboardChatText.getText());
+            test.pass("Assert Method Verified");
+        } else {
+            test.fail("Failed dashboard Chat Text");
+        }
+    }
+
+    public void dashboardHomeChatIcon() {
+        try {
+            File screenshotFile = dashboardHomeChatIcon.getScreenshotAs(OutputType.FILE);
+            BufferedImage image = ImageIO.read(screenshotFile);
+            File outputFile = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\screenshotscreen\\dashboardHomeChatIcon.png");
+            ImageIO.write(image, "png", outputFile);
+            test.pass("Extract dashboard Home Chat Icon", MediaEntityBuilder.createScreenCaptureFromPath("dashboardHomeChatIcon.png").build());
+        } catch (IOException e) {
+            e.printStackTrace();
+            test.fail("Failed to dashboard Home Chat Icon" + e.getMessage());
+        }
+    }
+
+    public void dashboardHomeChatSubtext() {
+        if (dashboardHomeChatSubtext.getText() != null) {
+            Assert.assertEquals(dashboardHomeChatSubtext.getText(), DashboardText.dashboardHomeChatSubtext());
+            test.info(dashboardHomeChatSubtext.getText());
+            test.pass("Assert Method Verified");
+        } else {
+            test.fail("Failed dashboard Home Chat Subtext");
+        }
+    }
+
+    public void dashboardHomeExpenseText() {
+        if (dashboardHomeExpenseText.getText() != null) {
+            Assert.assertEquals(dashboardHomeExpenseText.getText(), DashboardText.dashboardHomeExpenseText());
+            test.info(dashboardHomeExpenseText.getText());
+            test.pass("Assert Method Verified");
+        } else {
+            test.fail("Failed dashboard Home Expense Text");
+        }
+    }
+
+    public void dashboardHomeExpenseIcon() {
+        try {
+            File screenshotFile = dashboardHomeExpenseIcon.getScreenshotAs(OutputType.FILE);
+            BufferedImage image = ImageIO.read(screenshotFile);
+            File outputFile = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\screenshotscreen\\dashboardHomeExpenseIcon.png");
+            ImageIO.write(image, "png", outputFile);
+            test.pass("Extract dashboard Home Expense Icon", MediaEntityBuilder.createScreenCaptureFromPath("dashboardHomeExpenseIcon.png").build());
+        } catch (IOException e) {
+            e.printStackTrace();
+            test.fail("Failed to dashboard Home Expense Icon " + e.getMessage());
+        }
+    }
+
+    public void dashboardHomeExpenseSubtext() {
+        if (dashboardHomeExpenseSubtext.getText() != null) {
+            Assert.assertEquals(dashboardHomeExpenseSubtext.getText(), DashboardText.dashboardHomeExpenseSubtext());
+            test.info(dashboardHomeExpenseSubtext.getText());
+            test.pass("Assert Method Verified");
+        } else {
+            test.fail("Failed dashboard Home Expense Subtext");
+        }
+    }
+
+    public void dashboardHomeSchedule() {
+        if (dashboardHomeSchedule.getText() != null) {
+            Assert.assertEquals(dashboardHomeSchedule.getText(), DashboardText.dashboardHomeSchedule());
+            test.info(dashboardHomeSchedule.getText());
+            test.pass("Assert Method Verified");
+        } else {
+            test.fail("Failed dashboard Home Schedule");
+        }
+    }
+
+    public void dashboardHomeScheduleIcon() {
+        try {
+            File screenshotFile = dashboardHomeScheduleIcon.getScreenshotAs(OutputType.FILE);
+            BufferedImage image = ImageIO.read(screenshotFile);
+            File outputFile = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\screenshotscreen\\dashboardHomeScheduleIcon.png");
+            ImageIO.write(image, "png", outputFile);
+            test.pass("Extract dashboard Home Schedule Icon", MediaEntityBuilder.createScreenCaptureFromPath("dashboardHomeScheduleIcon.png").build());
+        } catch (IOException e) {
+            e.printStackTrace();
+            test.fail("Failed to dashboard Home Schedule Icon " + e.getMessage());
+        }
+    }
+
+    public void dashboardHomeScheduleSubtext() {
+        if (dashboardHomeScheduleSubtext.getText() != null) {
+            Assert.assertEquals(dashboardHomeScheduleSubtext.getText(), DashboardText.dashboardHomeScheduleSubtext());
+            test.info(dashboardHomeScheduleSubtext.getText());
+            test.pass("Assert Method Verified");
+        } else {
+            test.fail("Failed dashboard Home Schedule Subtext");
+        }
+    }
+
+    public void captureAndAttachScreenshot() {
+        ScreenShot screenShot = new ScreenShot(driver, test);
+        try {
+            String screenshotPath = screenShot.takeScreenshot("dashboardWelcomeHomeScreen.png");
+            test.pass("Screenshot captured and attached", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+        } catch (Exception e) {
+            test.fail("Failed to capture and attach screenshot: " + e.getMessage());
+        }
     }
 }

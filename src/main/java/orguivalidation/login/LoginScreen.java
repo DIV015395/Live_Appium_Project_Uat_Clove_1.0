@@ -85,7 +85,6 @@ public class LoginScreen extends BaseDriver {
             test.fail("Failed Login Username Text Validation");
         }
     }
-
     public void loginUsernameIcon() {
         try {
             File screenshotFile = loginusernameicon.getScreenshotAs(OutputType.FILE);

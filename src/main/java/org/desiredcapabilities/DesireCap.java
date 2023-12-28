@@ -8,7 +8,8 @@ public class DesireCap {
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "13.0");
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel_XL");
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-        caps.setCapability(MobileCapabilityType.APP, "C:\\cloveapps\\bases.apk");
+//        caps.setCapability(MobileCapabilityType.APP, "C:\\cloveapps\\bases.apk");
+        caps.setCapability(MobileCapabilityType.APP, "C:\\cloveapps\\cashhandoveralloc.apk");
         return caps;
     }
 }
