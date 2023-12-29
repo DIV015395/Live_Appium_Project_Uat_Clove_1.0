@@ -38,18 +38,18 @@ public class CompleteUIScreenValidation {
     @Test(priority = 1)
     public void loginScreenTest() {
         test = extent.createTest("Login Page UI Validation", "Login Page UI Validation");
-        LoginScreen objLoginScreen = new LoginScreen((AndroidDriver) driver, test);
-        objLoginScreen.extractImage();
-        objLoginScreen.loginTitle();
-        objLoginScreen.titleProceed();
-        objLoginScreen.loginUsername();
-        objLoginScreen.loginUsernameIcon();
-        objLoginScreen.loginPassword();
-        objLoginScreen.loginPasswordIcon();
-        objLoginScreen.loginGo();
-        objLoginScreen.ivSaveIcon();
-        objLoginScreen.loginBottomMessage();
-        objLoginScreen.captureAndAttachScreenshot();
+        LoginScreen loginScreen = new LoginScreen((AndroidDriver) driver, test);
+        loginScreen.extractImage();
+        loginScreen.loginTitle();
+        loginScreen.titleProceed();
+        loginScreen.loginUsername();
+        loginScreen.loginUsernameIcon();
+        loginScreen.loginPassword();
+        loginScreen.loginPasswordIcon();
+        loginScreen.loginGo();
+        loginScreen.ivSaveIcon();
+        loginScreen.loginBottomMessage();
+        loginScreen.captureAndAttachScreenshot();
         extent.flush();
     }
     @Test(priority = 2)
@@ -63,7 +63,6 @@ public class CompleteUIScreenValidation {
         obj.toastMassage();
         obj.toastMassageValidation();
     }
-
     @Test(priority = 3)
     public void dashboardScreenTest() {
         test = extent.createTest("DashBoard Page UI Validation", "DashBoard Page UI Validation");
