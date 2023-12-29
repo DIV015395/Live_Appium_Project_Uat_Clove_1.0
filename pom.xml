@@ -50,28 +50,11 @@
       <version>2.0.6</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-    <dependency>
-      <groupId>com.aventstack</groupId>
-        <artifactId>extentreports</artifactId>
-        <version>5.0.9</version>
-    </dependency>
-
-
       <dependency>
           <groupId>com.aventstack</groupId>
           <artifactId>extentreports</artifactId>
           <version>4.1.5</version>
       </dependency>
-
-
-      <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-      <dependency>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-api</artifactId>
-          <version>2.0.7</version>
-      </dependency>
-
 
     <!-- Logback Implementation -->
     <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
@@ -112,13 +95,6 @@
           <groupId>com.sun.mail</groupId>
           <artifactId>javax.mail</artifactId>
           <version>1.6.2</version>
-      </dependency>
-
-      <!-- Other dependencies -->
-      <dependency>
-          <groupId>javax.mail</groupId>
-          <artifactId>javax.mail-api</artifactId>
-          <version>1.6.2</version> <!-- Use the latest version -->
       </dependency>
       <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
       <dependency>

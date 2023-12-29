@@ -26,7 +26,7 @@ public class LogoutTest
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 1", "Expense Add Test Cases");
+        test = extent.createTest("Test case 1", "DashBoard Logout");
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);

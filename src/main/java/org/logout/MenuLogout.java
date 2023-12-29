@@ -8,7 +8,6 @@ import org.desiredcapabilities.BaseDriver;
 import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
-
 public class MenuLogout extends BaseDriver {
     ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_chat")
@@ -22,33 +21,39 @@ public class MenuLogout extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_login_titleLogin")
     private AndroidElement titleLogin;
 
-
     public MenuLogout(AndroidDriver driver, ExtentTest test) {
         super(driver);
         this.test = test;
     }
 
     public void setHomeChat() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        homeChat.click();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            homeChat.click();
+            test.pass("Successful Click on Dashboard Chat button");
+        } catch (Exception e) {
+            test.fail("Failed to click on Dashboard Chat button");
+        }
     }
 
     public void setMenu() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        menu.click();
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            menu.click();
+            test.pass("Successful Click on Menu Button");
+        } catch (Exception e) {
+            test.fail("Failed to click on Menu Button ");
+        }
+
     }
 
-    //    public void logoutButtonTextVerify()
-//    {
-//        String logoutText = menuLogout.getText();
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        Assert.assertEquals(logoutText,"Yes");
-//    }
     public void setLogoutFromMenu() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             menuLogout.click();
+            test.pass("Successful Click on Logout Button");
         } catch (Exception e) {
+            test.fail("Failed Click on Logout Button");
 
         }
     }
@@ -56,14 +61,19 @@ public class MenuLogout extends BaseDriver {
     public void clickOnYesButton() {
         try {
             yesButton.click();
+            test.pass("Click on Yes Button Successful");
         } catch (Exception e) {
-
+            test.fail("Failed to click on yes Button");
         }
     }
 
     public void redirectLoginPage() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Assert.assertEquals(titleLogin.getText(), "Login");
-
+        try {
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            Assert.assertEquals(titleLogin.getText(), "Login");
+            test.pass("Successful Redirect to Login Page");
+        } catch (Exception e) {
+            test.fail("Failed to Redirect to Login Page");
+        }
     }
 }

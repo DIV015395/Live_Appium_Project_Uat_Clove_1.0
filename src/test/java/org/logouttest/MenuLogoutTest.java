@@ -19,8 +19,6 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class MenuLogoutTest {
-
-
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
@@ -28,7 +26,7 @@ public class MenuLogoutTest {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 1", "Expense Add Test Cases");
+        test = extent.createTest("Test case 2", "Menu Logout");
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
