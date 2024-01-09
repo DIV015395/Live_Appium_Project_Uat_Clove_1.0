@@ -13,8 +13,10 @@ public class ScreenShot extends BaseDriver {
     ExtentTest test;
 
     public ScreenShot(AndroidDriver driver, ExtentTest test) {
-        super(driver);
+
+        super(driver,test);
         this.test = test;
+
     }
 
     public String takeScreenshot(String screenshotName) {

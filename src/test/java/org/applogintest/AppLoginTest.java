@@ -21,7 +21,7 @@ public class AppLoginTest {
     public void main() throws InterruptedException, MalformedURLException {
         extent = ExtentManager.getInstance();
         test = extent.createTest("Test Case login", "Description of main login");
-        BaseDriver baseDriver = new BaseDriver((AndroidDriver<AndroidElement>) driver, test);
+        BaseDriver baseDriver = new BaseDriver((AndroidDriver) driver, test);
         baseDriver.driverLaunch();
         AppLogin obj = new AppLogin((AndroidDriver) driver, test);
         obj.userName();

@@ -14,7 +14,7 @@ public class AppLogin extends BaseDriver
 {
     private final ExtentTest test;
     public AppLogin(AndroidDriver driver, ExtentTest test) {
-        super(driver);
+        super(driver,test);
         this.test = test;
     }
     @AndroidFindBy(xpath = "//android.widget.Toast")

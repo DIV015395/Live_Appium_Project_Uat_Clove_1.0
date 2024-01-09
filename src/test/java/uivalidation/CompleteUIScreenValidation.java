@@ -1,5 +1,4 @@
 package uivalidation;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -13,11 +12,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import orguivalidation.dashboard.DashboardScreen;
 import orguivalidation.login.LoginScreen;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
 public class CompleteUIScreenValidation {
     public AppiumDriver driver;
     public ExtentReports extent = ExtentManager.getInstance();

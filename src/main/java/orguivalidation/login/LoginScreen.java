@@ -1,5 +1,4 @@
 package orguivalidation.login;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import io.appium.java_client.android.AndroidDriver;
@@ -9,12 +8,10 @@ import org.desiredcapabilities.BaseDriver;
 import org.desiredcapabilities.ScreenShot;
 import org.openqa.selenium.OutputType;
 import org.testng.Assert;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 public class LoginScreen extends BaseDriver {
     LoginText loginText = new LoginText();
     ExtentTest test;

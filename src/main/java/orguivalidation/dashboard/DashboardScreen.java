@@ -9,7 +9,6 @@ import org.desiredcapabilities.BaseDriver;
 import org.desiredcapabilities.ScreenShot;
 import org.openqa.selenium.OutputType;
 import org.testng.Assert;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -64,7 +63,7 @@ public class DashboardScreen extends BaseDriver {
 
 
     public DashboardScreen(AndroidDriver driver, ExtentTest test) {
-        super(driver);
+        super(driver,test);
         this.test = test;
     }
 
