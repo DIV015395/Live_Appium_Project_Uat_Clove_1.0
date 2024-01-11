@@ -1,29 +1,29 @@
 package orguivalidation.login;
 
 public class LoginText {
-    public String loginTitleText() {
+    public static  String loginTitleText() {
         String text = "Login";
         return text;
     }
 
-    public String titleProceedText() {
+    public static  String titleProceedText() {
         String text = "with your existing PRM User ID";
         return text;
     }
 
-    public String loginUsernameText() {
+    public static  String loginUsernameText() {
         String text = "Username";
         return text;
     }
-    public String loginPasswordText() {
+    public static  String loginPasswordText() {
         String text = "Password";
         return text;
     }
-    public String loginGoText() {
+    public static  String loginGoText() {
         String text = "GO";
         return text;
     }
-    public String loginBottomMessage() {
+    public static  String loginBottomMessage() {
         String text = "*Please be aware that on login into app you will be automatically logged out from other devices!";
         return text;
     }
