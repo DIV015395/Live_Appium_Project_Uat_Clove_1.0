@@ -25,7 +25,7 @@ public class DashboardUITest {
 
     @BeforeClass
     public void driverLaunch() {
-        test = extent.createTest("Driver Launch", "Driver Launch");
+        test = extent.createTest("DashBoard Page UI Validation", "DashBoard Page UI Validation");
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
@@ -33,7 +33,6 @@ public class DashboardUITest {
         } catch (MalformedURLException e) {
             test.log(Status.FAIL, "Click function is not working");
         }
-        extent.flush();
     }
     @Test(priority = 1)
     public void redirectToDashboard()
@@ -49,7 +48,6 @@ public class DashboardUITest {
     }
     @Test(priority = 2)
     public void dashboardScreenTest() {
-        test = extent.createTest("DashBoard Page UI Validation", "DashBoard Page UI Validation");
         DashboardScreen dashboardScreen = new DashboardScreen((AndroidDriver) driver, test);
         dashboardScreen.dashboardNotificationIconExtract();
         dashboardScreen.dashboardLogoutIconExtract();

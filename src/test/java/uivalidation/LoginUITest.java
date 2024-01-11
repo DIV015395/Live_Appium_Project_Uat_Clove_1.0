@@ -21,7 +21,7 @@ public class LoginUITest
     public ExtentTest test;
     @BeforeClass
     public void driverLaunch() {
-        test = extent.createTest("Driver Launch", "Driver Launch");
+        test = extent.createTest("Login Page UI Validation", "Login Page UI Validation");
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
@@ -29,11 +29,10 @@ public class LoginUITest
         } catch (MalformedURLException e) {
             test.log(Status.FAIL, "Click function is not working");
         }
-        extent.flush();
     }
     @Test(priority = 1)
     public void loginScreenTest() {
-        test = extent.createTest("Login Page UI Validation", "Login Page UI Validation");
+
         LoginScreen objLoginScreen = new LoginScreen((AndroidDriver) driver, test);
         objLoginScreen.extractImage();
         objLoginScreen.loginTitle();

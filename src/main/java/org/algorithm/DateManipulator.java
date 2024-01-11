@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class DateManipulator {
+
     public static String subtractOneDay(String originalDateStr) {
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -39,4 +40,19 @@ public class DateManipulator {
             return null;
         }
     }
-}
+
+        public static String currentDate() {
+            // Get the current date
+            Date currentDate = new Date();
+
+            // Create a SimpleDateFormat object with the desired pattern
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            // Format the date using the SimpleDateFormat object
+            String formattedDate = dateFormat.format(currentDate);
+
+          return formattedDate;
+        }
+    }
+
+

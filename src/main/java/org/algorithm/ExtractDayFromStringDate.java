@@ -11,7 +11,6 @@ public class ExtractDayFromStringDate {
         String[] dateParts = dateString.split("/");
         // Extract the day part as an integer
         int day = Integer.parseInt(dateParts[0]);
-
         return day;
     }
 }
