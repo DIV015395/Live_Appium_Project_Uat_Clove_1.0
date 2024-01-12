@@ -251,9 +251,4 @@ public class ScheduleScreen extends BaseDriver
             test.fail("Failed to schedule View Group Icon" + e.getMessage());
         }
     }
-
-
-
-
-
 }
