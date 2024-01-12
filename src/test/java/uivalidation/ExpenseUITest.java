@@ -1,5 +1,4 @@
 package uivalidation;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -14,11 +13,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import orguivalidation.expense.ExpenseScreen;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
 public class ExpenseUITest
 {
     public AppiumDriver driver;
@@ -26,7 +23,7 @@ public class ExpenseUITest
     public ExtentTest test;
     @BeforeClass
     public void driverLaunch() {
-        test = extent.createTest("DashBoard Page UI Validation", "DashBoard Page UI Validation");
+        test = extent.createTest("Expense Page UI Validation", "Expense Page UI Validation");
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
@@ -64,7 +61,6 @@ public class ExpenseUITest
       expenseScreen.expenseSearchExpenseIcon();
       expenseScreen.expenseSelectedItemText();
       expenseScreen.expenseChangeSelectedItemIcon();
-
    }
     @AfterClass
     public void driverClose() {
@@ -72,5 +68,4 @@ public class ExpenseUITest
         driver.quit();
         extent.flush();
     }
-
 }

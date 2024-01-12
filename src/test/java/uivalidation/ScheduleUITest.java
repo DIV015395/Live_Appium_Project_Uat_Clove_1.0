@@ -16,15 +16,15 @@ import orguivalidation.schedule.ScheduleScreen;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
-public class ScheduleUITest {
+public class ScheduleUITest
+{
     public AppiumDriver driver;
     public ExtentReports extent = ExtentManager.getInstance();
     public ExtentTest test;
 
     @BeforeClass
     public void driverLaunch() {
-        test = extent.createTest("Driver Launch", "Driver Launch");
+        test = extent.createTest("Schedule Screen UI Validation", "Schedule Screen UI Validation");
         try {
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
@@ -75,5 +75,4 @@ public class ScheduleUITest {
         driver.quit();
         extent.flush();
     }
-
 }

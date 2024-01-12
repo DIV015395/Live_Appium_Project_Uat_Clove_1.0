@@ -28,7 +28,7 @@ public class MenuUITest {
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Testcase 1", "description of schedule first page test case 1");
+        test = extent.createTest("Menu UI Validation", "Menu UI Validation Icon");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
