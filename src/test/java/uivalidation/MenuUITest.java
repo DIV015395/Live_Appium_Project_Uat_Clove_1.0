@@ -67,7 +67,7 @@ public class MenuUITest {
     @Test(priority = 4,description = "Menu UI Validation")
     public void MenuUIValidation()
     {
-        MenuScreen menuScreen = new MenuScreen((AndroidDriver) driver, test);
+       MenuScreen menuScreen = new MenuScreen((AndroidDriver) driver, test);
        menuScreen.menuCloveLogo();
        menuScreen.menuDividerCloveIcon();
        menuScreen.menuUserInfo();
@@ -83,9 +83,6 @@ public class MenuUITest {
        menuScreen.menuFrameLayoutView2();
        menuScreen.menuNavAbout();
        menuScreen.menuNavLogout();
-
-
-
     }
     @AfterClass
     public void driverClose() {

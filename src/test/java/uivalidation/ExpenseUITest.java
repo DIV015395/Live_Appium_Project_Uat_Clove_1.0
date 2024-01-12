@@ -1,4 +1,5 @@
 package uivalidation;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -6,16 +7,19 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.testcase.TestCase5;
 import org.desiredcapabilities.DesireCap;
+import org.expenses.ExpensesAdd;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import orguivalidation.dashboard.DashboardScreen;
+import orguivalidation.expense.ExpenseScreen;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-public class DashboardUITest
+
+public class ExpenseUITest
 {
     public AppiumDriver driver;
     public ExtentReports extent = ExtentManager.getInstance();
@@ -44,33 +48,29 @@ public class DashboardUITest
         obj.toastMassageValidation();
     }
     @Test(priority = 2)
-    public void dashboardScreenTest() {
-        DashboardScreen dashboardScreen = new DashboardScreen((AndroidDriver) driver, test);
-        dashboardScreen.dashboardNotificationIconExtract();
-        dashboardScreen.dashboardLogoutIconExtract();
-        dashboardScreen.dashboardProfileImageExtract();
-        dashboardScreen.dashboardEditIconExtract();
-        dashboardScreen.dashboardWelcomeTextTest();
-        dashboardScreen.dashboardDoctorNameText();
-        dashboardScreen.dashboardDefaultLocationIcon();
-        dashboardScreen.dashboardDefaultLocationText();
-        dashboardScreen.dashboardRoleIcon();
-        dashboardScreen.dashboardRoleNameText();
-        dashboardScreen.dashboardChatText();
-        dashboardScreen.dashboardHomeChatIcon();
-        dashboardScreen.dashboardHomeChatSubtext();
-        dashboardScreen.dashboardHomeExpenseText();
-        dashboardScreen.dashboardHomeExpenseIcon();
-        dashboardScreen.dashboardHomeExpenseSubtext();
-        dashboardScreen.dashboardHomeSchedule();
-        dashboardScreen.dashboardHomeScheduleIcon();
-        dashboardScreen.dashboardHomeScheduleSubtext();
-        dashboardScreen.captureAndAttachScreenshot();
-    }
+ public void redirectToExpense()
+ {
+     ExpensesAdd obj = new ExpensesAdd((AndroidDriver) driver, test);
+     obj.expensesClick();
+     obj.nextButton();
+ }
+ @Test(priority = 3)
+    public void expenseUIValidation()
+  {
+      ExpenseScreen expenseScreen = new ExpenseScreen((AndroidDriver) driver, test);
+      expenseScreen.expenseScreenTitle();
+      expenseScreen.expenseAddExpenseIcon();
+      expenseScreen.expenseAddInfoIcon();
+      expenseScreen.expenseSearchExpenseIcon();
+      expenseScreen.expenseSelectedItemText();
+      expenseScreen.expenseChangeSelectedItemIcon();
+
+   }
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.quit();
         extent.flush();
     }
+
 }

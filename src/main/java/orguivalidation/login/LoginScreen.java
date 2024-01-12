@@ -55,7 +55,6 @@ public class LoginScreen extends BaseDriver {
             test.fail("Failed to extract the Login Icon " + e.getMessage());
         }
     }
-
     public void loginTitle() {
         if (logintitletext.getText() != null) {
             Assert.assertEquals(logintitletext.getText(), loginText.loginTitleText());
@@ -65,7 +64,6 @@ public class LoginScreen extends BaseDriver {
             test.fail("Failed Login Title Text Validation");
         }
     }
-
     public void titleProceed() {
         if (titleproceedtext.getText() != null) {
             Assert.assertEquals(titleproceedtext.getText(), loginText.titleProceedText());
@@ -75,7 +73,6 @@ public class LoginScreen extends BaseDriver {
             test.fail("Failed Title Proceed Text Validation");
         }
     }
-
     public void loginUsername() {
         if (loginusernametext.getText() != null) {
             Assert.assertEquals(loginusernametext.getText(), loginText.loginUsernameText());
@@ -153,7 +150,6 @@ public class LoginScreen extends BaseDriver {
             test.fail("Failed Login Bottom Message Text Validation");
         }
     }
-
     public void captureAndAttachScreenshot() {
         ScreenShot screenShot = new ScreenShot(driver, test);
         try {
