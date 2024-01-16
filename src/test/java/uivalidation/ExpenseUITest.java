@@ -52,7 +52,7 @@ public class ExpenseUITest
      obj.nextButton();
  }
  @Test(priority = 3)
-    public void expenseUIValidation()
+ public void expenseUIValidation()
   {
       ExpenseScreen expenseScreen = new ExpenseScreen((AndroidDriver) driver, test);
       expenseScreen.expenseScreenTitle();
@@ -61,7 +61,7 @@ public class ExpenseUITest
       expenseScreen.expenseSearchExpenseIcon();
       expenseScreen.expenseSelectedItemText();
       expenseScreen.expenseChangeSelectedItemIcon();
-   }
+  }
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

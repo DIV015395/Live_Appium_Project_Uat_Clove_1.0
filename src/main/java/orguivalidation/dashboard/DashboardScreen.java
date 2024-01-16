@@ -75,7 +75,8 @@ public class DashboardScreen extends BaseDriver {
             File outputFile = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\screenshotscreen\\dashboardLogoutIcon.png");
             ImageIO.write(image, "png", outputFile);
             test.pass("Extract dashboard Logout Icon", MediaEntityBuilder.createScreenCaptureFromPath("dashboardLogoutIcon.png").build());
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
             test.fail("Failed to dashboard Logout Icon" + e.getMessage());
         }
@@ -108,13 +109,16 @@ public class DashboardScreen extends BaseDriver {
     }
 
     public void dashboardEditIconExtract() {
-        try {
+        try
+        {
             File screenshotFile = dashboardEditIcon.getScreenshotAs(OutputType.FILE);
             BufferedImage image = ImageIO.read(screenshotFile);
             File outputFile = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\screenshotscreen\\dashboardEditIcon.png");
             ImageIO.write(image, "png", outputFile);
             test.pass("Extract dashboard Edit Icon", MediaEntityBuilder.createScreenCaptureFromPath("dashboardEditIcon.png").build());
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
             test.fail("Failed to dashboard Edit Icon" + e.getMessage());
         }

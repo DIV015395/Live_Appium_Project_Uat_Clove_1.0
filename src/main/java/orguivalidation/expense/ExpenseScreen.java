@@ -13,7 +13,8 @@ import java.io.File;
 import java.io.IOException;
 public class ExpenseScreen extends BaseDriver {
     ExtentTest test;
-    public ExpenseScreen(AndroidDriver driver,ExtentTest test) {
+    public ExpenseScreen(AndroidDriver driver,ExtentTest test)
+    {
         super(driver);
         this.test = test;
     }
@@ -51,7 +52,9 @@ public class ExpenseScreen extends BaseDriver {
                 File outputFile = new File("C:\\Users\\ManjeetSharma\\IdeaProjects\\Live_Appium_Project_Uat_Clove_1.0\\screenshotscreen\\expenseAddExpenseIcon.png");
                 ImageIO.write(image, "png", outputFile);
                 test.pass("Extract Expense Add Expense Icon", MediaEntityBuilder.createScreenCaptureFromPath("expenseAddExpenseIcon.png").build());
-            } catch (IOException e) {
+            }
+            catch (IOException e)
+            {
                 e.printStackTrace();
                 test.fail("Failed to extract Expense Add Expense Icon" + e.getMessage());
             }
