@@ -1,5 +1,4 @@
 //Patient Details validation
-
 package org.patientsearch.testcase;
 import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
@@ -17,10 +16,10 @@ public class TestCase1 extends PatientSearch {
     public WebElement doctorName;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_patientSearch_clinicName")
     public WebElement clinicName;
-    public TestCase1(AndroidDriver driver, ExtentTest test) {
+    public TestCase1(AndroidDriver driver, ExtentTest test)
+    {
         super(driver, test);
     }
-
     public void patientDetails() {
         System.out.println(patientName.getText());
         System.out.println(patientId.getText());

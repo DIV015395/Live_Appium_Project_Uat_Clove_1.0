@@ -1,16 +1,12 @@
 //validation of Three_Dot_Button working or not during Patient search;
-
 package org.patientsearch.testcase;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.patientsearch.PatientSearch;
-
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
-
 public class TestCase2 extends PatientSearch {
 
     ResourceBundle resourceBundle = ResourceBundle.getBundle("patientsearch");

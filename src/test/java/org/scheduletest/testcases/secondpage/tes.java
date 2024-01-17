@@ -24,8 +24,5 @@ public class tes {
         System.out.println(names);
         int l = CurrentFormattedDate.currentDate();
         System.out.println(l);
-
     }
-
-
 }
