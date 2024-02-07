@@ -104,15 +104,15 @@ public class ScheduleScreen extends SchedulePage {
 
         }
     }
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView")
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_screen_title")
     private AndroidElement screenTitle;
     String redirectScreenTitleName = "Add Appointment";
     public void screenTitleValidation() {
         try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             Assert.assertEquals(screenTitle.getText(), redirectScreenTitleName);
             test.log(Status.PASS, "Redirect to Appointment Add Screen Verified - Working Fine");
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             test.log(Status.FAIL, "Redirect to Appointment Add Screen Verified - Not Working");
         }
     }
