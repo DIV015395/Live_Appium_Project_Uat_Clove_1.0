@@ -14,6 +14,21 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class AppointmentPage extends BaseDriver {
+
+    //Three should be changed before run the script
+    @AndroidFindBy(xpath ="//android.view.View[@content-desc=\"06 February 2024\"]")
+    public WebElement Date;
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"05 February 2024\"]")
+    private WebElement previousDate;
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"08 April 2024\"]")
+    private WebElement afterTwoMonthDate;
+
+   //Three should be changed before run the script
+    @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc=\"Previous Month\"]")
+    private WebElement backButtonInCalender;
+    @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc=\"Next Month\"]")
+    private WebElement nextButtonInCalender;
+
     ExtentTest test;
     public void webElementClear(WebElement element)
     {
@@ -33,23 +48,12 @@ public class AppointmentPage extends BaseDriver {
             test.log(Status.FAIL,"Failed to clear text");
         }
     }
-
-
-//    String datt = "04 February 2023";
-//    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"" + date + "\"]")
-//    MobileElement yourElement;
-
-
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc=]")
-    public WebElement Date;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_contact")
     public WebElement et_contact;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_name")
     public WebElement et_name;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_appointmentDateSelect")
     public WebElement Dates;
-    //    @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_next_month_arrow")
-//    public WebElement Next_month;
     @AndroidFindBy(id = "com.clove.clover.uat:id/mdtp_ok")
     public WebElement Dateok;
     @AndroidFindBy(id = "com.clove.clover.uat:id/rv_timeSlots")
