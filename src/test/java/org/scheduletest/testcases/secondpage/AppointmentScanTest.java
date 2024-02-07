@@ -1,5 +1,4 @@
 package org.scheduletest.testcases.secondpage;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -108,9 +107,16 @@ public class AppointmentScanTest {
         obj.scrollingUp();
         obj.selectState();
         obj.itemTitleSate();
+        obj.clearMobileNumberPatient();
+        obj.mobileNumberNineDigit();
         obj.scrollingDown();
         obj.submitButton();
-        obj.toastPrint();
+        obj.mobileNoInvalidToast();
+//
+        obj.scrollingUp();
+        obj.clearMobileNumberPatient();
+        obj.mobileNumberPatient();
+        obj.scrollingDown();
         obj.successfulToastMessage();
         //
         obj.selectDoctorDropdown();

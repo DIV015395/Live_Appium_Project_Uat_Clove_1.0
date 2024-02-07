@@ -10,9 +10,11 @@ import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.schedule.SchedulePage;
-import org.schedule.testcase.secondpage.TestCase1;
+import org.schedule.testcase.secondpage.AppointmentInClinic;
+import org.schedule.testcase.secondpage.AppointmentScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -20,15 +22,15 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class AppointmentEnterMobileNumber {
+public class AppointmentInClinicTest {
+
     private AppiumDriver driver;
     private ExtentReports extent;
     private ExtentTest test;
-
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 1", "Schedule second page Test case 1");
+        test = extent.createTest("Scan Appointment", "Scan Appointment");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
             DesiredCapabilities caps = DesireCap.desire();
@@ -62,18 +64,42 @@ public class AppointmentEnterMobileNumber {
     }
     @Test(priority = 3)
     public void appointmentTestCase() {
-        TestCase1 obj = new TestCase1((AndroidDriver) driver, test);
+        AppointmentInClinic obj = new AppointmentInClinic((AndroidDriver) driver, test);
+
         obj.scrollingDown();
         obj.submitButton();
-        obj.toastMassageValidation();
+        obj.numberToastValidation();
+        //
+        obj.scrollingUp();
+        obj.mobileNumberPatient();
+        obj.scrollingDown();
+        obj.submitButton();
+        obj.nameToastValidation();
+        //
+        obj.scrollingUp();
+        obj.namePatient();
+        obj.clearMobileNumberPatient();
+        obj.mobileNumberNineDigit();
+        obj.scrollingDown();
+        obj.submitButton();
+        obj.mobileNoInvalidToast();
+
+        obj.scrollingUp();
+        obj.clearMobileNumberPatient();
+        obj.mobileNumberPatient();
+        obj.calenderOpen();
+        obj.selectDate();
+        obj.calenderOkButton();
+        obj.slotSelection();
+        obj.durationSelection();
+
         test.pass("Test case passed Successfully");
     }
 
-//    @AfterClass
-//    public void driverClose() {
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    @AfterClass
+    public void driverClose() {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 //        driver.quit();
-//        extent.flush();
-//    }
+        extent.flush();
+    }
 }
-

@@ -428,4 +428,24 @@ public class AppointmentPage extends BaseDriver {
         }
     }
 
+    public void mobileNumberNineDigit()
+    {
+        if (et_contact.isDisplayed())
+        {
+            try {
+                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                et_contact.sendKeys("701113149");
+                test.log(Status.PASS,"Send nine digit in Mobile no text Field");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed to Send nine digit in Mobile no text Field");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to Identify the Mobile text field Locator");
+        }
+    }
+
 }

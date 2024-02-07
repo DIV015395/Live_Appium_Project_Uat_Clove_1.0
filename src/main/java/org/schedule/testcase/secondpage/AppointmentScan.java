@@ -149,5 +149,11 @@ public class AppointmentScan extends AppointmentPage
         }
     }
 
+    private String  mobileNoInvalidToast = "Enter 10 digit mobile no!";
+    public void mobileNoInvalidToast()
+    {
+        Assert.assertEquals(mobileNoInvalidToast, "Enter 10 digit mobile no!");
+    }
+
 
 }
