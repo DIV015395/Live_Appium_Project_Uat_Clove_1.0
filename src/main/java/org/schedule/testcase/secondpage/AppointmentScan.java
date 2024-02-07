@@ -136,7 +136,7 @@ public class AppointmentScan extends AppointmentPage
             layout_clinicSelect.click();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             // Assuming you want to select the option with text "Bodakdev"
-            String desiredOptionText = "All Clinic";
+            String desiredOptionText = "ExtSC-Pune";
             for (WebElement option : tv_itemTitle) {
                 if (option.getText().equals(desiredOptionText)) {
                     option.click();
@@ -154,6 +154,29 @@ public class AppointmentScan extends AppointmentPage
     {
         Assert.assertEquals(mobileNoInvalidToast, "Enter 10 digit mobile no!");
     }
+    private String selectDoctorToastMessage = "Please select a Doctor to book an appointment!";
+    public void selectDoctorToastMessage()
+    {
+        Assert.assertEquals(selectDoctorToastMessage, "Enter 10 digit mobile no!");
+    }
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.TextView")
+    private WebElement firstDoctorName;
 
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.TextView")
+    private WebElement secondDoctorName;
+    public void selectDoctorFromList()
+    {
+        if (firstDoctorName.isEnabled())
+        {
+            firstDoctorName.click();
+        }
+        else
+        {
+            if (secondDoctorName.isEnabled())
+            {
+                secondDoctorName.click();
+            }
+        }
+    }
 
 }

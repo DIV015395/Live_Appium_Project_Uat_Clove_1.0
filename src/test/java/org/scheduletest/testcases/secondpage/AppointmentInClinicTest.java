@@ -92,6 +92,8 @@ public class AppointmentInClinicTest {
         obj.calenderOkButton();
         obj.slotSelection();
         obj.durationSelection();
+        obj.painElements();
+        obj.chiefNote();
 
         test.pass("Test case passed Successfully");
     }
