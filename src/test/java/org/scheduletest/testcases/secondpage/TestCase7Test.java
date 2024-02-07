@@ -71,7 +71,7 @@ public class TestCase7Test {
         obj.slotSelection();
         obj.durationSelection();
         obj.setDoctorName();
-        obj.scrolling();
+        obj.scrollingDown();
         obj.painElements();
         obj.chiefNote();
         obj.submitButton();

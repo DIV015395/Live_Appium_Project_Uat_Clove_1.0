@@ -15,7 +15,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/patientsearchtest/testcases/TestCase2Test.java">
         <classes>
-            <class name="org.patientsearchtest.testcases.TestCase2Test">
+            <class name="org.patientsearchtest.testcases.PatientSearchByEmail">
                 <methods>
                     <include name="loginApp"/>
                     <include name="patientSearch"/>
@@ -26,7 +26,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/patientsearchtest/testcases/TestCase3Test.java">
         <classes>
-            <class name="org.patientsearchtest.testcases.TestCase3Test">
+            <class name="org.patientsearchtest.testcases.PatientSearchByMobileNo">
                 <methods>
                     <include name="loginApp"/>
                     <include name="patientSearch"/>
@@ -37,7 +37,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/patientsearchtest/testcases/TestCase4Test.java">
         <classes>
-            <class name="org.patientsearchtest.testcases.TestCase4Test">
+            <class name="org.patientsearchtest.testcases.PatientSearchByName">
                 <methods>
                     <include name="loginApp"/>
                     <include name="patientSearch"/>
@@ -48,7 +48,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/patientsearchtest/testcases/TestCase5Test.java">
         <classes>
-            <class name="org.patientsearchtest.testcases.TestCase5Test">
+            <class name="org.patientsearchtest.testcases.PatientSearchByPatientId">
                 <methods>
                     <include name="loginApp"/>
                     <include name="patientSearch"/>

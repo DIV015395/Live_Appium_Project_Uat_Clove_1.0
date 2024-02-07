@@ -9,6 +9,7 @@ import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.schedule.testcase.firstpage.ScheduleScreen;
 import org.schedule.testcase.firstpage.TestCase1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +21,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class TestCase1Test {
+public class ScheuleScreenTest {
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
@@ -55,19 +56,21 @@ public class TestCase1Test {
     @Test(priority = 2)
     public void main() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        TestCase1 obj = new TestCase1((AndroidDriver) driver, test);
+        ScheduleScreen obj = new ScheduleScreen((AndroidDriver) driver, test);
         obj.homeSchedule();
         obj.appointmentPlus();
-        obj.toastMessage();
         obj.toastMassageValidation();
+        obj.dateChange();
+        obj.selectClinicDropdown();
+        obj.appointmentPlus();
+        obj.screenTitleValidation();
         test.pass("Test is successful pass");
     }
 
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.quit();
+//        driver.quit();
         extent.flush();
     }
-
 }

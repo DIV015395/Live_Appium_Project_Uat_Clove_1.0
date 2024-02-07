@@ -32,22 +32,30 @@ public class SchedulePage extends BaseDriver {
         this.test = test;
     }
 
-    ResourceBundle resourceBundle = ResourceBundle.getBundle("schedule");
-    String doctorName = resourceBundle.getString("doctorName");
-    String clinicName = resourceBundle.getString("clinicName");
 
-    public void homeSchedule() {
-        try {
-            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-            tv_home_schedule.click();
-            test.log(Status.PASS, "Home schedule button clicked ");
-        } catch (Exception e) {
-            test.log(Status.FAIL, "Home schedule button click -> Failed");
+
+    public void homeSchedule()
+    {
+        if(tv_home_schedule.isDisplayed()) {
+            try {
+                driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+                tv_home_schedule.click();
+                test.log(Status.PASS, "Home schedule button clicked ");
+            } catch (Exception e)
+            {
+                test.log(Status.FAIL, "Home schedule button click -> Failed");
+            }
+        }
+        else {
+            test.log(Status.FAIL,"Failed to identify the locator Home Schedule");
         }
     }
     public void scheduleCalenderDate() {
         System.out.println(scheduleCalender.getText());
     }
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("schedule");
+    String doctorName = resourceBundle.getString("doctorName");
+    String clinicName = resourceBundle.getString("clinicName");
     public void selectClinicDropdown() {
 
         try {
@@ -70,7 +78,8 @@ public class SchedulePage extends BaseDriver {
         }
     }
 
-    public void selectDoctorDropdown() {
+    public void selectDoctorDropdown()
+    {
         try {
             layout_doctorSelect.click();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -87,17 +96,21 @@ public class SchedulePage extends BaseDriver {
             test.log(Status.FAIL, "Doctor is selected from dropdown -> Failed");
         }
     }
-
     public void appointmentPlus() {
-        try {
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            fab_newAppointment.click();
-            test.log(Status.PASS, "Clicked on Appointment plus button");
-        } catch (Exception e) {
-            test.log(Status.FAIL, "Clicked on Appointement plus button -> Failed");
+        if (fab_newAppointment.isDisplayed())
+        {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                fab_newAppointment.click();
+                test.log(Status.PASS, "Clicked on Appointment plus button");
+            } catch (Exception e) {
+                test.log(Status.FAIL, "Clicked on Appointement plus button -> Failed");
+            }
         }
-
+        else
+        {
+            test.log(Status.FAIL, "Failed -> to identify the Locator");
+        }
     }
 
 

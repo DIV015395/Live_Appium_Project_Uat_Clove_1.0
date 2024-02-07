@@ -19,12 +19,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class TestCase2Test {
-
+public class TestCase2Test
+{
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
-
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
@@ -38,7 +37,6 @@ public class TestCase2Test {
             test.log(Status.FAIL, "Click function is not working");
         }
     }
-
     @Test
     public void main() {
 
@@ -53,7 +51,6 @@ public class TestCase2Test {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         test.pass("Test case passed successfully.");
     }
-
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

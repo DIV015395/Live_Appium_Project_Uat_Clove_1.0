@@ -15,9 +15,32 @@ import java.util.concurrent.TimeUnit;
 
 public class AppointmentPage extends BaseDriver {
     ExtentTest test;
+    public void webElementClear(WebElement element)
+    {
+        if(element.isDisplayed())
+        {
+            try {
+                element.clear();
+                test.log(Status.PASS,"Text Clear ");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Text Clear Failed");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to clear text");
+        }
+    }
 
 
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"04 August 2023\"]")
+//    String datt = "04 February 2023";
+//    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"" + date + "\"]")
+//    MobileElement yourElement;
+
+
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=]")
     public WebElement Date;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_contact")
     public WebElement et_contact;
@@ -71,7 +94,10 @@ public class AppointmentPage extends BaseDriver {
             test.log(Status.FAIL, "Patient mobile no filled -> Not working");
 
         }
-
+    }
+    public void clearMobileNumberPatient()
+    {
+        webElementClear(et_contact);
     }
 
     public void namePatient() {
@@ -84,7 +110,10 @@ public class AppointmentPage extends BaseDriver {
         }
 
     }
-
+    public void clearNamePatient()
+    {
+        webElementClear(et_name);
+    }
     public void calenderOpen() {
         try {
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -120,7 +149,8 @@ public class AppointmentPage extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_doctorName")
     public List<WebElement> doctorName;
 
-    public void durationSelection() {
+    public void durationSelection()
+    {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         tv_appointmentDuration.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -154,8 +184,17 @@ public class AppointmentPage extends BaseDriver {
     }
 
     //Scroll down perform karna hai is jagah par;
-    public void scrolling() {
-//        Dimension size = driver.manage().window().getSize();
+    public void scrollingDown()
+    {
+        driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"))"));
+    }
+    public void scrollingUp()
+    {
+        driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollBackward()"));
+    }
+    public void newScrolling()
+    {
+        //        Dimension size = driver.manage().window().getSize();
 //        int startX = size.width / 2;
 //        int startY = (int) (size.height * 0.8);
 //        int endY = (int) (size.height * 0.2);
@@ -169,9 +208,6 @@ public class AppointmentPage extends BaseDriver {
 //                "new UiScrollable(new UiSelector().scrollable(true))"
 //                        + ".scrollIntoView(new UiSelector().text(\"SAVE\"))"));
 //        element.click();
-
-
-        driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));
     }
 
     public void painElements() {
@@ -205,4 +241,191 @@ public class AppointmentPage extends BaseDriver {
             test.log(Status.FAIL, "Click on Save button at Appointment Page -> Not Working");
         }
     }
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.widget.TextView")
+    private WebElement clinicScanDropdown;
+
+    public void clinicScanDropdown()
+    {
+        if(clinicScanDropdown.isDisplayed())
+        {
+            try {
+                clinicScanDropdown.click();
+                test.log(Status.PASS,"Click on clinic Scan Dropdown Working Fine");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Not Working button clinicScanDropdown");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to identify xpath : ClinicScanDropdown ");
+        }
+    }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemTitle")
+    private List<WebElement> itemTitle;
+    public void itemTitle() {
+        try {
+            for (WebElement option : itemTitle)
+            {
+                if (option.getText().equals("Scan")) {
+                    option.click();
+                    break;
+                }
+            }
+            test.log(Status.PASS, "Doctor is selected from dropdown");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Doctor is selected from dropdown -> Failed");
+        }
+    }
+    @AndroidFindBy(id = "android:id/button1")
+    private WebElement scanProceed;
+    public void scanProceed()
+    {
+        if (scanProceed.isDisplayed())
+        {
+            try {
+                scanProceed.click();
+                test.log(Status.PASS,"Click on Scan Proceed Button");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed to click on scan Proceed");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to identify scanProceed Button");
+        }
+    }
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[3]/android.widget.TextView")
+    private WebElement puneClinicForScan;
+    public void puneClinicForScan()
+    {
+        if (puneClinicForScan.isDisplayed())
+        {
+            try {
+                puneClinicForScan.click();
+                test.log(Status.PASS,"Click on puneClinicForScan");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed to click puneClinicForScan");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to identify puneClinicForScan");
+        }
+    }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_address")
+    private WebElement address;
+    public void address()
+    {
+        if (address.isDisplayed())
+        {
+            try {
+                address.sendKeys("Noida sec 16");
+                test.log(Status.PASS,"Send address in address element");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed = Send address in address element");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Identify Failed = Send address in address element");
+        }
+    }
+    public void clearAddress()
+    {
+        webElementClear(address);
+    }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_city")
+    private WebElement city;
+
+    public void city()
+    {
+        if (city.isDisplayed())
+        {
+            try {
+                city.sendKeys("Noida");
+                test.log(Status.PASS,"Send city in address element");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed = Send city in address element");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Identify Failed = Send city in address element");
+        }
+    }
+    public void clearCity()
+    {
+        webElementClear(city);
+    }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_pin_code")
+    private WebElement pinCode;
+    public void pinCode()
+    {
+        if (pinCode.isDisplayed())
+        {
+            try {
+                pinCode.sendKeys("141001");
+                test.log(Status.PASS,"Send pinCode in address element");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed = Send pinCode in address element");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Identify Failed = Send pinCode in address element");
+        }
+    }
+    public void clearPinCode()
+    {
+        webElementClear(pinCode);
+    }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/et_state")
+    private WebElement selectState;
+    public void selectState()
+    {
+        if (selectState.isDisplayed())
+        {
+            try {
+                selectState.click();
+                test.log(Status.PASS,"Click on select State");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed = Click on select State");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Identify Failed = Click on select State");
+        }
+    }
+    public void itemTitleSate() {
+        try {
+            for (WebElement option : itemTitle)
+            {
+                if (option.getText().equals("Delhi")) {
+                    option.click();
+                    break;
+                }
+            }
+            test.log(Status.PASS, "Doctor is selected from dropdown");
+        }
+        catch (Exception e)
+        {
+            test.log(Status.FAIL, "Doctor is selected from dropdown -> Failed");
+        }
+    }
+
 }

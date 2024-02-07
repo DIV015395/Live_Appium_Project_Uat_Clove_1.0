@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/scheduletest/testcases/firstpage/TestCase1Test.java">
         <classes>
-            <class name="org.scheduletest.testcases.firstpage.TestCase1Test">
+            <class name="org.scheduletest.testcases.firstpage.ScheduleSelectValidClinic">
                 <methods>
                     <include name="loginApp"/>
                     <include name="main"/>
@@ -15,7 +15,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/ManjeetSharma/IdeaProjects/Live_Appium_Project_Uat_Clove_1.0/src/test/java/org/scheduletest/testcases/firstpage/TestCase2Test.java">
         <classes>
-            <class name="org.scheduletest.testcases.firstpage.TestCase2Test">
+            <class name="org.scheduletest.testcases.firstpage.ScheduleRedirectToAppointment">
                 <methods>
                     <include name="loginApp"/>
                     <include name="main"/>

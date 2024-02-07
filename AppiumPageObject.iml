@@ -12,6 +12,8 @@
       <sourceFolder url="file://$MODULE_DIR$/loginresources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/screenshotscreen" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/org/applogin/loginresources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/org/expenses/expenseresources" type="java-resource" />
     </content>
   </component>
 </module>

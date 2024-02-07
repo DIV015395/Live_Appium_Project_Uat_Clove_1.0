@@ -1,8 +1,4 @@
-//fill name and mobile no in appointment page then scroll down and click on save button.
-//it will redirect to previous page with success appointment booking.
-
-
-package org.scheduletest.testcases.secondpage;
+package org.patientsearchtest.testcases;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -13,11 +9,9 @@ import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.schedule.SchedulePage;
-import org.schedule.testcase.secondpage.TestCase4;
+import org.patientsearch.testcase.TestCase3;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -25,20 +19,21 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class TestCase4Test {
-    private AppiumDriver driver;
-    private ExtentReports extent;
-    private ExtentTest test;
+public class PatientSearchByMobileNo {
+    public AppiumDriver driver;
+    public ExtentReports extent;
+    public ExtentTest test;
 
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test case 4", "Schedule second page Test case 4");
         Logger logger = LoggerFactory.getLogger(getClass());
         try {
+            test = extent.createTest("Testcase 3", "description of Patient Search test case 3");
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            test.log(Status.PASS, "Driver launch Successful");
         } catch (MalformedURLException e) {
             test.log(Status.FAIL, "Click function is not working");
         }
@@ -55,33 +50,27 @@ public class TestCase4Test {
         obj.goClickButton();
         obj.permissonAllowed();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        test.log(Status.PASS, "Login Successful");
     }
 
     @Test(priority = 2)
-    public void schedulePage() {
-        SchedulePage obj = new SchedulePage((AndroidDriver) driver, test);
-        obj.homeSchedule();
-        obj.selectClinicDropdown();
-        obj.selectDoctorDropdown();
-        obj.appointmentPlus();
-    }
-
-    @Test(priority = 3)
-    public void appointmentTestCase() {
-
-        TestCase4 obj = new TestCase4((AndroidDriver) driver, test);
-        obj.mobileNumberPatient();
-        obj.namePatient();
-        obj.scrolling();
-        obj.submitButton();
-        obj.toastMassageValidation();
-        test.pass("Test case passed Successfully");
-    }
-
-    @AfterClass
-    public void driverClose() {
+    public void patientSearch() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.quit();
-        extent.flush();
+        TestCase3 obj = new TestCase3((AndroidDriver) driver, test);
+        obj.homePatientSearch();
+        obj.explore();
+        obj.patientSearchByValue();
+        obj.selectClinic();
+        obj.patientSearchByOption();
+        obj.searchButton();
+        obj.setListingContactNo();
+        test.pass("Test is successful pass");
     }
+//
+//    @AfterClass
+//    public void driverClose() {
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        driver.quit();
+//        extent.flush();
+//    }
 }

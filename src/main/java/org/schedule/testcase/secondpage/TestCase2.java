@@ -25,7 +25,7 @@ public class TestCase2 extends AppointmentPage {
     }
 
 
-    public void scrolling() {
+    public void scrollingDown() {
         driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"SAVE\"));"));
     }
 

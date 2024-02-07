@@ -10,7 +10,7 @@ public class DesireCap {
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 //        caps.setCapability(MobileCapabilityType.APP, "C:\\cloveapps\\bases.apk");
 //        caps.setCapability(MobileCapabilityType.APP, "C:\\cloveapps\\cashhandoveralloc.apk");
-        caps.setCapability(MobileCapabilityType.APP, "C:\\cloveapps\\clove_doctor_uat_20240107_1.apk");
+        caps.setCapability(MobileCapabilityType.APP, "C:\\cloveapps\\clove_doctor_uat_20240130_1.apk");
         return caps;
     }
 }

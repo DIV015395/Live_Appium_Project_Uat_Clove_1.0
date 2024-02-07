@@ -71,10 +71,18 @@ public class PatientSearch extends BaseDriver {
         this.test = test;
     }
 
-    public void homePatientSearch() {
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        home_patient_search.click();
-        test.log(Status.PASS, "Home Patient Action working fine.");
+    public void homePatientSearch()
+    {
+        if(home_patient_search.isDisplayed())
+        {
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            home_patient_search.click();
+            test.log(Status.PASS, "Home Patient Action working fine.");
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to Identify the Home Patient Search Android Element");
+        }
     }
 
     public void explore() {
@@ -86,12 +94,25 @@ public class PatientSearch extends BaseDriver {
         test.log(Status.PASS, "Explore Action working fine.");
     }
 
-    public void patientSearchByValue() {
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        searchQuery.sendKeys("1111");
-        test.log(Status.PASS, "Input Field fill successfully ");
+    public void patientSearchByValue()
+    {
+        if (searchQuery.isDisplayed())
+        {
+            try {
+                driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+                searchQuery.sendKeys("1111");
+                test.log(Status.PASS, "Input Field fill successfully ");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL, "Input Field fill = Failed ");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to Identify the Locator SearchQuery");
+        }
     }
-
     public void selectClinic() {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         ListClinic.click();
@@ -109,25 +130,54 @@ public class PatientSearch extends BaseDriver {
     }
 
 
-    public void patientSearchByOption() {
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        patientSearchBy.click();
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-        // Assuming you want to select the option with text "Bodakdev"
+    public void patientSearchByOption()
+    {
         String desiredOptionText = "Mobile";
-
-        for (WebElement option : listofpatientSearchBy) {
+        if (patientSearchBy.isDisplayed())
+        {
+            try {
+                driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+                patientSearchBy.click();
+                test.log(Status.PASS, "Dropdown  'List of Patient Search by' is Working Fine");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Dropdown  'List of Patient Search by' is not Working");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to Identify the Locator Patient SearchBy");
+        }
+        // Assuming you want to select the option with text "Bodakdev"
+        for (WebElement option : listofpatientSearchBy)
+        {
             if (option.getText().equals(desiredOptionText)) {
                 option.click();
+                test.log(Status.PASS, "Dropdown selected  = " + desiredOptionText);
                 break;
             }
         }
-        test.log(Status.PASS, "Dropdown  'List of Patient Search by' is Working Fine");
-        test.log(Status.PASS, "Dropdown selected  = " + desiredOptionText);
+
     }
-    public void searchButton() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        iv_search.click();
-        test.log(Status.PASS, "Search Button is Working Fine.");
+    public void searchButton()
+    {
+        if (iv_search.isDisplayed())
+        {
+            try {
+                driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+                iv_search.click();
+                test.log(Status.PASS, "Search Button is Working Fine.");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL, "Search Button is Not Working");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL, "Failed to Identify the Search Button");
+        }
+
     }
 }
