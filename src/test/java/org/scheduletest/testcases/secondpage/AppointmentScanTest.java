@@ -117,6 +117,7 @@ public class AppointmentScanTest {
         obj.clearMobileNumberPatient();
         obj.mobileNumberPatient();
         obj.scrollingDown();
+        obj.submitButton();
         obj.successfulToastMessage();
         //
         obj.selectDoctorDropdown();
