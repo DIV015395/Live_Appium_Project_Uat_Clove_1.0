@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.algorithm.CurrentTimeInIndia;
 import org.desiredcapabilities.BaseDriver;
@@ -13,21 +14,85 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-public class AppointmentPage extends BaseDriver {
+public class AppointmentPage extends BaseDriver
+{
 
     //Three should be changed before run the script
     @AndroidFindBy(xpath ="//android.view.View[@content-desc=\"06 February 2024\"]")
-    public WebElement Date;
+    private WebElement Date;
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"05 February 2024\"]")
     private WebElement previousDate;
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"08 April 2024\"]")
     private WebElement afterTwoMonthDate;
+    public void previousDate()
+    {
+        if(previousDate.isEnabled())
+        {
+            test.log(Status.FAIL,"Previous Date is enable for Book Appointment");
+        }
+        else
+        {
+            test.log(Status.PASS,"Previous Date is disable for Book Appointment");
+        }
+    }
+
+    public void afterTwoMonthDate()
+    {
+        if(afterTwoMonthDate.isEnabled())
+        {
+            test.log(Status.FAIL,"afterTwoMonthDate is enable for Book Appointment");
+        }
+        else
+        {
+            test.log(Status.PASS,"afterTwoMonthDate is disable for Book Appointment");
+        }
+    }
 
    //Three should be changed before run the script
     @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc=\"Previous Month\"]")
     private WebElement backButtonInCalender;
+
+    public void backButtonInCalender()
+    {
+        if (backButtonInCalender.isDisplayed())
+        {
+            try {
+                backButtonInCalender.click();
+                test.log(Status.PASS,"Click on Back Button in Calender");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed to Click on Back Button in Calender");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to Identify  Back Button in Calender");
+        }
+
+    }
     @AndroidFindBy(xpath = "//android.widget.ImageButton[@content-desc=\"Next Month\"]")
     private WebElement nextButtonInCalender;
+
+    public void nextButtonInCalender()
+    {
+        if (nextButtonInCalender.isDisplayed())
+        {
+            try {
+                nextButtonInCalender.click();
+                test.log(Status.PASS,"Click on Next Button in Calender");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed to Click on Next Button in Calender");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to Identify  Next Button in Calender");
+        }
+
+    }
 
     ExtentTest test;
     public void webElementClear(WebElement element)
@@ -84,7 +149,6 @@ public class AppointmentPage extends BaseDriver {
         this.test = test;
     }
 
-
     ResourceBundle resourceBundle = ResourceBundle.getBundle("appointment");
     String patientName = resourceBundle.getString("namePatient");
     String patientMobileNumber = resourceBundle.getString("mobileNumber");
@@ -136,7 +200,6 @@ public class AppointmentPage extends BaseDriver {
         } catch (Exception e) {
             test.log(Status.FAIL, "Date selected from calender -> Not Working");
         }
-
     }
 
     public void calenderOkButton() {
@@ -324,12 +387,14 @@ public class AppointmentPage extends BaseDriver {
     }
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_address")
     private WebElement address;
+    ResourceBundle resourceBundleScan = ResourceBundle.getBundle("scanAppointmentData");
+    String scanAddress = resourceBundleScan.getString("scanAddress");
     public void address()
     {
         if (address.isDisplayed())
         {
             try {
-                address.sendKeys("Noida sec 16");
+                address.sendKeys(scanAddress);
                 test.log(Status.PASS,"Send address in address element");
             }
             catch (Exception e)
@@ -349,12 +414,14 @@ public class AppointmentPage extends BaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_city")
     private WebElement city;
 
+    String scanCity = resourceBundleScan.getString("scanCity");
+
     public void city()
     {
         if (city.isDisplayed())
         {
             try {
-                city.sendKeys("Noida");
+                city.sendKeys(scanCity);
                 test.log(Status.PASS,"Send city in address element");
             }
             catch (Exception e)
@@ -373,12 +440,14 @@ public class AppointmentPage extends BaseDriver {
     }
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_pin_code")
     private WebElement pinCode;
+
+    String scanPinCode = resourceBundleScan.getString("scanPinCode");
     public void pinCode()
     {
         if (pinCode.isDisplayed())
         {
             try {
-                pinCode.sendKeys("141001");
+                pinCode.sendKeys(scanPinCode);
                 test.log(Status.PASS,"Send pinCode in address element");
             }
             catch (Exception e)
@@ -397,6 +466,7 @@ public class AppointmentPage extends BaseDriver {
     }
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_state")
     private WebElement selectState;
+
     public void selectState()
     {
         if (selectState.isDisplayed())
@@ -415,11 +485,12 @@ public class AppointmentPage extends BaseDriver {
             test.log(Status.FAIL,"Identify Failed = Click on select State");
         }
     }
+    String scanState = resourceBundleScan.getString("scanState");
     public void itemTitleSate() {
         try {
             for (WebElement option : itemTitle)
             {
-                if (option.getText().equals("Delhi")) {
+                if (option.getText().equals(scanState)) {
                     option.click();
                     break;
                 }
@@ -449,6 +520,19 @@ public class AppointmentPage extends BaseDriver {
         else
         {
             test.log(Status.FAIL,"Failed to Identify the Mobile text field Locator");
+        }
+    }
+    @AndroidFindBy(id = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.TextView")
+    private AndroidElement firstDoctorSelect;
+    public void conditionalSelectDoctor()
+    {
+        if (firstDoctorSelect.isSelected())
+        {
+
+        }
+        else
+        {
+            firstDoctorSelect.click();
         }
     }
 

@@ -77,6 +77,23 @@ public class AppointmentSelectDoctorToBook {
         obj.submitButton();
         obj.toastMassageValidation();
         test.pass("Test case passed Successfully");
+
+
+
+
+//Proceeder to verify the Calender
+        obj.calenderOpen();
+        obj.previousDate();
+        obj.nextButtonInCalender();
+        obj.nextButtonInCalender();
+        obj.afterTwoMonthDate();
+        obj.backButtonInCalender();
+        obj.backButtonInCalender();
+        obj.previousDate();
+        obj.selectDate();
+        obj.calenderOkButton();
+//Implemet in all cases
+
     }
 
     @AfterClass

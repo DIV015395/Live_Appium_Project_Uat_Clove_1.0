@@ -10,7 +10,6 @@ import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.schedule.testcase.firstpage.ScheduleScreen;
-import org.schedule.testcase.firstpage.TestCase1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;

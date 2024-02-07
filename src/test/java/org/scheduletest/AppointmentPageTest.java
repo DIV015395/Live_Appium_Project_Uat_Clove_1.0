@@ -11,15 +11,14 @@ import org.schedule.SchedulePage;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class AppointmentPageTest {
+public class AppointmentPageTest
+{
     private AppiumDriver driver;
     private ExtentTest test;
-
     @BeforeClass
     public void driverLaunch() throws MalformedURLException {
         DesiredCapabilities caps = DesireCap.desire();

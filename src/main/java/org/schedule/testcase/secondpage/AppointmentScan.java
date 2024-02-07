@@ -11,11 +11,39 @@ import org.schedule.AppointmentPage;
 import org.testng.Assert;
 
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 public class AppointmentScan extends AppointmentPage
 {
     ExtentTest test;
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("scanAppointmentData");
+    String patientNameScan = resourceBundle.getString("namePatient");
+    String patientMobileNumberScan = resourceBundle.getString("mobileNumber");
+    @Override
+    public void mobileNumberPatient() {
+        try {
+            et_contact.sendKeys(patientMobileNumberScan);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            test.log(Status.PASS, "Patient mobile no filled");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Patient mobile no filled -> Not working");
+
+        }
+    }
+    @Override
+    public void namePatient() {
+        try {
+            et_name.sendKeys(patientNameScan);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            test.log(Status.PASS, "Patient name filled at Appointment page");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Patient name filled at Appointment page -> Not working");
+        }
+
+    }
+
+
     @AndroidFindBy(xpath = "//android.widget.Toast")
     private AndroidElement messages;
     private String mobileNumber = "Please enter patient mobile number!";
@@ -27,6 +55,7 @@ public class AppointmentScan extends AppointmentPage
         Assert.assertEquals(mobileNumber, messages.getText());
         test.log(Status.PASS,"Toast Message :- "+mobileNumber);
     }
+
     private String nameGetMessage = "Please enter patient name!";
     public void nameToastValidation()
     {
@@ -132,7 +161,7 @@ public class AppointmentScan extends AppointmentPage
     private List<WebElement> tv_itemTitle;
     @AndroidFindBy(id = "com.clove.clover.uat:id/layout_clinicSelect")
     private WebElement layout_clinicSelect;
-    public void selectDoctorDropdown() {
+    public void selectClinicDropdown() {
         try {
             layout_clinicSelect.click();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -179,5 +208,37 @@ public class AppointmentScan extends AppointmentPage
             }
         }
     }
+
+    //Validating data at Listing
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[2]")
+    private AndroidElement scanListingFirstName;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView")
+    private AndroidElement scanListingPhoneNumber;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.TextView[2]")
+    private AndroidElement scanListingAppointmentType;
+    //Validating This data at Listing
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.TextView[3]")
+    private AndroidElement scanAppointmentStatus;
+    //Validating
+    String appointmentType = "Scan";
+    String appointmentStatus = "Active";
+    public void dataValidationScanListing()
+    {
+        test.log(Status.PASS,"-------Listing Scan Data Validation-----------");
+        Assert.assertEquals(scanListingFirstName.getText(), patientNameScan);
+        test.log(Status.INFO,scanListingFirstName.getText()+" ====="+patientNameScan);
+        Assert.assertEquals(scanListingPhoneNumber.getText(), patientMobileNumberScan);
+        test.log(Status.INFO,scanListingPhoneNumber.getText()+" ====="+patientMobileNumberScan);
+        Assert.assertEquals(scanListingAppointmentType.getText(),appointmentType);
+        test.log(Status.INFO,scanListingAppointmentType.getText()+" ====="+appointmentType);
+        Assert.assertEquals(scanAppointmentStatus.getText(),appointmentStatus);
+        test.log(Status.INFO,scanAppointmentStatus.getText()+" ====="+appointmentStatus);
+
+    }
+
+
+
+
+
 
 }

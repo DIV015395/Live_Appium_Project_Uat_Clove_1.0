@@ -10,6 +10,7 @@ import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.schedule.SchedulePage;
 import org.schedule.testcase.secondpage.AppointmentScan;
+import org.schedule.testcase.secondpage.AppointmentScanBookNextDay;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
@@ -18,7 +19,8 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-public class AppointmentScanTest {
+public class AppointmentScanBookNextDayTest {
+
     private AppiumDriver driver;
     private ExtentReports extent;
     private ExtentTest test;
@@ -58,76 +60,30 @@ public class AppointmentScanTest {
         obj.appointmentPlus();
     }
     @Test(priority = 3)
-    public void appointmentTestCase() {
-    AppointmentScan obj = new AppointmentScan((AndroidDriver) driver, test);
-    obj.clinicScanDropdown();
-    obj.itemTitle();
-    obj.scanProceed();
-    obj.puneClinicForScan();
-    obj.scrollingDown();
-    obj.submitButton();
-    obj.numberToastValidation();
-    //
-    obj.scrollingUp();
-    obj.mobileNumberPatient();
-    obj.scrollingDown();
-    obj.submitButton();
-    obj.toastPrint();
-    obj.nameToastValidation();
-     //
-    obj.scrollingUp();
-    obj.namePatient();
-    obj.scrollingDown();
-    obj.submitButton();
-    obj.toastPrint();
-    obj.addressToastValidation();
-       //
-        obj.scrollingUp();
+    public void appointmentTestCase()
+    {
+        AppointmentScanBookNextDay obj = new AppointmentScanBookNextDay((AndroidDriver) driver, test);
+        obj.clinicScanDropdown();
+        obj.itemTitle();
+        obj.scanProceed();
+        obj.puneClinicForScan();
+        obj.mobileNumberPatient();
+        obj.namePatient();
+        obj.calenderOpen();
+        obj.selectNextDate();
+        obj.calenderOkButton();
         obj.address();
-        obj.scrollingDown();
-        obj.submitButton();
-        obj.toastPrint();
-        obj.cityToastValidation();
-        //
-        obj.scrollingUp();
         obj.city();
-        obj.scrollingDown();
-        obj.submitButton();
-        obj.toastPrint();
-        obj.pinCodeToastValidation();
-        //
-        obj.scrollingUp();
         obj.pinCode();
-        obj.scrollingDown();
-        obj.submitButton();
-        obj.toastPrint();
-        obj.stateToastValidation();
-        //
-        obj.scrollingUp();
         obj.selectState();
         obj.itemTitleSate();
-        obj.clearMobileNumberPatient();
-        obj.mobileNumberNineDigit();
+        obj.conditionalSelectDoctor();
         obj.scrollingDown();
         obj.submitButton();
-        obj.mobileNoInvalidToast();
-//
-        obj.scrollingUp();
-        obj.clearMobileNumberPatient();
-        obj.mobileNumberPatient();
-        obj.scrollingDown();
-        obj.submitButton();
-        obj.successfulToastMessage();
-        obj.dataValidationScanListing();
-        //
         obj.selectClinicDropdown();
+        obj.nextDateButtonInListing();
         obj.dataValidationScanListing();
-        //
-        obj.threeDotActionButton();
-        obj.actionCancelButton();
-        obj.threeDotActionButton();
-        obj.listActionButton();
-        obj.editScheduleListing();
+
         test.pass("Test case passed Successfully");
     }
 
