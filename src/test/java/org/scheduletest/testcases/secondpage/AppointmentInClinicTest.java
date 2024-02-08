@@ -66,6 +66,17 @@ public class AppointmentInClinicTest {
     public void appointmentTestCase() {
         AppointmentInClinic obj = new AppointmentInClinic((AndroidDriver) driver, test);
 
+        obj.calenderOpen();
+        obj.previousDate();
+        obj.nextButtonInCalender();
+        obj.nextButtonInCalender();
+        obj.afterTwoMonthDate();
+        obj.backButtonInCalender();
+        obj.backButtonInCalender();
+        obj.previousDate();
+        obj.selectDate();
+        obj.calenderOkButton();
+
         obj.scrollingDown();
         obj.submitButton();
         obj.numberToastValidation();

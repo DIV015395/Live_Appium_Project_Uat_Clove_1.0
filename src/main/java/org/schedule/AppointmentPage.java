@@ -18,11 +18,11 @@ public class AppointmentPage extends BaseDriver
 {
 
     //Three should be changed before run the script
-    @AndroidFindBy(xpath ="//android.view.View[@content-desc=\"06 February 2024\"]")
+    @AndroidFindBy(xpath ="//android.view.View[@content-desc=\"08 February 2024\"]")
     private WebElement Date;
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"05 February 2024\"]")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"07 February 2024\"]")
     private WebElement previousDate;
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"08 April 2024\"]")
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"09 April 2024\"]")
     private WebElement afterTwoMonthDate;
     public void previousDate()
     {

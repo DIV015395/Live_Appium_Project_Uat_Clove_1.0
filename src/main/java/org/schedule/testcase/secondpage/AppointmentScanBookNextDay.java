@@ -21,7 +21,7 @@ public class AppointmentScanBookNextDay extends AppointmentPage {
     String patientNameScan = resourceBundleScanNextDay.getString("namePatient");
     String patientMobileNumberScan = resourceBundleScanNextDay.getString("mobileNumber");
     //Please the date
-    @AndroidFindBy(xpath ="//android.view.View[@content-desc=\"08 February 2024\"]")
+    @AndroidFindBy(xpath ="//android.view.View[@content-desc=\"09 February 2024\"]")
     public WebElement nextDate;
     ExtentTest test;
     public AppointmentScanBookNextDay(AndroidDriver driver, ExtentTest test) {

@@ -64,6 +64,18 @@ public class AppointmentScanTest {
     obj.itemTitle();
     obj.scanProceed();
     obj.puneClinicForScan();
+
+        obj.calenderOpen();
+        obj.previousDate();
+        obj.nextButtonInCalender();
+        obj.nextButtonInCalender();
+        obj.afterTwoMonthDate();
+        obj.backButtonInCalender();
+        obj.backButtonInCalender();
+        obj.previousDate();
+        obj.selectDate();
+        obj.calenderOkButton();
+
     obj.scrollingDown();
     obj.submitButton();
     obj.numberToastValidation();
