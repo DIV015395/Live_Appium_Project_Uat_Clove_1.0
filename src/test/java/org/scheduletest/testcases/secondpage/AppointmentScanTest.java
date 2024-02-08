@@ -130,7 +130,6 @@ public class AppointmentScanTest {
         obj.scrollingDown();
         obj.submitButton();
         obj.successfulToastMessage();
-        obj.dataValidationScanListing();
         //
         obj.selectClinicDropdown();
         obj.dataValidationScanListing();
