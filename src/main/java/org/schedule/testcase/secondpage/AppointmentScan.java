@@ -221,7 +221,7 @@ public class AppointmentScan extends AppointmentPage
     private AndroidElement scanAppointmentStatus;
     //Validating
     String appointmentType = "Scan";
-    String appointmentStatus = "Active";
+    String appointmentStatus = "active";
     public void dataValidationScanListing()
     {
         test.log(Status.PASS,"-------Listing Scan Data Validation-----------");
