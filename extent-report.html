@@ -52,7 +52,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Feb 9, 2024 02:05:22 pm</span>
+			<span class='label blue darken-3 suite-start-time'>Feb 12, 2024 03:57:43 pm</span>
 			</a>
 		</ul>
 	</div>
@@ -67,7 +67,7 @@
 				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+										<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -110,10 +110,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
+                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
                 </div>
             </div>
         </div>
@@ -131,19 +131,19 @@
 </div>	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Scan Appointment</span>
-						<span class='test-time'>Feb 9, 2024 02:05:22 pm</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>Test Case 1</span>
+						<span class='test-time'>Feb 12, 2024 03:57:44 pm</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 9, 2024 02:05:22 pm</span>
-	<span class='label end-time'>Feb 9, 2024 02:07:39 pm</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 2m 16s+936ms</span>
+	<span class='label start-time'>Feb 12, 2024 03:57:44 pm</span>
+	<span class='label end-time'>Feb 12, 2024 03:58:02 pm</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+326ms</span>
 </div>
-<div class='test-desc'>Scan Appointment </div>
+<div class='test-desc'>Description of Test Case 1 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -156,23 +156,7 @@
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:05:42 pm</td>
-				<td class='step-details'>
-						Correct User Id Filled
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:05:42 pm</td>
-				<td class='step-details'>
-						Correct Password Filled
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:05:43 pm</td>
+				<td class='timestamp'>3:57:58 pm</td>
 				<td class='step-details'>
 						Clicked on Go Button
 					
@@ -180,7 +164,7 @@
 			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:05:44 pm</td>
+				<td class='timestamp'>3:57:59 pm</td>
 				<td class='step-details'>
 						Permisson Allowed
 					
@@ -188,345 +172,41 @@
 			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:04 pm</td>
+				<td class='timestamp'>3:58:01 pm</td>
 				<td class='step-details'>
-						Home schedule button clicked
+						Actual: Please enter valid username & password! matches Expected: Please enter valid username & password!
 					
 				</td>
 			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:13 pm</td>
+				<td class='timestamp'>3:58:01 pm</td>
 				<td class='step-details'>
-						Clinic is selected from dropdown
+						Correct User Id Filled
 					
 				</td>
 			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:18 pm</td>
+				<td class='timestamp'>3:58:01 pm</td>
 				<td class='step-details'>
-						Doctor is selected from dropdown
+						Clicked on Go Button
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:58:02 pm</td>
+				<td class='step-details'>
+						Actual: Please enter valid username & password! does not match Expected: Please enter password!
 					
 				</td>
 			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:19 pm</td>
+				<td class='timestamp'>3:58:02 pm</td>
 				<td class='step-details'>
-						Clicked on Appointment plus button
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:24 pm</td>
-				<td class='step-details'>
-						Click on clinic Scan Dropdown Working Fine
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:27 pm</td>
-				<td class='step-details'>
-						Doctor is selected from dropdown
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:27 pm</td>
-				<td class='step-details'>
-						Click on Scan Proceed Button
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:28 pm</td>
-				<td class='step-details'>
-						Click on puneClinicForScan
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:30 pm</td>
-				<td class='step-details'>
-						Calender Open Properly
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:31 pm</td>
-				<td class='step-details'>
-						Previous Date is disable for Book Appointment
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:32 pm</td>
-				<td class='step-details'>
-						Click on Next Button in Calender
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:32 pm</td>
-				<td class='step-details'>
-						Click on Next Button in Calender
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:33 pm</td>
-				<td class='step-details'>
-						afterTwoMonthDate is disable for Book Appointment
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:33 pm</td>
-				<td class='step-details'>
-						Click on Back Button in Calender
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:34 pm</td>
-				<td class='step-details'>
-						Click on Back Button in Calender
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:35 pm</td>
-				<td class='step-details'>
-						Previous Date is disable for Book Appointment
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:36 pm</td>
-				<td class='step-details'>
-						Date selected from calender
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:37 pm</td>
-				<td class='step-details'>
-						Clicked on ok Button at Calender page
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:42 pm</td>
-				<td class='step-details'>
-						Click on Save button at Appointment Page
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:42 pm</td>
-				<td class='step-details'>
-						Toast Message :- Please enter patient mobile number!
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:44 pm</td>
-				<td class='step-details'>
-						Patient mobile no filled
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:48 pm</td>
-				<td class='step-details'>
-						Click on Save button at Appointment Page
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:50 pm</td>
-				<td class='step-details'>
-						Patient name filled at Appointment page
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:55 pm</td>
-				<td class='step-details'>
-						Click on Save button at Appointment Page
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:06:57 pm</td>
-				<td class='step-details'>
-						Send address in address element
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:02 pm</td>
-				<td class='step-details'>
-						Click on Save button at Appointment Page
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:04 pm</td>
-				<td class='step-details'>
-						Send city in address element
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:07 pm</td>
-				<td class='step-details'>
-						Click on Save button at Appointment Page
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:11 pm</td>
-				<td class='step-details'>
-						Send pinCode in address element
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:15 pm</td>
-				<td class='step-details'>
-						Click on Save button at Appointment Page
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:17 pm</td>
-				<td class='step-details'>
-						Click on select State
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:19 pm</td>
-				<td class='step-details'>
-						Doctor is selected from dropdown
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:21 pm</td>
-				<td class='step-details'>
-						Text Clear
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:22 pm</td>
-				<td class='step-details'>
-						Send nine digit in Mobile no text Field
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:25 pm</td>
-				<td class='step-details'>
-						Click on Save button at Appointment Page
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:27 pm</td>
-				<td class='step-details'>
-						Text Clear
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:28 pm</td>
-				<td class='step-details'>
-						Patient mobile no filled
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:31 pm</td>
-				<td class='step-details'>
-						Click on Save button at Appointment Page
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:37 pm</td>
-				<td class='step-details'>
-						Doctor is selected from dropdown
-					
-				</td>
-			</tr>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:07:37 pm</td>
-				<td class='step-details'>
-						-------Listing Scan Data Validation-----------
-					
-				</td>
-			</tr>
-			<tr class='log' status='info'>
-				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:07:39 pm</td>
-				<td class='step-details'>
-						MS =====MS
-					
-				</td>
-			</tr>
-			<tr class='log' status='info'>
-				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:07:39 pm</td>
-				<td class='step-details'>
-						8984839999 =====8984839999
-					
-				</td>
-			</tr>
-			<tr class='log' status='info'>
-				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>2:07:39 pm</td>
-				<td class='step-details'>
-						Scan =====Scan
+						Test case passed successfully.
 					
 				</td>
 			</tr>
@@ -575,19 +255,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Feb 9, 2024 02:05:22 pm</div>
+					<div class='panel-lead'>Feb 12, 2024 03:57:43 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Feb 9, 2024 02:07:39 pm</div>
+			 		<div class='panel-lead'>Feb 12, 2024 03:58:02 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 2m 17s+262ms</div>
+					<div class='panel-lead'>0h 0m 18s+418ms</div>
 				</div>
 			</div>
 		</div>
@@ -599,13 +279,13 @@
 		<script>
 			var statusGroup = {
                 parentCount: 1,
-				passParent: 1,
-				failParent: 0,
+				passParent: 0,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 1,
 				childCount: 0,
 				passChild: 0,
 				failChild: 0,
@@ -630,7 +310,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "Scan Appointment":136.936
+			        "Test Case 1":18.326
 			};
 		</script>
 	

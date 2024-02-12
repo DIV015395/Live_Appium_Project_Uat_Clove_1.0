@@ -1,17 +1,16 @@
-package org.patientsearchtest;
+package org.applogintest;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import org.applogin.AppLogin;
+import org.applogin.AppLoginNew;
+import org.applogin.testcase.TestCase1;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.patientsearch.PatientSearch;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -20,56 +19,68 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class PatientSearchTest
-{
+public class AppLoginNewTest {
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
+
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        Logger logger = LoggerFactory.getLogger(getClass());
+        test = extent.createTest("Test Case 1", "Description of Test Case 1");
+//        Logger logger = LoggerFactory.getLogger(getClass());
         try {
-            test = extent.createTest("Testcase 1", "description of schedule first page test case 1");
             DesiredCapabilities caps = DesireCap.desire();
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            test.log(Status.PASS, "Driver launch Successful");
         } catch (MalformedURLException e) {
             test.log(Status.FAIL, "Click function is not working");
         }
-
     }
-    @Test(priority = 1)
-    public void loginApp() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppLogin obj = new AppLogin((AndroidDriver) driver, test);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.userName();
-        obj.userPassword();
+    @Test(priority = 1 ,description = "Negative Scenario")
+    public void loginNegativeScenario() {
+        AppLoginNew obj = new AppLoginNew((AndroidDriver) driver, test);
+
         obj.goClickButton();
         obj.permissonAllowed();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        test.log(Status.PASS, "Login Successful");
+        obj.bothBlankToastMessage();
+
+
+        obj.userName();
+        obj.goClickButton();
+        obj.onlyUserNameFill();
+        obj.clearUserName();
+
+        //
+//        obj.userPassword();
+//        obj.goClickButton();
+//        obj.printToatMessage();
+//        obj.cleaUserPassword();
+////
+//        obj.wrongUserName();
+//        obj.userPassword();
+//        obj.goClickButton();
+//        obj.printToatMessage();
+
+        test.pass("Test case passed successfully.");
     }
 
-    @Test(priority = 2)
-    public void patientSearch() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        PatientSearch obj1 = new PatientSearch((AndroidDriver) driver, test);
-        obj1.homePatientSearch();
-        obj1.explore();
-        obj1.patientSearchByValue();
-        obj1.selectClinic();
-        obj1.patientSearchByOption();
-        obj1.searchButton();
-        test.pass("Test is successful pass");
-    }
 
+
+//    @Test(priority = 2 ,description = "Negative Scenario")
+//    public void main() {
+//        TestCase1 obj = new TestCase1((AndroidDriver) driver, test);
+//        obj.userName();
+//        obj.goClickButton();
+//        obj.permissonAllowed();
+//        obj.toastMessage();
+//        obj.toastMassageValidation();
+//        test.pass("Test case passed successfully.");
+//    }
     @AfterClass
     public void driverClose() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.quit();
+//        driver.quit();
         extent.flush();
     }
 }

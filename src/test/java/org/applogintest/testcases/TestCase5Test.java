@@ -26,7 +26,8 @@ public class TestCase5Test {
     public ExtentTest test;
 
     @BeforeClass
-    public void driverLaunch() {
+    public void driverLaunch()
+    {
         extent = ExtentManager.getInstance();
         test = extent.createTest("Test case 5", "Description of test case 5");
         Logger logger = LoggerFactory.getLogger(getClass());
@@ -38,7 +39,6 @@ public class TestCase5Test {
             test.log(Status.FAIL, "Click function is not working");
         }
     }
-
     @Test
     public void main() {
         TestCase5 obj = new TestCase5((AndroidDriver) driver, test);
