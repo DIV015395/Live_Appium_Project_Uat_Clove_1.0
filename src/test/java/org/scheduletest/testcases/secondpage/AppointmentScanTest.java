@@ -5,6 +5,7 @@ import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
+import org.applogin.AppLoginNew;
 import org.desiredcapabilities.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -38,14 +39,8 @@ public class AppointmentScanTest {
 
     @Test(priority = 1)
     public void loginApp() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        AppLogin obj = new AppLogin((AndroidDriver) driver, test);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        obj.userName();
-        obj.userPassword();
-        obj.goClickButton();
-        obj.permissonAllowed();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        AppLoginNew appLoginNew = new AppLoginNew((AndroidDriver) driver,test);
+        appLoginNew.loginPositiveScenario();
     }
 
     @Test(priority = 2)

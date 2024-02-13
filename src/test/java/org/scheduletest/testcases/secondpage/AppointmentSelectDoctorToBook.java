@@ -1,5 +1,4 @@
 package org.scheduletest.testcases.secondpage;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.AppiumDriver;
@@ -18,7 +17,6 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
 public class AppointmentSelectDoctorToBook {
 
     private AppiumDriver driver;

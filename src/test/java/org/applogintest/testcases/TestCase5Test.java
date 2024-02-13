@@ -20,11 +20,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class TestCase5Test {
+public class TestCase5Test
+{
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
-
     @BeforeClass
     public void driverLaunch()
     {
