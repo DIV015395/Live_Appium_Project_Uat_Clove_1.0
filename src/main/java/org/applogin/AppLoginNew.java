@@ -1,21 +1,14 @@
 package org.applogin;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.desiredcapabilities.BaseDriver;
-import org.testng.asserts.SoftAssert;
-
-import java.sql.SQLOutput;
+import org.desiredcapabilities.NewBaseDriver;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
-public class AppLoginNew extends BaseDriver
+public class AppLoginNew extends NewBaseDriver
 {
-    private String getToastMassage;
     private final ExtentTest test;
-
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_login_username")
     private AndroidElement et_login_username;
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_login_password")
@@ -29,76 +22,147 @@ public class AppLoginNew extends BaseDriver
     private final String password = resourceBundle.getString("pass");
 
     public AppLoginNew(AndroidDriver driver, ExtentTest test) {
-        super(driver);
+        super(driver,test);
         this.test = test;
     }
+    public void userName()
+    {
+        try
+        {   setDriverWaitTenSecond(driver);
+                et_login_username.sendKeys(userid);
+                test.log(Status.PASS, "Correct User Id Filled");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed to fill UserName ");
+            }
 
-    public void userName() {
-        et_login_username.sendKeys(userid);
-        test.log(Status.PASS, "Correct User Id Filled");
     }
-    public void wrongUserName() {
-        et_login_username.sendKeys("efefef");
+    public void wrongUserName()
+    {
+        et_login_username.sendKeys("Manjeet.sharmassss");
         test.log(Status.PASS, "Correct User Id Filled");
     }
     public void clearUserName()
     {
         et_login_username.clear();
     }
-    public void userPassword() {
-        et_login_password.sendKeys(password);
-        test.log(Status.PASS, "Correct Password Filled");
+    public void userPassword()
+    {
+
+            try
+            {
+                setDriverWaitTenSecond(driver);
+                et_login_password.sendKeys(password);
+                test.log(Status.PASS, "Correct Password Filled");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed to fill UserPassword ");
+            }
     }
     public void cleaUserPassword()
     {
-    et_login_password.clear();
+
+        if(et_login_password.isDisplayed())
+        {
+            try
+            {
+                et_login_password.clear();
+                test.log(Status.PASS,"Text clear in User Password Filled");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed to fill clear UserPassword ");
+            }
+        }
+        else
+        {
+            test.log(Status.FAIL,"Failed to identify the locator for userPassword for Clear");
+        }
     }
-    public void goClickButton() {
-        tv_login_go.click();
-        test.log(Status.PASS, "Clicked on Go Button");
+    public void goClickButton()
+    {
+            try
+            {
+                setDriverWaitTenSecond(driver);
+                tv_login_go.click();
+                test.log(Status.PASS, "Clicked on Go Button");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed to Click on Go Button");
+            }
     }
 
-    public void permissonAllowed() {
-        permission_allow_button.click();
-        test.log(Status.PASS, "Permisson Allowed");
+
+    public void permissionAllowed() {
+          try
+            {
+                setDriverWaitTenSecond(driver);
+                permission_allow_button.click();
+                test.log(Status.PASS, "Permission Allowed");
+            }
+            catch (Exception e)
+            {
+                test.log(Status.FAIL,"Failed to click on Allow Button");
+            }
     }
     String bothBlank = "Please enter valid username & password!";
     String onlyUserNameFill = "Please enter password!";
     String onlyPasswordFill = "Please enter username!";
     String unauthorisedToast = "You are not authorised to access!";
+    String authorisedToast = "Please wait, your contacts are being updated!";
+
+
     @AndroidFindBy(xpath = "//android.widget.Toast")
     private AndroidElement toastMessages;
-
-
     public void bothBlankToastMessage()
     {
         customSoftAssert(toastMessages.getText(),bothBlank);
+        setDriverWaitTillThreeSecond();
     }
     public void onlyUserNameFill()
     {
         customSoftAssert(toastMessages.getText(),onlyUserNameFill);
+        setDriverWaitTillThreeSecond();
     }
     public void onlyPasswordFillToast()
     {
         customSoftAssert(toastMessages.getText(),onlyPasswordFill);
+        setDriverWaitTillThreeSecond();
     }
-    public void unauthorisedToast()
+    public void unAuthorisedToast()
     {
+        setDriverWaitTillThreeSecond();
         customSoftAssert(toastMessages.getText(),unauthorisedToast);
+        setDriverWaitTillThreeSecond();
+    }
+    public void authorisedToast()
+    {
+        setDriverWaitTenSecond(driver);
+        customSoftAssert(toastMessages.getText(),authorisedToast);
+        setDriverWaitTillThreeSecond();
     }
     public void customSoftAssert(String Actual, String Expected)
     {
 
         if(Actual.equals(Expected))
         {
-            test.log(Status.PASS,"Actual: "+ Actual+ " matches Expected: "+ Expected);
+            test.log(Status.PASS,"Actual: "+ Actual+ " : matches Expected: "+ Expected);
         }
         else
         {
-            test.log(Status.FAIL,"Actual: "+ Actual+ " does not match Expected: "+ Expected);
+            test.log(Status.FAIL,"Actual: "+ Actual+ " : does not match Expected: "+ Expected);
         }
-
     }
-
+    public void loginPositiveScenario()
+    {
+         userName();
+         userPassword();
+         goClickButton();
+        permissionAllowed();
+        authorisedToast();
+    }
 
 }

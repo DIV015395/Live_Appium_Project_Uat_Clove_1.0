@@ -34,7 +34,6 @@ public class AppointmentScanTest {
         } catch (MalformedURLException e) {
             test.log(Status.FAIL, "Click function is not working");
         }
-
     }
 
     @Test(priority = 1)
