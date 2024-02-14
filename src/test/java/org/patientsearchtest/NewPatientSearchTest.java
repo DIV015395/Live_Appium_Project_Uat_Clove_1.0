@@ -77,6 +77,25 @@ public class NewPatientSearchTest {
         newPatientSeach.selectAddFile();
         newPatientSeach.oralImages();
         newPatientSeach.saveButton();
+        newPatientSeach.titleToastMessageValidation();
+        //
+        newPatientSeach.fileTitleField();
+        newPatientSeach.saveButton();
+        newPatientSeach.uploadToastMessageValidation();
+        //
+        newPatientSeach.setAttachFiles();
+        newPatientSeach.allowPermission();
+        newPatientSeach.setCamera();
+        newPatientSeach.setCamera();
+        newPatientSeach.setShutterButton();
+        newPatientSeach.setDoneCapture();
+        newPatientSeach.attachFileTitleValidation();
+        //
+        newPatientSeach.attachFilesCancel();
+        newPatientSeach.attachFileTitleValidation();
+        //
+
+
 
 
         test.pass("Test is successful pass");

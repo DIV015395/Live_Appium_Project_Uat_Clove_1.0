@@ -506,7 +506,152 @@ public class NewPatientSeach extends NewBaseDriver {
     // Toast message element
     @AndroidFindBy(xpath = "//android.widget.Toast")
     private AndroidElement toastMessage;
+    String titleToast = "Please enter file title!";
+    String uploadToast = "Please select file for upload!";
+
+    public void titleToastMessageValidation()
+    {
+        customSoftAssert(toastMessage.getText(),titleToast);
+        setDriverWaitTillThreeSecond();
+    }
+    public void uploadToastMessageValidation()
+    {
+        customSoftAssert(toastMessage.getText(),uploadToast);
+        setDriverWaitTillThreeSecond();
+    }
+    public void printToastMessage()
+    {
+        System.out.println(toastMessage.getText());
+    }
     //
     //all Toast Message //
-    String itemToastMessage = "Please enter Item!";
+
+    @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
+    private WebElement permissionButton;
+    @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_button")
+    private WebElement permissionAllowButton;
+
+    public void allowPermission()
+    {
+        try {
+            setDriverWaitTenSecond(driver);
+            permissionButton.click();
+            setDriverWaitTenSecond(driver);
+            permissionAllowButton.click();
+            setDriverWaitTenSecond(driver);
+            permissionAllowButton.click();
+            setDriverWaitTenSecond(driver);
+            test.log(Status.PASS,"All Permission given for upload files");
+        }
+        catch (Exception e)
+        {
+            test.log(Status.FAIL,"Failed to Give All Permission given for upload files");
+        }
+
+    }
+
+    //
+    @AndroidFindBy(id = "com.clove.clover.uat:id/rl_imagePickerOption_camera")
+    private AndroidElement cameraPicker;
+    public void setCameraPicker()
+    {
+        try{
+            cameraPicker.click();
+            test.log(Status.PASS,"Click on Camera ");
+        }
+        catch (Exception e)
+        {
+            test.log(Status.PASS,"Failed to Click on Camera ");
+        }
+    }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/rl_imagePickerOption_gallery")
+    private AndroidElement galleryPicker;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/rl_imagePickerOption_file")
+    private AndroidElement filePicker;
+
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_camera")
+    private AndroidElement Camera;
+
+    @AndroidFindBy(id = "com.android.camera2:id/shutter_button")
+    private AndroidElement shutterButton;
+
+    @AndroidFindBy(id = "com.android.camera2:id/done_button")
+    private AndroidElement doneCapture;
+
+    public void setCamera() {
+
+        try {
+            setDriverWaitTenSecond(driver);
+            Camera.click();
+            test.log(Status.PASS, "Click on Camera button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Camera button.  Not Working");
+        }
+    }
+    public void setShutterButton() {
+
+
+        try {
+            setDriverWaitTenSecond(driver);
+            shutterButton.click();
+            test.log(Status.PASS, "Click on Camera Capture button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Camera Capture button.  Not Working");
+        }
+    }
+    public void setDoneCapture() {
+
+        try {
+            setDriverWaitTenSecond(driver);
+            doneCapture.click();
+            test.log(Status.PASS, "Click on Capture Right button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Capture Right button.  Not Working");
+        }
+    }
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_attachFiles")
+    private AndroidElement attachFiles;
+    public void setAttachFiles() {
+
+        try {
+            setDriverWaitTenSecond(driver);
+            attachFiles.click();
+            test.log(Status.PASS, "Click on Attach file button. Working");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Click on Attach file button.  Not Working");
+        }
+    }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_attachedFile_title")
+    private AndroidElement attachFileTitle;
+    public void attachFileTitleValidation()
+    {
+       if (attachFileTitle.getText()!=null)
+       {
+           test.log(Status.PASS,"File Path name : "+attachFileTitle.getText());
+       }
+       else
+       {
+           test.log(Status.FAIL,"Failed to show the file path at screen after capture");
+       }
+    }
+
+    @AndroidFindBy(id = "com.clove.clover.uat:id/iv_attachedFile_cancel")
+    private AndroidElement attachFilesCancel;
+    public void attachFilesCancel()
+    {
+        try {
+            attachFilesCancel.click();
+            test.log(Status.PASS,"Click on AttachFile Cancel Button");
+        }
+        catch (Exception e)
+        {
+            test.log(Status.FAIL,"Failed to Click on AttachFile Cancel Button");
+        }
+    }
+
+
+
+
 }
