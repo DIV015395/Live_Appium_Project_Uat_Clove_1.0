@@ -19,7 +19,6 @@ public class ExpenseAddRemarks extends ExpensesAdd {
         super(driver, test);
         this.test = test;
     }
-
     public void getNotes() {
         try {
             driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

@@ -49,6 +49,17 @@ public class NewBaseDriver
             System.out.println(e);
         }
     }
+    public void setDriverWaitTillOneSecond()
+    {
+        try
+        {
+            Thread.sleep(3000);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+    }
     public void setDriverWaitTenSecond()
     {
         try

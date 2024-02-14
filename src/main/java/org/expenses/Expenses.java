@@ -1,5 +1,4 @@
 package org.expenses;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
@@ -8,12 +7,12 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.desiredcapabilities.BaseDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-public class Expenses extends BaseDriver {
+public class Expenses extends BaseDriver
+{
     ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_expense")
     public AndroidElement expense;

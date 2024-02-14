@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-public class PatientSearch extends BaseDriver {
+public class PatientSearch extends BaseDriver
+{
     public ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_selectedItem")
     private WebElement ListClinic;

@@ -11,13 +11,13 @@ import java.util.concurrent.TimeUnit;
 
 public class ExpensesAdd extends Expenses {
     ExtentTest test;
-    @AndroidFindBy(id = "com.clove.clover.uat:id/add_expense")
-    private AndroidElement addexpense;
 
     public ExpensesAdd(AndroidDriver driver, ExtentTest test) {
         super(driver, test);
         this.test = test;
     }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/add_expense")
+    private AndroidElement addexpense;
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_calender")
     private AndroidElement calenderButton;
 
@@ -304,7 +304,6 @@ public class ExpensesAdd extends Expenses {
             test.log(Status.FAIL, "Click on Camera button.  Not Working");
         }
     }
-
     public void setShutterButton() {
 
 
@@ -316,7 +315,6 @@ public class ExpensesAdd extends Expenses {
             test.log(Status.FAIL, "Click on Camera Capture button.  Not Working");
         }
     }
-
     public void setAttachFiles() {
 
         try {
