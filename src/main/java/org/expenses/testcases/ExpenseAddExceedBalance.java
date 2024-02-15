@@ -5,14 +5,14 @@ import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.expenses.ExpensesAdd;
+import org.expenses.ExpensesListingAdd;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-public class ExpenseAddExceedBalance extends ExpensesAdd {
+public class ExpenseAddExceedBalance extends ExpensesListingAdd {
     ExtentTest test;
     ResourceBundle resourceBundle = ResourceBundle.getBundle("ExpenseExceedAmountClinic");
     private final String desiredOptionText = resourceBundle.getString("clinic");

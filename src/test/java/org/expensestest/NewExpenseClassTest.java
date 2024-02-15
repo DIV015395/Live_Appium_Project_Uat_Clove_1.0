@@ -5,8 +5,12 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLoginNew;
 import org.desiredcapabilities.NewBaseDriver;
+import org.expenses.ExpensesListing;
 import org.expenses.NewExpenseClass;
 import org.extentreport.ExtentManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -41,7 +45,7 @@ public class NewExpenseClassTest {
         //Redirect to expense add screen;
         newExpenseClass.setActionSave();
         newExpenseClass.itemToastMessage();
-        //
+//        //
         newExpenseClass.setName();
         newExpenseClass.setActionSave();
         newExpenseClass.quantityToastMessage();
@@ -63,13 +67,18 @@ public class NewExpenseClassTest {
         newExpenseClass.setRemarksBackArrow();
         newExpenseClass.addExpenseScreenTitle();
         //
-        newExpenseClass.getAddedNotesValidation();
         newExpenseClass.setRemarksButton();
-        newExpenseClass.setRemarksDelete();
-        newExpenseClass.getNotAddedNotes();
+        newExpenseClass.setRemarksTextSend();
+        newExpenseClass.setRemarkDone();
+        newExpenseClass.getNotes();
         newExpenseClass.setRemarksButton();
         newExpenseClass.setRemarksBackArrow();
-        newExpenseClass.addExpenseScreenTitle();
+        newExpenseClass.getNotes();
+        newExpenseClass.setRemarksButton();
+        newExpenseClass.setRemarksDelete();
+        newExpenseClass.getNotes();
+        newExpenseClass.setRemarksButton();
+        newExpenseClass.setRemarksBackArrow();
         //
         //Camera click Functionality
         newExpenseClass.setAttachFiles();
@@ -79,7 +88,68 @@ public class NewExpenseClassTest {
         newExpenseClass.setCamera();
         newExpenseClass.setShutterButton();
         newExpenseClass.setDoneCapture();
-        //Camera click Functionality
+        newExpenseClass.attachFileTitleValidation();
+
+        //Cancel the images
+        newExpenseClass.attachFilesCancel();
+        newExpenseClass.setActionSave();
+        newExpenseClass.expenseAddedSuccessfulToast();
+        //click on save button
+
+        ExpensesListing expensesListing = new ExpensesListing((AndroidDriver) driver,test);
+        expensesListing.setActionDots();
+        expensesListing.setCopy();
+        newExpenseClass.getTextName();
+        newExpenseClass.getTextQuantity();
+        newExpenseClass.getTextAmount();
+
+        newExpenseClass.setRemarksBackArrow();
+
+        expensesListing.setActionDots();
+        expensesListing.setView();
+        newExpenseClass.getTextName();
+        newExpenseClass.getTextQuantity();
+        newExpenseClass.getTextAmount();
+
+        newExpenseClass.setRemarksBackArrow();
+
+        expensesListing.setActionDots();
+        expensesListing.setEdit();
+        newExpenseClass.clearName();
+        newExpenseClass.clearAmount();
+        newExpenseClass.clearQuantity();
+
+
+
+
+
+
+
+
+
+//        newExpenseClass.setName();
+//        newExpenseClass.setQuantity();
+//        newExpenseClass.setAmount();
+//        newExpenseClass.setAttachFiles();
+//        newExpenseClass.setPermissionOne();
+//        newExpenseClass.setAllowFirstTime();
+//        newExpenseClass.setAllowSecondtime();
+//        newExpenseClass.setCamera();
+//        newExpenseClass.setShutterButton();
+//        newExpenseClass.setDoneCapture();
+//        newExpenseClass.setActionSave();
+//        newExpenseClass.toastMessage();
+//        newExpenseClass.toastMassageValidation();
+//        newExpenseClass.scrollTo();
+//        newExpenseClass.printDetailsForMatchingItems();
+//        newExpenseClass.clickActionButtonForItemText();
+//        newExpenseClass.setView();
+//        newExpenseClass.setRemarksBackArrow();
+//        newExpenseClass.clickActionButtonForItemText();
+//        newExpenseClass.setEdit();
+//        newExpenseClass.setEditName();
+//        newExpenseClass.setEditAmount();
+//        newExpenseClass.setEditQuantity();
 
 
     }

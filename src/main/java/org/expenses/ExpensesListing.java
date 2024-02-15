@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-public class Expenses extends BaseDriver
+public class ExpensesListing extends BaseDriver
 {
     ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_expense")
@@ -39,19 +39,19 @@ public class Expenses extends BaseDriver
     private AndroidElement view;
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[4]/android.widget.TextView")
     private AndroidElement delete;
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.Button")
+    @AndroidFindBy(id = "com.clove.clover.uat:id/btn_cancel")
     private AndroidElement cancel;
     //three dot action button option
 
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_action_dots")
-    private List<AndroidElement> actionDots;
+    private AndroidElement actionDots;
     ResourceBundle resourceBundle = ResourceBundle.getBundle("addexpensedetails");
     String expenseAddName = resourceBundle.getString("name");
-    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_itemdetail")
-    private List<WebElement> itemDetail;
+    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_bottomSheet_item")
+    private List<WebElement> listActionButton;
 
-    public Expenses(AndroidDriver driver, ExtentTest test) {
+    public ExpensesListing(AndroidDriver driver, ExtentTest test) {
         super(driver);
         this.test = test;
     }
@@ -123,21 +123,26 @@ public class Expenses extends BaseDriver
         }
     }
 
-    public void setListcount() {
+    public void setActionDots()
+        {
         try {
-            if (actionDots.size() == 0) {
-                test.log(Status.PASS, noRecords.getText());
-            } else {
-                test.log(Status.PASS, "There is no of Items = " + actionDots.size());
-            }
+
+            actionDots.click();
+                test.log(Status.PASS, "Click on action button");
+
         } catch (Exception e) {
-            test.log(Status.FAIL, "Items Listing Not working");
+            test.log(Status.FAIL, "Failed to click on action button");
         }
     }
 
     public void setView() {
         try {
-            view.click();
+            for (WebElement option : listActionButton) {
+                if (option.getText().equals("View")) {
+                    option.click();
+                    break;
+                }
+            }
             test.log(Status.PASS, "Click on view button : working ");
         } catch (Exception e) {
             test.log(Status.FAIL, "Click on view button : not working ");
@@ -155,7 +160,12 @@ public class Expenses extends BaseDriver
 
     public void setCopy() {
         try {
-            copy.click();
+            for (WebElement option : listActionButton) {
+                if (option.getText().equals("Copy")) {
+                    option.click();
+                    break;
+                }
+            }
             test.log(Status.PASS, "click on copy button :  working");
         } catch (Exception e) {
             test.log(Status.FAIL, "click on copy button : Not working");
@@ -165,7 +175,12 @@ public class Expenses extends BaseDriver
     public void setEdit() {
 
         try {
-            edit.click();
+            for (WebElement option : listActionButton) {
+                if (option.getText().equals("Edit")) {
+                    option.click();
+                    break;
+                }
+            }
             test.log(Status.PASS, "click on Edit button :  working");
         } catch (Exception e) {
             test.log(Status.FAIL, "click on Edit button : Not working");

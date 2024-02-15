@@ -7,7 +7,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.ExpensesAdd;
+import org.expenses.ExpensesListingAdd;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
@@ -56,7 +56,7 @@ public class ExpensesAddTest {
 
     @Test(priority = 2)
     public void main() throws InterruptedException {
-        ExpensesAdd obj = new ExpensesAdd((AndroidDriver) driver, test);
+        ExpensesListingAdd obj = new ExpensesListingAdd((AndroidDriver) driver, test);
         obj.expensesClick();
         obj.nextButton();
         obj.setAddexpense();

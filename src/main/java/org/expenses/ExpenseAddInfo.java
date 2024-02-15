@@ -6,7 +6,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.testng.Assert;
 
-public class ExpenseAddInfo extends Expenses {
+public class ExpenseAddInfo extends ExpensesListing {
     ExtentTest test;
 
     public ExpenseAddInfo(AndroidDriver driver, ExtentTest test) {

@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class ExpenseFilter extends Expenses {
+public class ExpenseFilter extends ExpensesListing {
     ExtentTest test;
     String searchButton;
     @AndroidFindBy(id = "com.clove.clover.uat:id/search_expense")

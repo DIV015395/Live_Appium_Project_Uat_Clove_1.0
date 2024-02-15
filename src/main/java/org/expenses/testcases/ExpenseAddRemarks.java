@@ -4,12 +4,12 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.expenses.ExpensesAdd;
+import org.expenses.ExpensesListingAdd;
 import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
 
-public class ExpenseAddRemarks extends ExpensesAdd {
+public class ExpenseAddRemarks extends ExpensesListingAdd {
     ExtentTest test;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_notes")
     private WebElement notes;

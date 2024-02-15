@@ -6,7 +6,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.testcase.TestCase5;
 import org.desiredcapabilities.DesireCap;
-import org.expenses.ExpensesAdd;
+import org.expenses.ExpensesListingAdd;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
@@ -47,7 +47,7 @@ public class ExpenseUITest
     @Test(priority = 2)
  public void redirectToExpense()
  {
-     ExpensesAdd obj = new ExpensesAdd((AndroidDriver) driver, test);
+     ExpensesListingAdd obj = new ExpensesListingAdd((AndroidDriver) driver, test);
      obj.expensesClick();
      obj.nextButton();
  }

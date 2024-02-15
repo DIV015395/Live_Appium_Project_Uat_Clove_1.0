@@ -9,10 +9,10 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-public class ExpensesAdd extends Expenses {
+public class ExpensesListingAdd extends ExpensesListing {
     ExtentTest test;
 
-    public ExpensesAdd(AndroidDriver driver, ExtentTest test) {
+    public ExpensesListingAdd(AndroidDriver driver, ExtentTest test) {
         super(driver, test);
         this.test = test;
     }
@@ -76,7 +76,7 @@ public class ExpensesAdd extends Expenses {
     private final String expenseAddName = resourceBundle.getString("name");
     private final String expenseAddAmount = resourceBundle.getString("Amount");
     private final String expenseAddQuantity = resourceBundle.getString("Quantity");
-    private final String expenseEditAddName = resourceBundle.getString("editname");
+    private final String expenseEditAddName = resourceBundle.getString("editName");
     private final String expenseEditAddAmount = resourceBundle.getString("editAmount");
     private final String expenseEditAddQuantity = resourceBundle.getString("editQuantity");
 
