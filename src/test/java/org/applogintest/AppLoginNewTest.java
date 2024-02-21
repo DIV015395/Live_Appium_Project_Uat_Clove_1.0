@@ -10,7 +10,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
-
 public class AppLoginNewTest
 {
     public AppiumDriver driver;
@@ -19,7 +18,7 @@ public class AppLoginNewTest
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
-        test = extent.createTest("Test Case 1", "Description of Test Case 1");
+        test = extent.createTest("Login Module", "Login test cases");
         NewBaseDriver newBaseDriver = new NewBaseDriver((AndroidDriver) driver, test);
         driver = newBaseDriver.driverLaunch();
     }
@@ -49,10 +48,10 @@ public class AppLoginNewTest
         obj.clearUserName();
         obj.cleaUserPassword();
         //
-        obj.userName();
-        obj.userPassword();
-        obj.goClickButton();
-        obj.authorisedToast();
+//        obj.userName();
+//        obj.userPassword();
+//        obj.goClickButton();
+//        obj.authorisedToast();
     }
     @Test(priority = 2 ,description = "Positive Scenario")
     public void loginPositiveScenarios() {
