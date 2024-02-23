@@ -20,11 +20,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class ExpensesTest {
+public class ExpensesTest
+{
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
-
     @BeforeClass
     public void driverLaunch() {
         extent = ExtentManager.getInstance();
@@ -37,9 +37,7 @@ public class ExpensesTest {
         } catch (MalformedURLException e) {
             test.log(Status.FAIL, "Click function is not working");
         }
-
     }
-
     @Test(priority = 1)
     public void loginApp() {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

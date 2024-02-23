@@ -3,8 +3,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import org.applogin.AppLoginNew;
+import org.assets.AssetTransfer;
 import org.assets.Assets;
 import org.desiredcapabilities.NewBaseDriver;
 import org.extentreport.ExtentManager;
@@ -44,8 +44,27 @@ public class AssetsTest
     @Test(priority = 3)
     public void assetModule() {
         Assets assets = new Assets((AndroidDriver) driver, test);
+////////////////////
         assets.setMenu();
         assets.assetsMenuButton();
+        assets.assetListArrowDown();
+        assets.listTransferButton();
+        assets.selectType();
+        assets.allTypeNameDoctor();
+        assets.selectDoctorType();
+        assets.doctorName();
+        assets.selectAccessory();
+        assets.doneSave();
+
+
+        AssetTransfer assetTransfer = new AssetTransfer((AndroidDriver)driver,test);
+        assetTransfer.imagesUpload();
+        assetTransfer.permissionButton();
+        assetTransfer.shutterDone();
+        assetTransfer.deleteImages();
+        assets.actionSubmit();
+
+
     }
 
 

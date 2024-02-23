@@ -29,7 +29,7 @@ public class NewBaseDriver
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 
     }
-    public void setDriverWaitTenSecond(AppiumDriver driver)
+    public static void setDriverWaitTenSecond(AppiumDriver driver)
     {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
