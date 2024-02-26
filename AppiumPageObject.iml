@@ -15,6 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/org/applogin/loginresources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/org/expenses/expenseresources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/org/assets/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/org/chat/resources" type="java-resource" />
     </content>
   </component>
 </module>
