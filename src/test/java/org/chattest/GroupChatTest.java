@@ -43,27 +43,35 @@ public class GroupChatTest {
         groupChat.makeGroupAddButton();
         groupChat.groupName();
         groupChat.addParticipantForGroup();
-        groupChat.clickElementAtIndexForGroupUserList(0);
-        groupChat.getTextFromSubElement(0);
+        //
+        //Taking all name
         groupChat.clickElementAtIndexForGroupUserList(1);
         groupChat.getTextFromSubElement(1);
         groupChat.clickElementAtIndexForGroupUserList(2);
         groupChat.getTextFromSubElement(2);
         groupChat.clickElementAtIndexForGroupUserList(3);
         groupChat.getTextFromSubElement(3);
+        groupChat.clickElementAtIndexForGroupUserList(4);
+        groupChat.getTextFromSubElement(4);
+        //
+        //
         groupChat.groupListNextButton();
         groupChat.saveGroupButton();
+        //
+        groupChat.getTextFromToastMessage();
+        //
         groupChat.groupTitleName();
         groupChat.friendsName();
         groupChat.saveGroupButton();
         groupChat.groupTitleName();
         groupChat.friendsName();
-        groupChat.getTextForFriendsNameValidation(0);
+        //
+        //Validating all Name;
         groupChat.getTextForFriendsNameValidation(1);
         groupChat.getTextForFriendsNameValidation(2);
         groupChat.getTextForFriendsNameValidation(3);
-
-    }
+        groupChat.getTextForFriendsNameValidation(4);
+      }
 
     @AfterClass
     public void driverClose() {
