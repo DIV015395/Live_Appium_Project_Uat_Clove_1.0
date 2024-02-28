@@ -2,11 +2,10 @@ package org.assets;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.desiredcapabilities.NewBaseDriver;
+import org.utils.NewBaseDriver;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 

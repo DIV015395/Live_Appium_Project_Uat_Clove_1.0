@@ -5,7 +5,7 @@ import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.desiredcapabilities.NewBaseDriver;
+import org.utils.NewBaseDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -24,6 +24,7 @@ public class ContactScreenChat extends NewBaseDriver {
     public void contactButton()
     {
         try {
+            NewBaseDriver.setDriverWaitTenSecond(driver);
             contactButton.click();
             test.log(Status.PASS,"Click on Contact Button");
         }
@@ -44,6 +45,7 @@ public class ContactScreenChat extends NewBaseDriver {
         for (WebElement option : userName) {
             if (option.getText().equals(type))
             {
+                NewBaseDriver.setDriverWaitTenSecond(driver);
                 option.click();
                 test.log(Status.PASS, "Click on User for Chating ");
                 break;

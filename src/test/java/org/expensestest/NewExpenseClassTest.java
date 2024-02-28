@@ -4,7 +4,7 @@ import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLoginNew;
-import org.desiredcapabilities.NewBaseDriver;
+import org.utils.NewBaseDriver;
 import org.expenses.ExpensesListing;
 import org.expenses.NewExpenseClass;
 import org.extentreport.ExtentManager;

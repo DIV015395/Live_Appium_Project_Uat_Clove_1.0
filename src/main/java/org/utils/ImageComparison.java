@@ -1,4 +1,4 @@
-package org.desiredcapabilities;
+package org.utils;
 import java.util.Base64;
 public class ImageComparison {
     private static boolean compareImages(byte[] image1, byte[] image2) {

@@ -4,10 +4,12 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import org.applogin.AppLoginNew;
 import org.chat.*;
-import org.desiredcapabilities.NewBaseDriver;
+import org.utils.NewBaseDriver;
 import org.extentreport.ExtentManager;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -54,9 +56,12 @@ public class ChatTest
     @Test(priority = 5,description = "Sending Message to USer")
     public void chatWithUser()
     {
-        UserChat userChat = new UserChat((AndroidDriver)driver,test);
+          UserChat userChat = new UserChat((AndroidDriver)driver,test);
           userChat.sendMessage();
           userChat.sendButton();
+        ChatListing chatListing = new ChatListing((AndroidDriver)driver,test );
+        chatListing.textViewMessageChatFound();
+          userChat.backButton();
     }
     @Test(priority = 6,description = "Action Button Performing")
     public void chatScreenMessage()
@@ -67,7 +72,41 @@ public class ChatTest
         ChatListing chatListing = new ChatListing((AndroidDriver)driver,test);
         chatListing.listingUserNameClick();
         chatListing.textViewMessage();
-
+    }
+    @Test(priority = 7,description = "Delete Message")
+    public void deleteChatMessage()
+    {
+        UserChat userChat = new UserChat((AndroidDriver)driver,test);
+        userChat.messageDeleteMessage();
+        userChat.messageDeleteButton();
+        userChat.deleteForAll();
+    }
+    @Test(priority = 8,description = "Sending Message to USer")
+    public void chatWithUserSecondTime()
+    {
+        UserChat userChat = new UserChat((AndroidDriver)driver,test);
+        userChat.sendMessage();
+        userChat.sendButton();
+        ChatListing chatListing = new ChatListing((AndroidDriver)driver,test );
+        chatListing.textViewMessageChatFound();
+        userChat.messageInfoMessage();
+        userChat.backButton();
+    }
+    @Test(priority = 9,description = "Delete Message")
+    public void deleteChatMessageForMe()
+    {
+        ChatListing chatListing = new ChatListing((AndroidDriver)driver,test);
+        chatListing.listingUserNameClick();
+        chatListing.textViewMessage();
+        UserChat userChat = new UserChat((AndroidDriver)driver,test);
+        userChat.messageDeleteMessage();
+        userChat.messageDeleteButton();
+        userChat.deleteForMe();
+    }
+    @AfterClass
+    public void driverClose() {
+//        driver.quit();
+        extent.flush();
     }
 
 }

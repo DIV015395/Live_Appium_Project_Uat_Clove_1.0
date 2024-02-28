@@ -5,7 +5,7 @@ import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.desiredcapabilities.NewBaseDriver;
+import org.utils.NewBaseDriver;
 
 import java.util.ResourceBundle;
 
@@ -21,6 +21,7 @@ public class ChatScreen extends NewBaseDriver
     public void chatOptionSearch()
     {
         try {
+            NewBaseDriver.setDriverWaitTenSecond(driver);
             chatOptionSearch.click();
             test.log(Status.PASS,"Click on Chat Search Button");
         }
@@ -36,6 +37,7 @@ public class ChatScreen extends NewBaseDriver
     public void searchBar()
     {
         try {
+            NewBaseDriver.setDriverWaitTenSecond(driver);
             searchBar.sendKeys(chatSearchUsers);
             test.log(Status.PASS,"Searching with Name");
         }
@@ -49,6 +51,7 @@ public class ChatScreen extends NewBaseDriver
     public void oneToOneChat()
     {
         try {
+            NewBaseDriver.setDriverWaitTenSecond(driver);
             oneToOneChat.click();
             test.log(Status.PASS,"Click on one to one chat");
         }
@@ -63,6 +66,7 @@ public class ChatScreen extends NewBaseDriver
     public void switchContactSpecialty()
     {
         try {
+            NewBaseDriver.setDriverWaitTenSecond(driver);
             switchContactSpecialty.click();
             test.log(Status.PASS,"Click on Switch Contact Specialty");
         }

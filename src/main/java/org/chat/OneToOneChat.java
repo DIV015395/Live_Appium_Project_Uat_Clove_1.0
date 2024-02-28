@@ -7,24 +7,26 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.utils.NewBaseDriver;
 
-public class DashBoardChat extends NewBaseDriver {
+public class OneToOneChat extends NewBaseDriver
+{
     ExtentTest test;
-    public DashBoardChat(AndroidDriver<AndroidElement> driver, ExtentTest test) {
+    public OneToOneChat(AndroidDriver<AndroidElement> driver, ExtentTest test) {
         super(driver, test);
         this.test = test;
     }
-    @AndroidFindBy(id = "com.clove.clover.uat:id/tv_home_chat")
-    private AndroidElement homeChat;
-    public void homeChat()
+    @AndroidFindBy(id = "com.clove.clover.uat:id/img_view_group")
+    private AndroidElement groupChat;
+    public void groupChat()
     {
-        try {
+        try
+        {
             NewBaseDriver.setDriverWaitTenSecond(driver);
-            homeChat.click();
-            test.log(Status.PASS,"Click on homeChat Button");
+            groupChat.click();
+            test.log(Status.PASS,"Click on Group Chat");
         }
         catch (Exception e)
         {
-            test.log(Status.FAIL,"Failed to click on homeChat Button");
+            test.log(Status.FAIL,"Failed to Click on Group Chat");
         }
     }
 }

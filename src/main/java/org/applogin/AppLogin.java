@@ -5,7 +5,7 @@ import com.aventstack.extentreports.Status;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.desiredcapabilities.BaseDriver;
+import org.utils.BaseDriver;
 
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;

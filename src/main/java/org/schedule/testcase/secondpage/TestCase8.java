@@ -6,7 +6,7 @@ import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.desiredcapabilities.BaseDriver;
+import org.utils.BaseDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 

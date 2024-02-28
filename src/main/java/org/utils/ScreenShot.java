@@ -1,4 +1,4 @@
-package org.desiredcapabilities;
+package org.utils;
 
 import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;

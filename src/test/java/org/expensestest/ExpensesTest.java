@@ -6,7 +6,7 @@ import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLogin;
-import org.desiredcapabilities.DesireCap;
+import org.utils.DesireCap;
 import org.expenses.ExpensesListingAdd;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;

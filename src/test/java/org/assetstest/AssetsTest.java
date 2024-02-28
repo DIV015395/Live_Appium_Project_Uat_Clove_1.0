@@ -6,7 +6,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLoginNew;
 import org.assets.AssetTransfer;
 import org.assets.Assets;
-import org.desiredcapabilities.NewBaseDriver;
+import org.utils.NewBaseDriver;
 import org.extentreport.ExtentManager;
 import org.schedule.testcase.firstpage.ScheduleScreen;
 import org.testng.annotations.BeforeClass;

@@ -5,8 +5,8 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.desiredcapabilities.BaseDriver;
-import org.desiredcapabilities.ScreenShot;
+import org.utils.BaseDriver;
+import org.utils.ScreenShot;
 import org.openqa.selenium.OutputType;
 import org.testng.Assert;
 

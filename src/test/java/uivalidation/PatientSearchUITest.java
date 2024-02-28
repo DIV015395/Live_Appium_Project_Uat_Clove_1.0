@@ -6,14 +6,13 @@ import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.testcase.TestCase5;
-import org.desiredcapabilities.DesireCap;
+import org.utils.DesireCap;
 import org.extentreport.ExtentManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.patientsearch.PatientSearch;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import orguivalidation.dashboard.DashboardScreen;
 import orguivalidation.patientsearch.PatientSearchScreen;
 
 import java.net.MalformedURLException;
