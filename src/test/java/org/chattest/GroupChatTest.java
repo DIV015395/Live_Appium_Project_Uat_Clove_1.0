@@ -49,8 +49,21 @@ public class GroupChatTest {
         groupChat.getTextFromSubElement(1);
         groupChat.clickElementAtIndexForGroupUserList(2);
         groupChat.getTextFromSubElement(2);
-    }
+        groupChat.clickElementAtIndexForGroupUserList(3);
+        groupChat.getTextFromSubElement(3);
+        groupChat.groupListNextButton();
+        groupChat.saveGroupButton();
+        groupChat.groupTitleName();
+        groupChat.friendsName();
+        groupChat.saveGroupButton();
+        groupChat.groupTitleName();
+        groupChat.friendsName();
+        groupChat.getTextForFriendsNameValidation(0);
+        groupChat.getTextForFriendsNameValidation(1);
+        groupChat.getTextForFriendsNameValidation(2);
+        groupChat.getTextForFriendsNameValidation(3);
 
+    }
 
     @AfterClass
     public void driverClose() {
