@@ -33,11 +33,11 @@ public class NewBaseDriver
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
-    public void setDriverWaitTillThreeSecond()
+    public static void setDriverWaitTillThreeSecond()
     {
         try
         {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         }
         catch (Exception e)
         {

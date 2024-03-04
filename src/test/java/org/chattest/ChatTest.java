@@ -1,10 +1,8 @@
 package org.chattest;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import org.applogin.AppLoginNew;
 import org.chat.*;
 import org.utils.NewBaseDriver;
@@ -18,6 +16,7 @@ public class ChatTest
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
+
     @BeforeClass(description = "Launch the Base Driver")
     public void driverLaunch()
     {
@@ -102,6 +101,31 @@ public class ChatTest
         userChat.messageDeleteMessage();
         userChat.messageDeleteButton();
         userChat.deleteForMe();
+    }
+    @Test(priority = 10,description = "Reply on  Message")
+    public void messageReply()
+    {
+        UserChat userChat = new UserChat((AndroidDriver)driver,test);
+        ChatListing chatListing = new ChatListing((AndroidDriver)driver,test);
+        userChat.sendMessage();
+        userChat.sendButton();
+        chatListing.listingUserNameClick();
+        chatListing.textViewMessage();
+        userChat.messageReplyMessage();
+        userChat.sendMessage();
+        userChat.sendButton();
+    }
+    @Test(priority = 11,description = "Reply on  Message")
+    public void messageInfoCheck()
+    {
+        UserChat userChat = new UserChat((AndroidDriver)driver,test);
+        ChatListing chatListing = new ChatListing((AndroidDriver)driver,test);
+        userChat.sendMessage();
+        userChat.sendButton();
+        chatListing.listingUserNameClick();
+        chatListing.textViewMessage();
+        userChat.messageInfoMessage();
+        userChat.backButton();
     }
     @AfterClass
     public void driverClose() {

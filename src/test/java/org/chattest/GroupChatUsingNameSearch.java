@@ -1,17 +1,20 @@
 package org.chattest;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLoginNew;
-import org.chat.*;
+import org.chat.DashBoardChat;
+import org.chat.GroupChat;
 import org.extentreport.ExtentManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.utils.NewBaseDriver;
 
-public class GroupChatTest {
+public class GroupChatUsingNameSearch {
+
     public AppiumDriver driver;
     public ExtentReports extent;
     public ExtentTest test;
@@ -35,44 +38,29 @@ public class GroupChatTest {
         chat.homeChat();
     }
     @Test(priority = 3,description = "Contact Chat Screen")
-    public void ContactScreenChat()
-    {
+    public void ContactScreenChat() throws InterruptedException {
         GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
         groupChat.groupChatButton();
         groupChat.makeGroupAddButton();
         groupChat.groupName();
         groupChat.addParticipantForGroup();
         //
-        //Taking all name
-        groupChat.clickElementAtIndexForGroupUserList(1);
-        groupChat.getTextFromSubElement(1);
-        groupChat.clickElementAtIndexForGroupUserList(2);
-        groupChat.getTextFromSubElement(2);
-        groupChat.clickElementAtIndexForGroupUserList(3);
-        groupChat.getTextFromSubElement(3);
+        groupChat.chatSearchButton();
+        groupChat.sendingSearchText("demo.doctor2");
+        groupChat.clickElementAtIndexForGroupUserList(0);
+        groupChat.getTextFromSubElement(0);
+        groupChat.clearSearchText();
 
-        groupChat.groupListNextButton();
-        //
-        groupChat.getTextForFriendsNameValidation(0);
-        groupChat.getTextForFriendsNameValidation(1);
-        groupChat.getTextForFriendsNameValidation(2);
-        //
-        groupChat.saveGroupButton();
-        //
-        groupChat.getTextFromToastMessage();
-        //
-        groupChat.groupTitleName();
-        groupChat.friendsName();
-        groupChat.saveGroupButton();
-        groupChat.groupTitleName();
-        groupChat.friendsName();
-        //
-        //Validating all Name;
-        groupChat.getTextForFriendsNameValidation(0);
-        groupChat.getTextForFriendsNameValidation(1);
-        groupChat.getTextForFriendsNameValidation(2);
-        groupChat.getTextForFriendsNameValidation(3);
-      }
+        groupChat.sendingSearchText("demo.doctor");
+        groupChat.clickElementAtIndexForGroupUserList(0);
+        groupChat.getTextFromSubElement(0);
+        groupChat.clearSearchText();
+
+        groupChat.sendingSearchText("demo.It");
+        groupChat.clickElementAtIndexForGroupUserList(0);
+        groupChat.getTextFromSubElement(0);
+        groupChat.clearSearchText();
+    }
 
     @AfterClass
     public void driverClose() {
