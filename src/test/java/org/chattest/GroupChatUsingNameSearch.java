@@ -38,13 +38,18 @@ public class GroupChatUsingNameSearch {
         chat.homeChat();
     }
     @Test(priority = 3,description = "Contact Chat Screen")
-    public void ContactScreenChat() throws InterruptedException {
+    public void ContactScreenChat()
+    {
         GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
         groupChat.groupChatButton();
         groupChat.makeGroupAddButton();
         groupChat.groupName();
         groupChat.addParticipantForGroup();
-        //
+    }
+    @Test(priority = 4,description = "Click on User for add in Group")
+    public void ClickOnListUsersFromChat()
+    {
+        GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
         groupChat.chatSearchButton();
         groupChat.sendingSearchText("demo.doctor2");
         groupChat.clickElementAtIndexForGroupUserList(0);
@@ -60,6 +65,42 @@ public class GroupChatUsingNameSearch {
         groupChat.clickElementAtIndexForGroupUserList(0);
         groupChat.getTextFromSubElement(0);
         groupChat.clearSearchText();
+    }
+    @Test(priority = 5,description = "Click on Next Button After Select some Users")
+    public void ClickOnNextButton()
+    {
+        GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+        groupChat.groupListNextButton();
+    }
+    @Test(priority = 6,description = "Validate All User Name list after click on next button")
+    public void ValidateOnListAllUSer()
+    {
+        GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+        groupChat.getTextForFriendsNameValidation(0);
+        groupChat.getTextForFriendsNameValidation(1);
+        groupChat.getTextForFriendsNameValidation(2);
+
+    }
+    @Test(priority = 7,description = "Click on Group name , redirect to group info ")
+    public void SaveAndRedirectToGroupInfo()
+    {
+        GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+        groupChat.saveGroupButton();
+        groupChat.getTextFromToastMessage();
+        groupChat.groupTitleName();
+        groupChat.friendsName();
+        groupChat.saveGroupButton();
+        groupChat.groupTitleName();
+        groupChat.friendsName();
+    }
+    @Test(priority = 8,description = " redirect to group info , Validate all UserName List")
+    public void ValidateAtGroupInfoUserNameOfGroup()
+    {
+        GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+        groupChat.getTextForFriendsNameValidation(0);
+        groupChat.getTextForFriendsNameValidation(1);
+        groupChat.getTextForFriendsNameValidation(2);
+        groupChat.getTextForFriendsNameValidation(3);
     }
 
     @AfterClass

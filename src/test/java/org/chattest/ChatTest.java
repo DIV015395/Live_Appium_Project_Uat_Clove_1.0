@@ -72,7 +72,7 @@ public class ChatTest
         chatListing.listingUserNameClick();
         chatListing.textViewMessage();
     }
-    @Test(priority = 7,description = "Delete Message")
+    @Test(priority = 7,description = "Delete Message For All")
     public void deleteChatMessage()
     {
         UserChat userChat = new UserChat((AndroidDriver)driver,test);
@@ -91,7 +91,7 @@ public class ChatTest
         userChat.messageInfoMessage();
         userChat.backButton();
     }
-    @Test(priority = 9,description = "Delete Message")
+    @Test(priority = 9,description = "Delete Message for Me")
     public void deleteChatMessageForMe()
     {
         ChatListing chatListing = new ChatListing((AndroidDriver)driver,test);
@@ -115,7 +115,7 @@ public class ChatTest
         userChat.sendMessage();
         userChat.sendButton();
     }
-    @Test(priority = 11,description = "Reply on  Message")
+    @Test(priority = 11,description = "Message Info")
     public void messageInfoCheck()
     {
         UserChat userChat = new UserChat((AndroidDriver)driver,test);
@@ -129,7 +129,7 @@ public class ChatTest
     }
     @AfterClass
     public void driverClose() {
-//        driver.quit();
+        driver.quit();
         extent.flush();
     }
 

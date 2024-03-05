@@ -42,41 +42,57 @@ public class GroupChatTest {
         groupChat.makeGroupAddButton();
         groupChat.groupName();
         groupChat.addParticipantForGroup();
-        //
-        //Taking all name
-        groupChat.clickElementAtIndexForGroupUserList(1);
-        groupChat.getTextFromSubElement(1);
-        groupChat.clickElementAtIndexForGroupUserList(2);
-        groupChat.getTextFromSubElement(2);
-        groupChat.clickElementAtIndexForGroupUserList(3);
-        groupChat.getTextFromSubElement(3);
-
-        groupChat.groupListNextButton();
-        //
-        groupChat.getTextForFriendsNameValidation(0);
-        groupChat.getTextForFriendsNameValidation(1);
-        groupChat.getTextForFriendsNameValidation(2);
-        //
-        groupChat.saveGroupButton();
-        //
-        groupChat.getTextFromToastMessage();
-        //
-        groupChat.groupTitleName();
-        groupChat.friendsName();
-        groupChat.saveGroupButton();
-        groupChat.groupTitleName();
-        groupChat.friendsName();
-        //
-        //Validating all Name;
-        groupChat.getTextForFriendsNameValidation(0);
-        groupChat.getTextForFriendsNameValidation(1);
-        groupChat.getTextForFriendsNameValidation(2);
-        groupChat.getTextForFriendsNameValidation(3);
       }
+     @Test(priority = 4,description = "Click on User for add in Group")
+      public void ClickOnListUsersFromChat()
+      {
+          GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+          groupChat.clickElementAtIndexForGroupUserList(1);
+          groupChat.getTextFromSubElement(1);
+          groupChat.clickElementAtIndexForGroupUserList(2);
+          groupChat.getTextFromSubElement(2);
+          groupChat.clickElementAtIndexForGroupUserList(3);
+          groupChat.getTextFromSubElement(3);
+      }
+    @Test(priority = 5,description = "Click on Next Button After Select some Users")
+      public void ClickOnNextButton()
+      {
+          GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+          groupChat.groupListNextButton();
+      }
+    @Test(priority = 6,description = "Validate All User Name list after click on next button")
+      public void ValidateOnListAllUSer()
+      {
+          GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+          groupChat.getTextForFriendsNameValidation(0);
+          groupChat.getTextForFriendsNameValidation(1);
+          groupChat.getTextForFriendsNameValidation(2);
 
+      }
+    @Test(priority = 7,description = "Click on Group name , redirect to group info ")
+      public void SaveAndRedirectToGroupInfo()
+      {
+          GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+          groupChat.saveGroupButton();
+          groupChat.getTextFromToastMessage();
+          groupChat.groupTitleName();
+          groupChat.friendsName();
+          groupChat.saveGroupButton();
+          groupChat.groupTitleName();
+          groupChat.friendsName();
+      }
+    @Test(priority = 8,description = " redirect to group info , Validate all UserName List")
+      public void ValidateAtGroupInfoUserNameOfGroup()
+      {
+          GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+          groupChat.getTextForFriendsNameValidation(0);
+          groupChat.getTextForFriendsNameValidation(1);
+          groupChat.getTextForFriendsNameValidation(2);
+          groupChat.getTextForFriendsNameValidation(3);
+      }
     @AfterClass
     public void driverClose() {
-//        driver.quit();
+        driver.quit();
         extent.flush();
     }
 }

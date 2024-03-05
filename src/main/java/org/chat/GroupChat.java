@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.utils.NewBaseDriver;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class GroupChat extends NewBaseDriver {
     public void customSoftAssertScreenTitle(String Actual, String Expected) {
@@ -75,8 +76,8 @@ public class GroupChat extends NewBaseDriver {
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/et_group_name")
     private AndroidElement groupName;
-    String groupTextName = "Clove Special Group 12";
-
+    private ResourceBundle resourceBundle = ResourceBundle.getBundle("groupname");
+    private String groupTextName = resourceBundle.getString("groupname");
     public void groupName() {
         try {
             NewBaseDriver.setDriverWaitTenSecond(driver);
@@ -141,8 +142,11 @@ public class GroupChat extends NewBaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_title")
     private List<AndroidElement> groupTitleName;
 
-    public void groupTitleName() {
+    public void groupTitleName()
+    {
+        NewBaseDriver.setDriverWaitTenSecond(driver);
         String type = groupTextName;
+        NewBaseDriver.setDriverWaitTillThreeSecond();
         for (WebElement option : groupTitleName) {
             if (option.getText().equals(type)) {
                 NewBaseDriver.setDriverWaitTenSecond(driver);
