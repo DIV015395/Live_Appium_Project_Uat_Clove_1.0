@@ -161,6 +161,7 @@ public class GroupChat extends NewBaseDriver {
     private AndroidElement friendsName;
 
     public void friendsName() {
+        NewBaseDriver.setDriverWaitTenSecond(driver);
         try {
             NewBaseDriver.setDriverWaitTenSecond(driver);
             friendsName.click();
@@ -173,15 +174,32 @@ public class GroupChat extends NewBaseDriver {
     @AndroidFindBy(id = "com.clove.clover.uat:id/rl_header_row")
     private List<AndroidElement> friendsListInfoName;
 
-    public void getTextForFriendsNameValidation(int index) {
+    public void getTextForFriendsNameValidation(int index)
+    {
 
         NewBaseDriver.setDriverWaitTenSecond(driver);
         NewBaseDriver.setDriverWaitTillThreeSecond();
-
         AndroidElement subElement = (AndroidElement) friendsListInfoName.get(index).findElements(By.id("com.clove.clover.uat:id/textViewUserName")).get(0);
         NewBaseDriver.setDriverWaitTenSecond(driver);
         String userNameText = subElement.getText();
         System.out.println("User Name: " + userNameText);
+    }
+    public void getTextForFriendsNameAsAdmin(int index)
+    {
+        NewBaseDriver.setDriverWaitTenSecond(driver);
+        NewBaseDriver.setDriverWaitTillThreeSecond();
+        AndroidElement subElement = (AndroidElement) friendsListInfoName.get(index).findElements(By.id("com.clove.clover.uat:id/tv_admin")).get(2);
+        NewBaseDriver.setDriverWaitTenSecond(driver);
+        String userNameText = subElement.getText();
+        System.out.println("User Name: " + userNameText);
+    }
+    public void ClickOnTextForFriendsNameValidation(int index)
+    {
+        NewBaseDriver.setDriverWaitTenSecond(driver);
+        NewBaseDriver.setDriverWaitTillThreeSecond();
+        AndroidElement subElement = (AndroidElement) friendsListInfoName.get(index).findElements(By.id("com.clove.clover.uat:id/textViewUserName")).get(0);
+        NewBaseDriver.setDriverWaitTenSecond(driver);
+        subElement.click();
     }
 
     @AndroidFindBy(id = "com.clove.clover.uat:id/iv_chatHeaderOption_search")

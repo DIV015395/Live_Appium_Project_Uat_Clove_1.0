@@ -17,6 +17,7 @@ public class DashBoardChat extends NewBaseDriver {
     private AndroidElement homeChat;
     public void homeChat()
     {
+        NewBaseDriver.setDriverWaitTenSecond(driver);
         try {
             NewBaseDriver.setDriverWaitTenSecond(driver);
             homeChat.click();

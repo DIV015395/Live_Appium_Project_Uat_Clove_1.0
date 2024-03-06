@@ -10,7 +10,6 @@ import org.extentreport.ExtentManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 public class ChatTest
 {
     public AppiumDriver driver;
@@ -132,5 +131,4 @@ public class ChatTest
         driver.quit();
         extent.flush();
     }
-
 }

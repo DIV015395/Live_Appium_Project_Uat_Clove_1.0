@@ -7,6 +7,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.applogin.AppLoginNew;
 import org.chat.DashBoardChat;
 import org.chat.GroupChat;
+import org.chat.GroupUserActionButton;
 import org.extentreport.ExtentManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -86,10 +87,6 @@ public class GroupChatUsingNameSearch {
     {
         GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
         groupChat.saveGroupButton();
-        groupChat.getTextFromToastMessage();
-        groupChat.groupTitleName();
-        groupChat.friendsName();
-        groupChat.saveGroupButton();
         groupChat.groupTitleName();
         groupChat.friendsName();
     }
@@ -101,6 +98,19 @@ public class GroupChatUsingNameSearch {
         groupChat.getTextForFriendsNameValidation(1);
         groupChat.getTextForFriendsNameValidation(2);
         groupChat.getTextForFriendsNameValidation(3);
+        groupChat.ClickOnTextForFriendsNameValidation(1);
+    }
+    @Test(priority = 9,description = " Click on User for remove from group")
+    public void removeUserFromGroup()
+    {
+        GroupUserActionButton groupUserActionButton = new GroupUserActionButton((AndroidDriver)driver,test);
+        groupUserActionButton.addRemoveGroupAdmin();
+    }
+    @Test(priority = 10,description = "Click on get text admin as user")
+    public void validateAdminMakeToUser()
+    {
+        GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+        groupChat.getTextForFriendsNameAsAdmin(1);
     }
 
     @AfterClass

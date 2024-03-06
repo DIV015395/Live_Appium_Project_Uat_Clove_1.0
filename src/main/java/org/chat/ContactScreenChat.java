@@ -41,6 +41,7 @@ public class ContactScreenChat extends NewBaseDriver {
     private String userNameClick = resourceBundle.getString("userNameClick");
     public void userNameClick()
     {
+        NewBaseDriver.setDriverWaitTenSecond(driver);
         String type = userNameClick;
         for (WebElement option : userName) {
             if (option.getText().equals(type))

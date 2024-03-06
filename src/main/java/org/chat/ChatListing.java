@@ -39,6 +39,8 @@ public class ChatListing extends NewBaseDriver
     private List<AndroidElement> textViewMessage;
     public void textViewMessage()
     {
+
+        NewBaseDriver.setDriverWaitTenSecond(driver);
         TouchAction touchAction = new TouchAction(driver);
 
         String type = "Hello Sir What are you doing";
