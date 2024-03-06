@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import org.applogin.AppLoginNew;
 import org.chat.DashBoardChat;
 import org.chat.GroupChat;
@@ -80,7 +81,6 @@ public class GroupChatUsingNameSearch {
         groupChat.getTextForFriendsNameValidation(0);
         groupChat.getTextForFriendsNameValidation(1);
         groupChat.getTextForFriendsNameValidation(2);
-
     }
     @Test(priority = 7,description = "Click on Group name , redirect to group info ")
     public void SaveAndRedirectToGroupInfo()
@@ -98,19 +98,32 @@ public class GroupChatUsingNameSearch {
         groupChat.getTextForFriendsNameValidation(1);
         groupChat.getTextForFriendsNameValidation(2);
         groupChat.getTextForFriendsNameValidation(3);
-        groupChat.ClickOnTextForFriendsNameValidation(1);
+
     }
     @Test(priority = 9,description = " Click on User for remove from group")
-    public void removeUserFromGroup()
+    public void removeUserFromGroups()
     {
+        GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+        groupChat.ClickOnTextForFriendsNameValidation(1);
         GroupUserActionButton groupUserActionButton = new GroupUserActionButton((AndroidDriver)driver,test);
         groupUserActionButton.addRemoveGroupAdmin();
     }
     @Test(priority = 10,description = "Click on get text admin as user")
     public void validateAdminMakeToUser()
     {
+        GroupUserActionButton groupUserActionButton = new GroupUserActionButton((AndroidDriver)driver,test);
+        groupUserActionButton.getTextForFriendsNameAsAdmin(1);
         GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
-        groupChat.getTextForFriendsNameAsAdmin(1);
+        groupChat.ClickOnTextForFriendsNameValidation(2);
+
+    }
+    @Test(priority = 11,description = "Remove User from group")
+    public void removeUserFromGroup()
+    {
+        GroupUserActionButton groupUserActionButton = new GroupUserActionButton((AndroidDriver)driver,test);
+        groupUserActionButton.removeParticipant();
+        GroupChat groupChat = new GroupChat((AndroidDriver)driver,test);
+        groupChat.getTextForFriendsNameValidation(2);
     }
 
     @AfterClass

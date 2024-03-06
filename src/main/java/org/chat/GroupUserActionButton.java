@@ -1,20 +1,26 @@
 package org.chat;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.By;
 import org.utils.NewBaseDriver;
+
+import java.util.List;
 
 public class GroupUserActionButton extends NewBaseDriver {
 
     ExtentTest test;
+    AppiumDriver driver;
     @AndroidFindBy(id = "com.clove.clover.uat:id/tv_view_profile")
     private AndroidElement viewProfile;
 
     public GroupUserActionButton(AndroidDriver<AndroidElement> driver, ExtentTest test) {
         super(driver, test);
         this.test = test;
+        this.driver = driver;
     }
 
     public void viewProfile()
@@ -80,5 +86,14 @@ public class GroupUserActionButton extends NewBaseDriver {
         {
             test.log(Status.PASS,"Failed to click on Cancel Button");
         }
+    }
+    @AndroidFindBy(id = "com.clove.clover.uat:id/rl_header_row")
+    private List<AndroidElement> friendsListInfoName;
+    public void getTextForFriendsNameAsAdmin(int index)
+    {
+        NewBaseDriver.setDriverWaitTenSecond(driver);
+        NewBaseDriver.setDriverWaitTillThreeSecond();
+        String ss = friendsListInfoName.get(index).findElement(By.id("com.clove.clover.uat:id/tv_admin")).getText();
+        System.out.println(ss);
     }
 }
